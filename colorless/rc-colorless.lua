@@ -78,7 +78,7 @@ taglist.buttons = awful.util.table.join(
 -- Textclock widget
 --------------------------------------------------------------------------------
 local textclock = {}
-textclock.widget = redflat.widget.textclock({ timeformat = "%H:%M", dateformat = "%b  %d  %a" })
+textclock.widget = redflat.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%d/%m/%Y" })
 
 -- Layoutbox configure
 --------------------------------------------------------------------------------
