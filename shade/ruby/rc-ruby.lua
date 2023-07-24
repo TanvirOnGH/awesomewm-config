@@ -122,7 +122,7 @@ redflat.float.clientmenu:set_style(tagline_style)
 -- Textclock widget
 --------------------------------------------------------------------------------
 local textclock = {}
-textclock.widget = redflat.widget.textclock({ timeformat = "%H:%M", dateformat = "%b  %d  %a" })
+textclock.widget = redflat.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%d/%m/%Y" })
 
 textclock.buttons = awful.util.table.join(
 	awful.button({}, 1, function() redflat.float.calendar:show() end)
