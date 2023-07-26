@@ -24,8 +24,7 @@ function autostart.run()
 	awful.spawn.with_shell("python ~/scripts/firefox/ff-sync.py")
 
 	-- utils
-	awful.spawn.with_shell("compton")
-	awful.spawn.with_shell("nm-applet")
+	awful.spawn.with_shell("picom")
 
 	-- apps
 	awful.spawn.with_shell("gpaste-client start")
