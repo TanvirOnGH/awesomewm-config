@@ -205,7 +205,7 @@ theme.widget.tasklist.char_digit = 3
 theme.widget.tasklist.task = theme.gauge.task.red
 
 theme.widget.tasklist.appnames = {}
-theme.widget.tasklist.appnames["Nemo"                ] = "NFM"
+theme.widget.tasklist.appnames["Thunar"                ] = "THNR"
 theme.widget.tasklist.appnames["Gvim"                ] = "VIM"
 theme.widget.tasklist.appnames["Terminator"          ] = "TRM"
 theme.widget.tasklist.appnames["Firefox"             ] = "FFX"

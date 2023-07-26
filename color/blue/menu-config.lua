@@ -83,7 +83,7 @@ function menu:init(args)
 			{ "Places",        placesmenu,  micon("folder_home"), key = "c" },
 			separator,
 			{ "Terminal",      env.terminal, micon("terminal") },
-			{ "Nemo",          env.fm,       micon("folder"), key = "n" },
+			{ "Thunar",        env.fm,       micon("folder"), key = "n" },
 			{ "Ranger",        ranger_comm,  micon("folder"), key = "r" },
 			{ "Editor",        "emacs",      micon("emacs") },
 			separator,
