@@ -169,7 +169,7 @@ sysmon.widget.network = redflat.widget.net(
 		speed = { up = 6 * 1024^2, down = 6 * 1024^2 },
 		autoscale = false
 	},
-	{ timeout = 2, widget = redflat.gauge.icon.double }
+	{ timeout = 1, widget = redflat.gauge.icon.double }
 )
 
 -- CPU usage

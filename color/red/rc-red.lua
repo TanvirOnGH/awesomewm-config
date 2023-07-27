@@ -184,7 +184,7 @@ local img = redflat.util.base.image(7, 40, { x = 1, y = 0, width = 5, height = 4
 sysmon.widget.network = redflat.widget.net(
 	{ interface = "enp42s0", speed = { up = 6 * 1024^2, down = 6 * 1024^2 }, autoscale = false },
 	-- custom style
-	{ timeout = 2, widget = redflat.gauge.icon.double, monitor = { step = 0.1, icon1 = img, icon2 = img, igap = 3 } }
+	{ timeout = 1, widget = redflat.gauge.icon.double, monitor = { step = 0.1, icon1 = img, icon2 = img, igap = 3 } }
 )
 
 -- CPU usage
