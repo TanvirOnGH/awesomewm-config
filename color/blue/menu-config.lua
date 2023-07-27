@@ -61,12 +61,10 @@ function menu:init(args)
 	-- Exit submenu
 	------------------------------------------------------------
 	local exitmenu = {
-		{ "Reboot",          "reboot",                    micon("gnome-session-reboot")  },
-		{ "Shutdown",        "shutdown now",              micon("system-shutdown")       },
+		{ "Reboot",          "reboot",            micon("gnome-session-reboot")  },
+		{ "Shutdown",        "poweroff",          micon("system-shutdown")       },
 		separator,
-		{ "Switch user",     "dm-tool switch-to-greeter", micon("gnome-session-switch")  },
-		{ "Suspend",         "systemctl suspend" ,        micon("gnome-session-suspend") },
-		{ "Log out",         awesome.quit,                micon("exit")                  },
+		{ "Log out",         awesome.quit,        micon("exit")                  },
 	}
 
 	-- Main menu
