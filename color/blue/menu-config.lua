@@ -41,10 +41,9 @@ function menu:init(args)
 	-- Awesome submenu
 	------------------------------------------------------------
 	local awesomemenu = {
-		{ "Restart",         awesome.restart,                     micon("gnome-session-reboot") },
+		{ "Restart",         awesome.restart,                           micon("gnome-session-reboot") },
 		separator,
-		{ "Awesome config",  env.fm .. " .config/awesome",        micon("folder-bookmarks") },
-		{ "Awesome lib",     env.fm .. " /usr/share/awesome/lib", micon("folder-bookmarks") }
+		{ "Awesome config",  "code" .. " /home/user/.config/awesome/",  micon("terminal") },
 	}
 
 	-- Places submenu
