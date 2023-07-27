@@ -50,7 +50,6 @@ theme.widget.wrapper = {
 	keyboard    = { 10, 10, 4, 4 },
 	taglist     = { 4, 4, 0, 0 },
 	mail        = { 10, 10, 4, 4 },
-	battery     = { 0, 5, 0, 0 },
 	cpu         = { 5, 0, 0, 0 },
 	tray        = { 10, 12, 7, 7 },
 	tasklist    = { 6, 0, 0, 0 }, -- centering tasklist widget

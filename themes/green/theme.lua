@@ -121,7 +121,6 @@ theme.widget.wrapper = {
 	network     = { 6, 6, 8, 8 },
 	cpu         = { 10, 2, 8, 8 },
 	ram         = { 2, 2, 8, 8 },
-	battery     = { 2, 10, 8, 8 },
 	keyboard    = { 10, 10, 5, 5 },
 	mail        = { 10, 10, 5, 5 },
 	tray        = { 10, 12, 8, 8 },

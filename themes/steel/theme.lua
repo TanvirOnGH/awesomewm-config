@@ -47,7 +47,6 @@ theme.widget.wrapper = {
 	tray        = { 8, 8, 7, 7 },
 	cpu         = { 9, 3, 7, 7 },
 	ram         = { 2, 2, 7, 7 },
-	battery     = { 3, 9, 7, 7 },
 	network     = { 4, 4, 7, 7 },
 	updates     = { 10, 10, 7, 7 },
 	taglist     = { 4, 4, 0, 0 },

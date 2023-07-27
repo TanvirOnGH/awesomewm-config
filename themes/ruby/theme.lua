@@ -188,7 +188,6 @@ theme.widget.wrapper = {
 	tray        = { 8, 8, 7, 7 },
 	cpu         = { 9, 3, 7, 7 },
 	ram         = { 2, 2, 7, 7 },
-	battery     = { 3, 9, 7, 7 },
 	network     = { 4, 4, 7, 7 },
 	updates     = { 6, 6, 6, 6 },
 	taglist     = { 4, 4, 5, 4 },
@@ -225,10 +224,6 @@ theme.widget.keyboard.icon = theme.path .. "/widget/keyboard.svg"
 
 -- Mail
 theme.widget.mail.icon = theme.path .. "/widget/mail.svg"
-
--- Battery
-theme.widget.battery.notify = { icon = theme.path .. "/widget/battery.svg", color = theme.color.main }
-theme.widget.battery.levels = { 0.05, 0.1, 0.15, 0.2, 0.25, 0.30 }
 
 -- Individual styles
 ------------------------------------------------------------

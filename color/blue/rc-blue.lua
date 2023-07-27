@@ -166,15 +166,8 @@ mail.buttons = awful.util.table.join(
 local sysmon = { widget = {}, buttons = {}, icon = {} }
 
 -- icons
-sysmon.icon.battery = redflat.util.table.check(beautiful, "wicon.battery")
 sysmon.icon.network = redflat.util.table.check(beautiful, "wicon.wireless")
 sysmon.icon.cpuram = redflat.util.table.check(beautiful, "wicon.monitor")
-
--- battery
-sysmon.widget.battery = redflat.widget.sysmon(
-	{ func = redflat.system.pformatted.bat(25), arg = "BAT0" },
-	{ timeout = 60, widget = redflat.gauge.icon.single, monitor = { is_vertical = true, icon = sysmon.icon.battery } }
-)
 
 -- network speed
 sysmon.widget.network = redflat.widget.net(

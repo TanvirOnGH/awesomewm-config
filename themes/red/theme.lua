@@ -153,7 +153,6 @@ theme.widget.wrapper = {
 	updates    = { 4, 4, 9, 9 },
 	keyboard    = { 4, 4, 5, 5 },
 	mail        = { 4, 4, 5, 5 },
-	battery     = { 3, 3, 0, 0 },
 	ram         = { 3, 3, 0, 0 },
 	cpu         = { 3, 3, 0, 0 },
 	tray        = { 1, 1, 8, 8 },
