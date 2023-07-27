@@ -260,21 +260,14 @@ awful.screen.connect_for_each_screen(
 				layout = wibox.layout.fixed.horizontal,
 
 				separator,
-				env.wrapper(mail.widget, "mail", mail.buttons),
-				separator,
-				env.wrapper(kbindicator.widget, "keyboard", kbindicator.buttons),
-				separator,
 				env.wrapper(sysmon.widget.network, "network"),
 				separator,
 				env.wrapper(sysmon.widget.cpuram, "cpuram", sysmon.buttons.cpuram),
-				separator,
-				env.wrapper(volume.widget, "volume", volume.buttons),
 				separator,
 				env.wrapper(textclock.widget, "textclock"),
 				separator,
 				env.wrapper(tray.widget, "tray", tray.buttons),
 				separator,
-				env.wrapper(sysmon.widget.battery, "battery"),
 			},
 		}
 	end
