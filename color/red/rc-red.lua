@@ -190,7 +190,7 @@ sysmon.widget.network = redflat.widget.net(
 -- CPU usage
 sysmon.widget.cpu = redflat.widget.sysmon(
 	{ func = redflat.system.pformatted.cpu(80) },
-	{ timeout = 2, monitor = { label = "CPU" } }
+	{ timeout = 1, monitor = { label = "CPU" } }
 )
 
 sysmon.buttons.cpu = awful.util.table.join(
@@ -200,7 +200,7 @@ sysmon.buttons.cpu = awful.util.table.join(
 -- RAM usage
 sysmon.widget.ram = redflat.widget.sysmon(
 	{ func = redflat.system.pformatted.mem(80) },
-	{ timeout = 10, monitor = { label = "RAM" } }
+	{ timeout = 2, monitor = { label = "RAM" } }
 )
 
 sysmon.buttons.ram = awful.util.table.join(

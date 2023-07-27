@@ -203,7 +203,7 @@ end
 
 sysmon.widget.cpuram = redflat.widget.sysmon(
 	{ func = cpuram_func },
-	{ timeout = 2,  widget = redflat.gauge.monitor.double, monitor = { icon = sysmon.icon.cpuram } }
+	{ timeout = 1,  widget = redflat.gauge.monitor.double, monitor = { icon = sysmon.icon.cpuram } }
 )
 
 sysmon.buttons.cpuram = awful.util.table.join(
