@@ -206,10 +206,12 @@ function theme:init()
 	--------------------------------------------------------------------------------
 	self.service.dfparser = {
 		-- list of path to check desktop files
-		desktop_file_dirs = {
-			'/usr/share/applications/',
-			'/usr/local/share/applications/',
-			'~/.local/share/applications',
+        desktop_file_dirs = {
+			-- On NixOS systems
+			'/run/current-system/sw/share/applications/'
+			-- '/usr/share/applications/',
+			-- '/usr/local/share/applications/',
+			-- '~/.local/share/applications',
 		},
 		-- icon theme settings
 		icons = {
