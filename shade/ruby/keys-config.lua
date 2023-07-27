@@ -790,8 +790,8 @@ function hotkeys:init(args)
 			{ description = "Open a terminal", group = "Applications" }
 		},
 		{
-			{ env.mod, "Mod1" }, "space", function() awful.spawn("gpaste-client ui") end,
-			{ description = "Clipboard manager", group = "Applications" }
+			{ env.mod }, "space", function() awful.spawn("flameshot gui") end,
+			{ description = "Flameshot", group = "Applications" }
 		},
 
 		{
@@ -870,11 +870,11 @@ function hotkeys:init(args)
 			{ description = "Switch to lower line", group = "Tag navigation" }
 		},
 		{
-			{ env.mod }, "space", function() tag_line_switch(tcn) end,
+			{ env.mod, "Control" }, "space", function() tag_line_switch(tcn) end,
 			{ description = "Switch tag line", group = "Tag navigation" }
 		},
 		{
-			{ env.mod, "Control" }, "space", function() clients_swap_by_line(tcn) end,
+			{ env.mod, "Shift" }, "space", function() clients_swap_by_line(tcn) end,
 			{ description = "Swap clients between lines", group = "Tag navigation" }
 		},
 
