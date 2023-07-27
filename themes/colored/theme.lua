@@ -68,7 +68,6 @@ theme.cairo_fonts = {
 -- Widget icons
 --------------------------------------------------------------------------------
 theme.wicon = {
-	battery    = theme.path .. "/widget/battery.svg",
 	wireless   = theme.path .. "/widget/wireless.svg",
 	monitor    = theme.path .. "/widget/monitor.svg",
 	audio      = theme.path .. "/widget/audio.svg",
