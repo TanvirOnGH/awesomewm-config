@@ -608,8 +608,8 @@ function hotkeys:init(args)
 			{ description = "Open a terminal", group = "Actions" }
 		},
 		{
-			{ env.mod, "Mod1" }, "space", function() awful.spawn("gpaste-client ui") end,
-			{ description = "Clipboard manager", group = "Actions" }
+			{ env.mod }, "space", function() awful.spawn("flameshot gui") end,
+			{ description = "Flameshot", group = "Actions" }
 		},
 		{
 			{ env.mod, "Control" }, "r", awesome.restart,
