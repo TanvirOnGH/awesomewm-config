@@ -184,7 +184,7 @@ sysmon.widget.network = redflat.widget.net(
 		speed = { up = 6 * 1024^2, down = 6 * 1024^2 },
 		autoscale = false
 	},
-	{ timeout = 2, widget = redflat.gauge.monitor.double, monitor = { icon = sysmon.icon.network } }
+	{ timeout = 1, widget = redflat.gauge.monitor.double, monitor = { icon = sysmon.icon.network } }
 )
 
 -- CPU and RAM usage

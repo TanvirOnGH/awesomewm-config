@@ -40,7 +40,7 @@ function desktop:init(args)
 		interface      = "enp42s0",
 		maxspeed       = { up = 6*1024^2, down = 6*1024^2 },
 		crit           = { up = 6*1024^2, down = 6*1024^2 },
-		timeout        = 2,
+		timeout        = 1,
 		autoscale      = false,
 		label          = "NET"
 	}
