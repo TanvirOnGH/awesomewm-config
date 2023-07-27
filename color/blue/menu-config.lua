@@ -34,9 +34,6 @@ function menu:init(args)
 		return redflat.service.dfparser.lookup_icon(name, icon_style)
 	end
 
-	-- extra commands
-	local ranger_comm = env.terminal .. " -e ranger"
-
 	-- Application submenu
 	------------------------------------------------------------
 	local appmenu = redflat.service.dfparser.menu({ icons = icon_style, wm_name = "awesome" })
@@ -83,9 +80,9 @@ function menu:init(args)
 			{ "Places",        placesmenu,  micon("folder_home"), key = "c" },
 			separator,
 			{ "Terminal",      env.terminal, micon("terminal") },
-			{ "Thunar",        env.fm,       micon("folder"), key = "n" },
-			{ "Ranger",        ranger_comm,  micon("folder"), key = "r" },
-			{ "Editor",        "emacs",      micon("emacs") },
+			{ "Thunar",        env.fm,       micon("folder")},
+			{ "Firefox",       "firefox",    micon("browser")},
+			{ "VSCode",        "code",       micon("code-editor") },
 			separator,
 			{ "Exit",          exitmenu,     micon("exit") },
 		}
