@@ -41,7 +41,7 @@ function menu:init(args)
 	-- Awesome submenu
 	------------------------------------------------------------
 	local awesomemenu = {
-		{ "Restart",         awesome.restart,                 micon("gnome-session-reboot") },
+		{ "Restart",         awesome.restart,                     micon("gnome-session-reboot") },
 		separator,
 		{ "Awesome config",  env.fm .. " .config/awesome",        micon("folder-bookmarks") },
 		{ "Awesome lib",     env.fm .. " /usr/share/awesome/lib", micon("folder-bookmarks") }
@@ -50,14 +50,12 @@ function menu:init(args)
 	-- Places submenu
 	------------------------------------------------------------
 	local placesmenu = {
-		{ "Documents",   env.fm .. " Documents", micon("folder-documents") },
-		{ "Downloads",   env.fm .. " Downloads", micon("folder-download")  },
-		{ "Music",       env.fm .. " Music",     micon("folder-music")     },
-		{ "Pictures",    env.fm .. " Pictures",  micon("folder-pictures")  },
-		{ "Videos",      env.fm .. " Videos",    micon("folder-videos")    },
+		{ "Downloads",   env.fm .. " downloads",       micon("folder-download")  },
+		{ "Music",       env.fm .. " media/musics",    micon("folder-music")     },
+		{ "Pictures",    env.fm .. " media/pictures",  micon("folder-pictures")  },
+		{ "Videos",      env.fm .. " media/videos",    micon("folder-videos")    },
 		separator,
-		{ "Media",       env.fm .. " /mnt/media",   micon("folder-bookmarks") },
-		{ "Storage",     env.fm .. " /mnt/storage", micon("folder-bookmarks") },
+		{ "HDD",       env.fm .. " /mnt/HDD",          micon("folder-bookmarks") },
 	}
 
 	-- Exit submenu
