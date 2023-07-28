@@ -909,7 +909,7 @@ function theme:init()
 		keytip        = { geometry = { width = 400 } }, -- redflat key tip settings
 	}
 
-	-- Application swit`cher
+	-- Application switcher
 	------------------------------------------------------------
 	self.float.appswitcher = {
 		wibox_height    = 240, -- widget height
