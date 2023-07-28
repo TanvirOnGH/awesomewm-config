@@ -193,7 +193,6 @@ function hotkeys:init(args)
 	local env = args.env
 	local mainmenu = args.menu
 	local volume = args.volume
-	local microphone = args.microphone
 	local appkeys = args.appkeys or {}
 
 	local tcn = args.tag_cols_num or 0
@@ -907,11 +906,6 @@ function hotkeys:init(args)
 			{}, "XF86AudioMute", volume_mute,
 			{ description = "Mute audio", group = "Volume control" }
 		},
-		{
-			{ "Control" }, "XF86AudioMute", function () microphone:mute() end,
-			{ description = "Mute microphone", group = "Volume control" }
-		},
-
 		{
 			{}, "XF86MonBrightnessUp", function() brightness({ step = 2 }) end,
 			{ description = "Increase brightness", group = "Brightness control" }

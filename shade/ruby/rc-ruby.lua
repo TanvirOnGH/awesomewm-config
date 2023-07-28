@@ -166,27 +166,6 @@ volume.buttons = awful.util.table.join(
 	awful.button({}, 9, function() redflat.float.player:action("Next")          end)
 )
 
--- PA microphone
---------------------------------------------------------------------------------
-local microphone = {}
-
--- tricky custom style
-local microphone_style = {
-	widget = redflat.gauge.audio.blue.new,
-	audio = beautiful.individual and beautiful.individual.microphone_audio or {},
-}
---microphone_style.audio.gauge = redflat.gauge.monitor.dash
-microphone_style.audio.gauge = false
-
--- init widget
-microphone.widget = redflat.widget.pulse({ type = "source" }, microphone_style)
-
-microphone.buttons = awful.util.table.join(
-	awful.button({}, 2, function() microphone.widget:mute() end),
-	awful.button({}, 4, function() microphone.widget:change_volume() end),
-	awful.button({}, 5, function() microphone.widget:change_volume({ down = true }) end)
-)
-
 -- Keyboard layout indicator
 --------------------------------------------------------------------------------
 local kbindicator = {}
@@ -357,7 +336,7 @@ local appkeys = require("color.blue.appkeys-config") -- load file with applicati
 local hotkeys = require("shade.ruby.keys-config") -- load file with hotkeys configuration
 hotkeys:init({
 	env = env, menu = mymenu.mainmenu, appkeys = appkeys, tag_cols_num = taglist.cols_num,
-	microphone = microphone.widget, volume = volume.widget
+	volume = volume.widget
  })
 
 

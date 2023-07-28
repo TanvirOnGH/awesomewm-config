@@ -182,7 +182,6 @@ theme.widget.wrapper = {
 	layoutbox   = { 12, 9, 6, 6 },
 	textclock   = { 10, 10, 0, 0 },
 	volume      = { 4, 9, 3, 3 },
-	microphone  = { 5, 6, 6, 6 },
 	keyboard    = { 9, 9, 3, 3 },
 	mail        = { 9, 9, 3, 3 },
 	tray        = { 8, 8, 7, 7 },
@@ -224,16 +223,6 @@ theme.widget.keyboard.icon = theme.path .. "/widget/keyboard.svg"
 
 -- Mail
 theme.widget.mail.icon = theme.path .. "/widget/mail.svg"
-
--- Individual styles
-------------------------------------------------------------
-theme.individual.microphone_audio = {
-	width   = 26,
-	--dmargin = { 4, 3, 1, 1 },
-	--dash    = { line = { num = 3, height = 5 } },
-	icon    = theme.path .. "/widget/microphone.svg",
-	color   = { icon = theme.color.main, mute = theme.color.icon }
-}
 
 -- Floating widgets
 -----------------------------------------------------------------------------------------------------------------------
