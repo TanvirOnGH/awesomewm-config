@@ -153,7 +153,7 @@ function desktop:init(args)
 		cpu       = { match = "CPU:%s+%+(%d+)%.%d°[CF]" },
 		ram       = { match = "SODIMM:%s+%+(%d+)%.%d°[CF]" },
 		wifi      = { match = "iwlwifi_1%-virtual%-0\r?\nAdapter:%sVirtual%sdevice\r?\ntemp1:%s+%+(%d+)%.%d°[CF]" },
-		--chip      = { match = "pch_skylake%-virtual%-0\r?\nAdapter:%sVirtual%sdevice\r?\ntemp1:%s+%+(%d+)%.%d°[CF]" },
+		chip      = { match = "pch_skylake%-virtual%-0\r?\nAdapter:%sVirtual%sdevice\r?\ntemp1:%s+%+(%d+)%.%d°[CF]" },
 		cpu_fan   = { match = "Processor%sFan:%s+(%d+)%sRPM" },
 		video_fan = { match = "Video%sFan:%s+(%d+)%sRPM" },
 	}
