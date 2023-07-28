@@ -72,7 +72,6 @@ theme.wicon = {
 	monitor    = theme.path .. "/widget/monitor.svg",
 	audio      = theme.path .. "/widget/audio.svg",
 	headphones = theme.path .. "/widget/headphones.svg",
-	brightness = theme.path .. "/widget/brightness.svg",
 	package    = theme.path .. "/widget/package.svg",
 	search     = theme.path .. "/widget/search.svg",
 	mute       = theme.path .. "/widget/mute.svg",
@@ -222,10 +221,6 @@ function theme:update()
 	------------------------------------------------------------
 	self.float.keychain.border_width = 0
 	self.float.keychain.keytip = { geometry = { width = 1200 }, column = 2 }
-
-	-- Brightness control
-	------------------------------------------------------------
-	self.float.brightness.notify = { icon = self.wicon.brightness }
 
 	-- Floating calendar
 	------------------------------------------------------------

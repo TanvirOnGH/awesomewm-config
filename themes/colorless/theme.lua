@@ -764,12 +764,6 @@ function theme:init()
 	--------------------------------------------------------------------------------
 	self.float = { decoration = {} }
 
-	-- Brightness control
-	------------------------------------------------------------
-	self.float.brightness = {
-		notify = {},  -- redflat notify style (see theme.float.notify)
-	}
-
 	-- Client menu
 	------------------------------------------------------------
 	self.float.clientmenu = {

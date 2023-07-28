@@ -364,14 +364,6 @@ appkeys["mpv"] = {
 			{ description = "Increase contrast", group = "Video" }
 		},
 		{
-			{}, "3", nil,
-			{ description = "Decrease brightness", group = "Video" }
-		},
-		{
-			{}, "4", nil,
-			{ description = "Increase brightness", group = "Video" }
-		},
-		{
 			{}, "5", nil,
 			{ description = "Decrease gamma", group = "Video" }
 		},

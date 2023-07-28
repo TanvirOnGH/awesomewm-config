@@ -102,11 +102,6 @@ local function client_numkey(i, mod, action)
 	)
 end
 
--- brightness functions
-local brightness = function(args)
-	redflat.float.brightness:change_with_xbacklight(args) -- use xbacklight
-end
-
 -- right bottom corner position
 local rb_corner = function()
 	return { x = screen[mouse.screen].workarea.x + screen[mouse.screen].workarea.width,
@@ -685,15 +680,6 @@ function hotkeys:init(args)
 		{
 			{ env.mod }, "Down", function() awful.layout.inc(-1) end,
 			{ description = "Select previous layout", group = "Layouts" }
-		},
-
-		{
-			{}, "XF86MonBrightnessUp", function() brightness({ step = 2 }) end,
-			{ description = "Increase brightness", group = "Brightness control" }
-		},
-		{
-			{}, "XF86MonBrightnessDown", function() brightness({ step = 2, down = true }) end,
-			{ description = "Reduce brightness", group = "Brightness control" }
 		},
 
 		{
