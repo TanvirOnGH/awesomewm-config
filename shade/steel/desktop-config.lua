@@ -29,7 +29,7 @@ function desktop:init(args)
 	args = args or {}
 	local env = args.env or {}
 	local autohide = env.desktop_autohide or false
-	local font = "Furore 20"
+	local font = "Fira Code 20"
 
 	-- system info level settings
 	local fs_levels = {
