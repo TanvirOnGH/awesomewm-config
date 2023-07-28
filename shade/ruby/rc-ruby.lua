@@ -82,7 +82,7 @@ taglist.buttons = awful.util.table.join(
 	awful.button({         }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
--- some tag settings which indirectky depends on row and columns number of taglist
+-- some tag settings which indirectly depends on row and columns number of taglist
 taglist.names = {
 	"Main",     "Development", "Files",      "Media",      "Editing",  "Misc", -- [1]
     "Browsing", "Terminal 1",  "Terminal 2", "Terminal 3", "Virtual",  "Game", -- [2]
