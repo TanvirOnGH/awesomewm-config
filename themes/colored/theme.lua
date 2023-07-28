@@ -16,7 +16,7 @@ theme.path = awful.util.get_configuration_dir() .. "themes/colored"
 ------------------------------------------------------------
 theme.panel_height        = 36 -- panel height
 theme.border_width        = 4  -- window border width
-theme.useless_gap         = 4  -- useless gap
+theme.useless_gap         = 5  -- useless gap
 
 -- Fonts
 ------------------------------------------------------------
