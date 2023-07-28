@@ -78,7 +78,7 @@ function menu:init(args)
 		items = {
             { "Awesome",      awesomemenu, micon("awesome") },
 			{ "NixOS",        nixmenu,     micon("nix") },
-			{ "Applications",  appmenu,     micon("distributor-logo") },
+			{ "Applications",  appmenu,     micon("folder") },
 			{ "Places",        placesmenu,  micon("folder_home"), key = "c" },
 			separator,
 			{ "Terminal",      env.terminal, micon("terminal") },
