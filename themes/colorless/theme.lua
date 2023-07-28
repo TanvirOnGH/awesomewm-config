@@ -573,19 +573,6 @@ function theme:init()
 		audio  = {}   -- style for gauge
 	}
 
-	-- Keyboard layout indicator
-	------------------------------------------------------------
-	self.widget.keyboard = {
-		icon         = self.icon.system,  -- widget icon
-		micon        = self.icon,         -- some common menu icons
-
-		-- list of colors associated with keyboard layouts
-		layout_color = { self.color.icon, self.color.main },
-
-		-- redflat menu style (see theme.menu)
-		menu = { width  = 180, color  = { right_icon = self.color.icon }, nohide = true }
-	}
-
 	-- Mail indicator
 	------------------------------------------------------------
 	self.widget.mail = {

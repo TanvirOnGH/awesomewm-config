@@ -47,7 +47,6 @@ theme.widget.wrapper = {
 	textclock   = { 10, 10, 0, 0 },
 	volume      = { 10, 10, 5, 5 },
 	network     = { 4, 4, 5, 5 },
-	keyboard    = { 10, 10, 4, 4 },
 	taglist     = { 4, 4, 0, 0 },
 	mail        = { 10, 10, 4, 4 },
 	cpu         = { 5, 0, 0, 0 },
