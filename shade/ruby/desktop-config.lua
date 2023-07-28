@@ -119,8 +119,8 @@ function desktop:init(args)
 
 	-- QEMU image (placed along with disks)
 	--------------------------------------------------------------------------------
-	local qm1 = "/mnt/storage/vmdrive/win10-gvt/win10-work-base.qcow2"
-	local qm2 = "/mnt/storage/vmdrive/win10-gvt/win10-work-current.qcow2"
+	local qm1 = "/var/lib/libvirt/images/Whonix-Workstation.qcow2"
+	local qm2 = "/var/lib/libvirt/images/Whonix-Gateway.qcow2"
 
 	local bms = beautiful.desktop.multimeter -- base multimeter style
 	local dy = disks_original_height - (bms.height.upright + bms.height.lines)
@@ -136,8 +136,8 @@ function desktop:init(args)
 	--setup
 	qemu.args = {
 		sensors  = {
-			{ meter_function = system.qemu_image_size, maxm = 100, crit = 90, name = "qemu-w10-base", args = qm1 },
-			{ meter_function = system.qemu_image_size, maxm = 100, crit = 80, name = "qemu-w10-snap", args = qm2 },
+			{ meter_function = system.qemu_image_size, maxm = 100, crit = 90, name = "qemu-whonix-workstation", args = qm1 },
+			{ meter_function = system.qemu_image_size, maxm = 100, crit = 80, name = "qemu-whonix-gateway", args = qm2 },
 		},
 		timeout = 600
 	}
