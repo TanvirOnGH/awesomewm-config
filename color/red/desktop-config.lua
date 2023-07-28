@@ -158,7 +158,7 @@ function desktop:init(args)
 	-- gpu
 	local thermalg = { geometry = wgeometry(grid, places.thermalg, workarea) }
 	thermalg.args = {
-		sensors = { { async_function = system.thermal.nvoptimus, maxm = 105, crit = 80, name = "gpu" } },
+		sensors = { { meter_function = system.thermal.nvsmi, maxm = 105, crit = 80, name = "gpu" } },
 		timeout = 10,
 	}
 

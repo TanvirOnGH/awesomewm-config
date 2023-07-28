@@ -256,7 +256,7 @@ function desktop:init(args)
 	end
 
 	-- temperature nvidia
-	hardwareset.blocks[3].async = system.thermal.nvoptimus
+	hardwareset.blocks[3].async = system.thermal.nvsmi
 	hardwareset.blocks[3].action = function(data)
 		local value = data.off and "is currently disabled" or
 		              string.format("has temperature of %s degrees", form_value(data[1], colset.tgpu, {}))

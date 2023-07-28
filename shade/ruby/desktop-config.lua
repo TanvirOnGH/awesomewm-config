@@ -169,7 +169,7 @@ function desktop:init(args)
 		sensors = {
 			{ meter_function = system.lmsensors.get, args = "cpu",  maxm = 100, crit = 75, name = "cpu"  },
 			{ meter_function = system.lmsensors.get, args = "wifi", maxm = 100, crit = 75, name = "wifi" },
-			{ async_function = system.thermal.nvoptimus, maxm = 105, crit = 80, name = "gpu" }
+			{ meter_function = system.thermal.nvsmi, maxm = 105, crit = 80, name = "gpu" }
 		},
 		timeout = sensors_base_timeout,
 	}
