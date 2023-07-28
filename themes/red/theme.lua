@@ -22,9 +22,8 @@ theme.path = awful.util.get_configuration_dir() .. "themes/red"
 --------------------------------------------------------------------------------
 theme.panel_height = 40 -- panel height
 theme.useless_gap  = 5  -- useless gap
-theme.cellnum = { x = 80, y = 43 } -- grid layout property
-
-theme.wallpaper    = theme.path .. "/wallpaper/custom.png"
+theme.cellnum      = { x = 80, y = 43 } -- grid layout property
+theme.wallpaper    = awful.util.get_configuration_dir() .. "misc/wallpapers/red/custom.png"
 
 -- Fonts
 ------------------------------------------------------------

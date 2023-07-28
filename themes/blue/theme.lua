@@ -21,7 +21,7 @@ theme.path = awful.util.get_configuration_dir() .. "themes/blue"
 -- Main config
 --------------------------------------------------------------------------------
 theme.panel_height = 40 -- panel height
-theme.wallpaper    = theme.path .. "/wallpaper/custom.png"
+theme.wallpaper    = awful.util.get_configuration_dir() .. "misc/wallpapers/blue/custom.png"
 
 -- Setup parent theme settings
 --------------------------------------------------------------------------------
