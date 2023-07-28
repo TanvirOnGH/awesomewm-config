@@ -150,7 +150,6 @@ theme.widget.wrapper = {
 	layoutbox   = { 4, 4, 9, 9 },
 	volume      = { 4, 4, 5, 5 },
 	updates    = { 4, 4, 9, 9 },
-	mail        = { 4, 4, 5, 5 },
 	ram         = { 3, 3, 0, 0 },
 	cpu         = { 3, 3, 0, 0 },
 	tray        = { 1, 1, 8, 8 },

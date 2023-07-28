@@ -73,7 +73,6 @@ theme.wicon = {
 	audio      = theme.path .. "/widget/audio.svg",
 	headphones = theme.path .. "/widget/headphones.svg",
 	brightness = theme.path .. "/widget/brightness.svg",
-	mail       = theme.path .. "/widget/mail.svg",
 	package    = theme.path .. "/widget/package.svg",
 	search     = theme.path .. "/widget/search.svg",
 	mute       = theme.path .. "/widget/mute.svg",
@@ -161,11 +160,6 @@ function theme:update()
 	-- Pulseaudio volume control
 	------------------------------------------------------------
 	self.widget.pulse.notify = { icon = self.wicon.audio }
-
-	-- Mail indicator
-	------------------------------------------------------------
-	self.widget.mail.icon = self.wicon.mail
-	self.widget.mail.notify = { icon = self.wicon.mail }
 
 	-- System updates indicator
 	------------------------------------------------------------

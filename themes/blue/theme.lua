@@ -103,7 +103,6 @@ theme.widget.wrapper = {
 	volume      = { 10, 10, 5, 5 },
 	network     = { 10, 10, 5, 5 },
 	cpuram      = { 10, 10, 5, 5 },
-	mail        = { 10, 10, 4, 4 },
 	tray        = { 8, 8, 7, 7 },
 	tasklist    = { 4, 0, 0, 0 }, -- centering tasklist widget
 }

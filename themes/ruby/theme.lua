@@ -182,7 +182,6 @@ theme.widget.wrapper = {
 	layoutbox   = { 12, 9, 6, 6 },
 	textclock   = { 10, 10, 0, 0 },
 	volume      = { 4, 9, 3, 3 },
-	mail        = { 9, 9, 3, 3 },
 	tray        = { 8, 8, 7, 7 },
 	cpu         = { 9, 3, 7, 7 },
 	ram         = { 2, 2, 7, 7 },
@@ -216,9 +215,6 @@ theme.gauge.monitor.dash.width = 11
 theme.widget.tasklist.char_digit = 5
 theme.widget.tasklist.task = theme.gauge.task.ruby
 theme.widget.tasklist.tasktip.max_width = 1200
-
--- Mail
-theme.widget.mail.icon = theme.path .. "/widget/mail.svg"
 
 -- Floating widgets
 -----------------------------------------------------------------------------------------------------------------------

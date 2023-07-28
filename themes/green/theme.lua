@@ -121,7 +121,6 @@ theme.widget.wrapper = {
 	network     = { 6, 6, 8, 8 },
 	cpu         = { 10, 2, 8, 8 },
 	ram         = { 2, 2, 8, 8 },
-	mail        = { 10, 10, 5, 5 },
 	tray        = { 10, 12, 8, 8 },
 	taglist     = { 6, 6, 0, 0 },
 	tasklist    = { 14, 0, 0, 0 }, -- centering tasklist widget

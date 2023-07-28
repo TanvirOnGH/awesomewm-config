@@ -573,16 +573,6 @@ function theme:init()
 		audio  = {}   -- style for gauge
 	}
 
-	-- Mail indicator
-	------------------------------------------------------------
-	self.widget.mail = {
-		icon        = self.icon.system,  -- widget icon
-		notify      = {},                -- redflat notify style (see theme.float.notify)
-		need_notify = true,              -- show notification on new mail
-		firstrun    = true,              -- check mail on wm start/restart
-		color       = self.color,        -- colors (main used)
-	}
-
 	-- System updates indicator
 	------------------------------------------------------------
 	self.widget.updates = {

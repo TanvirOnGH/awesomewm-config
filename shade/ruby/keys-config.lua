@@ -476,10 +476,6 @@ function hotkeys:init(args)
 			{}, "u", function() redflat.widget.updates:update(true) end,
 			{ description = "Check available updates", group = "Update info", keyset = { "u" } }
 		},
-		{
-			{}, "m", function() redflat.widget.mail:update(true) end,
-			{ description = "Check new mail", group = "Update info", keyset = { "m" } }
-		},
 	}
 
 	-- client properties switch

@@ -129,25 +129,6 @@ volume.buttons = awful.util.table.join(
 	awful.button({}, 9, function() redflat.float.player:action("Next")          end)
 )
 
--- Mail widget
---------------------------------------------------------------------------------
--- mail settings template
-local my_mails = require("color.blue.mail-example")
-
--- safe load private mail settings
-pcall(function() my_mails = require("private.mail-config") end)
-
--- widget setup
-local mail = {}
-redflat.widget.mail:init({ maillist = my_mails })
-mail.widget = redflat.widget.mail()
-
--- buttons
-mail.buttons = awful.util.table.join(
-	awful.button({ }, 1, function () awful.spawn.with_shell(env.mail) end),
-	awful.button({ }, 2, function () redflat.widget.mail:update(true) end)
-)
-
 -- System resource monitoring widgets
 --------------------------------------------------------------------------------
 local sysmon = { widget = {}, buttons = {} }
