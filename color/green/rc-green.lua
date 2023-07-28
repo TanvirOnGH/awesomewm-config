@@ -121,18 +121,6 @@ volume.buttons = awful.util.table.join(
 	awful.button({}, 9, function() redflat.float.player:action("Next")          end)
 )
 
--- Keyboard layout indicator
---------------------------------------------------------------------------------
-local kbindicator = {}
-redflat.widget.keyboard:init({ "English", "Russian" })
-kbindicator.widget = redflat.widget.keyboard()
-
-kbindicator.buttons = awful.util.table.join(
-	awful.button({}, 1, function () redflat.widget.keyboard:toggle_menu() end),
-	awful.button({}, 4, function () redflat.widget.keyboard:toggle()      end),
-	awful.button({}, 5, function () redflat.widget.keyboard:toggle(true)  end)
-)
-
 -- Mail widget
 --------------------------------------------------------------------------------
 -- mail settings template
