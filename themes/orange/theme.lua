@@ -48,7 +48,6 @@ theme.widget.wrapper = {
 	volume      = { 10, 10, 5, 5 },
 	network     = { 4, 4, 5, 5 },
 	taglist     = { 4, 4, 0, 0 },
-	mail        = { 10, 10, 4, 4 },
 	cpu         = { 5, 0, 0, 0 },
 	tray        = { 10, 12, 7, 7 },
 	tasklist    = { 6, 0, 0, 0 }, -- centering tasklist widget
