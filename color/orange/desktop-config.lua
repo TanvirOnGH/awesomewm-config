@@ -247,7 +247,7 @@ function desktop:init(args)
 	end
 
 	-- temperature hdd
-	local hdd_smart_check = system.simple_async("smartctl --attributes /dev/sda", "194.+%s(%d+)%s%(.+%)\r?\n")
+	local hdd_smart_check = system.simple_async("smartctl --attributes /dev/sdb", "194.+%s(%d+)%s%(.+%)\r?\n")
 
 	hardwareset.blocks[2].async = hdd_smart_check
 	hardwareset.blocks[2].action = function(data)
@@ -279,7 +279,7 @@ function desktop:init(args)
 	hardwareset.blocks[4].action = function()
 		local data = {}
 		data[1] = system.disk_speed("nvme0n1", speed_storage[1])
-		data[2] = system.disk_speed("sda", speed_storage[2])
+		data[2] = system.disk_speed("sdb", speed_storage[2])
 
 		local values = {}
 		for i, set in ipairs({colset.sspeed, colset.hspeed}) do

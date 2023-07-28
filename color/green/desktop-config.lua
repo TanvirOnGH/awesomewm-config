@@ -61,7 +61,7 @@ function desktop:init(args)
 	local hddspeed = { geometry = wgeometry(grid, places.hddspeed, workarea) }
 
 	hddspeed.args = {
-		interface = "sda",
+		interface = "sdb",
 		meter_function = system.disk_speed,
 		timeout = 2,
 		label = "HARD DRIVE"
@@ -128,7 +128,7 @@ function desktop:init(args)
 	--------------------------------------------------------------------------------
 	local thermal = { geometry = wgeometry(grid, places.thermal, workarea) }
 
-	local hdd_smart_check = system.simple_async("smartctl --attributes /dev/sda", "194.+%s(%d+)%s%(.+%)\r?\n")
+	local hdd_smart_check = system.simple_async("smartctl --attributes /dev/sdb", "194.+%s(%d+)%s%(.+%)\r?\n")
 
 	thermal.args = {
 		sensors = {
