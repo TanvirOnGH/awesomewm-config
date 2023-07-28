@@ -117,8 +117,7 @@ function desktop:init(args)
 
 	boxes.storage.root = storage_check("system storage", "/")
 	boxes.storage.home = storage_check("user storage", "/home")
-	boxes.storage.misk = storage_check("application storage", "/mnt/storage")
-	boxes.storage.media = storage_check("content storage", "/mnt/media")
+	boxes.storage.hdd = storage_check("harddisk storage", "/mnt/HDD")
 
 	-- construct layout
 	main.body.area = wibox.widget({
@@ -128,8 +127,7 @@ function desktop:init(args)
 
 		boxes.storage.root,
 		boxes.storage.home,
-		boxes.storage.misk,
-		boxes.storage.media,
+		boxes.storage.hdd,
 
 		spacing = 20,
 		layout  = wibox.layout.fixed.vertical
