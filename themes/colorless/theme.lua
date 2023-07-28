@@ -45,7 +45,7 @@ theme.homedir = os.getenv("HOME")
 
 theme.panel_height        = 36 -- panel height
 theme.border_width        = 4  -- window border width
-theme.useless_gap         = 4  -- useless gap
+theme.useless_gap         = 5  -- useless gap
 
 theme.cellnum = { x = 96, y = 58 } -- grid layout property
 
