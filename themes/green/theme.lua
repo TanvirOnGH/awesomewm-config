@@ -25,7 +25,7 @@ theme.wallpaper    = theme.path .. "/wallpaper/custom.png"
 
 -- Fonts
 ------------------------------------------------------------
-theme.cairo_fonts.desktop.textbox = { font = "Germania One", size = 24, face = 0 }
+theme.cairo_fonts.desktop.textbox = { font = "Fira Code", size = 24, face = 0 }
 
 
 -- Setup parent theme settings

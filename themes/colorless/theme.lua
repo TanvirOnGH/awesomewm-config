@@ -54,47 +54,47 @@ theme.wallpaper = theme.path .. "/wallpaper/primary.png" -- wallpaper file
 -- Fonts
 ------------------------------------------------------------
 theme.fonts = {
-	main     = "sans 12",      -- main font
-	menu     = "sans 12",      -- main menu font
-	tooltip  = "sans 12",      -- tooltip font
-	notify   = "sans bold 14", -- redflat notify popup font
-	clock    = "sans bold 12", -- textclock widget font
-	qlaunch  = "sans bold 14", -- quick launch key label font
-	logout   = "sans bold 14", -- logout screen labels
-	title    = "sans bold 12", -- widget titles font
-	tiny     = "sans bold 10", -- smallest font for widgets
-	keychain = "sans bold 14", -- key sequence tip font
-	titlebar = "sans bold 12", -- client titlebar font
+	main     = "Fira Code 12",      -- main font
+	menu     = "Fira Code 12",      -- main menu font
+	tooltip  = "Fira Code 12",      -- tooltip font
+	notify   = "Fira Code bold 14", -- redflat notify popup font
+	clock    = "Fira Code bold 12", -- textclock widget font
+	qlaunch  = "Fira Code bold 14", -- quick launch key label font
+	logout   = "Fira Code bold 14", -- logout screen labels
+	title    = "Fira Code bold 12", -- widget titles font
+	tiny     = "Fira Code bold 10", -- smallest font for widgets
+	keychain = "Fira Code bold 14", -- key sequence tip font
+	titlebar = "Fira Code bold 12", -- client titlebar font
 	logout   = {
-		label   = "sans bold 14", -- logout option labels
-		counter = "sans bold 24", -- logout counter
+		label   = "Fira Code bold 14", -- logout option labels
+		counter = "Fira Code bold 24", -- logout counter
 	},
 	hotkeys = {
-		main  = "sans 12",      -- hotkeys helper main font
+		main  = "Fira Code 12",      -- hotkeys helper main font
 		key   = "mono 12",      -- hotkeys helper key font (use monospace for align)
-		title = "sans bold 14", -- hotkeys helper group title font
+		title = "Fira Code bold 14", -- hotkeys helper group title font
 	},
 	player   = {
-		main = "sans bold 12", -- player widget main font
-		time = "sans bold 14", -- player widget current time font
+		main = "Fira Code bold 12", -- player widget main font
+		time = "Fira Code bold 14", -- player widget current time font
 	},
 	-- very custom calendar fonts
 	calendar = {
-		clock = "Sans 24", date = "Sans 15", week_numbers = "Sans 12", weekdays_header = "Sans 11",
-		days  = "Sans 12", default = "Sans 10", focus = "Sans 14 Bold", controls = "Sans 13"
+		clock = "Fira Code 24", date = "Fira Code 15", week_numbers = "Fira Code 12", weekdays_header = "Fira Code 11",
+		days  = "Fira Code 12", default = "Fira Code 10", focus = "Fira Code 14 Bold", controls = "Fira Code 13"
 	},
 }
 
 theme.cairo_fonts = {
-	tag         = { font = "Sans", size = 16, face = 1 }, -- tag widget font
-	appswitcher = { font = "Sans", size = 22, face = 1 }, -- appswitcher widget font
+	tag         = { font = "Fira Code", size = 16, face = 1 }, -- tag widget font
+	appswitcher = { font = "Fira Code", size = 22, face = 1 }, -- appswitcher widget font
 	navigator   = {
-		title = { font = "Sans", size = 28, face = 1, slant = 0 }, -- window navigation title font
-		main  = { font = "Sans", size = 22, face = 1, slant = 0 }  -- window navigation  main font
+		title = { font = "Fira Code", size = 28, face = 1, slant = 0 }, -- window navigation title font
+		main  = { font = "Fira Code", size = 22, face = 1, slant = 0 }  -- window navigation  main font
 	},
 
 	desktop = {
-		textbox = { font = "Sans", size = 24, face = 1 },
+		textbox = { font = "Fira Code", size = 24, face = 1 },
 	},
 }
 
@@ -1332,7 +1332,7 @@ function theme:init()
 	--Custom aligned text block
 	------------------------------------------------------------
 	self.desktop.textset = {
-		font  = "Sans 12",         -- font
+		font  = "Fira Code 12",         -- font
 		spacing = 0,               -- space between lines
 		color = self.desktop.color -- color (desktop used)
 	}
@@ -1450,7 +1450,7 @@ function theme:init()
 		label = {
 			gap  = 8,   -- space between label and pointer
 			sep  = "-", -- day/month separator
-			font = { font = "Play", size = 16, face = 1, slant = 0 }, -- font
+			font = { font = "Fira Code", size = 16, face = 1, slant = 0 }, -- font
 		},
 
 		-- days marks style

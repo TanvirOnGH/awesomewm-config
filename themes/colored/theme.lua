@@ -21,43 +21,43 @@ theme.useless_gap         = 4  -- useless gap
 -- Fonts
 ------------------------------------------------------------
 theme.fonts = {
-	main     = "Roboto 13",      -- main font
-	menu     = "Roboto 13",      -- main menu font
-	tooltip  = "Roboto 13",      -- tooltip font
-	notify   = "Play bold 14",   -- redflat notify popup font
-	clock    = "Play bold 12",   -- textclock widget font
-	qlaunch  = "Play bold 14",   -- quick launch key label font
-	logout   = "Play bold 14",   -- logout screen labels
-	keychain = "Play bold 16",   -- key sequence tip font
-	title    = "Roboto bold 13", -- widget titles font
-	tiny     = "Roboto bold 10", -- smallest font for widgets
-	titlebar = "Roboto bold 13", -- client titlebar font
+	main     = "Fira Code 13",      -- main font
+	menu     = "Fira Code 13",      -- main menu font
+	tooltip  = "Fira Code 13",      -- tooltip font
+	notify   = "Fira Code bold 14",   -- redflat notify popup font
+	clock    = "Fira Code bold 12",   -- textclock widget font
+	qlaunch  = "Fira Code bold 14",   -- quick launch key label font
+	logout   = "Fira Code bold 14",   -- logout screen labels
+	keychain = "Fira Code bold 16",   -- key sequence tip font
+	title    = "Fira Code bold 13", -- widget titles font
+	tiny     = "Fira Code bold 10", -- smallest font for widgets
+	titlebar = "Fira Code bold 13", -- client titlebar font
 	logout   = {
-		label   = "Play bold 14", -- logout option labels
-		counter = "Play bold 24", -- logout counter
+		label   = "Fira Code bold 14", -- logout option labels
+		counter = "Fira Code bold 24", -- logout counter
 	},
 	hotkeys  = {
-		main  = "Roboto 14",             -- hotkeys helper main font
-		key   = "Iosevka Term Light 14", -- hotkeys helper key font (use monospace for align)
-		title = "Roboto bold 16",        -- hotkeys helper group title font
+		main  = "Fira Code 14",             -- hotkeys helper main font
+		key   = "Fira Code Light 14", -- hotkeys helper key font (use monospace for align)
+		title = "Fira Code bold 16",        -- hotkeys helper group title font
 	},
 	player   = {
-		main = "Play bold 13", -- player widget main font
-		time = "Play bold 15", -- player widget current time font
+		main = "Fira Code bold 13", -- player widget main font
+		time = "Fira Code bold 15", -- player widget current time font
 	},
 	-- very custom calendar fonts
 	calendar = {
-		clock = "Play bold 28", date = "Play 16", week_numbers = "Play 12", weekdays_header = "Play 12",
-		days  = "Play 14", default = "Play 14", focus = "Play 12 Bold", controls = "Play bold 16"
+		clock = "Fira Code bold 28", date = "Play 16", week_numbers = "Play 12", weekdays_header = "Play 12",
+		days  = "Play 14", default = "Play 14", focus = "Play 12 Bold", controls = "Fira Code bold 16"
 	},
 }
 
 theme.cairo_fonts = {
-	tag         = { font = "Play", size = 16, face = 1 }, -- tag widget font
-	appswitcher = { font = "Play", size = 20, face = 1 }, -- appswitcher widget font
+	tag         = { font = "Fira Code", size = 16, face = 1 }, -- tag widget font
+	appswitcher = { font = "Fira Code", size = 20, face = 1 }, -- appswitcher widget font
 	navigator   = {
-		title = { font = "Play", size = 28, face = 1, slant = 0 }, -- window navigation title font
-		main  = { font = "Play", size = 22, face = 1, slant = 0 }  -- window navigation  main font
+		title = { font = "Fira Code", size = 28, face = 1, slant = 0 }, -- window navigation title font
+		main  = { font = "Fira Code", size = 22, face = 1, slant = 0 }  -- window navigation  main font
 	},
 
 	desktop = {

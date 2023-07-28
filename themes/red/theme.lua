@@ -28,8 +28,8 @@ theme.wallpaper    = theme.path .. "/wallpaper/custom.png"
 
 -- Fonts
 ------------------------------------------------------------
-theme.cairo_fonts.tag = { font = "Play", size = 20, face = 1 }
-theme.cairo_fonts.desktop.textbox = { font = "Gunplay", size = 22, face = 0 }
+theme.cairo_fonts.tag = { font = "Fira Code", size = 20, face = 1 }
+theme.cairo_fonts.desktop.textbox = { font = "Fira Code", size = 22, face = 0 }
 
 -- Setup parent theme settings
 --------------------------------------------------------------------------------
