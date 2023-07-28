@@ -195,9 +195,7 @@ function desktop:init(args)
 		"Turning to the topic of drives %s of data was found on your system partition " ..
 				"and %s%s percent of disk space remain free.",
 		" Home partition filled with %s and %s percent of it is still free.",
-		" Also separate partition was allocated for opt directory" ..
-				" where %s used which is approximately %s percent of total,",
-		" and for media subdir of mnt where %s used which is %s percent.",
+		" and HDD partition of mnt where %s used which is %s percent.",
 	}
 
 	-- disk usage meter function
@@ -215,7 +213,6 @@ function desktop:init(args)
 			},
 			{ form_value(data[2][2], colset.light, {}, diskset.unit), form_value(100 - data[2][1], colset.diskpf) },
 			{ form_value(data[3][2], colset.light, {}, diskset.unit), form_value(data[3][1], colset.diskp ) },
-			{ form_value(data[4][2], colset.light, {}, diskset.unit), form_value(data[4][1], colset.diskp ) },
 		}
 
 		return form_text(disk_sentences, values)
