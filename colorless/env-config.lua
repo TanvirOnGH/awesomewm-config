@@ -25,9 +25,9 @@ function env:init(args)
 	local theme = args.theme or "colorless"
 
 	-- environment vars
-	self.terminal = args.terminal or "x-terminal-emulator"
-	self.mod = args.mod or "Mod4"
-	self.fm = args.fm or "nautilus"
+	self.terminal = args.terminal or "alacritty"
+    self.fm = args.fm or "thunar"
+
 	self.home = os.getenv("HOME")
 	self.themedir = awful.util.get_configuration_dir() .. "themes/" .. theme
 
