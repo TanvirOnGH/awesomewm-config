@@ -12,8 +12,13 @@ local autostart = {}
 -- Application list function
 --------------------------------------------------------------------------------
 function autostart.run()
+    -- essentials
+    awful.spawn.with_shell("xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 75 --pos 0x0 --rotate normal") -- display output
+    awful.spawn.with_shell("xset -dpms") -- prevent X server from turning off the display
+	awful.spawn.with_shell("xset s off") -- disable X screen saver feature
+
 	-- utils
-	awful.spawn.with_shell("picom")
+	awful.spawn.with_shell("picom") -- compositor
 
 	-- apps
 end
