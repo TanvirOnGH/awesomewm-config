@@ -20,7 +20,7 @@ theme.path = awful.util.get_configuration_dir() .. "themes/orange"
 
 -- Main config
 --------------------------------------------------------------------------------
-theme.panel_height = 36 -- panel height
+theme.panel_height = 40 -- panel height
 theme.wallpaper    = theme.path .. "/wallpaper/custom.png"
 
 -- Setup parent theme settings
