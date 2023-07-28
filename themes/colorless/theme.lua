@@ -43,7 +43,7 @@ theme.homedir = os.getenv("HOME")
 -- Main config
 ------------------------------------------------------------
 
-theme.panel_height        = 36 -- panel height
+theme.panel_height        = 40 -- panel height
 theme.border_width        = 4  -- window border width
 theme.useless_gap         = 5  -- useless gap
 

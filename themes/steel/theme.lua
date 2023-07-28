@@ -19,7 +19,7 @@ theme.path = awful.util.get_configuration_dir() .. "themes/steel"
 
 -- Main config
 --------------------------------------------------------------------------------
-theme.panel_height = 38 -- panel height
+theme.panel_height = 40 -- panel height
 theme.border_width = 0  -- window border width
 theme.useless_gap  = 5  -- useless gap
 theme.wallpaper    = theme.path .. "/wallpaper/primary.png"
