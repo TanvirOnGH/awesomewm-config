@@ -47,8 +47,8 @@ theme.fonts = {
 	},
 	-- very custom calendar fonts
 	calendar = {
-		clock = "Fira Code bold 28", date = "Play 16", week_numbers = "Play 12", weekdays_header = "Play 12",
-		days  = "Play 14", default = "Play 14", focus = "Play 12 Bold", controls = "Fira Code bold 16"
+		clock = "Fira Code bold 28", date = "Fira Code 16", week_numbers = "Fira Code 12", weekdays_header = "Fira Code 12",
+		days  = "Fira Code 14", default = "Fira Code 14", focus = "Fira Code 12 Bold", controls = "Fira Code bold 16"
 	},
 }
 
