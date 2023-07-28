@@ -44,6 +44,12 @@ function menu:init(args)
 		{ "Restart",         awesome.restart,                           micon("gnome-session-reboot") },
 		separator,
 		{ "Awesome config",  "code" .. " /home/user/.config/awesome/",  micon("terminal") },
+    }
+	
+	-- Nix submenu
+	------------------------------------------------------------
+	local nixmenu = {
+		{ "Nix config",  "code" .. " /home/user/nix-config/",  micon("terminal") },
 	}
 
 	-- Places submenu
@@ -70,7 +76,8 @@ function menu:init(args)
 	------------------------------------------------------------
 	self.mainmenu = redflat.menu({ theme = theme,
 		items = {
-			{ "Awesome",       awesomemenu, micon("awesome") },
+            { "Awesome",      awesomemenu, micon("awesome") },
+			{ "NixOS",        nixmenu,     micon("nix") },
 			{ "Applications",  appmenu,     micon("distributor-logo") },
 			{ "Places",        placesmenu,  micon("folder_home"), key = "c" },
 			separator,
