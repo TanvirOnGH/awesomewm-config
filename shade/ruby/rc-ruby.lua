@@ -190,7 +190,7 @@ microphone.buttons = awful.util.table.join(
 -- Keyboard layout indicator
 --------------------------------------------------------------------------------
 local kbindicator = {}
-redflat.widget.keyboard:init({ "English", "Russian" })
+redflat.widget.keyboard:init({ "English", "Spanish" })
 kbindicator.widget = redflat.widget.keyboard()
 
 kbindicator.buttons = awful.util.table.join(
