@@ -757,8 +757,6 @@ function theme:init()
 	-- task text aliases
 	self.widget.tasklist.appnames = {}
 	self.widget.tasklist.appnames["Firefox"             ] = "FIFOX"
-	self.widget.tasklist.appnames["Gnome-terminal"      ] = "GTERM"
-
 
 	-- Floating widgets
 	--------------------------------------------------------------------------------
