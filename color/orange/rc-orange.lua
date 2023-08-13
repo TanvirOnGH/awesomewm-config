@@ -58,7 +58,7 @@ local separator = redflat.gauge.separator.vertical()
 local tasklist = {}
 
 -- load list of app name aliases from files and set it as part of tasklist theme
-tasklist.style = { appnames = require("color.blue.alias-config")}
+tasklist.style = { appnames = require("common.alias-config")}
 
 tasklist.buttons = awful.util.table.join(
 	awful.button({}, 1, redflat.widget.tasklist.action.select),
