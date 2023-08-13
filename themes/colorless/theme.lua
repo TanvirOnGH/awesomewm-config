@@ -1194,7 +1194,7 @@ function theme:init()
 	--------------------------------------------------------------------------------
 	self.desktop = { common = { bar = {}, pack = {} }, speedmeter = {} }
 
-	self.desktop.line_height = 18 -- text and progressbar height for desktop wodgets
+	self.desktop.line_height = 18 -- text and progressbar height for desktop widgets
 
 	-- desktop widget colors
 	self.desktop.color = {
