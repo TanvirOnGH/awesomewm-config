@@ -45,7 +45,7 @@ theme.homedir = os.getenv("HOME")
 
 theme.panel_height        = 40 -- panel height
 theme.border_width        = 0  -- window border width
-theme.useless_gap         = 5                  -- useless gap
+theme.useless_gap         = 5  -- useless gap
 theme.cellnum      = { x = 96, y = 58 } -- grid layout property
 theme.wallpaper    = awful.util.get_configuration_dir() .. "misc/wallpapers/colorless/primary.png"
 
