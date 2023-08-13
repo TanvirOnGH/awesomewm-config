@@ -103,7 +103,7 @@ local tagline_style = { tagline = { height = 40, rows = taglist.rows_num, spacin
 
 -- load list of app name aliases from files and set it as part of tasklist theme
 tasklist.style = {
-	appnames = require("color.blue.alias-config"),  widget = redflat.gauge.task.ruby.new,
+	appnames = require("common.alias-config"),  widget = redflat.gauge.task.ruby.new,
 	winmenu = tagline_style
 }
 

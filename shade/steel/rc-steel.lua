@@ -63,7 +63,7 @@ redflat.widget.layoutbox:init(awful.layout.layouts)
 local tasklist = {}
 
 -- load list of app name aliases from files and set it as part of tasklist theme
-tasklist.style = { appnames = require("color.blue.alias-config"),  widget = redflat.gauge.task.ruby.new }
+tasklist.style = { appnames = require("common.alias-config"),  widget = redflat.gauge.task.ruby.new }
 
 tasklist.buttons = awful.util.table.join(
 	awful.button({}, 1, redflat.widget.tasklist.action.select),
