@@ -756,7 +756,6 @@ function theme:init()
 
 	-- task text aliases
 	self.widget.tasklist.appnames = {}
-	self.widget.tasklist.appnames["Firefox"             ] = "FIFOX"
 
 	-- Floating widgets
 	--------------------------------------------------------------------------------

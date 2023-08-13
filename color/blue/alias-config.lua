@@ -7,7 +7,6 @@ local appnames = {}
 appnames["Exaile"              ] = "EXAILE"
 appnames["Pragha"              ] = "PRAG"
 appnames["Smplayer"            ] = "SMPL"
-appnames["Firefox"             ] = "FIFOX"
 appnames["Gnome-system-monitor"] = "SYSMN"
 appnames["Gthumb"              ] = "THUMB"
 appnames["Gimp-2.8"            ] = "GIMP"
