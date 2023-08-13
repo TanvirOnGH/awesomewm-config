@@ -90,7 +90,7 @@ taglist.names = {
 
 local al = awful.layout.layouts
 taglist.layouts = {
-	al[1], al[6], al[6], al[7], al[3], al[1], -- [1]
+	al[6], al[6], al[6], al[7], al[3], al[1], -- [1]
 	al[6], al[3], al[4], al[5], al[3], al[1], -- [2]
 }
 
