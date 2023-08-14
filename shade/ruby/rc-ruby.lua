@@ -20,6 +20,9 @@ local awsmx = require("awsmx")
 -- debug locker
 local lock = lock or {}
 
+-- Enable desktop
+lock.desktop = false;
+
 awsmx.startup.locked = lock.autostart
 awsmx.startup:activate()
 
@@ -32,7 +35,7 @@ require("common.ercheck-config") -- load file with error handling
 -- Setup theme and environment vars
 -----------------------------------------------------------------------------------------------------------------------
 local env = require("color.blue.env-config") -- load file with environment
-env:init({ theme = "ruby", desktop_autohide = true, set_center = true })
+env:init({ theme = "ruby", desktop_autohide = false, set_center = true })
 
 
 -- Layouts setup
