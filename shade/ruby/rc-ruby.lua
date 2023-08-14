@@ -64,7 +64,7 @@ local taglist = {}
 taglist.style = { widget = awsmx.gauge.tag.ruby.new, show_tip = true }
 
 -- double line taglist
-taglist.cols_num = 6
+taglist.cols_num = 5
 taglist.rows_num = 2
 
 taglist.layout = wibox.widget {
@@ -87,14 +87,14 @@ taglist.buttons = awful.util.table.join(
 
 -- some tag settings which indirectly depends on row and columns number of taglist
 taglist.names = {
-	"Main",     "Development", "Files",      "Media",      "Editing",  "Misc", -- [1]
-    "Browsing", "Terminal 1",  "Terminal 2", "Terminal 3", "Virtual",  "Game", -- [2]
+	"Main",     "Development", "Files",      "Media",      "Editing", -- [1]
+    "Browsing", "Terminal 1",  "Terminal 2", "Terminal 3", "Virtual", -- [2]
 }
 
 local al = awful.layout.layouts
 taglist.layouts = {
-	al[6], al[6], al[6], al[7], al[3], al[1], -- [1]
-	al[6], al[3], al[4], al[5], al[3], al[1], -- [2]
+	al[6], al[6], al[6], al[7], al[3], -- [1]
+	al[6], al[3], al[4], al[5], al[3], -- [2]
 }
 
 -- Tasklist
