@@ -565,14 +565,6 @@ function theme:init()
 		end,
 	}
 
-	-- Pulseaudio volume control
-	------------------------------------------------------------
-	self.widget.pulse = {
-		notify = {},  -- awsmx notify style (see theme.float.notify)
-		widget = nil, -- audio gauge (usually setted by rc file)
-		audio  = {}   -- style for gauge
-	}
-
 	-- Layoutbox
 	------------------------------------------------------------
 	self.widget.layoutbox = {
