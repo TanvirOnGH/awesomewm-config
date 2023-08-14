@@ -22,7 +22,7 @@ function env:init(args)
 
 	-- init vars
 	args = args or {}
-	local theme = args.theme or "colorless"
+	local theme = args.theme
 
 	-- environment vars
 	self.terminal = args.terminal or "kitty"
