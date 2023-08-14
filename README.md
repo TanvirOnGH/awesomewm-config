@@ -3,6 +3,11 @@ My [awesome window manager](https://awesomewm.org) configuration (fork of [worro
 
 ![Ruby Desktop](screenshots/ruby_desktop.png)
 
+## Installation
+```bash
+git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome --recursive
+```
+
 ## Note
 I'm using this [awesomewm](https://awesomewm.org) configuration on my (NixOS)(https://nixos.org) systems, and you might notice some things that appear unusual, like the standard paths, e.g `/usr/share` equivalent for nix is `/run/current-system/sw/share` and for home-manager is `~/.local/state/home-manager/gcroots/current-home/home-path/share` on NixOS systems.
 
