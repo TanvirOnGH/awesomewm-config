@@ -22,21 +22,22 @@ function env:init(args)
 
 	-- init vars
 	args = args or {}
-	local theme = args.theme
 
 	-- environment vars
+    self.theme = args.theme or "red"
+    self.mod = args.mod or "Mod4"
 	self.terminal = args.terminal or "kitty"
     self.fm = args.fm or "thunar"
 
 	self.home = os.getenv("HOME")
-	self.themedir = awful.util.get_configuration_dir() .. "themes/" .. theme
+	self.themedir = awful.util.get_configuration_dir() .. "themes/" .. self.theme
 
 	-- boolean defaults is pain
 	self.sloppy_focus = args.sloppy_focus or false
 	self.color_border_focus = args.color_border_focus or false
 	self.set_slave = args.set_slave == nil and true or false
-	self.desktop_autohide = args.desktop_autohide or false
 	self.set_center = args.set_center or false
+	self.desktop_autohide = args.desktop_autohide or false
 
 	-- theme setup
 	beautiful.init(env.themedir .. "/theme.lua")
@@ -61,7 +62,7 @@ env.wallpaper = function(s)
 		if not env.desktop_autohide and awful.util.file_readable(beautiful.wallpaper) then
 			gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 		else
-			gears.wallpaper.set(beautiful.color.bg)
+			gears.wallpaper.set(beautiful.color and beautiful.color.bg)
 		end
 	end
 end
@@ -79,8 +80,7 @@ end
 -- Panel widgets wrapper
 --------------------------------------------------------------------------------
 env.wrapper = function(widget, name, buttons)
-	local margin = awsmx.util.table.check(beautiful, "widget.wrapper")
-	               and beautiful.widget.wrapper[name] or { 0, 0, 0, 0 }
+	local margin = awsmx.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name] or { 0, 0, 0, 0 }
 	if buttons then
 		widget:buttons(buttons)
 	end
