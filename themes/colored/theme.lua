@@ -156,10 +156,6 @@ function theme:update()
 	self.gauge.audio.red.icon = { volume = self.wicon.audio, mute = self.wicon.mute }
 	self.gauge.audio.blue.icon = self.wicon.headphones
 
-	-- Pulseaudio volume control
-	------------------------------------------------------------
-	self.widget.pulse.notify = { icon = self.wicon.audio }
-
 	-- Layoutbox
 	------------------------------------------------------------
 	self.widget.layoutbox.menu.icon_margin  = { 8, 12, 9, 9 }

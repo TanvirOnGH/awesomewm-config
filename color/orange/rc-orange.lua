@@ -96,24 +96,6 @@ tray.buttons = awful.util.table.join(
 	awful.button({}, 1, function() awsmx.widget.minitray:toggle() end)
 )
 
--- PA volume control
---------------------------------------------------------------------------------
-local volume = {}
-volume.widget = awsmx.widget.pulse(nil, { widget = awsmx.gauge.audio.blue.new })
-
--- activate player widget
-awsmx.float.player:init({ name = env.player })
-
-volume.buttons = awful.util.table.join(
-	awful.button({}, 4, function() volume.widget:change_volume()                end),
-	awful.button({}, 5, function() volume.widget:change_volume({ down = true }) end),
-	awful.button({}, 2, function() volume.widget:mute()                         end),
-	awful.button({}, 3, function() awsmx.float.player:show()                  end),
-	awful.button({}, 1, function() awsmx.float.player:action("PlayPause")     end),
-	awful.button({}, 8, function() awsmx.float.player:action("Previous")      end),
-	awful.button({}, 9, function() awsmx.float.player:action("Next")          end)
-)
-
 -- System resource monitoring widgets
 --------------------------------------------------------------------------------
 local sysmon = { widget = {}, buttons = {} }
@@ -245,7 +227,7 @@ logout:init()
 local appkeys = require("color.blue.appkeys-config") -- load file with application keys sheetb
 
 local hotkeys = require("color.blue.keys-config") -- load file with hotkeys configuration
-hotkeys:init({ env = env, menu = mymenu.mainmenu, appkeys = appkeys, volume = volume.widget })
+hotkeys:init({ env = env, menu = mymenu.mainmenu, appkeys = appkeys })
 
 
 -- Rules
