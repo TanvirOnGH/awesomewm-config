@@ -21,24 +21,24 @@ awsmx.startup:activate()
 
 -- Error handling
 -----------------------------------------------------------------------------------------------------------------------
-require("colorless.ercheck-config") -- load file with error handling
+require("common.ercheck-config") -- load file with error handling
 
 
 -- Setup theme and environment vars
 -----------------------------------------------------------------------------------------------------------------------
-local env = require("colorless.env-config") -- load file with environment
+local env = require("common.env-config") -- load file with environment
 env:init()
 
 
 -- Layouts setup
 -----------------------------------------------------------------------------------------------------------------------
-local layouts = require("colorless.layout-config") -- load file with tile layouts setup
+local layouts = require("common.layout-config") -- load file with tile layouts setup
 layouts:init()
 
 
 -- Main menu configuration
 -----------------------------------------------------------------------------------------------------------------------
-local mymenu = require("colorless.menu-config") -- load file with menu configuration
+local mymenu = require("common.menu-config") -- load file with menu configuration
 mymenu:init({ env = env })
 
 
@@ -159,23 +159,23 @@ awful.screen.connect_for_each_screen(
 
 -- Key bindings
 -----------------------------------------------------------------------------------------------------------------------
-local hotkeys = require("colorless.keys-config") -- load file with hotkeys configuration
+local hotkeys = require("common.keys-config") -- load file with hotkeys configuration
 hotkeys:init({ env = env, menu = mymenu.mainmenu })
 
 
 -- Rules
 -----------------------------------------------------------------------------------------------------------------------
-local rules = require("colorless.rules-config") -- load file with rules configuration
+local rules = require("common.rules-config") -- load file with rules configuration
 rules:init({ hotkeys = hotkeys})
 
 
 -- Titlebar setup
 -----------------------------------------------------------------------------------------------------------------------
-local titlebar = require("colorless.titlebar-config") -- load file with titlebar configuration
+local titlebar = require("common.titlebar-config") -- load file with titlebar configuration
 titlebar:init()
 
 
 -- Base signal set for awesome wm
 -----------------------------------------------------------------------------------------------------------------------
-local signals = require("colorless.signals-config") -- load file with signals configuration
+local signals = require("common.signals-config") -- load file with signals configuration
 signals:init({ env = env })

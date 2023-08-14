@@ -25,7 +25,7 @@ awsmx.startup:activate()
 
 -- Error handling
 -----------------------------------------------------------------------------------------------------------------------
-require("colorless.ercheck-config") -- load file with error handling
+require("common.ercheck-config") -- load file with error handling
 
 
 -- Setup theme and environment vars
@@ -266,13 +266,13 @@ rules:init({ hotkeys = hotkeys})
 
 -- Titlebar setup
 -----------------------------------------------------------------------------------------------------------------------
-local titlebar = require("colorless.titlebar-config") -- load file with titlebar configuration
+local titlebar = require("common.titlebar-config") -- load file with titlebar configuration
 titlebar:init()
 
 
 -- Base signal set for awesome wm
 -----------------------------------------------------------------------------------------------------------------------
-local signals = require("colorless.signals-config") -- load file with signals configuration
+local signals = require("common.signals-config") -- load file with signals configuration
 signals:init({ env = env })
 
 
