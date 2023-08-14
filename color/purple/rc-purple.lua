@@ -250,7 +250,7 @@ awful.screen.connect_for_each_screen(
 -- Desktop widgets
 -----------------------------------------------------------------------------------------------------------------------
 if not lock.desktop then
-	local desktop = require("shade.purple.desktop") -- load file with desktop widgets configuration
+	local desktop = require("color.purple.desktop") -- load file with desktop widgets configuration
 	desktop:init({
 		env = env,
 		buttons = awful.util.table.join(awful.button({}, 3, function () mymenu.mainmenu:toggle() end))
@@ -260,7 +260,7 @@ end
 
 -- Active screen edges
 -----------------------------------------------------------------------------------------------------------------------
-local edges = require("shade.purple.edges") -- load file with edges configuration
+local edges = require("color.purple.edges") -- load file with edges configuration
 edges:init({ tag_cols_num = taglist.cols_num })
 
 
@@ -274,7 +274,7 @@ logout:init()
 -----------------------------------------------------------------------------------------------------------------------
 local appkeys = require("common.appkeys") -- load file with application keys sheet
 
-local hotkeys = require("shade.purple.keys") -- load file with hotkeys configuration
+local hotkeys = require("color.purple.keys") -- load file with hotkeys configuration
 hotkeys:init({
 	env = env, menu = mymenu.mainmenu, appkeys = appkeys, tag_cols_num = taglist.cols_num,
 })
@@ -288,7 +288,7 @@ rules:init({ env = env, hotkeys = hotkeys })
 
 -- Titlebar setup
 -----------------------------------------------------------------------------------------------------------------------
-local titlebar = require("shade.purple.titlebar") -- load file with titlebar configuration
+local titlebar = require("color.purple.titlebar") -- load file with titlebar configuration
 titlebar:init()
 
 
