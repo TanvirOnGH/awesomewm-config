@@ -41,16 +41,17 @@ theme.desktop.grid = {
 }
 
 theme.desktop.places = {
-	netspeed = { 2, 1 },
-	ssdspeed = { 2, 2 },
-	hddspeed = { 2, 3 },
 	cpumem   = { 1, 1 },
-	transm   = { 1, 2 },
-	disks    = { 1, 3 },
+    transm   = { 1, 2 },
+	ssdspeed = { 1, 3 },
 	thermal1 = { 1, 4 },
+	vnstat   = { 1, 5 },
+
+    disks    = { 2, 1 },
+	netspeed = { 2, 2 },
+	hddspeed = { 2, 3 },
 	thermal2 = { 2, 4 },
 	fan      = { 2, 5 },
-	vnstat   = { 1, 5 },
 }
 
 -- Desktop widgets
