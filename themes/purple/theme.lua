@@ -183,9 +183,9 @@ theme.widget.wrapper = {
 	textclock   = { 10, 10, 0, 0 },
 	volume      = { 4, 9, 3, 3 },
 	tray        = { 8, 8, 7, 7 },
-	cpu         = { 9, 3, 7, 7 },
-	ram         = { 2, 2, 7, 7 },
-	network     = { 4, 4, 7, 7 },
+	cpu         = { 3, 3, 7, 7 },
+	ram         = { 3, 3, 7, 7 },
+	network     = { 3, 3, 7, 7 },
 	taglist     = { 4, 4, 5, 4 },
 	tasklist    = { 0, 30, 0, 0 }, -- centering tasklist widget
 }
