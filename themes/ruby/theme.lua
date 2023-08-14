@@ -209,9 +209,11 @@ theme.gauge.audio.blue.icon = theme.path .. "/widget/audio.svg"
 theme.gauge.monitor.dash.width = 11
 
 -- Tasklist
-theme.widget.tasklist.char_digit = 5
+theme.widget.tasklist.char_digit = 8
 theme.widget.tasklist.task = theme.gauge.task.ruby
 theme.widget.tasklist.tasktip.max_width = 1200
+theme.gauge.task.ruby.width = 100
+theme.gauge.task.ruby.underline  = { height = 12, thickness = 2, gap = 34, dh = 4 }
 
 -- Floating widgets
 -----------------------------------------------------------------------------------------------------------------------
