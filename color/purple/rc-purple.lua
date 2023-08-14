@@ -93,8 +93,8 @@ taglist.names = {
 
 local al = awful.layout.layouts
 taglist.layouts = {
-	al[6], al[6], al[6], al[7], al[3], -- [1]
-	al[6], al[3], al[4], al[5], al[3], -- [2]
+	al[16], al[3], al[14], al[12], al[1], -- [1]
+	al[15], al[4], al[14], al[12], al[2], -- [2]
 }
 
 -- Tasklist
