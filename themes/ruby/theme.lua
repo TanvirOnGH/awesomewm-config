@@ -10,8 +10,8 @@ local theme = require("themes/colored/theme")
 
 -- Color scheme
 -----------------------------------------------------------------------------------------------------------------------
-theme.color.main   = "#A30817"
-theme.color.urgent = "#d13d4b"
+theme.color.main   = "#5906D3"
+theme.color.urgent = "#864DDC"
 
 
 -- Common
@@ -21,7 +21,7 @@ theme.path = awful.util.get_configuration_dir() .. "themes/ruby"
 -- Main config
 --------------------------------------------------------------------------------
 theme.panel_height = 40 -- panel height
-theme.wallpaper    = awful.util.get_configuration_dir() .. "misc/wallpapers/ruby/transparent.png"
+theme.wallpaper    = awful.util.get_configuration_dir() .. "misc/wallpapers/purple/purple.png"
 theme.desktopbg    = theme.wallpaper
 
 -- Setup parent theme settings
