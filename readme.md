@@ -1,7 +1,7 @@
 ## About
 My [awesome window manager](https://awesomewm.org) configuration (fork of [worron/awesome-config](https://github.com/worron/awesome-config))
 
-![Ruby Desktop](screenshots/ruby_desktop.png)
+![Ruby Desktop](screenshots/purple_desktop.png)
 
 ## Installation
 ```bash
