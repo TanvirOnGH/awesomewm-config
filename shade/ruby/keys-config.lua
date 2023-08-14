@@ -280,20 +280,6 @@ function hotkeys:init(args)
 	awsmx.menu:set_keys(awful.util.table.join(awsmx.menu.keys.move, menu_keys_move), "move")
 	--awsmx.menu:set_keys(menu_keys_move, "move")
 
-	-- Updates widget
-	------------------------------------------------------------
-	local updates_keys_action = {
-		{
-			{ env.mod }, ",", function() awsmx.widget.updates:hide() end,
-			{ description = "Close updates widget", group = "Action" }
-		},
-	}
-
-	-- close widget by the same key as showing
-	awsmx.widget.updates:set_keys(
-		awful.util.table.join(awsmx.widget.updates.keys.action, updates_keys_action), "action"
-	)
-
 	-- Top process list
 	------------------------------------------------------------
 	local top_keys_action = {
@@ -457,14 +443,6 @@ function hotkeys:init(args)
 	table.insert(keyseq[3][7][3], {
 		{}, line2_symb, nil, { description = "Move client and show tag on 2nd line", group = grp, keyset = tagkeys }
 	})
-
-	-- widget info update commands
-	keyseq[3][8][3] = {
-		{
-			{}, "u", function() awsmx.widget.updates:update(true) end,
-			{ description = "Check available updates", group = "Update info", keyset = { "u" } }
-		},
-	}
 
 	-- client properties switch
 	keyseq[3][9][3] = {
@@ -805,10 +783,6 @@ function hotkeys:init(args)
 		{
 			{ env.mod }, "/", function() awsmx.float.top:show("cpu") end,
 			{ description = "Top process list", group = "Widgets" }
-		},
-		{
-			{ env.mod }, ",", function() awsmx.widget.updates:show() end,
-			{ description = "System updates info", group = "Widgets" }
 		},
 		{
 			{ env.mod }, "`", function() awsmx.widget.minitray:toggle() end,

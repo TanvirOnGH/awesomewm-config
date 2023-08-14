@@ -169,19 +169,6 @@ volume.buttons = awful.util.table.join(
 	awful.button({}, 9, function() awsmx.float.player:action("Next")          end)
 )
 
--- Software update indcator
---------------------------------------------------------------------------------
-awsmx.widget.updates:init({ command = env.updates })
-
-local updates = {}
-updates.widget = awsmx.widget.updates()
-
-updates.buttons = awful.util.table.join(
-	awful.button({ }, 1, function () awsmx.widget.updates:toggle() end),
-	awful.button({ }, 2, function () awsmx.widget.updates:update(true) end),
-	awful.button({ }, 3, function () awsmx.widget.updates:toggle() end)
-)
-
 -- System resource monitoring widgets
 --------------------------------------------------------------------------------
 local sysmon = { widget = {}, buttons = {} }
@@ -309,7 +296,7 @@ local hotkeys = require("shade.ruby.keys-config") -- load file with hotkeys conf
 hotkeys:init({
 	env = env, menu = mymenu.mainmenu, appkeys = appkeys, tag_cols_num = taglist.cols_num,
 	volume = volume.widget
- })
+})
 
 
 -- Rules

@@ -85,24 +85,6 @@ taglist.buttons = awful.util.table.join(
 local textclock = {}
 textclock.widget = awsmx.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%d/%m/%Y" })
 
--- Software update indcator
---------------------------------------------------------------------------------
-awsmx.widget.updates:init({ command = env.updates })
-
--- Layoutbox configure
---------------------------------------------------------------------------------
--- just init layout menu without panel widget
-awsmx.widget.layoutbox:init(awful.layout.layouts)
-
--- Tray widget
---------------------------------------------------------------------------------
-local tray = {}
-tray.widget = awsmx.widget.minitray()
-
-tray.buttons = awful.util.table.join(
-	awful.button({}, 1, function() awsmx.widget.minitray:toggle() end)
-)
-
 -- PA volume control
 --------------------------------------------------------------------------------
 local volume = {}

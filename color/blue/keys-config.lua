@@ -657,10 +657,6 @@ function hotkeys:init(args)
 			{ description = "Show minitray", group = "Widgets" }
 		},
 		{
-			{ env.mod, "Control" }, "u", function() awsmx.widget.updates:update(true) end,
-			{ description = "Check available updates", group = "Widgets" }
-		},
-		{
 			{ env.mod }, "g", function() qlaunch:show() end,
 			{ description = "Application quick launcher", group = "Widgets" }
 		},

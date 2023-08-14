@@ -160,15 +160,6 @@ function theme:update()
 	------------------------------------------------------------
 	self.widget.pulse.notify = { icon = self.wicon.audio }
 
-	-- System updates indicator
-	------------------------------------------------------------
-	self.widget.updates.notify = { icon = self.wicon.package }
-	self.widget.updates.wibox.icon.package = self.wicon.package
-	self.widget.updates.wibox.icon.normal = self.wicon.updates.normal
-	self.widget.updates.wibox.icon.silent = self.wicon.updates.silent
-	self.widget.updates.wibox.icon.weekly = self.wicon.updates.weekly
-	self.widget.updates.wibox.icon.daily = self.wicon.updates.daily
-
 	-- Layoutbox
 	------------------------------------------------------------
 	self.widget.layoutbox.menu.icon_margin  = { 8, 12, 9, 9 }

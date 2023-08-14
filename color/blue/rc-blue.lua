@@ -88,10 +88,6 @@ taglist.buttons = awful.util.table.join(
 local textclock = {}
 textclock.widget = awsmx.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%d/%m/%Y" })
 
--- Software update indcator
---------------------------------------------------------------------------------
-awsmx.widget.updates:init({ command = env.updates })
-
 -- Layoutbox configure
 --------------------------------------------------------------------------------
 local layoutbox = {}
