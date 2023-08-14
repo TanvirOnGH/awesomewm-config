@@ -216,9 +216,6 @@ theme.widget.tasklist.appnames["Easytag"             ] = "TAG"
 theme.widget.tasklist.appnames["Mcomix"              ] = "CMX"
 theme.widget.tasklist.appnames["Claws-mail"          ] = "CML"
 
--- System updates indicator
-theme.widget.updates.icon = theme.icon.awesome
-
 -- Minitray
 theme.widget.minitray.geometry = { height = 50 }
 

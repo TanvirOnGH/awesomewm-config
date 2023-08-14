@@ -92,19 +92,6 @@ taglist.buttons = awful.util.table.join(
 local binclock = {}
 binclock.widget = awsmx.widget.binclock({ timeout = 1, dateformat = "%H:%M:%S  %d-%m" })
 
--- Software update indcator and menu button in one
---------------------------------------------------------------------------------
-awsmx.widget.updates:init({ command = env.updates })
-
-local updates = {}
-updates.widget = awsmx.widget.updates()
-
-updates.buttons = awful.util.table.join(
-	awful.button({ }, 1, function () mymenu.mainmenu:toggle() end),
-	awful.button({ }, 2, function () awsmx.widget.updates:update(true) end),
-	awful.button({ }, 3, function () awsmx.widget.updates:toggle() end)
-)
-
 -- Tray widget
 --------------------------------------------------------------------------------
 local tray = {}

@@ -59,9 +59,6 @@ theme.widget.wrapper = {
 -- Dotcount
 theme.gauge.graph.dots.dot_gap_h = 5
 
--- System updates indicator
-theme.widget.updates.icon = theme.icon.awesome
-
 -- Audio
 theme.gauge.audio.blue.dash.plain = true
 theme.gauge.audio.blue.dash.bar.num = 8
