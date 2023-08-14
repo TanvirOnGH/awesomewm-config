@@ -83,11 +83,6 @@ theme.wicon = {
 		horizontal = theme.path .. "/widget/resize/horizontal.svg",
 		vertical   = theme.path .. "/widget/resize/vertical.svg",
 	},
-	updates    = {
-		normal = theme.path .. "/widget/updates/normal.svg",
-		silent = theme.path .. "/widget/updates/silent.svg",
-		weekly = theme.path .. "/widget/updates/weekly.svg",
-		daily = theme.path .. "/widget/updates/daily.svg", },
 	logout = {
 		logout = theme.path .. "/widget/logout/logout.svg",
 		lock = theme.path .. "/widget/logout/lock.svg",

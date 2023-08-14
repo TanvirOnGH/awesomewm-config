@@ -186,7 +186,6 @@ theme.widget.wrapper = {
 	cpu         = { 9, 3, 7, 7 },
 	ram         = { 2, 2, 7, 7 },
 	network     = { 4, 4, 7, 7 },
-	updates     = { 6, 6, 6, 6 },
 	taglist     = { 4, 4, 5, 4 },
 	tasklist    = { 0, 30, 0, 0 }, -- centering tasklist widget
 }
