@@ -233,10 +233,11 @@ awful.screen.connect_for_each_screen(
 			{ -- right widgets
 				layout = wibox.layout.fixed.horizontal,
 
-				env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
-				env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
 				separator,
                 env.wrapper(sysmon.widget.network, "network"),
+				separator,
+				env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
+				env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
 				separator,
 				env.wrapper(textclock.widget, "textclock", textclock.buttons),
 				separator,
