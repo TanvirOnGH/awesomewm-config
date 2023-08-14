@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------------
---                                                  Ruby theme                                                       --
+--                                                  purple theme                                                       --
 -----------------------------------------------------------------------------------------------------------------------
 local awful = require("awful")
 
@@ -16,7 +16,7 @@ theme.color.urgent = "#864DDC"
 
 -- Common
 -----------------------------------------------------------------------------------------------------------------------
-theme.path = awful.util.get_configuration_dir() .. "themes/ruby"
+theme.path = awful.util.get_configuration_dir() .. "themes/purple"
 
 -- Main config
 --------------------------------------------------------------------------------
@@ -209,10 +209,10 @@ theme.gauge.monitor.dash.width = 11
 
 -- Tasklist
 theme.widget.tasklist.char_digit = 8
-theme.widget.tasklist.task = theme.gauge.task.ruby
+theme.widget.tasklist.task = theme.gauge.task.purple
 theme.widget.tasklist.tasktip.max_width = 1200
-theme.gauge.task.ruby.width = 100
-theme.gauge.task.ruby.underline  = { height = 12, thickness = 2, gap = 34, dh = 4 }
+theme.gauge.task.purple.width = 100
+theme.gauge.task.purple.underline  = { height = 12, thickness = 2, gap = 34, dh = 4 }
 
 -- Floating widgets
 -----------------------------------------------------------------------------------------------------------------------

@@ -74,11 +74,11 @@ theme.gauge.tag.green.width = 42
 theme.gauge.tag.green.margin = { 0, 0, 7, 7 }
 
 -- Tasklist
-theme.gauge.task.ruby.width = 80
-theme.gauge.task.ruby.underline  = { height = 12, thickness = 3, gap = 34, dh = 5 }
+theme.gauge.task.purple.width = 80
+theme.gauge.task.purple.underline  = { height = 12, thickness = 3, gap = 34, dh = 5 }
 
 theme.widget.tasklist.char_digit = 5
-theme.widget.tasklist.task = theme.gauge.task.ruby
+theme.widget.tasklist.task = theme.gauge.task.purple
 
 -- End
 -----------------------------------------------------------------------------------------------------------------------
