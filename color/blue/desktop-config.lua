@@ -5,16 +5,16 @@
 -- Grab environment
 local beautiful = require("beautiful")
 --local awful = require("awful")
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local desktop = {}
 
 -- desktop aliases
-local wgeometry = redflat.util.desktop.wgeometry
+local wgeometry = awsmx.util.desktop.wgeometry
 local workarea = screen[mouse.screen].workarea
-local system = redflat.system
+local system = awsmx.system
 
 -- Desktop widgets
 -----------------------------------------------------------------------------------------------------------------------
@@ -143,22 +143,22 @@ function desktop:init(args)
 
 	-- Initialize all desktop widgets
 	--------------------------------------------------------------------------------
-	netspeed.body = redflat.desktop.speedmeter.normal(netspeed.args, netspeed.style)
-	ssdspeed.body = redflat.desktop.speedmeter.normal(ssdspeed.args, ssdspeed.style)
-	hddspeed.body = redflat.desktop.speedmeter.normal(hddspeed.args, hddspeed.style)
-	cpumem.body   = redflat.desktop.multimeter(cpumem.args, cpumem.style)
-	transm.body   = redflat.desktop.multimeter(transm.args, transm.style)
-	disks.body    = redflat.desktop.multiline(disks.args, disks.style)
-	thermal.body  = redflat.desktop.singleline(thermal.args, thermal.style)
+	netspeed.body = awsmx.desktop.speedmeter.normal(netspeed.args, netspeed.style)
+	ssdspeed.body = awsmx.desktop.speedmeter.normal(ssdspeed.args, ssdspeed.style)
+	hddspeed.body = awsmx.desktop.speedmeter.normal(hddspeed.args, hddspeed.style)
+	cpumem.body   = awsmx.desktop.multimeter(cpumem.args, cpumem.style)
+	transm.body   = awsmx.desktop.multimeter(transm.args, transm.style)
+	disks.body    = awsmx.desktop.multiline(disks.args, disks.style)
+	thermal.body  = awsmx.desktop.singleline(thermal.args, thermal.style)
 
 	-- Desktop setup
 	--------------------------------------------------------------------------------
 	local desktop_objects = { netspeed, hddspeed, ssdspeed, transm, cpumem, disks, thermal }
 
 	if not autohide then
-		redflat.util.desktop.build.static(desktop_objects)
+		awsmx.util.desktop.build.static(desktop_objects)
 	else
-		redflat.util.desktop.build.dynamic(desktop_objects, nil, beautiful.desktopbg, args.buttons)
+		awsmx.util.desktop.build.dynamic(desktop_objects, nil, beautiful.desktopbg, args.buttons)
 	end
 end
 

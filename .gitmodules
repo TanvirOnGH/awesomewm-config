@@ -1,3 +1,2 @@
-[submodule "redflat"]
-	path = redflat
-	url = https://github.com/TanvirOnGH/redflat
+[submodule "awsmx"]
+	url = https://github.com/TanvirOnGH/awsmx

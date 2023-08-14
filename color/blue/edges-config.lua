@@ -4,15 +4,15 @@
 
 -- Grab environment
 local awful = require("awful")
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local edges = {}
 
-local switcher = redflat.float.appswitcher
-local currenttags = redflat.widget.tasklist.filter.currenttags
-local allscreen   = redflat.widget.tasklist.filter.allscreen
+local switcher = awsmx.float.appswitcher
+local currenttags = awsmx.widget.tasklist.filter.currenttags
+local allscreen   = awsmx.widget.tasklist.filter.allscreen
 
 -- Active screen edges
 -----------------------------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ function edges:init(args)
 
 	-- Top
 	--------------------------------------------------------------------------------
-	local top = redflat.util.desktop.edge("horizontal")
+	local top = awsmx.util.desktop.edge("horizontal")
 	top.wibox:geometry(egeometry["top"])
 
 	top.layout:buttons(awful.util.table.join(
@@ -44,7 +44,7 @@ function edges:init(args)
 
 	-- Right
 	--------------------------------------------------------------------------------
-	local right = redflat.util.desktop.edge("vertical")
+	local right = awsmx.util.desktop.edge("vertical")
 	right.wibox:geometry(egeometry["right"])
 
 	right.layout:buttons(awful.util.table.join(
@@ -54,7 +54,7 @@ function edges:init(args)
 
 	-- Left
 	--------------------------------------------------------------------------------
-	local left = redflat.util.desktop.edge("vertical", { ew, workarea.height - ew })
+	local left = awsmx.util.desktop.edge("vertical", { ew, workarea.height - ew })
 	left.wibox:geometry(egeometry["left"])
 
 	left.area[1]:buttons(awful.util.table.join(
@@ -68,7 +68,7 @@ function edges:init(args)
 		awful.button({}, 5, function() switcher:show({ filter = currenttags, reverse = true }) end)
 	))
 
-	left.wibox:connect_signal("mouse::leave", function() redflat.float.appswitcher:hide() end)
+	left.wibox:connect_signal("mouse::leave", function() awsmx.float.appswitcher:hide() end)
 end
 
 -- End
