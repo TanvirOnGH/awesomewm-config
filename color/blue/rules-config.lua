@@ -78,7 +78,7 @@ function rules:init(args)
 		-- Tags placement
 		{
 			rule = { instance = "Xephyr" },
-			properties = { tag = self.env.theme == "ruby" and "Test" or "Free", fullscreen = true }
+			properties = { tag = self.env.theme == "purple" and "Test" or "Free", fullscreen = true }
 		},
 
 		-- Jetbrains splash screen fix

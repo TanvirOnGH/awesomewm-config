@@ -405,7 +405,7 @@ function theme:init()
 		color        = self.color                            -- colors (main used)
 	}
 
-	self.gauge.tag.ruby = {
+	self.gauge.tag.purple = {
 		width = 40,         -- widget width
 		color = self.color, -- colors (main used)
 
@@ -484,7 +484,7 @@ function theme:init()
 		point    = { width = 70, height = 3, gap = 27, dx = 5 },
 	}
 
-	self.gauge.task.ruby = {
+	self.gauge.task.purple = {
 		width = 76,
 		text_shift = 26,
 		color      = self.color,

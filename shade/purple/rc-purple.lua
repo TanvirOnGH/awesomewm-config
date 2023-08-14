@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------------
---                                                   Ruby config                                                     --
+--                                                   purple config                                                     --
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Load modules
@@ -35,7 +35,7 @@ require("common.ercheck-config") -- load file with error handling
 -- Setup theme and environment vars
 -----------------------------------------------------------------------------------------------------------------------
 local env = require("color.blue.env-config") -- load file with environment
-env:init({ theme = "ruby", desktop_autohide = false, set_center = true })
+env:init({ theme = "purple", desktop_autohide = false, set_center = true })
 
 
 -- Layouts setup
@@ -61,7 +61,7 @@ local separator = awsmx.gauge.separator.vertical()
 --------------------------------------------------------------------------------
 local taglist = {}
 
-taglist.style = { widget = awsmx.gauge.tag.ruby.new, show_tip = true }
+taglist.style = { widget = awsmx.gauge.tag.purple.new, show_tip = true }
 
 -- double line taglist
 taglist.cols_num = 5
@@ -106,7 +106,7 @@ local tagline_style = { tagline = { height = 40, rows = taglist.rows_num, spacin
 
 -- load list of app name aliases from files and set it as part of tasklist theme
 tasklist.style = {
-	appnames = require("common.alias-config"),  widget = awsmx.gauge.task.ruby.new,
+	appnames = require("common.alias-config"),  widget = awsmx.gauge.task.purple.new,
 	winmenu = tagline_style
 }
 
@@ -250,7 +250,7 @@ awful.screen.connect_for_each_screen(
 -- Desktop widgets
 -----------------------------------------------------------------------------------------------------------------------
 if not lock.desktop then
-	local desktop = require("shade.ruby.desktop-config") -- load file with desktop widgets configuration
+	local desktop = require("shade.purple.desktop-config") -- load file with desktop widgets configuration
 	desktop:init({
 		env = env,
 		buttons = awful.util.table.join(awful.button({}, 3, function () mymenu.mainmenu:toggle() end))
@@ -260,7 +260,7 @@ end
 
 -- Active screen edges
 -----------------------------------------------------------------------------------------------------------------------
-local edges = require("shade.ruby.edges-config") -- load file with edges configuration
+local edges = require("shade.purple.edges-config") -- load file with edges configuration
 edges:init({ tag_cols_num = taglist.cols_num })
 
 
@@ -274,7 +274,7 @@ logout:init()
 -----------------------------------------------------------------------------------------------------------------------
 local appkeys = require("color.blue.appkeys-config") -- load file with application keys sheet
 
-local hotkeys = require("shade.ruby.keys-config") -- load file with hotkeys configuration
+local hotkeys = require("shade.purple.keys-config") -- load file with hotkeys configuration
 hotkeys:init({
 	env = env, menu = mymenu.mainmenu, appkeys = appkeys, tag_cols_num = taglist.cols_num,
 })
@@ -288,7 +288,7 @@ rules:init({ env = env, hotkeys = hotkeys })
 
 -- Titlebar setup
 -----------------------------------------------------------------------------------------------------------------------
-local titlebar = require("shade.ruby.titlebar-config") -- load file with titlebar configuration
+local titlebar = require("shade.purple.titlebar-config") -- load file with titlebar configuration
 titlebar:init()
 
 

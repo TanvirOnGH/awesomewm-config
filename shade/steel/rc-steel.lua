@@ -63,7 +63,7 @@ awsmx.widget.layoutbox:init(awful.layout.layouts)
 local tasklist = {}
 
 -- load list of app name aliases from files and set it as part of tasklist theme
-tasklist.style = { appnames = require("common.alias-config"),  widget = awsmx.gauge.task.ruby.new }
+tasklist.style = { appnames = require("common.alias-config"),  widget = awsmx.gauge.task.purple.new }
 
 tasklist.buttons = awful.util.table.join(
 	awful.button({}, 1, awsmx.widget.tasklist.action.select),
