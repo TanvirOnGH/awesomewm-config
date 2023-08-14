@@ -195,7 +195,7 @@ theme.widget.wrapper = {
 ------------------------------------------------------------
 
 -- Dotcount
---theme.gauge.graph.dots.dot_gap_h = 5
+theme.gauge.graph.dots.dot_gap_h = 5
 
 -- Audio
 theme.gauge.audio.blue.dash.plain = true
