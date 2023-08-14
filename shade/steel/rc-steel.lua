@@ -15,13 +15,13 @@ require("awful.autofocus")
 
 -- User modules
 ------------------------------------------------------------
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 
 -- debug locker
 local lock = lock or {}
 
-redflat.startup.locked = lock.autostart
-redflat.startup:activate()
+awsmx.startup.locked = lock.autostart
+awsmx.startup:activate()
 
 
 -- Error handling
@@ -52,36 +52,36 @@ mymenu:init({ env = env })
 
 -- Separator
 --------------------------------------------------------------------------------
-local separator = redflat.gauge.separator.vertical()
+local separator = awsmx.gauge.separator.vertical()
 
 -- Layoutbox configure
 --------------------------------------------------------------------------------
-redflat.widget.layoutbox:init(awful.layout.layouts)
+awsmx.widget.layoutbox:init(awful.layout.layouts)
 
 -- Tasklist
 --------------------------------------------------------------------------------
 local tasklist = {}
 
 -- load list of app name aliases from files and set it as part of tasklist theme
-tasklist.style = { appnames = require("common.alias-config"),  widget = redflat.gauge.task.ruby.new }
+tasklist.style = { appnames = require("common.alias-config"),  widget = awsmx.gauge.task.ruby.new }
 
 tasklist.buttons = awful.util.table.join(
-	awful.button({}, 1, redflat.widget.tasklist.action.select),
-	awful.button({}, 2, redflat.widget.tasklist.action.close),
-	awful.button({}, 3, redflat.widget.tasklist.action.menu),
-	awful.button({}, 4, redflat.widget.tasklist.action.switch_next),
-	awful.button({}, 5, redflat.widget.tasklist.action.switch_prev)
+	awful.button({}, 1, awsmx.widget.tasklist.action.select),
+	awful.button({}, 2, awsmx.widget.tasklist.action.close),
+	awful.button({}, 3, awsmx.widget.tasklist.action.menu),
+	awful.button({}, 4, awsmx.widget.tasklist.action.switch_next),
+	awful.button({}, 5, awsmx.widget.tasklist.action.switch_prev)
 )
 
 -- Taglist widget
 --------------------------------------------------------------------------------
 local taglist = {}
-taglist.style = { widget = redflat.gauge.tag.green.new, show_tip = true }
+taglist.style = { widget = awsmx.gauge.tag.green.new, show_tip = true }
 taglist.buttons = awful.util.table.join(
 	awful.button({         }, 1, function(t) t:view_only() end),
 	awful.button({ env.mod }, 1, function(t) if client.focus then client.focus:move_to_tag(t) end end),
 	awful.button({         }, 2, awful.tag.viewtoggle),
-	awful.button({         }, 3, function(t) redflat.widget.layoutbox:toggle_menu(t) end),
+	awful.button({         }, 3, function(t) awsmx.widget.layoutbox:toggle_menu(t) end),
 	awful.button({ env.mod }, 3, function(t) if client.focus then client.focus:toggle_tag(t) end end),
 	awful.button({         }, 4, function(t) awful.tag.viewnext(t.screen) end),
 	awful.button({         }, 5, function(t) awful.tag.viewprev(t.screen) end)
@@ -90,46 +90,46 @@ taglist.buttons = awful.util.table.join(
 -- Textclock widget
 --------------------------------------------------------------------------------
 local binclock = {}
-binclock.widget = redflat.widget.binclock({ timeout = 1, dateformat = "%H:%M:%S  %d-%m" })
+binclock.widget = awsmx.widget.binclock({ timeout = 1, dateformat = "%H:%M:%S  %d-%m" })
 
 -- Software update indcator and menu button in one
 --------------------------------------------------------------------------------
-redflat.widget.updates:init({ command = env.updates })
+awsmx.widget.updates:init({ command = env.updates })
 
 local updates = {}
-updates.widget = redflat.widget.updates()
+updates.widget = awsmx.widget.updates()
 
 updates.buttons = awful.util.table.join(
 	awful.button({ }, 1, function () mymenu.mainmenu:toggle() end),
-	awful.button({ }, 2, function () redflat.widget.updates:update(true) end),
-	awful.button({ }, 3, function () redflat.widget.updates:toggle() end)
+	awful.button({ }, 2, function () awsmx.widget.updates:update(true) end),
+	awful.button({ }, 3, function () awsmx.widget.updates:toggle() end)
 )
 
 -- Tray widget
 --------------------------------------------------------------------------------
 local tray = {}
-tray.widget = redflat.widget.minitray()
+tray.widget = awsmx.widget.minitray()
 
 tray.buttons = awful.util.table.join(
-	awful.button({}, 1, function() redflat.widget.minitray:toggle() end)
+	awful.button({}, 1, function() awsmx.widget.minitray:toggle() end)
 )
 
 -- PA volume control
 --------------------------------------------------------------------------------
 local volume = {}
-volume.widget = redflat.widget.pulse(nil, { widget = redflat.gauge.audio.blue.new })
+volume.widget = awsmx.widget.pulse(nil, { widget = awsmx.gauge.audio.blue.new })
 
 -- activate player widget
-redflat.float.player:init({ name = env.player })
+awsmx.float.player:init({ name = env.player })
 
 volume.buttons = awful.util.table.join(
 	awful.button({}, 4, function() volume.widget:change_volume()                end),
 	awful.button({}, 5, function() volume.widget:change_volume({ down = true }) end),
 	awful.button({}, 2, function() volume.widget:mute()                         end),
-	awful.button({}, 3, function() redflat.float.player:show()                  end),
-	awful.button({}, 1, function() redflat.float.player:action("PlayPause")     end),
-	awful.button({}, 8, function() redflat.float.player:action("Previous")      end),
-	awful.button({}, 9, function() redflat.float.player:action("Next")          end)
+	awful.button({}, 3, function() awsmx.float.player:show()                  end),
+	awful.button({}, 1, function() awsmx.float.player:action("PlayPause")     end),
+	awful.button({}, 8, function() awsmx.float.player:action("Previous")      end),
+	awful.button({}, 9, function() awsmx.float.player:action("Next")          end)
 )
 
 
@@ -138,33 +138,33 @@ volume.buttons = awful.util.table.join(
 local sysmon = { widget = {}, buttons = {} }
 
 -- network speed
-sysmon.widget.network = redflat.widget.net(
+sysmon.widget.network = awsmx.widget.net(
 	{
 		interface = "enp42s0",
 		speed = { up = 6 * 1024^2, down = 6 * 1024^2 },
 		autoscale = false
 	},
-	{ timeout = 1, widget = redflat.gauge.icon.double, monitor = { step = 0.1 } }
+	{ timeout = 1, widget = awsmx.gauge.icon.double, monitor = { step = 0.1 } }
 )
 
 -- CPU usage
-sysmon.widget.cpu = redflat.widget.sysmon(
-	{ func = redflat.system.pformatted.cpu(80) },
-	{ timeout = 1, widget = redflat.gauge.monitor.dash }
+sysmon.widget.cpu = awsmx.widget.sysmon(
+	{ func = awsmx.system.pformatted.cpu(80) },
+	{ timeout = 1, widget = awsmx.gauge.monitor.dash }
 )
 
 sysmon.buttons.cpu = awful.util.table.join(
-	awful.button({ }, 1, function() redflat.float.top:show("cpu") end)
+	awful.button({ }, 1, function() awsmx.float.top:show("cpu") end)
 )
 
 -- RAM usage
-sysmon.widget.ram = redflat.widget.sysmon(
-	{ func = redflat.system.pformatted.mem(70) },
-	{ timeout = 2, widget = redflat.gauge.monitor.dash }
+sysmon.widget.ram = awsmx.widget.sysmon(
+	{ func = awsmx.system.pformatted.mem(70) },
+	{ timeout = 2, widget = awsmx.gauge.monitor.dash }
 )
 
 sysmon.buttons.ram = awful.util.table.join(
-	awful.button({ }, 1, function() redflat.float.top:show("mem") end)
+	awful.button({ }, 1, function() awsmx.float.top:show("mem") end)
 )
 
 
@@ -187,10 +187,10 @@ awful.screen.connect_for_each_screen(
 		)
 
 		-- taglist widget
-		taglist[s] = redflat.widget.taglist({ screen = s, buttons = taglist.buttons, hint = env.tagtip }, taglist.style)
+		taglist[s] = awsmx.widget.taglist({ screen = s, buttons = taglist.buttons, hint = env.tagtip }, taglist.style)
 
 		-- tasklist widget
-		tasklist[s] = redflat.widget.tasklist({ screen = s, buttons = tasklist.buttons }, tasklist.style)
+		tasklist[s] = awsmx.widget.tasklist({ screen = s, buttons = tasklist.buttons }, tasklist.style)
 
 		-- panel wibox
 		s.panel = awful.wibar({ position = "bottom", screen = s, height = beautiful.panel_height })

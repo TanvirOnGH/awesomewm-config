@@ -10,14 +10,14 @@ local beautiful = require("beautiful")
 local wibox = require("wibox")
 local timer = require("gears.timer")
 
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local desktop = {}
 
 -- desktop aliases
-local system = redflat.system
+local system = awsmx.system
 local wa = mouse.screen.workarea
 
 -- Desktop widgets
@@ -185,9 +185,9 @@ function desktop:init(args)
 	local desktop_objects = { main }
 
 	if not autohide then
-		redflat.util.desktop.build.static(desktop_objects, args.buttons)
+		awsmx.util.desktop.build.static(desktop_objects, args.buttons)
 	else
-		redflat.util.desktop.build.dynamic(desktop_objects, nil, beautiful.desktopbg, args.buttons)
+		awsmx.util.desktop.build.dynamic(desktop_objects, nil, beautiful.desktopbg, args.buttons)
 	end
 end
 

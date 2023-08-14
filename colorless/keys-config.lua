@@ -5,20 +5,20 @@
 -- Grab environment
 local awful = require("awful")
 
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local hotkeys = { mouse = {}, raw = {}, keys = {}, fake = {} }
 
 -- key aliases
-local apprunner = redflat.float.apprunner
-local appswitcher = redflat.float.appswitcher
-local current = redflat.widget.tasklist.filter.currenttags
-local allscr = redflat.widget.tasklist.filter.allscreen
-local laybox = redflat.widget.layoutbox
-local redtip = redflat.float.hotkeys
-local redtitle = redflat.titlebar
+local apprunner = awsmx.float.apprunner
+local appswitcher = awsmx.float.appswitcher
+local current = awsmx.widget.tasklist.filter.currenttags
+local allscr = awsmx.widget.tasklist.filter.allscreen
+local laybox = awsmx.widget.layoutbox
+local redtip = awsmx.float.hotkeys
+local redtitle = awsmx.titlebar
 
 -- Key support functions
 -----------------------------------------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ end
 
 local function toggle_placement(env)
 	env.set_slave = not env.set_slave
-	redflat.float.notify:show({ text = (env.set_slave and "Slave" or "Master") .. " placement" })
+	awsmx.float.notify:show({ text = (env.set_slave and "Slave" or "Master") .. " placement" })
 end
 
 local function tag_numkey(i, mod, action)
@@ -171,24 +171,24 @@ function hotkeys:init(args)
 	------------------------------------------------------------
 	local menu_keys_move = {
 		{
-			{ env.mod }, "k", redflat.menu.action.down,
+			{ env.mod }, "k", awsmx.menu.action.down,
 			{ description = "Select next item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "i", redflat.menu.action.up,
+			{ env.mod }, "i", awsmx.menu.action.up,
 			{ description = "Select previous item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "j", redflat.menu.action.back,
+			{ env.mod }, "j", awsmx.menu.action.back,
 			{ description = "Go back", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "l", redflat.menu.action.enter,
+			{ env.mod }, "l", awsmx.menu.action.enter,
 			{ description = "Open submenu", group = "Navigation" }
 		},
 	}
 
-	redflat.menu:set_keys(awful.util.table.join(redflat.menu.keys.move, menu_keys_move), "move")
+	awsmx.menu:set_keys(awful.util.table.join(awsmx.menu.keys.move, menu_keys_move), "move")
 
 	-- Appswitcher
 	------------------------------------------------------------
@@ -307,7 +307,7 @@ function hotkeys:init(args)
 			{ description = "Show hotkeys helper", group = "Main" }
 		},
 		{
-			{ env.mod }, "F2", function () redflat.service.navigator:run() end,
+			{ env.mod }, "F2", function () awsmx.service.navigator:run() end,
 			{ description = "Window control mode", group = "Main" }
 		},
 		{
@@ -315,7 +315,7 @@ function hotkeys:init(args)
 			{ description = "Reload awesome", group = "Main" }
 		},
 		{
-			{ env.mod }, "c", function() redflat.float.keychain:activate(keyseq, "User") end,
+			{ env.mod }, "c", function() awsmx.float.keychain:activate(keyseq, "User") end,
 			{ description = "User key sequence", group = "Main" }
 		},
 		{
@@ -357,15 +357,15 @@ function hotkeys:init(args)
 			{ description = "Application launcher", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "p", function() redflat.float.prompt:run() end,
+			{ env.mod }, "p", function() awsmx.float.prompt:run() end,
 			{ description = "Show the prompt box", group = "Widgets" }
 		},
 		{
-			{ env.mod, "Control" }, "i", function() redflat.widget.minitray:toggle() end,
+			{ env.mod, "Control" }, "i", function() awsmx.widget.minitray:toggle() end,
 			{ description = "Show minitray", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "F3", function() redflat.float.qlaunch:show() end,
+			{ env.mod }, "F3", function() awsmx.float.qlaunch:show() end,
 			{ description = "Application quick launcher", group = "Main" }
 		},
 
@@ -459,8 +459,8 @@ function hotkeys:init(args)
 		}
 	}
 
-	self.keys.root = redflat.util.key.build(self.raw.root)
-	self.keys.client = redflat.util.key.build(self.raw.client)
+	self.keys.root = awsmx.util.key.build(self.raw.root)
+	self.keys.client = awsmx.util.key.build(self.raw.client)
 
 	-- Numkeys
 	--------------------------------------------------------------------------------
@@ -500,7 +500,7 @@ function hotkeys:init(args)
 
 	-- Hotkeys helper setup
 	--------------------------------------------------------------------------------
-	redflat.float.hotkeys:set_pack("Main", awful.util.table.join(self.raw.root, self.raw.client, self.fake.numkeys), 2)
+	awsmx.float.hotkeys:set_pack("Main", awful.util.table.join(self.raw.root, self.raw.client, self.fake.numkeys), 2)
 
 	-- Mouse buttons
 	--------------------------------------------------------------------------------

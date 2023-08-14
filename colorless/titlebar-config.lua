@@ -7,10 +7,10 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
--- local redflat = require("redflat")
-local redtitle = require("redflat.titlebar")
-local redutil = require("redflat.util")
-local clientmenu = require("redflat.float.clientmenu")
+-- local awsmx = require("awsmx")
+local redtitle = require("awsmx.titlebar")
+local redutil = require("awsmx.util")
+local clientmenu = require("awsmx.float.clientmenu")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------

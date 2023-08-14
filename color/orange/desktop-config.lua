@@ -4,7 +4,7 @@
 
 -- Grab environment
 local beautiful = require("beautiful")
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 local wibox = require("wibox")
 
 local unpack = unpack or table.unpack
@@ -15,7 +15,7 @@ local desktop = {}
 
 -- desktop aliases
 local workarea = screen[mouse.screen].workarea
-local system = redflat.system
+local system = awsmx.system
 
 -- Desktop widgets
 -----------------------------------------------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ function desktop:init(args)
 
 		local txt = value
 		if unit then
-			txt = redflat.util.text.dformat(value, unit, dn, " ")
+			txt = awsmx.util.text.dformat(value, unit, dn, " ")
 		else
 			local to = get_order(text_set)
 
@@ -340,7 +340,7 @@ function desktop:init(args)
 	-- Initialize all desktop widgets
 	--------------------------------------------------------------------------------
 	for _, field in ipairs({ cpuset, diskset, hardwareset, torrset }) do
-		field.box = redflat.desktop.textset(field.blocks)
+		field.box = awsmx.desktop.textset(field.blocks)
 		field.box:set_forced_height(field.height)
 		main_layout:add(field.box)
 	end
@@ -352,7 +352,7 @@ function desktop:init(args)
 		if args.buttons then main_layout:buttons(args.buttons) end
 	else
 		local object = { geometry = geometry, body = { area = main_layout} }
-		redflat.util.desktop.build.dynamic({ object }, nil, beautiful.desktopbg, args.buttons)
+		awsmx.util.desktop.build.dynamic({ object }, nil, beautiful.desktopbg, args.buttons)
 	end
 end
 

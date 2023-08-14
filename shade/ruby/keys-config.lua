@@ -6,24 +6,24 @@
 local table = table
 local unpack = unpack or table.unpack
 local awful = require("awful")
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local hotkeys = { mouse = {}, raw = {}, keys = {}, fake = {} }
 
 -- key aliases
-local apprunner = redflat.float.apprunner
-local appswitcher = redflat.float.appswitcher
-local current = redflat.widget.tasklist.filter.currenttags
-local allscr = redflat.widget.tasklist.filter.allscreen
-local laybox = redflat.widget.layoutbox
-local redtip = redflat.float.hotkeys
-local laycom = redflat.layout.common
-local grid = redflat.layout.grid
-local map = redflat.layout.map
-local logout = redflat.service.logout
-local qlaunch = redflat.float.qlaunch
+local apprunner = awsmx.float.apprunner
+local appswitcher = awsmx.float.appswitcher
+local current = awsmx.widget.tasklist.filter.currenttags
+local allscr = awsmx.widget.tasklist.filter.allscreen
+local laybox = awsmx.widget.layoutbox
+local redtip = awsmx.float.hotkeys
+local laycom = awsmx.layout.common
+local grid = awsmx.layout.grid
+local map = awsmx.layout.map
+local logout = awsmx.service.logout
+local qlaunch = awsmx.float.qlaunch
 local numkeys_line = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 local tagkeys_line = { "q", "w", "e", "r", "t", "y", "u", "i", "o" }
 
@@ -83,7 +83,7 @@ end
 -- new clients placement
 local function toggle_placement(env)
 	env.set_slave = not env.set_slave
-	redflat.float.notify:show({ text = (env.set_slave and "Slave" or "Master") .. " placement" })
+	awsmx.float.notify:show({ text = (env.set_slave and "Slave" or "Master") .. " placement" })
 end
 
 -- select next row tag on second key press
@@ -200,7 +200,7 @@ function hotkeys:init(args)
 	local volume_mute  = function() volume:mute() end
 
 	-- Init widgets
-	redflat.float.qlaunch:init()
+	awsmx.float.qlaunch:init()
 
 	-- Application hotkeys helper
 	--------------------------------------------------------------------------------
@@ -219,7 +219,7 @@ function hotkeys:init(args)
 			end
 		end
 
-		redflat.float.notify:show({ text = "No tips for " .. client.focus.class })
+		awsmx.float.notify:show({ text = "No tips for " .. client.focus.class })
 	end
 
 	-- Keys for widgets
@@ -260,52 +260,52 @@ function hotkeys:init(args)
 	------------------------------------------------------------
 	local menu_keys_move = {
 		{
-			{ env.mod }, "k", redflat.menu.action.down,
+			{ env.mod }, "k", awsmx.menu.action.down,
 			{ description = "Select next item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "i", redflat.menu.action.up,
+			{ env.mod }, "i", awsmx.menu.action.up,
 			{ description = "Select previous item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "j", redflat.menu.action.back,
+			{ env.mod }, "j", awsmx.menu.action.back,
 			{ description = "Go back", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "l", redflat.menu.action.enter,
+			{ env.mod }, "l", awsmx.menu.action.enter,
 			{ description = "Open submenu", group = "Navigation" }
 		},
 	}
 
-	redflat.menu:set_keys(awful.util.table.join(redflat.menu.keys.move, menu_keys_move), "move")
-	--redflat.menu:set_keys(menu_keys_move, "move")
+	awsmx.menu:set_keys(awful.util.table.join(awsmx.menu.keys.move, menu_keys_move), "move")
+	--awsmx.menu:set_keys(menu_keys_move, "move")
 
 	-- Updates widget
 	------------------------------------------------------------
 	local updates_keys_action = {
 		{
-			{ env.mod }, ",", function() redflat.widget.updates:hide() end,
+			{ env.mod }, ",", function() awsmx.widget.updates:hide() end,
 			{ description = "Close updates widget", group = "Action" }
 		},
 	}
 
 	-- close widget by the same key as showing
-	redflat.widget.updates:set_keys(
-		awful.util.table.join(redflat.widget.updates.keys.action, updates_keys_action), "action"
+	awsmx.widget.updates:set_keys(
+		awful.util.table.join(awsmx.widget.updates.keys.action, updates_keys_action), "action"
 	)
 
 	-- Top process list
 	------------------------------------------------------------
 	local top_keys_action = {
 		{
-			{ env.mod }, "/", function() redflat.float.top:hide() end,
+			{ env.mod }, "/", function() awsmx.float.top:hide() end,
 			{ description = "Close top list widget", group = "Action" }
 		},
 	}
 
 	-- close widget by the same key as showing
-	redflat.float.top:set_keys(
-		awful.util.table.join(redflat.float.top.keys.action, top_keys_action), "action"
+	awsmx.float.top:set_keys(
+		awful.util.table.join(awsmx.float.top.keys.action, top_keys_action), "action"
 	)
 
 	-- Appswitcher widget
@@ -461,7 +461,7 @@ function hotkeys:init(args)
 	-- widget info update commands
 	keyseq[3][8][3] = {
 		{
-			{}, "u", function() redflat.widget.updates:update(true) end,
+			{}, "u", function() awsmx.widget.updates:update(true) end,
 			{ description = "Check available updates", group = "Update info", keyset = { "u" } }
 		},
 	}
@@ -637,8 +637,8 @@ function hotkeys:init(args)
 		},
 	}
 
-	redflat.layout.grid:set_keys(layout_grid_move, "move")
-	redflat.layout.grid:set_keys(layout_grid_resize, "resize")
+	awsmx.layout.grid:set_keys(layout_grid_move, "move")
+	awsmx.layout.grid:set_keys(layout_grid_resize, "resize")
 
 	-- user map layout keys
 	local layout_map_layout = {
@@ -739,8 +739,8 @@ function hotkeys:init(args)
 		},
 	}
 
-	redflat.layout.map:set_keys(layout_map_layout, "layout")
-	redflat.layout.map:set_keys(layout_map_resize, "resize")
+	awsmx.layout.map:set_keys(layout_map_layout, "layout")
+	awsmx.layout.map:set_keys(layout_map_resize, "resize")
 
 
 	-- Global keys
@@ -756,15 +756,15 @@ function hotkeys:init(args)
 		},
 
 		{
-			{ env.mod }, "F2", function () redflat.service.navigator:run() end,
+			{ env.mod }, "F2", function () awsmx.service.navigator:run() end,
 			{ description = "[Hold] Tiling window control mode", group = "Window control" }
 		},
 		{
-			{ env.mod }, "b", function() redflat.float.bartip:show() end,
+			{ env.mod }, "b", function() awsmx.float.bartip:show() end,
 			{ description = "[Hold] Titlebar control", group = "Window control" }
 		},
 		{
-			{ env.mod }, "h", function() redflat.float.control:show() end,
+			{ env.mod }, "h", function() awsmx.float.control:show() end,
 			{ description = "[Hold] Floating window control mode", group = "Window control" }
 		},
 
@@ -803,23 +803,23 @@ function hotkeys:init(args)
 		--},
 
 		{
-			{ env.mod }, "/", function() redflat.float.top:show("cpu") end,
+			{ env.mod }, "/", function() awsmx.float.top:show("cpu") end,
 			{ description = "Top process list", group = "Widgets" }
 		},
 		{
-			{ env.mod }, ",", function() redflat.widget.updates:show() end,
+			{ env.mod }, ",", function() awsmx.widget.updates:show() end,
 			{ description = "System updates info", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "`", function() redflat.widget.minitray:toggle() end,
+			{ env.mod }, "`", function() awsmx.widget.minitray:toggle() end,
 			{ description = "Minitray", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "c", function() redflat.float.keychain:activate(keyseq, "User") end,
+			{ env.mod }, "c", function() awsmx.float.keychain:activate(keyseq, "User") end,
 			{ description = "User key sequence", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "z", function() redflat.service.logout:show() end,
+			{ env.mod }, "z", function() awsmx.service.logout:show() end,
 			{ description = "Log out screen", group = "Widgets" }
 		},
 
@@ -870,7 +870,7 @@ function hotkeys:init(args)
 			{ description = "Application launcher", group = "Launchers" }
 		},
 		{
-			{ env.mod }, "p", function() redflat.float.prompt:run() end,
+			{ env.mod }, "p", function() awsmx.float.prompt:run() end,
 			{ description = "Prompt box", group = "Launchers" }
 		},
 		{
@@ -892,19 +892,19 @@ function hotkeys:init(args)
 		},
 
 		{
-			{ env.mod }, ".", function() redflat.float.player:show(rb_corner()) end,
+			{ env.mod }, ".", function() awsmx.float.player:show(rb_corner()) end,
 			{ description = "Show/hide widget", group = "Audio player" }
 		},
 		{
-			{}, "XF86AudioPlay", function() redflat.float.player:action("PlayPause") end,
+			{}, "XF86AudioPlay", function() awsmx.float.player:action("PlayPause") end,
 			{ description = "Play/Pause track", group = "Audio player" }
 		},
 		{
-			{}, "XF86AudioNext", function() redflat.float.player:action("Next") end,
+			{}, "XF86AudioNext", function() awsmx.float.player:action("Next") end,
 			{ description = "Next track", group = "Audio player" }
 		},
 		{
-			{}, "XF86AudioPrev", function() redflat.float.player:action("Previous") end,
+			{}, "XF86AudioPrev", function() awsmx.float.player:action("Previous") end,
 			{ description = "Previous track", group = "Audio player" }
 		},
 
@@ -948,8 +948,8 @@ function hotkeys:init(args)
 		}
 	}
 
-	self.keys.root = redflat.util.key.build(self.raw.root)
-	self.keys.client = redflat.util.key.build(self.raw.client)
+	self.keys.root = awsmx.util.key.build(self.raw.root)
+	self.keys.client = awsmx.util.key.build(self.raw.client)
 
 	-- Numkeys
 	--------------------------------------------------------------------------------
@@ -993,7 +993,7 @@ function hotkeys:init(args)
 
 	-- Hotkeys helper setup
 	--------------------------------------------------------------------------------
-	redflat.float.hotkeys:set_pack("Main", awful.util.table.join(self.raw.root, self.raw.client, self.fake.tagkeys), 2)
+	awsmx.float.hotkeys:set_pack("Main", awful.util.table.join(self.raw.root, self.raw.client, self.fake.tagkeys), 2)
 
 	-- Mouse buttons
 	--------------------------------------------------------------------------------

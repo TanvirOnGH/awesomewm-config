@@ -15,9 +15,9 @@ require("awful.autofocus")
 
 -- User modules
 ------------------------------------------------------------
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 
-redflat.startup:activate()
+awsmx.startup:activate()
 
 -- Error handling
 -----------------------------------------------------------------------------------------------------------------------
@@ -47,29 +47,29 @@ mymenu:init({ env = env })
 
 -- Separator
 --------------------------------------------------------------------------------
-local separator = redflat.gauge.separator.vertical()
+local separator = awsmx.gauge.separator.vertical()
 
 -- Tasklist
 --------------------------------------------------------------------------------
 local tasklist = {}
 
 tasklist.buttons = awful.util.table.join(
-	awful.button({}, 1, redflat.widget.tasklist.action.select),
-	awful.button({}, 2, redflat.widget.tasklist.action.close),
-	awful.button({}, 3, redflat.widget.tasklist.action.menu),
-	awful.button({}, 4, redflat.widget.tasklist.action.switch_next),
-	awful.button({}, 5, redflat.widget.tasklist.action.switch_prev)
+	awful.button({}, 1, awsmx.widget.tasklist.action.select),
+	awful.button({}, 2, awsmx.widget.tasklist.action.close),
+	awful.button({}, 3, awsmx.widget.tasklist.action.menu),
+	awful.button({}, 4, awsmx.widget.tasklist.action.switch_next),
+	awful.button({}, 5, awsmx.widget.tasklist.action.switch_prev)
 )
 
 -- Taglist widget
 --------------------------------------------------------------------------------
 local taglist = {}
-taglist.style = { widget = redflat.gauge.tag.orange.new, show_tip = true }
+taglist.style = { widget = awsmx.gauge.tag.orange.new, show_tip = true }
 taglist.buttons = awful.util.table.join(
 	awful.button({         }, 1, function(t) t:view_only() end),
 	awful.button({ env.mod }, 1, function(t) if client.focus then client.focus:move_to_tag(t) end end),
 	awful.button({         }, 2, awful.tag.viewtoggle),
-	awful.button({         }, 3, function(t) redflat.widget.layoutbox:toggle_menu(t) end),
+	awful.button({         }, 3, function(t) awsmx.widget.layoutbox:toggle_menu(t) end),
 	awful.button({ env.mod }, 3, function(t) if client.focus then client.focus:toggle_tag(t) end end),
 	awful.button({         }, 4, function(t) awful.tag.viewnext(t.screen) end),
 	awful.button({         }, 5, function(t) awful.tag.viewprev(t.screen) end)
@@ -78,7 +78,7 @@ taglist.buttons = awful.util.table.join(
 -- Textclock widget
 --------------------------------------------------------------------------------
 local textclock = {}
-textclock.widget = redflat.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%d/%m/%Y" })
+textclock.widget = awsmx.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%d/%m/%Y" })
 
 -- Layoutbox configure
 --------------------------------------------------------------------------------
@@ -86,7 +86,7 @@ local layoutbox = {}
 
 layoutbox.buttons = awful.util.table.join(
 	awful.button({ }, 1, function () awful.layout.inc( 1) end),
-	awful.button({ }, 3, function () redflat.widget.layoutbox:toggle_menu(mouse.screen.selected_tag) end),
+	awful.button({ }, 3, function () awsmx.widget.layoutbox:toggle_menu(mouse.screen.selected_tag) end),
 	awful.button({ }, 4, function () awful.layout.inc( 1) end),
 	awful.button({ }, 5, function () awful.layout.inc(-1) end)
 )
@@ -94,10 +94,10 @@ layoutbox.buttons = awful.util.table.join(
 -- Tray widget
 --------------------------------------------------------------------------------
 local tray = {}
-tray.widget = redflat.widget.minitray()
+tray.widget = awsmx.widget.minitray()
 
 tray.buttons = awful.util.table.join(
-	awful.button({}, 1, function() redflat.widget.minitray:toggle() end)
+	awful.button({}, 1, function() awsmx.widget.minitray:toggle() end)
 )
 
 
@@ -112,13 +112,13 @@ awful.screen.connect_for_each_screen(
 		awful.tag({ "Tag1", "Tag2", "Tag3", "Tag4", "Tag5" }, s, awful.layout.layouts[1])
 
 		-- layoutbox widget
-		layoutbox[s] = redflat.widget.layoutbox({ screen = s })
+		layoutbox[s] = awsmx.widget.layoutbox({ screen = s })
 
 		-- taglist widget
-		taglist[s] = redflat.widget.taglist({ screen = s, buttons = taglist.buttons, hint = env.tagtip }, taglist.style)
+		taglist[s] = awsmx.widget.taglist({ screen = s, buttons = taglist.buttons, hint = env.tagtip }, taglist.style)
 
 		-- tasklist widget
-		tasklist[s] = redflat.widget.tasklist({ screen = s, buttons = tasklist.buttons })
+		tasklist[s] = awsmx.widget.tasklist({ screen = s, buttons = tasklist.buttons })
 
 		-- panel wibox
 		s.panel = awful.wibar({ position = "bottom", screen = s, height = beautiful.panel_height })

@@ -4,7 +4,7 @@
 
 -- Grab environment
 local beautiful = require("beautiful")
-local redflat = require("redflat")
+local awsmx = require("awsmx")
 local awful = require("awful")
 local naughty = require("naughty")
 
@@ -20,7 +20,7 @@ function menu:init(args)
 	-- vars
 	args = args or {}
 	local env = args.env or {} -- fix this?
-	local separator = args.separator or { widget = redflat.gauge.separator.horizontal() }
+	local separator = args.separator or { widget = awsmx.gauge.separator.horizontal() }
 	local theme = args.theme or { auto_hotkey = true }
 	local icon_style = args.icon_style or {}
 
@@ -34,11 +34,11 @@ function menu:init(args)
 	-- and user only icon theme. See colored configs for more details.
 
 	-- At worst, you can give up all applications widgets (appmenu, applauncher, appswitcher, qlaunch) in your config
-	local appmenu = redflat.service.dfparser.menu({ icons = icon_style, wm_name = "awesome" })
+	local appmenu = awsmx.service.dfparser.menu({ icons = icon_style, wm_name = "awesome" })
 
 	-- Main menu
 	------------------------------------------------------------
-	self.mainmenu = redflat.menu({ theme = theme,
+	self.mainmenu = awsmx.menu({ theme = theme,
 		items = {
 			{ "Applications",  appmenu,      },
 			{ "Terminal",      env.terminal, },
@@ -56,12 +56,12 @@ function menu:init(args)
 	------------------------------------------------------------
 
 	-- theme vars
-	local deficon = redflat.util.base.placeholder()
-	local icon = redflat.util.table.check(beautiful, "icon.awesome") and beautiful.icon.awesome or deficon
-	local color = redflat.util.table.check(beautiful, "color.icon") and beautiful.color.icon or nil
+	local deficon = awsmx.util.base.placeholder()
+	local icon = awsmx.util.table.check(beautiful, "icon.awesome") and beautiful.icon.awesome or deficon
+	local color = awsmx.util.table.check(beautiful, "color.icon") and beautiful.color.icon or nil
 
 	-- widget
-	self.widget = redflat.gauge.svgbox(icon, nil, color)
+	self.widget = awsmx.gauge.svgbox(icon, nil, color)
 	self.buttons = awful.util.table.join(
 		awful.button({ }, 1, function () self.mainmenu:toggle() end)
 	)
