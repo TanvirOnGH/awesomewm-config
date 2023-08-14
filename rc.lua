@@ -4,7 +4,6 @@
 
 -- Configuration file selection
 -----------------------------------------------------------------------------------------------------------------------
---local rc = "color.blue.rc-blue"
 
 local rc = "shade.purple.rc-purple"
 

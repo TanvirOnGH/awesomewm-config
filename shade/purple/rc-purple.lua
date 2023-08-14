@@ -34,19 +34,19 @@ require("common.ercheck-config") -- load file with error handling
 
 -- Setup theme and environment vars
 -----------------------------------------------------------------------------------------------------------------------
-local env = require("color.blue.env-config") -- load file with environment
+local env = require("common.env-config") -- load file with environment
 env:init({ theme = "purple", desktop_autohide = false, set_center = true })
 
 
 -- Layouts setup
 -----------------------------------------------------------------------------------------------------------------------
-local layouts = require("color.blue.layout-config") -- load file with tile layouts setup
+local layouts = require("common.layout-config") -- load file with tile layouts setup
 layouts:init()
 
 
 -- Main menu configuration
 -----------------------------------------------------------------------------------------------------------------------
-local mymenu = require("color.blue.menu-config") -- load file with menu configuration
+local mymenu = require("common.menu-config") -- load file with menu configuration
 mymenu:init({ env = env })
 
 
@@ -266,13 +266,13 @@ edges:init({ tag_cols_num = taglist.cols_num })
 
 -- Log out screen
 -----------------------------------------------------------------------------------------------------------------------
-local logout = require("color.blue.logout-config")
+local logout = require("common.logout-config")
 logout:init()
 
 
 -- Key bindings
 -----------------------------------------------------------------------------------------------------------------------
-local appkeys = require("color.blue.appkeys-config") -- load file with application keys sheet
+local appkeys = require("common.appkeys-config") -- load file with application keys sheet
 
 local hotkeys = require("shade.purple.keys-config") -- load file with hotkeys configuration
 hotkeys:init({
@@ -282,7 +282,7 @@ hotkeys:init({
 
 -- Rules
 -----------------------------------------------------------------------------------------------------------------------
-local rules = require("color.blue.rules-config") -- load file with rules configuration
+local rules = require("common.rules-config") -- load file with rules configuration
 rules:init({ env = env, hotkeys = hotkeys })
 
 
@@ -301,6 +301,6 @@ signals:init({ env = env })
 -- Autostart user applications
 -----------------------------------------------------------------------------------------------------------------------
 if awsmx.startup.is_startup then
-	local autostart = require("color.blue.autostart-config") -- load file with autostart application list
+	local autostart = require("common.autostart-config") -- load file with autostart application list
 	autostart.run()
 end

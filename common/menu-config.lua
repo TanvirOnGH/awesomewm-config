@@ -6,15 +6,15 @@
 local beautiful = require("beautiful")
 local awsmx = require("awsmx")
 local awful = require("awful")
-local naughty = require("naughty")
 
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local menu = {}
 
+
 -- Build function
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 function menu:init(args)
 
 	-- vars
@@ -22,45 +22,77 @@ function menu:init(args)
 	local env = args.env or {} -- fix this?
 	local separator = args.separator or { widget = awsmx.gauge.separator.horizontal() }
 	local theme = args.theme or { auto_hotkey = true }
-	local icon_style = args.icon_style or {}
+	local icon_style = args.icon_style or { custom_only = true, scalable_only = true }
+
+	-- theme vars
+	local default_icon = awsmx.util.base.placeholder()
+	local icon = awsmx.util.table.check(beautiful, "icon.awesome") and beautiful.icon.awesome or default_icon
+	local color = awsmx.util.table.check(beautiful, "color.icon") and beautiful.color.icon or nil
+
+	-- icon finder
+	local function micon(name)
+		return awsmx.service.dfparser.lookup_icon(name, icon_style)
+	end
 
 	-- Application submenu
 	------------------------------------------------------------
-
-	-- WARNING!
-	-- 'dfparser' module used to parse available desktop files for building application list and finding app icons,
-	-- it may cause significant delay on wm start/restart due to the synchronous type of the scripts.
-	-- This issue can be reduced by using additional settings like custom desktop files directory
-	-- and user only icon theme. See colored configs for more details.
-
-	-- At worst, you can give up all applications widgets (appmenu, applauncher, appswitcher, qlaunch) in your config
 	local appmenu = awsmx.service.dfparser.menu({ icons = icon_style, wm_name = "awesome" })
+
+	-- Awesome submenu
+	------------------------------------------------------------
+	local awesomemenu = {
+		{ "Restart",         awesome.restart,                           micon("gnome-session-reboot") },
+		separator,
+		{ "Awesome config",  "code" .. " /home/user/.config/awesome/",  micon("terminal") },
+    }
+	
+	-- Nix submenu
+	------------------------------------------------------------
+	local nixmenu = {
+		{ "Nix config",  "code" .. " /home/user/nix-config/",  micon("terminal") },
+	}
+
+	-- Places submenu
+	------------------------------------------------------------
+	local placesmenu = {
+		{ "Downloads",   env.fm .. " downloads",       micon("folder-download")  },
+		{ "Music",       env.fm .. " media/musics",    micon("folder-music")     },
+		{ "Pictures",    env.fm .. " media/pictures",  micon("folder-pictures")  },
+		{ "Videos",      env.fm .. " media/videos",    micon("folder-videos")    },
+		separator,
+		{ "HDD",       env.fm .. " /mnt/HDD",          micon("folder-bookmarks") },
+	}
+
+	-- Exit submenu
+	------------------------------------------------------------
+	local exitmenu = {
+		{ "Reboot",          "reboot",            micon("gnome-session-reboot")  },
+		{ "Shutdown",        "poweroff",          micon("system-shutdown")       },
+		separator,
+		{ "Log out",         awesome.quit,        micon("exit")                  },
+	}
 
 	-- Main menu
 	------------------------------------------------------------
 	self.mainmenu = awsmx.menu({ theme = theme,
 		items = {
-			{ "Applications",  appmenu,      },
-			{ "Terminal",      env.terminal, },
+            { "Awesome",      awesomemenu, micon("awesome") },
+			{ "NixOS",        nixmenu,     micon("nix") },
+			{ "Applications",  appmenu,     micon("folder") },
+			{ "Places",        placesmenu,  micon("folder_home"), key = "c" },
 			separator,
-			{ "Test Item 0", function() naughty.notify({ text = "Test menu 0" }) end,           },
-			{ "Test Item 1", function() naughty.notify({ text = "Test menu 1" }) end, key = "i" },
-			{ "Test Item 2", function() naughty.notify({ text = "Test menu 2" }) end, key = "m" },
+			{ "Terminal",      env.terminal, micon("terminal") },
+			{ "Thunar",        env.fm,       micon("folder")},
+			{ "Firefox",       "firefox",    micon("browser")},
+			{ "VSCode",        "code",       micon("code-editor") },
 			separator,
-			{ "Restart", awesome.restart, },
-			{ "Exit",    awesome.quit, },
+			{ "Exit",          exitmenu,     micon("exit") },
 		}
 	})
 
 	-- Menu panel widget
 	------------------------------------------------------------
 
-	-- theme vars
-	local deficon = awsmx.util.base.placeholder()
-	local icon = awsmx.util.table.check(beautiful, "icon.awesome") and beautiful.icon.awesome or deficon
-	local color = awsmx.util.table.check(beautiful, "color.icon") and beautiful.color.icon or nil
-
-	-- widget
 	self.widget = awsmx.gauge.svgbox(icon, nil, color)
 	self.buttons = awful.util.table.join(
 		awful.button({ }, 1, function () self.mainmenu:toggle() end)
