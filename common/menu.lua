@@ -4,7 +4,7 @@
 
 -- Grab environment
 local beautiful = require("beautiful")
-local awsmx = require("awsmx")
+local flex = require("flex")
 local awful = require("awful")
 
 
@@ -19,23 +19,23 @@ function menu:init(args)
 	-- vars
 	args = args or {}
 	local env = args.env or {} -- fix this?
-	local separator = args.separator or { widget = awsmx.gauge.separator.horizontal() }
+	local separator = args.separator or { widget = flex.gauge.separator.horizontal() }
 	local theme = args.theme or { auto_hotkey = true }
 	local icon_style = args.icon_style or { custom_only = true, scalable_only = true }
 
 	-- theme vars
-	local default_icon = awsmx.util.base.placeholder()
-	local icon = awsmx.util.table.check(beautiful, "icon.awesome") and beautiful.icon.awesome or default_icon
-	local color = awsmx.util.table.check(beautiful, "color.icon") and beautiful.color.icon or nil
+	local default_icon = flex.util.base.placeholder()
+	local icon = flex.util.table.check(beautiful, "icon.awesome") and beautiful.icon.awesome or default_icon
+	local color = flex.util.table.check(beautiful, "color.icon") and beautiful.color.icon or nil
 
 	-- icon finder
 	local function micon(name)
-		return awsmx.service.dfparser.lookup_icon(name, icon_style)
+		return flex.service.dfparser.lookup_icon(name, icon_style)
 	end
 
 	-- Application submenu
 	------------------------------------------------------------
-	local appmenu = awsmx.service.dfparser.menu({ icons = icon_style, wm_name = "awesome" })
+	local appmenu = flex.service.dfparser.menu({ icons = icon_style, wm_name = "awesome" })
 
 	-- Awesome submenu
 	------------------------------------------------------------
@@ -73,7 +73,7 @@ function menu:init(args)
 
 	-- Main menu
 	------------------------------------------------------------
-	self.mainmenu = awsmx.menu({
+	self.mainmenu = flex.menu({
 		theme = theme,
 		items = {
 			{ "Awesome",      awesomemenu, micon("awesome") },
@@ -93,7 +93,7 @@ function menu:init(args)
 	-- Menu panel widget
 	------------------------------------------------------------
 
-	self.widget = awsmx.gauge.svgbox(icon, nil, color)
+	self.widget = flex.gauge.svgbox(icon, nil, color)
 	self.buttons = awful.util.table.join(
 		awful.button({}, 1, function() self.mainmenu:toggle() end)
 	)

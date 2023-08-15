@@ -8,7 +8,7 @@ self = false
 exclude_files = {
     ".luacheckrc", -- this file itself
     "rc-back.lua", -- original config
-    "awsmx",       -- submodule
+    "flex",       -- submodule
 }
 
 -- Global objects defined by the C code

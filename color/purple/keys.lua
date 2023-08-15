@@ -6,24 +6,24 @@
 local table = table
 local unpack = unpack or table.unpack
 local awful = require("awful")
-local awsmx = require("awsmx")
+local flex = require("flex")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local hotkeys = { mouse = {}, raw = {}, keys = {}, fake = {} }
 
 -- key aliases
-local apprunner = awsmx.float.apprunner
-local appswitcher = awsmx.float.appswitcher
-local current = awsmx.widget.tasklist.filter.currenttags
-local allscr = awsmx.widget.tasklist.filter.allscreen
-local laybox = awsmx.widget.layoutbox
-local modtip = awsmx.float.hotkeys
-local laycom = awsmx.layout.common
-local grid = awsmx.layout.grid
-local map = awsmx.layout.map
-local logout = awsmx.service.logout
-local qlaunch = awsmx.float.qlaunch
+local apprunner = flex.float.apprunner
+local appswitcher = flex.float.appswitcher
+local current = flex.widget.tasklist.filter.currenttags
+local allscr = flex.widget.tasklist.filter.allscreen
+local laybox = flex.widget.layoutbox
+local modtip = flex.float.hotkeys
+local laycom = flex.layout.common
+local grid = flex.layout.grid
+local map = flex.layout.map
+local logout = flex.service.logout
+local qlaunch = flex.float.qlaunch
 local numkeys_line = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 local tagkeys_line = { "q", "w", "e", "r", "t", "y", "u", "i", "o" }
 
@@ -85,7 +85,7 @@ end
 -- new clients placement
 local function toggle_placement(env)
 	env.set_slave = not env.set_slave
-	awsmx.float.notify:show({ text = (env.set_slave and "Slave" or "Master") .. " placement" })
+	flex.float.notify:show({ text = (env.set_slave and "Slave" or "Master") .. " placement" })
 end
 
 -- select next row tag on second key press
@@ -203,7 +203,7 @@ function hotkeys:init(args)
 	local volume_mute  = function() volume:mute() end
 
 	-- Init widgets
-	awsmx.float.qlaunch:init()
+	flex.float.qlaunch:init()
 
 	-- Application hotkeys helper
 	--------------------------------------------------------------------------------
@@ -222,7 +222,7 @@ function hotkeys:init(args)
 			end
 		end
 
-		awsmx.float.notify:show({ text = "No tips for " .. client.focus.class })
+		flex.float.notify:show({ text = "No tips for " .. client.focus.class })
 	end
 
 	-- Keys for widgets
@@ -263,38 +263,38 @@ function hotkeys:init(args)
 	------------------------------------------------------------
 	local menu_keys_move = {
 		{
-			{ env.mod }, "k", awsmx.menu.action.down,
+			{ env.mod }, "k", flex.menu.action.down,
 			{ description = "Select next item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "i", awsmx.menu.action.up,
+			{ env.mod }, "i", flex.menu.action.up,
 			{ description = "Select previous item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "j", awsmx.menu.action.back,
+			{ env.mod }, "j", flex.menu.action.back,
 			{ description = "Go back", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "l", awsmx.menu.action.enter,
+			{ env.mod }, "l", flex.menu.action.enter,
 			{ description = "Open submenu", group = "Navigation" }
 		},
 	}
 
-	awsmx.menu:set_keys(awful.util.table.join(awsmx.menu.keys.move, menu_keys_move), "move")
-	--awsmx.menu:set_keys(menu_keys_move, "move")
+	flex.menu:set_keys(awful.util.table.join(flex.menu.keys.move, menu_keys_move), "move")
+	--flex.menu:set_keys(menu_keys_move, "move")
 
 	-- Top process list
 	------------------------------------------------------------
 	local top_keys_action = {
 		{
-			{ env.mod }, "/", function() awsmx.float.top:hide() end,
+			{ env.mod }, "/", function() flex.float.top:hide() end,
 			{ description = "Close top list widget", group = "Action" }
 		},
 	}
 
 	-- close widget by the same key as showing
-	awsmx.float.top:set_keys(
-		awful.util.table.join(awsmx.float.top.keys.action, top_keys_action), "action"
+	flex.float.top:set_keys(
+		awful.util.table.join(flex.float.top.keys.action, top_keys_action), "action"
 	)
 
 	-- Appswitcher widget
@@ -635,8 +635,8 @@ function hotkeys:init(args)
 		},
 	}
 
-	awsmx.layout.grid:set_keys(layout_grid_move, "move")
-	awsmx.layout.grid:set_keys(layout_grid_resize, "resize")
+	flex.layout.grid:set_keys(layout_grid_move, "move")
+	flex.layout.grid:set_keys(layout_grid_resize, "resize")
 
 	-- user map layout keys
 	local layout_map_layout = {
@@ -743,8 +743,8 @@ function hotkeys:init(args)
 		},
 	}
 
-	awsmx.layout.map:set_keys(layout_map_layout, "layout")
-	awsmx.layout.map:set_keys(layout_map_resize, "resize")
+	flex.layout.map:set_keys(layout_map_layout, "layout")
+	flex.layout.map:set_keys(layout_map_resize, "resize")
 
 
 	-- Global keys
@@ -761,15 +761,15 @@ function hotkeys:init(args)
 		},
 
 		{
-			{ env.mod }, "F2", function() awsmx.service.navigator:run() end,
+			{ env.mod }, "F2", function() flex.service.navigator:run() end,
 			{ description = "[Hold] Tiling window control mode", group = "Window control" }
 		},
 		{
-			{ env.mod }, "b", function() awsmx.float.bartip:show() end,
+			{ env.mod }, "b", function() flex.float.bartip:show() end,
 			{ description = "[Hold] Titlebar control", group = "Window control" }
 		},
 		{
-			{ env.mod }, "h", function() awsmx.float.control:show() end,
+			{ env.mod }, "h", function() flex.float.control:show() end,
 			{ description = "[Hold] Floating window control mode", group = "Window control" }
 		},
 
@@ -808,19 +808,19 @@ function hotkeys:init(args)
 		--},
 
 		{
-			{ env.mod }, "/", function() awsmx.float.top:show("cpu") end,
+			{ env.mod }, "/", function() flex.float.top:show("cpu") end,
 			{ description = "Top process list", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "`", function() awsmx.widget.minitray:toggle() end,
+			{ env.mod }, "`", function() flex.widget.minitray:toggle() end,
 			{ description = "Minitray", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "c", function() awsmx.float.keychain:activate(keyseq, "User") end,
+			{ env.mod }, "c", function() flex.float.keychain:activate(keyseq, "User") end,
 			{ description = "User key sequence", group = "Widgets" }
 		},
 		{
-			{ env.mod }, "z", function() awsmx.service.logout:show() end,
+			{ env.mod }, "z", function() flex.service.logout:show() end,
 			{ description = "Log out screen", group = "Widgets" }
 		},
 
@@ -872,7 +872,7 @@ function hotkeys:init(args)
 			{ description = "Application launcher", group = "Launchers" }
 		},
 		{
-			{ env.mod }, "p", function() awsmx.float.prompt:run() end,
+			{ env.mod }, "p", function() flex.float.prompt:run() end,
 			{ description = "Prompt box", group = "Launchers" }
 		},
 		{
@@ -923,8 +923,8 @@ function hotkeys:init(args)
 		}
 	}
 
-	self.keys.root = awsmx.util.key.build(self.raw.root)
-	self.keys.client = awsmx.util.key.build(self.raw.client)
+	self.keys.root = flex.util.key.build(self.raw.root)
+	self.keys.client = flex.util.key.build(self.raw.client)
 
 	-- Numkeys
 	--------------------------------------------------------------------------------
@@ -968,7 +968,7 @@ function hotkeys:init(args)
 
 	-- Hotkeys helper setup
 	--------------------------------------------------------------------------------
-	awsmx.float.hotkeys:set_pack("Main", awful.util.table.join(self.raw.root, self.raw.client, self.fake.tagkeys), 2)
+	flex.float.hotkeys:set_pack("Main", awful.util.table.join(self.raw.root, self.raw.client, self.fake.tagkeys), 2)
 
 	-- Mouse buttons
 	--------------------------------------------------------------------------------

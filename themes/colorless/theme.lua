@@ -55,7 +55,7 @@ theme.fonts        = {
 	main     = "Fira Code 12",   -- main font
 	menu     = "Fira Code 12",   -- main menu font
 	tooltip  = "Fira Code 12",   -- tooltip font
-	notify   = "Fira Code bold 14", -- awsmx notify popup font
+	notify   = "Fira Code bold 14", -- flex notify popup font
 	clock    = "Fira Code bold 12", -- textclock widget font
 	qlaunch  = "Fira Code bold 14", -- quick launch key label font
 	logout   = "Fira Code bold 14", -- logout screen labels
@@ -138,7 +138,7 @@ function theme:init()
 		},
 		linegap      = 32,                      -- gap between two lines on window information plate
 		timeout      = 1,                       -- highlight duration
-		notify       = {},                      -- awsmx notify style (see theme.float.notify)
+		notify       = {},                      -- flex notify style (see theme.float.notify)
 		titlefont    = self.cairo_fonts.navigator.title, -- first line font on window information plate
 		font         = self.cairo_fonts.navigator.main, -- second line font on window information plate
 
@@ -426,7 +426,7 @@ function theme:init()
 	------------------------------------------------------------
 	self.widget.textclock = {
 		font    = self.fonts.clock,    -- font
-		tooltip = {},                  -- awsmx tooltip style (see theme.float.tooltip)
+		tooltip = {},                  -- flex tooltip style (see theme.float.tooltip)
 		color   = { text = self.color.icon } -- colors
 	}
 
@@ -434,7 +434,7 @@ function theme:init()
 	------------------------------------------------------------
 	self.widget.binclock = {
 		width   = 52,     -- widget width
-		tooltip = {},     -- awsmx tooltip style (see theme.float.tooltip)
+		tooltip = {},     -- flex tooltip style (see theme.float.tooltip)
 		dot     = { size = 5 }, -- mark size
 		color   = self.color, -- colors (main used)
 	}
@@ -442,7 +442,7 @@ function theme:init()
 	-- Minitray
 	------------------------------------------------------------
 	self.widget.minitray = {
-		dotcount     = {},             -- awsmx dotcount style (see theme.gauge.graph.dots)
+		dotcount     = {},             -- flex dotcount style (see theme.gauge.graph.dots)
 		border_width = 0,              -- floating widget border width
 		geometry     = { height = 40 }, -- floating widget size
 		screen_gap   = 2 * self.useless_gap, -- minimal space from screen edge on floating widget placement
@@ -488,7 +488,7 @@ function theme:init()
 		unknown    = self.icon.unknown,  -- this one used as fallback
 	}
 
-	-- awsmx menu style (see theme.menu)
+	-- flex menu style (see theme.menu)
 	self.widget.layoutbox.menu = {
 		icon_margin = { 8, 12, 8, 8 },
 		width       = 260,
@@ -547,7 +547,7 @@ function theme:init()
 		stateline            = { height = 30 },        -- height of menu item with state icons
 		state_iconsize       = { width = 18, height = 18 }, -- size for state icons
 		layout_icon          = self.widget.layoutbox.icon, -- list of layout icons
-		separator            = { marginh = { 3, 3, 5, 5 } }, -- awsmx separator style (see theme.gauge.separator)
+		separator            = { marginh = { 3, 3, 5, 5 } }, -- flex separator style (see theme.gauge.separator)
 		color                = self.color,             -- colors (main used)
 
 		-- main menu style (see theme.menu)
@@ -615,7 +615,7 @@ function theme:init()
 		tagline              = { height = 30 },  -- tag line height
 		tag_iconsize         = { width = 16, height = 16 }, -- tag line marks size
 
-		-- awsmx separator style(see theme.gauge.separator)
+		-- flex separator style(see theme.gauge.separator)
 		separator            = { marginh = { 3, 3, 5, 5 }, marginv = { 3, 3, 3, 3 } },
 
 		-- same elements as for task list menu
@@ -650,7 +650,7 @@ function theme:init()
 		-- list columns width
 		labels_width  = { num = 30, cpu = 70, mem = 120 },
 
-		-- awsmx key tip settings
+		-- flex key tip settings
 		keytip        = { geometry = { width = 400 } },
 
 		-- placement function
@@ -669,7 +669,7 @@ function theme:init()
 		title_icon       = self.icon.system,      -- widget icon
 		border_width     = 0,                     -- widget border width
 		parser           = {},                    -- desktop file parser settings (see theme.service.dfparser)
-		field            = nil,                   -- awsmx text field style(see theme.float.decoration.field)
+		field            = nil,                   -- flex text field style(see theme.float.decoration.field)
 		shape            = nil,                   -- wibox shape
 		color            = self.color,            -- colors (main used)
 
@@ -679,7 +679,7 @@ function theme:init()
 		list_icon_margin = { 6, 12, 6, 6 },       -- margins around applications icons
 		dimage           = self.icon.unknown,     -- fallback icon for applications
 
-		keytip           = { geometry = { width = 400 } }, -- awsmx key tip settings
+		keytip           = { geometry = { width = 400 } }, -- flex key tip settings
 	}
 
 	-- Application switcher
@@ -711,7 +711,7 @@ function theme:init()
 		color           = self.color,             -- colors (main used)
 		font            = self.cairo_fonts.appswitcher, -- font of application mark(key)
 
-		-- awsmx key tip settings
+		-- flex key tip settings
 		keytip          = { geometry = { width = 400 }, exit = true },
 	}
 
@@ -729,9 +729,9 @@ function theme:init()
 
 		border_width  = 0,                        -- widget border width
 		border_margin = { 5, 5, 12, 15 },         -- margins around widget content
-		notify        = {},                       -- awsmx notify style (see theme.float.notify)
+		notify        = {},                       -- flex notify style (see theme.float.notify)
 		shape         = nil,                      -- wibox shape
-		recoloring    = false,                    -- apply awsmx recoloring feature on application icons
+		recoloring    = false,                    -- apply flex recoloring feature on application icons
 		label_font    = self.fonts.qlaunch,       -- font of application mark(key)
 		color         = self.color,               -- colors (main used)
 		df_icon       = self.icon.system,         -- fallback application icon
@@ -758,7 +758,7 @@ function theme:init()
 			height = 14 -- height of application state marks area
 		},
 
-		-- awsmx key tip settings
+		-- flex key tip settings
 		keytip        = { geometry = { width = 600 } },
 
 		-- file to store widget data
@@ -775,7 +775,7 @@ function theme:init()
 		delim         = "   ",                  -- text separator between key and description
 		tspace        = 5,                      -- space between lines in widget title
 		is_align      = true,                   -- align keys description (monospace font required)
-		separator     = { marginh = { 0, 0, 3, 6 } }, -- awsmx separator style (see theme.gauge.separator)
+		separator     = { marginh = { 0, 0, 3, 6 } }, -- flex separator style (see theme.gauge.separator)
 		font          = self.fonts.hotkeys.main, -- keys description font
 		keyfont       = self.fonts.hotkeys.key, -- keys font
 		titlefont     = self.fonts.hotkeys.title, -- widget title font
@@ -815,7 +815,7 @@ function theme:init()
 			unknown  = self.icon.unknown,
 		},
 
-		-- awsmx key tip settings
+		-- flex key tip settings
 		keytip        = { geometry = { width = 540 } },
 	}
 
@@ -842,7 +842,7 @@ function theme:init()
 			resize   = {},
 		},
 
-		-- awsmx key tip settings
+		-- flex key tip settings
 		keytip        = { geometry = { width = 540 } },
 	}
 
@@ -855,7 +855,7 @@ function theme:init()
 		shape        = nil,                       -- wibox shape
 		color        = self.color,                -- colors (main used)
 
-		-- awsmx key tip settings
+		-- flex key tip settings
 		keytip       = { geometry = { width = 600 }, column = 1 },
 	}
 
@@ -879,7 +879,7 @@ function theme:init()
 		geometry     = { width = 620, height = 120 }, -- widget size
 		border_width = 0,                       -- widget border width
 		margin       = { 20, 20, 40, 40 },      -- margins around widget content
-		field        = nil,                     -- awsmx text field style (see theme.float.decoration.field)
+		field        = nil,                     -- flex text field style (see theme.float.decoration.field)
 		shape        = nil,                     -- wibox shape
 		naughty      = {},                      -- awesome notification style
 		color        = self.color,              -- colors (main used)
@@ -921,7 +921,7 @@ function theme:init()
 		color                     = self.color,     -- colors (main used)
 	}
 
-	-- Notify (awsmx notification widget)
+	-- Notify (flex notification widget)
 	------------------------------------------------------------
 	self.float.notify = {
 		geometry        = { width = 484, height = 106 }, -- widget size
@@ -937,7 +937,7 @@ function theme:init()
 
 		-- progressbar is optional element used for some notifications
 		bar_width       = 8, -- progressbar width
-		progressbar     = {}, -- awsmx progressbar style (see theme.gauge.graph.bar)
+		progressbar     = {}, -- flex progressbar style (see theme.gauge.graph.bar)
 
 		-- placement function
 		set_position    = function(wibox)
@@ -1087,7 +1087,7 @@ function theme:init()
 		text        = { width = 92, draw = "by_edges" }, -- value style (see theme.desktop.common.textbox)
 		progressbar = {},                               -- progressbar style (see theme.desktop.common.bar.plain)
 		line        = { height = self.desktop.line_height }, -- text/progressbar height
-		tooltip     = {},                               -- awsmx tooltip style (see theme.float.tooltip)
+		tooltip     = {},                               -- flex tooltip style (see theme.float.tooltip)
 		color       = self.desktop.color,               -- color (desktop used)
 
 		-- show/hide line elements

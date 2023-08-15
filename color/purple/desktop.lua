@@ -5,16 +5,16 @@
 -- Grab environment
 local beautiful = require("beautiful")
 --local awful = require("awful")
-local awsmx = require("awsmx")
+local flex = require("flex")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local desktop = {}
 
 -- desktop aliases
-local wgeometry = awsmx.util.desktop.wgeometry
+local wgeometry = flex.util.desktop.wgeometry
 local workarea = screen[mouse.screen].workarea
-local system = awsmx.system
+local system = flex.system
 
 local wa = mouse.screen.workarea
 
@@ -146,13 +146,13 @@ function desktop:init(args)
 
 	-- Initialize all desktop widgets
 	--------------------------------------------------------------------------------
-	cpumem.body           = awsmx.desktop.multimeter(cpumem.args, cpumem.style)
-	netspeed.body         = awsmx.desktop.speedmeter.compact(netspeed.args, netspeed.style)
-	ssdspeed.body         = awsmx.desktop.speedmeter.compact(ssdspeed.args, ssdspeed.style)
-	disks.body            = awsmx.desktop.multiline(disks.args, disks.style)
-	qemu.body             = awsmx.desktop.multiline(qemu.args, qemu.style)
+	cpumem.body           = flex.desktop.multimeter(cpumem.args, cpumem.style)
+	netspeed.body         = flex.desktop.speedmeter.compact(netspeed.args, netspeed.style)
+	ssdspeed.body         = flex.desktop.speedmeter.compact(ssdspeed.args, ssdspeed.style)
+	disks.body            = flex.desktop.multiline(disks.args, disks.style)
+	qemu.body             = flex.desktop.multiline(qemu.args, qemu.style)
 
-	calendar.body         = awsmx.desktop.calendar(calendar.args, calendar.style)
+	calendar.body         = flex.desktop.calendar(calendar.args, calendar.style)
 
 	-- Desktop setup
 	--------------------------------------------------------------------------------
@@ -162,9 +162,9 @@ function desktop:init(args)
 	}
 
 	if not autohide then
-		awsmx.util.desktop.build.static(desktop_objects)
+		flex.util.desktop.build.static(desktop_objects)
 	else
-		awsmx.util.desktop.build.dynamic(desktop_objects, nil, beautiful.desktopbg, args.buttons)
+		flex.util.desktop.build.dynamic(desktop_objects, nil, beautiful.desktopbg, args.buttons)
 	end
 
 	calendar.body:activate_wibox(calendar.wibox)

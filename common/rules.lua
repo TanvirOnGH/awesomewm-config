@@ -5,7 +5,7 @@
 -- Grab environment
 local awful = require("awful")
 local beautiful = require("beautiful")
-local modtitle = require("awsmx.titlebar")
+local modtitle = require("flex.titlebar")
 
 -- Initialize tables and vars for the module
 -----------------------------------------------------------------------------------------------------------------------
