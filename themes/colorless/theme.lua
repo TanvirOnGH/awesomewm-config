@@ -265,7 +265,7 @@ function theme:init()
 
 	-- Gauge (various elements that used as component for other widgets) style
 	--------------------------------------------------------------------------------
-	self.gauge = { tag = {}, task = {}, icon = {}, audio = {}, monitor = {}, graph = {} }
+	self.gauge = { tag = {}, task = {}, icon = {}, monitor = {}, graph = {} }
 
 
 	-- Plain progressbar element
@@ -629,45 +629,6 @@ function theme:init()
 		enable_screen_switch = false,
 		enable_tagline       = false,
 		color                = self.color,
-	}
-
-	-- Audio player
-	------------------------------------------------------------
-	self.float.player = {
-		geometry        = { width = 490, height = 130 }, -- widget size
-		screen_gap      = 2 * self.useless_gap,    -- minimal space from screen edge on floating widget placement
-		border_margin   = { 15, 15, 15, 15 },      -- margins around widget content
-		elements_margin = { 15, 0, 0, 0 },         -- margins around main player elements (exclude cover art)
-		controls_margin = { 0, 0, 14, 6 },         -- margins around control player elements
-		volume_margin   = { 0, 0, 0, 3 },          -- margins around volume element
-		buttons_margin  = { 0, 0, 3, 3 },          -- margins around buttons area
-		pause_margin    = { 12, 12, 0, 0 },        -- margins around pause button
-		line_height     = 26,                      -- text lines height
-		bar_width       = 6,                       -- progressbar width
-		volume_width    = 50,                      -- volume element width
-		titlefont       = self.fonts.player.main,  -- track font
-		artistfont      = self.fonts.player.main,  -- artist/album font
-		timefont        = self.fonts.player.time,  -- track progress time font
-		border_width    = 0,                       -- widget border width
-		timeout         = 1,                       -- widget update timeout
-		set_position    = nil,                     -- set_position
-		shape           = nil,                     -- wibox shape
-		color           = self.color,              -- color (main used)
-
-		-- volume dash style (see theme.gauge.graph.dash)
-		dashcontrol     = { color = self.color, bar = { num = 7 } },
-
-		-- progressbar style (see theme.gauge.graph.bar)
-		progressbar     = { color = self.color },
-	}
-
-	-- widget icons
-	self.float.player.icon = {
-		cover   = self.base .. "/player/cover.svg",
-		next_tr = self.base .. "/player/next.svg",
-		prev_tr = self.base .. "/player/previous.svg",
-		play    = self.base .. "/player/play.svg",
-		pause   = self.base .. "/player/pause.svg"
 	}
 
 	-- Top processes
