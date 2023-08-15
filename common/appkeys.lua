@@ -197,7 +197,7 @@ appkeys["mpv"] = {
 			{ description = "Show the list of audio and subtitle", group = "General" }
 		},
 		{
-			{"Shift"}, "a", nil,
+			{ "Shift" }, "a", nil,
 			{ description = "Cycle aspect ratio", group = "General" }
 		},
 
@@ -317,7 +317,7 @@ appkeys["mpv"] = {
 			{ description = "Undo  the  last  seek", group = "Navigation" }
 		},
 		{
-			{ "Control", "Shift" }, "Backspace", nil,
+			{ "Control",                                 "Shift" }, "Backspace", nil,
 			{ description = "Mark the current position", group = "Navigation" }
 		},
 

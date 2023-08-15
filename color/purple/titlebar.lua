@@ -15,15 +15,21 @@ local clientmenu = require("awsmx.float.clientmenu")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
-local titlebar = {}
+local titlebar   = {}
 
 -- Support functions
 -----------------------------------------------------------------------------------------------------------------------
 local function construct_move_buttons(c, btn)
-	return awful.button({ }, btn or 1, function() client.focus = c; c:raise() awful.mouse.client.move(c) end)
+	return awful.button({}, btn or 1, function()
+		client.focus = c; c:raise()
+		awful.mouse.client.move(c)
+	end)
 end
 local function construct_menu_buttons(c, btn)
-	return awful.button({ }, btn or 1, function() client.focus = c; c:raise() clientmenu:show(c) end)
+	return awful.button({}, btn or 1, function()
+		client.focus = c; c:raise()
+		clientmenu:show(c)
+	end)
 end
 local function construct_all_buttons(c, move_btn, menu_btn)
 	return awful.util.table.join(construct_move_buttons(c, move_btn), construct_menu_buttons(c, menu_btn))
@@ -68,16 +74,15 @@ end
 -- Connect titlebar building signal
 -----------------------------------------------------------------------------------------------------------------------
 function titlebar:init()
-
-	local style = {}
+	local style        = {}
 
 	-- titlebar schemes
-	style.base    = redutil.table.merge(redutil.table.check(beautiful, "titlebar.base") or {}, { size = 8 })
-	style.compact = redutil.table.merge(style.base, { size = 16 })
-	style.iconic  = redutil.table.merge(style.base, { size = 24 })
+	style.base         = redutil.table.merge(redutil.table.check(beautiful, "titlebar.base") or {}, { size = 8 })
+	style.compact      = redutil.table.merge(style.base, { size = 16 })
+	style.iconic       = redutil.table.merge(style.base, { size = 24 })
 
 	-- titlebar elements styles
-	style.mark_mini = redutil.table.merge(
+	style.mark_mini    = redutil.table.merge(
 		redutil.table.check(beautiful, "titlebar.mark") or {},
 		{ size = 30, gap = 10, angle = 0 }
 	)
@@ -85,7 +90,7 @@ function titlebar:init()
 		style.mark_mini,
 		{ size = 20, gap = 6, angle = 0.707 }
 	)
-	style.icon_full = redutil.table.merge(
+	style.icon_full    = redutil.table.merge(
 		redutil.table.check(beautiful, "titlebar.icon") or {},
 		{ gap = 10 }
 	)
@@ -111,7 +116,7 @@ function titlebar:init()
 			local base  = wibox.widget({
 				nil,
 				{
-					right  = style.mark_mini.gap,
+					right = style.mark_mini.gap,
 					redtitle.mark.focus(c, style.mark_mini),
 					layout = wibox.container.margin,
 				},
@@ -149,9 +154,12 @@ function titlebar:init()
 								layout = wibox.container.margin,
 							},
 
-							layout  = wibox.layout.align.horizontal
+							layout = wibox.layout.align.horizontal
 						},
-						top = 3, bottom = 3, right = style.icon_compact.gap + 2, left = style.icon_compact.gap + 2,
+						top = 3,
+						bottom = 3,
+						right = style.icon_compact.gap + 2,
+						left = style.icon_compact.gap + 2,
 						layout = wibox.container.margin,
 					},
 					{
@@ -165,7 +173,8 @@ function titlebar:init()
 					layout  = wibox.layout.align.horizontal,
 
 				},
-				left = 4, right = 4,
+				left = 4,
+				right = 4,
 				widget = wibox.container.margin
 			})
 
@@ -185,7 +194,9 @@ function titlebar:init()
 						spacing = style.icon_full.gap,
 						layout  = wibox.layout.fixed.horizontal()
 					},
-					top = 2, bottom = 2, left = 4,
+					top = 2,
+					bottom = 2,
+					left = 4,
 					widget = wibox.container.margin
 				},
 				title,
@@ -197,7 +208,9 @@ function titlebar:init()
 						spacing = style.icon_full.gap,
 						layout  = wibox.layout.fixed.horizontal()
 					},
-					top = 2, bottom = 2, right = 4,
+					top = 2,
+					bottom = 2,
+					right = 4,
 					widget = wibox.container.margin
 				},
 

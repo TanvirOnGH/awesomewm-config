@@ -19,15 +19,14 @@ local env = {}
 -- Build hotkeys depended on config parameters
 -----------------------------------------------------------------------------------------------------------------------
 function env:init(args)
-
 	-- init vars
 	args = args or {}
 
 	-- environment vars
-    self.theme = args.theme or "red"
-    self.mod = args.mod or "Mod4"
+	self.theme = args.theme or "red"
+	self.mod = args.mod or "Mod4"
 	self.terminal = args.terminal or "kitty"
-    self.fm = args.fm or "thunar"
+	self.fm = args.fm or "thunar"
 
 	self.home = os.getenv("HOME")
 	self.themedir = awful.util.get_configuration_dir() .. "themes/" .. self.theme
@@ -80,7 +79,8 @@ end
 -- Panel widgets wrapper
 --------------------------------------------------------------------------------
 env.wrapper = function(widget, name, buttons)
-	local margin = awsmx.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name] or { 0, 0, 0, 0 }
+	local margin = awsmx.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name] or
+	{ 0, 0, 0, 0 }
 	if buttons then
 		widget:buttons(buttons)
 	end

@@ -3,21 +3,20 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Grab environment
-local awful = require("awful")
-local awsmx = require("awsmx")
+local awful       = require("awful")
+local awsmx       = require("awsmx")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
-local edges = {}
+local edges       = {}
 
-local switcher = awsmx.float.appswitcher
+local switcher    = awsmx.float.appswitcher
 local currenttags = awsmx.widget.tasklist.filter.currenttags
 local allscreen   = awsmx.widget.tasklist.filter.allscreen
 
 -- Active screen edges
 -----------------------------------------------------------------------------------------------------------------------
 function edges:init(args)
-
 	args = args or {}
 	local ew = args.width or 1 -- edge width
 	local workarea = args.workarea or screen[mouse.screen].workarea
@@ -25,7 +24,7 @@ function edges:init(args)
 
 	-- edge geometry
 	local egeometry = {
-		top   = { width = workarea.width - 2 * ew, height = ew , x = ew, y = 0 },
+		top   = { width = workarea.width - 2 * ew, height = ew, x = ew, y = 0 },
 		right = { width = ew, height = workarea.height, x = workarea.width - ew, y = 0 },
 		left  = { width = ew, height = workarea.height, x = 0, y = 0 }
 	}
@@ -71,13 +70,13 @@ function edges:init(args)
 	left.wibox:geometry(egeometry["left"])
 
 	left.area[1]:buttons(awful.util.table.join(
-		awful.button({}, 4, function() switcher:show({ filter = allscreen })                 end),
+		awful.button({}, 4, function() switcher:show({ filter = allscreen }) end),
 		awful.button({}, 5, function() switcher:show({ filter = allscreen, reverse = true }) end)
 	))
 
 	left.area[2]:buttons(awful.util.table.join(
-		awful.button({}, 9, function() if client.focus then client.focus.minimized = true end  end),
-		awful.button({}, 4, function() switcher:show({ filter = currenttags })                 end),
+		awful.button({}, 9, function() if client.focus then client.focus.minimized = true end end),
+		awful.button({}, 4, function() switcher:show({ filter = currenttags }) end),
 		awful.button({}, 5, function() switcher:show({ filter = currenttags, reverse = true }) end)
 	))
 

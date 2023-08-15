@@ -15,10 +15,9 @@ local layouts = {}
 -- Build  table
 -----------------------------------------------------------------------------------------------------------------------
 function layouts:init()
-
 	-- layouts list
 	local layset = {
-        awful.layout.suit.floating,
+		awful.layout.suit.floating,
 		awsmx.layout.map,
 		awful.layout.suit.tile,
 		awful.layout.suit.tile.left,
@@ -32,7 +31,7 @@ function layouts:init()
 		awful.layout.suit.spiral,
 		awful.layout.suit.magnifier,
 		awsmx.layout.grid,
-        awful.layout.suit.max.fullscreen,
+		awful.layout.suit.max.fullscreen,
 		awful.layout.suit.max,
 	}
 

@@ -7,8 +7,8 @@ self = false
 -- Do not check files outside of config
 exclude_files = {
     ".luacheckrc", -- this file itself
-    "rc-back.lua", -- orinal config
-    "awsmx",     -- submodule
+    "rc-back.lua", -- original config
+    "awsmx",       -- submodule
 }
 
 -- Global objects defined by the C code

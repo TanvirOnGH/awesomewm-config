@@ -8,4 +8,3 @@ appnames["firefox"] = "FF"
 appnames["Code"] = "VSCode"
 
 return appnames
-

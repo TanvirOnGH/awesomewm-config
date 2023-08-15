@@ -3,14 +3,14 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Grab environment
-local awful = require("awful")
+local awful     = require("awful")
 local beautiful = require("beautiful")
 
-local redutil  = require("awsmx.util")
+local redutil   = require("awsmx.util")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
-local signals = {}
+local signals   = {}
 
 -- Support functions
 -----------------------------------------------------------------------------------------------------------------------
@@ -34,7 +34,6 @@ end
 -- Build  table
 -----------------------------------------------------------------------------------------------------------------------
 function signals:init(args)
-
 	args = args or {}
 	local env = args.env
 
@@ -47,8 +46,8 @@ function signals:init(args)
 
 			-- startup placement
 			if awesome.startup
-			   and not c.size_hints.user_position
-			   and not c.size_hints.program_position
+				and not c.size_hints.user_position
+				and not c.size_hints.program_position
 			then
 				awful.placement.no_offscreen(c)
 			end
@@ -83,7 +82,7 @@ function signals:init(args)
 	-- hilight border of focused window
 	-- can be disabled since focus indicated by titlebars in current config
 	if env.color_border_focus then
-		client.connect_signal("focus",   function(c) c.border_color = beautiful.border_focus end)
+		client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 		client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 	end
 

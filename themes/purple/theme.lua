@@ -16,7 +16,7 @@ theme.color.urgent = "#864DDC"
 
 -- Common
 -----------------------------------------------------------------------------------------------------------------------
-theme.path = awful.util.get_configuration_dir() .. "themes/purple"
+theme.path         = awful.util.get_configuration_dir() .. "themes/purple"
 
 -- Main config
 --------------------------------------------------------------------------------
@@ -33,20 +33,20 @@ theme:update()
 
 -- Desktop widgets placement
 --------------------------------------------------------------------------------
-theme.desktop.grid = {
+theme.desktop.grid                                   = {
 	width  = { 450, 450 },
 	height = { 100, 100, 100, 60, 60 },
 	edge   = { width = { 100, 850 }, height = { 100, 100 } }
 }
 
-theme.desktop.places = {
+theme.desktop.places                                 = {
 	cpumem   = { 1, 1 },
 	netspeed = { 1, 2 },
-    transm   = { 1, 3 },
+	transm   = { 1, 3 },
 	thermal1 = { 1, 4 },
 	vnstat   = { 1, 5 },
 
-    disks    = { 2, 1 },
+	disks    = { 2, 1 },
 	ssdspeed = { 2, 2 },
 	hddspeed = { 2, 3 },
 	thermal2 = { 2, 4 },
@@ -57,86 +57,86 @@ theme.desktop.places = {
 --------------------------------------------------------------------------------
 -- individual widget settings doesn't used by awsmx module
 -- but grab directly from rc-files to rewrite base style
-theme.individual.desktop = { speedmeter = {}, multimeter = {}, multiline = {} }
+theme.individual.desktop                             = { speedmeter = {}, multimeter = {}, multiline = {} }
 
 -- Lines (common part)
-theme.desktop.common.pack.lines.line.height = 5
-theme.desktop.common.pack.lines.progressbar.chunk = { gap = 6, width = 16 }
+theme.desktop.common.pack.lines.line.height          = 5
+theme.desktop.common.pack.lines.progressbar.chunk    = { gap = 6, width = 16 }
 theme.desktop.common.pack.lines.tooltip.set_position = function(wibox)
 	awful.placement.under_mouse(wibox)
 	wibox.y = wibox.y - 30
 end
 
 -- Upright bar (common part)
-theme.desktop.common.bar.shaped.show.tooltip = true
+theme.desktop.common.bar.shaped.show.tooltip         = true
 theme.desktop.common.bar.shaped.tooltip.set_position = theme.desktop.common.pack.lines.tooltip.set_position
 
 -- Speedmeter (base widget)
-theme.desktop.speedmeter.compact.icon = {
+theme.desktop.speedmeter.compact.icon                = {
 	up = theme.path .. "/desktop/up.svg",
 	down = theme.path .. "/desktop/down.svg",
-	margin = { 0, 4, 0, 0}
+	margin = { 0, 4, 0, 0 }
 }
-theme.desktop.speedmeter.compact.height.chart = 46
-theme.desktop.speedmeter.compact.label.width = 76
-theme.desktop.speedmeter.compact.label.height = 15 -- manually set after font size
-theme.desktop.speedmeter.compact.label.font = { font = "Fira Code", size = 22, face = 1, slant = 0 }
-theme.desktop.speedmeter.compact.margins.label = { 10, 10, 0, 0 }
-theme.desktop.speedmeter.compact.margins.chart = { 0, 0, 3, 3 }
-theme.desktop.speedmeter.compact.chart = { bar = { width = 6, gap = 3 }, height = nil, zero_height = 0 }
-theme.desktop.speedmeter.compact.progressbar = { chunk = { width = 6, gap = 3 }, height = 3 }
+theme.desktop.speedmeter.compact.height.chart        = 46
+theme.desktop.speedmeter.compact.label.width         = 76
+theme.desktop.speedmeter.compact.label.height        = 15 -- manually set after font size
+theme.desktop.speedmeter.compact.label.font          = { font = "Fira Code", size = 22, face = 1, slant = 0 }
+theme.desktop.speedmeter.compact.margins.label       = { 10, 10, 0, 0 }
+theme.desktop.speedmeter.compact.margins.chart       = { 0, 0, 3, 3 }
+theme.desktop.speedmeter.compact.chart               = { bar = { width = 6, gap = 3 }, height = nil, zero_height = 0 }
+theme.desktop.speedmeter.compact.progressbar         = { chunk = { width = 6, gap = 3 }, height = 3 }
 
 -- Speedmeter drive (individual widget)
-theme.individual.desktop.speedmeter.drive = {
-	unit   = { { "B", -1 }, { "KB", 2 }, { "MB", 2048 } },
+theme.individual.desktop.speedmeter.drive            = {
+	unit = { { "B", -1 }, { "KB", 2 }, { "MB", 2048 } },
 }
 
 -- Multimeter (base widget)
-theme.desktop.multimeter.upbar          = { width = 32, chunk = { num = 8, line = 4 }, shape = "plain" }
-theme.desktop.multimeter.lines.show     = { label = false, tooltip = true, text = false }
-theme.desktop.multimeter.icon.full      = false
-theme.desktop.multimeter.icon.margin    = { 0, 8, 0, 0 }
-theme.desktop.multimeter.height.upright = 66
-theme.desktop.multimeter.height.lines   = 20
+theme.desktop.multimeter.upbar                       = { width = 32, chunk = { num = 8, line = 4 }, shape = "plain" }
+theme.desktop.multimeter.lines.show                  = { label = false, tooltip = true, text = false }
+theme.desktop.multimeter.icon.full                   = false
+theme.desktop.multimeter.icon.margin                 = { 0, 8, 0, 0 }
+theme.desktop.multimeter.height.upright              = 66
+theme.desktop.multimeter.height.lines                = 20
 
 -- Multimeter cpu and ram (individual widget)
-theme.individual.desktop.multimeter.cpumem = {
+theme.individual.desktop.multimeter.cpumem           = {
 	labels = { "RAM", "SWAP" },
-	icon  = { image = theme.path .. "/desktop/cpu.svg" }
+	icon   = { image = theme.path .. "/desktop/cpu.svg" }
 }
 
 -- Multimeter transmission info (individual widget)
-theme.individual.desktop.multimeter.transmission = {
+theme.individual.desktop.multimeter.transmission     = {
 	labels = { "SEED", "DNLD" },
-	unit   = { { "KB", -1 }, { "MB", 1024^1 } },
+	unit   = { { "KB", -1 }, { "MB", 1024 ^ 1 } },
 	upbar  = { width = 20, chunk = { num = 8, line = 4 }, shape = "plain" },
 	icon   = { image = theme.path .. "/desktop/transmission.svg" }
 }
 
 -- Multilines (base widget)
-theme.desktop.multiline.lines.show     = { label = false, tooltip = true, text = false }
-theme.desktop.multiline.icon.margin    = theme.desktop.multimeter.icon.margin
+theme.desktop.multiline.lines.show                   = { label = false, tooltip = true, text = false }
+theme.desktop.multiline.icon.margin                  = theme.desktop.multimeter.icon.margin
 
 -- Multilines storage (individual widget)
-theme.individual.desktop.multiline.storage = {
-	unit      = { { "KB", 1 }, { "MB", 1024^1 }, { "GB", 1024^2 } },
-	icon      = { image = theme.path .. "/desktop/storage.svg" },
-	lines     = {
+theme.individual.desktop.multiline.storage           = {
+	unit  = { { "KB", 1 }, { "MB", 1024 ^ 1 }, { "GB", 1024 ^ 2 } },
+	icon  = { image = theme.path .. "/desktop/storage.svg" },
+	lines = {
 		line        = { height = 10 },
 		progressbar = { chunk = { gap = 6, width = 4 } },
 	},
 }
 
 -- Multilines qemu drive images (individual widget)
-theme.individual.desktop.multiline.images = {
-	unit = { { "KB", 1 }, { "MB", 1024^1 }, { "GB", 1024^2 } },
+theme.individual.desktop.multiline.images            = {
+	unit = { { "KB", 1 }, { "MB", 1024 ^ 1 }, { "GB", 1024 ^ 2 } },
 }
 
 -- Multilines temperature (individual widget)
-theme.individual.desktop.multiline.thermal = {
-	digits    = 1,
-	icon      = { image = theme.path .. "/desktop/thermometer.svg", margin = { 0, 8, 0, 0 } },
-	lines     = {
+theme.individual.desktop.multiline.thermal           = {
+	digits = 1,
+	icon   = { image = theme.path .. "/desktop/thermometer.svg", margin = { 0, 8, 0, 0 } },
+	lines  = {
 		line        = { height = 13 },
 		text        = { font = { font = "Fira Code", size = 18, face = 1, slant = 0 }, width = 44 },
 		label       = { font = { font = "Fira Code", size = 18, face = 1, slant = 0 } },
@@ -144,33 +144,33 @@ theme.individual.desktop.multiline.thermal = {
 		progressbar = { chunk = { gap = 6, width = 4 } },
 		show        = { text = true, label = false, tooltip = true },
 	},
-	unit      = { { "°C", -1 } },
+	unit   = { { "°C", -1 } },
 }
 
 -- Multilines fan (individual widget)
-theme.individual.desktop.multiline.fan = {
-		digits    = 1,
-		margin    = { 0, 0, 5, 5 },
-		icon      = { image = theme.path .. "/desktop/fan.svg", margin = { 8, 16, 0, 0 } },
-		lines     = {
-			line        = { height = 13 },
-			progressbar = { chunk = { gap = 6, width = 4 } },
-			show        = { text = false, label = false, tooltip = true },
-		},
-		unit      = { { "RPM", -1 }, { "R", 1 } },
+theme.individual.desktop.multiline.fan               = {
+	digits = 1,
+	margin = { 0, 0, 5, 5 },
+	icon   = { image = theme.path .. "/desktop/fan.svg", margin = { 8, 16, 0, 0 } },
+	lines  = {
+		line        = { height = 13 },
+		progressbar = { chunk = { gap = 6, width = 4 } },
+		show        = { text = false, label = false, tooltip = true },
+	},
+	unit   = { { "RPM", -1 }, { "R", 1 } },
 }
 
 -- Multilines traffic (individual widget)
-theme.individual.desktop.multiline.vnstat = {
-		digits    = 3,
-		margin    = { 0, 0, 5, 5 },
-		icon      = { image = theme.path .. "/desktop/traffic.svg", margin = { 8, 16, 0, 0 } },
-		lines     = {
-			line        = { height = 13 },
-			progressbar = { chunk = { gap = 6, width = 4 } },
-			show        = { text = false, label = false, tooltip = true },
-		},
-		unit = { { "B", 1 }, { "KiB", 1024 }, { "MiB", 1024^2 }, { "GiB", 1024^3 } },
+theme.individual.desktop.multiline.vnstat            = {
+	digits = 3,
+	margin = { 0, 0, 5, 5 },
+	icon   = { image = theme.path .. "/desktop/traffic.svg", margin = { 8, 16, 0, 0 } },
+	lines  = {
+		line        = { height = 13 },
+		progressbar = { chunk = { gap = 6, width = 4 } },
+		show        = { text = false, label = false, tooltip = true },
+	},
+	unit   = { { "B", 1 }, { "KiB", 1024 }, { "MiB", 1024 ^ 2 }, { "GiB", 1024 ^ 3 } },
 }
 
 -- Panel widgets
@@ -178,54 +178,54 @@ theme.individual.desktop.multiline.vnstat = {
 
 -- individual margins for panel widgets
 ------------------------------------------------------------
-theme.widget.wrapper = {
-	layoutbox   = { 12, 9, 6, 6 },
-	textclock   = { 10, 10, 0, 0 },
-	volume      = { 4, 9, 3, 3 },
-	tray        = { 8, 8, 7, 7 },
-	cpu         = { 3, 3, 7, 7 },
-	ram         = { 3, 3, 7, 7 },
-	network     = { 3, 3, 7, 7 },
-	taglist     = { 4, 4, 5, 4 },
-	tasklist    = { 0, 30, 0, 0 }, -- centering tasklist widget
+theme.widget.wrapper                                 = {
+	layoutbox = { 12, 9, 6, 6 },
+	textclock = { 10, 10, 0, 0 },
+	volume    = { 4, 9, 3, 3 },
+	tray      = { 8, 8, 7, 7 },
+	cpu       = { 3, 3, 7, 7 },
+	ram       = { 3, 3, 7, 7 },
+	network   = { 3, 3, 7, 7 },
+	taglist   = { 4, 4, 5, 4 },
+	tasklist  = { 0, 30, 0, 0 }, -- centering tasklist widget
 }
 
 -- Various widgets style tuning
 ------------------------------------------------------------
 
 -- Dotcount
-theme.gauge.graph.dots.dot_gap_h = 5
+theme.gauge.graph.dots.dot_gap_h                     = 5
 
 -- Audio
-theme.gauge.audio.blue.dash.plain = true
-theme.gauge.audio.blue.dash.bar.num = 8
-theme.gauge.audio.blue.dash.bar.width = 3
-theme.gauge.audio.blue.dmargin = { 5, 0, 9, 9 }
-theme.gauge.audio.blue.width = 86
-theme.gauge.audio.blue.icon = theme.path .. "/widget/audio.svg"
+theme.gauge.audio.blue.dash.plain                    = true
+theme.gauge.audio.blue.dash.bar.num                  = 8
+theme.gauge.audio.blue.dash.bar.width                = 3
+theme.gauge.audio.blue.dmargin                       = { 5, 0, 9, 9 }
+theme.gauge.audio.blue.width                         = 86
+theme.gauge.audio.blue.icon                          = theme.path .. "/widget/audio.svg"
 
 -- Dash
-theme.gauge.monitor.dash.width = 11
+theme.gauge.monitor.dash.width                       = 11
 
 -- Tasklist
-theme.widget.tasklist.char_digit = 8
-theme.widget.tasklist.task = theme.gauge.task.purple
-theme.widget.tasklist.tasktip.max_width = 1200
-theme.gauge.task.purple.width = 100
-theme.gauge.task.purple.underline  = { height = 0, thickness = 3, gap = 35, dh = 0 }
+theme.widget.tasklist.char_digit                     = 8
+theme.widget.tasklist.task                           = theme.gauge.task.purple
+theme.widget.tasklist.tasktip.max_width              = 1200
+theme.gauge.task.purple.width                        = 100
+theme.gauge.task.purple.underline                    = { height = 0, thickness = 3, gap = 35, dh = 0 }
 
 -- Floating widgets
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Titlebar helper
-theme.float.bartip.names = { "Mini", "Compact", "Full" }
+theme.float.bartip.names                             = { "Mini", "Compact", "Full" }
 
 -- client menu tag line
-theme.widget.tasklist.winmenu.enable_tagline = false
-theme.widget.tasklist.winmenu.icon.tag = theme.path .. "/widget/mark.svg"
+theme.widget.tasklist.winmenu.enable_tagline         = false
+theme.widget.tasklist.winmenu.icon.tag               = theme.path .. "/widget/mark.svg"
 
-theme.float.clientmenu.enable_tagline = false
-theme.float.clientmenu.icon.tag = theme.widget.tasklist.winmenu.icon.tag
+theme.float.clientmenu.enable_tagline                = false
+theme.float.clientmenu.icon.tag                      = theme.widget.tasklist.winmenu.icon.tag
 
 
 -- Set hotkey helper size according current fonts and keys scheme
@@ -239,9 +239,9 @@ theme.menu.keytip              = { geometry = { width = 400 } }
 
 -- Titlebar
 -----------------------------------------------------------------------------------------------------------------------
-theme.titlebar.icon_compact = {
-	color        = { icon = theme.color.gray, main = theme.color.main, urgent = theme.color.main },
-	list         = {
+theme.titlebar.icon_compact    = {
+	color = { icon = theme.color.gray, main = theme.color.main, urgent = theme.color.main },
+	list  = {
 		maximized = theme.path .. "/titlebar/maximized.svg",
 		minimized = theme.path .. "/titlebar/minimize.svg",
 		close     = theme.path .. "/titlebar/close.svg",

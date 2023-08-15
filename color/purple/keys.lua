@@ -65,7 +65,9 @@ end
 
 local function restore_client()
 	local c = awful.client.restore()
-	if c then client.focus = c; c:raise() end
+	if c then
+		client.focus = c; c:raise()
+	end
 end
 
 -- close window
@@ -158,7 +160,7 @@ end
 local function tag_numkey(i, mod, action)
 	return awful.key(
 		mod, "#" .. i + 9,
-		function ()
+		function()
 			local screen = awful.screen.focused()
 			local tag = screen.tags[i]
 			if tag then action(tag) end
@@ -168,30 +170,31 @@ end
 
 -- right bottom corner position
 local rb_corner = function()
-	return { x = screen[mouse.screen].workarea.x + screen[mouse.screen].workarea.width,
-	         y = screen[mouse.screen].workarea.y + screen[mouse.screen].workarea.height }
+	return {
+		x = screen[mouse.screen].workarea.x + screen[mouse.screen].workarea.width,
+		y = screen[mouse.screen].workarea.y + screen[mouse.screen].workarea.height
+	}
 end
 
 -- Build hotkeys depended on config parameters
 -----------------------------------------------------------------------------------------------------------------------
 function hotkeys:init(args)
-
 	-- Init vars
-	args = args or {}
-	local env = args.env
-	local mainmenu = args.menu
-	local volume = args.volume
-	local appkeys = args.appkeys or {}
+	args               = args or {}
+	local env          = args.env
+	local mainmenu     = args.menu
+	local volume       = args.volume
+	local appkeys      = args.appkeys or {}
 
-	local tcn = args.tag_cols_num or 0
+	local tcn          = args.tag_cols_num or 0
 
-	local numkeys = { unpack(numkeys_line, 1, tcn) }
-	local tagkeys = { unpack(tagkeys_line, 1, tcn) }
+	local numkeys      = { unpack(numkeys_line, 1, tcn) }
+	local tagkeys      = { unpack(tagkeys_line, 1, tcn) }
 
-	self.mouse.root = (awful.util.table.join(
-		awful.button({ }, 3, function () mainmenu:toggle() end),
-		awful.button({ }, 4, awful.tag.viewnext),
-		awful.button({ }, 5, awful.tag.viewprev)
+	self.mouse.root    = (awful.util.table.join(
+		awful.button({}, 3, function() mainmenu:toggle() end),
+		awful.button({}, 4, awful.tag.viewnext),
+		awful.button({}, 5, awful.tag.viewprev)
 	))
 
 	-- volume functions
@@ -211,8 +214,8 @@ function hotkeys:init(args)
 		for name, sheet in pairs(keys) do
 			if name == app then
 				redtip:set_pack(
-						client.focus.class, sheet.pack, sheet.style.column, sheet.style.geometry,
-						function() redtip:remove_pack() end
+					client.focus.class, sheet.pack, sheet.style.column, sheet.style.geometry,
+					function() redtip:remove_pack() end
 				)
 				redtip:show()
 				return
@@ -238,7 +241,7 @@ function hotkeys:init(args)
 		},
 	}
 
-	 apprunner:set_keys(awful.util.table.join(apprunner.keys.move, apprunner_keys_move), "move")
+	apprunner:set_keys(awful.util.table.join(apprunner.keys.move, apprunner_keys_move), "move")
 	--apprunner:set_keys(apprunner_keys_move, "move")
 
 	-- Log out screen
@@ -330,7 +333,7 @@ function hotkeys:init(args)
 			{} -- hidden key
 		},
 		{
-			{ env.mod }, "F1", function() redtip:show()  end,
+			{ env.mod }, "F1", function() redtip:show() end,
 			{ description = "Show hotkeys helper", group = "Action" }
 		},
 	}
@@ -345,15 +348,15 @@ function hotkeys:init(args)
 
 	-- group
 	keyseq[3] = {
-		{ {}, "a", {}, {} }, -- wm management
-		{ {}, "k", {}, {} }, -- application kill
-		{ {}, "r", {}, {} }, -- client restore
-		{ {}, "n", {}, {} }, -- client minimization
-		{ {}, "f", {}, {} }, -- client moving
-		{ {}, "s", {}, {} }, -- client switching
-		{ {}, "d", {}, {} }, -- client move and tag switch
-		{ {}, "u", {}, {} }, -- update info
-		{ {}, "p", {}, {} }, -- client properties
+		{ {},          "a", {}, {} }, -- wm management
+		{ {},          "k", {}, {} }, -- application kill
+		{ {},          "r", {}, {} }, -- client restore
+		{ {},          "n", {}, {} }, -- client minimization
+		{ {},          "f", {}, {} }, -- client moving
+		{ {},          "s", {}, {} }, -- client switching
+		{ {},          "d", {}, {} }, -- client move and tag switch
+		{ {},          "u", {}, {} }, -- update info
+		{ {},          "p", {}, {} }, -- client properties
 
 		{ { "Shift" }, "f", {}, {} }, -- clients moving group
 		{ { "Shift" }, "s", {}, {} }, -- clients switching group
@@ -363,11 +366,11 @@ function hotkeys:init(args)
 	-- wm management sequence actions
 	keyseq[3][1][3] = {
 		{
-			{}, "p", function () toggle_placement(env) end,
+			{}, "p", function() toggle_placement(env) end,
 			{ description = "Switch master/slave window placement", group = "Awesome management", keyset = { "p" } }
 		},
 		{
-			{}, "r", function () awesome.restart() end,
+			{}, "r", function() awesome.restart() end,
 			{ description = "Reload awesome", group = "Awesome management", keyset = { "r" } }
 		},
 	}
@@ -415,8 +418,8 @@ function hotkeys:init(args)
 	-- add client tag sequence actions (without description)
 	local kk = awful.util.table.join(numkeys, tagkeys)
 	for i, k in ipairs(kk) do
-		table.insert(keyseq[3][5][3], { {}, k, function() client_move_by_index(i, { client.focus })        end, {} })
-		table.insert(keyseq[3][6][3], { {}, k, function() client_toggle_by_index(i, { client.focus })      end, {} })
+		table.insert(keyseq[3][5][3], { {}, k, function() client_move_by_index(i, { client.focus }) end, {} })
+		table.insert(keyseq[3][6][3], { {}, k, function() client_toggle_by_index(i, { client.focus }) end, {} })
 		table.insert(keyseq[3][7][3], { {}, k, function() client_move_and_go_by_index(i, { client.focus }) end, {} })
 	end
 
@@ -466,8 +469,8 @@ function hotkeys:init(args)
 
 	-- add groups of clients tag sequence actions (hidden keys)
 	for i, k in ipairs(kk) do
-		table.insert(keyseq[3][10][3], { {}, k, function() client_move_by_index(i, current_clients())        end, {} })
-		table.insert(keyseq[3][11][3], { {}, k, function() client_toggle_by_index(i, current_clients())      end, {} })
+		table.insert(keyseq[3][10][3], { {}, k, function() client_move_by_index(i, current_clients()) end, {} })
+		table.insert(keyseq[3][11][3], { {}, k, function() client_toggle_by_index(i, current_clients()) end, {} })
 		table.insert(keyseq[3][12][3], { {}, k, function() client_move_and_go_by_index(i, current_clients()) end, {} })
 	end
 
@@ -477,35 +480,37 @@ function hotkeys:init(args)
 	-- shared layout keys
 	local layout_tile = {
 		{
-			{ env.mod }, "l", function () awful.tag.incmwfact( 0.05) end,
+			{ env.mod }, "l", function() awful.tag.incmwfact(0.05) end,
 			{ description = "Increase master width factor", group = "Layout" }
 		},
 		{
-			{ env.mod }, "j", function () awful.tag.incmwfact(-0.05) end,
+			{ env.mod }, "j", function() awful.tag.incmwfact(-0.05) end,
 			{ description = "Decrease master width factor", group = "Layout" }
 		},
 		{
-			{ env.mod }, "i", function () awful.client.incwfact( 0.05) end,
+			{ env.mod }, "i", function() awful.client.incwfact(0.05) end,
 			{ description = "Increase window factor of a client", group = "Layout" }
 		},
 		{
-			{ env.mod }, "k", function () awful.client.incwfact(-0.05) end,
+			{ env.mod }, "k", function() awful.client.incwfact(-0.05) end,
 			{ description = "Decrease window factor of a client", group = "Layout" }
 		},
 		{
-			{ env.mod, }, "+", function () awful.tag.incnmaster( 1, nil, true) end,
+			{ env.mod, }, "+", function() awful.tag.incnmaster(1, nil, true) end,
 			{ description = "Increase the number of master clients", group = "Layout" }
 		},
 		{
-			{ env.mod }, "-", function () awful.tag.incnmaster(-1, nil, true) end,
+			{ env.mod }, "-", function() awful.tag.incnmaster(-1, nil, true) end,
 			{ description = "Decrease the number of master clients", group = "Layout" }
 		},
 		{
-			{ env.mod, "Control" }, "+", function () awful.tag.incncol( 1, nil, true) end,
+			{ env.mod,                                        "Control" }, "+",
+			function() awful.tag.incncol(1, nil, true) end,
 			{ description = "Increase the number of columns", group = "Layout" }
 		},
 		{
-			{ env.mod, "Control" }, "-", function () awful.tag.incncol(-1, nil, true) end,
+			{ env.mod,                                        "Control" }, "-",
+			function() awful.tag.incncol(-1, nil, true) end,
 			{ description = "Decrease the number of columns", group = "Layout" }
 		},
 	}
@@ -531,19 +536,22 @@ function hotkeys:init(args)
 			{ description = "Move window right", group = "Movement" }
 		},
 		{
-			{ env.mod, "Control" }, "KP_Up", function() grid.move_to("up", true) end,
+			{ env.mod,                                 "Control" }, "KP_Up", function() grid.move_to("up", true) end,
 			{ description = "Move window up by bound", group = "Movement" }
 		},
 		{
-			{ env.mod, "Control" }, "KP_Down", function() grid.move_to("down", true) end,
+			{ env.mod,                                   "Control" }, "KP_Down",
+			function() grid.move_to("down", true) end,
 			{ description = "Move window down by bound", group = "Movement" }
 		},
 		{
-			{ env.mod, "Control" }, "KP_Left", function() grid.move_to("left", true) end,
+			{ env.mod,                                   "Control" }, "KP_Left",
+			function() grid.move_to("left", true) end,
 			{ description = "Move window left by bound", group = "Movement" }
 		},
 		{
-			{ env.mod, "Control" }, "KP_Right", function() grid.move_to("right", true) end,
+			{ env.mod,                                    "Control" }, "KP_Right",
+			function() grid.move_to("right", true) end,
 			{ description = "Move window right by bound", group = "Movement" }
 		},
 	}
@@ -566,51 +574,63 @@ function hotkeys:init(args)
 			{ description = "Inrease window size to the right", group = "Resize" }
 		},
 		{
-			{ env.mod, "Shift" }, "i", function() grid.resize_to("up", nil, true) end,
+			{ env.mod,                                          "Shift" }, "i",
+			function() grid.resize_to("up", nil, true) end,
 			{ description = "Decrease window size from the up", group = "Resize" }
 		},
 		{
-			{ env.mod, "Shift" }, "k", function() grid.resize_to("down", nil, true) end,
+			{ env.mod,                                            "Shift" }, "k",
+			function() grid.resize_to("down", nil, true) end,
 			{ description = "Decrease window size from the down", group = "Resize" }
 		},
 		{
-			{ env.mod, "Shift" }, "j", function() grid.resize_to("left", nil, true) end,
+			{ env.mod,                                            "Shift" }, "j",
+			function() grid.resize_to("left", nil, true) end,
 			{ description = "Decrease window size from the left", group = "Resize" }
 		},
 		{
-			{ env.mod, "Shift" }, "l", function() grid.resize_to("right", nil, true) end,
+			{ env.mod,                                             "Shift" }, "l",
+			function() grid.resize_to("right", nil, true) end,
 			{ description = "Decrease window size from the right", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "i", function() grid.resize_to("up", true) end,
+			{ env.mod,                                                 "Control" }, "i",
+			function() grid.resize_to("up", true) end,
 			{ description = "Increase window size to the up by bound", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "k", function() grid.resize_to("down", true) end,
+			{ env.mod,                                                   "Control" }, "k",
+			function() grid.resize_to("down", true) end,
 			{ description = "Increase window size to the down by bound", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "j", function() grid.resize_to("left", true) end,
+			{ env.mod,                                                   "Control" }, "j",
+			function() grid.resize_to("left", true) end,
 			{ description = "Increase window size to the left by bound", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "l", function() grid.resize_to("right", true) end,
+			{ env.mod,                                                    "Control" }, "l",
+			function() grid.resize_to("right", true) end,
 			{ description = "Increase window size to the right by bound", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control", "Shift" }, "i", function() grid.resize_to("up", true, true) end,
+			{ env.mod,                                                    "Control",       "Shift" }, "i",
+			function() grid.resize_to("up", true, true) end,
 			{ description = "Decrease window size from the up by bound ", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control", "Shift" }, "k", function() grid.resize_to("down", true, true) end,
+			{ env.mod,                                                      "Control",       "Shift" }, "k",
+			function() grid.resize_to("down", true, true) end,
 			{ description = "Decrease window size from the down by bound ", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control", "Shift" }, "j", function() grid.resize_to("left", true, true) end,
+			{ env.mod,                                                      "Control",       "Shift" }, "j",
+			function() grid.resize_to("left", true, true) end,
 			{ description = "Decrease window size from the left by bound ", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control", "Shift" }, "l", function() grid.resize_to("right", true, true) end,
+			{ env.mod,                                                       "Control",       "Shift" }, "l",
+			function() grid.resize_to("right", true, true) end,
 			{ description = "Decrease window size from the right by bound ", group = "Resize" }
 		},
 	}
@@ -633,11 +653,13 @@ function hotkeys:init(args)
 			{ description = "Create new horizontal group", group = "Layout" }
 		},
 		{
-			{ env.mod, "Control" }, "v", function() map.insert_group(true) end,
+			{ env.mod,                                                 "Control" }, "v",
+			function() map.insert_group(true) end,
 			{ description = "Insert new vertical group before active", group = "Layout" }
 		},
 		{
-			{ env.mod, "Control" }, "h", function() map.insert_group(false) end,
+			{ env.mod,                                                   "Control" }, "h",
+			function() map.insert_group(false) end,
 			{ description = "Insert new horizontal group before active", group = "Layout" }
 		},
 		{
@@ -645,7 +667,7 @@ function hotkeys:init(args)
 			{ description = "Destroy group", group = "Layout" }
 		},
 		{
-			{ env.mod, "Control" }, "d", function() map.clean_groups() end,
+			{ env.mod,                                  "Control" }, "d", function() map.clean_groups() end,
 			{ description = "Destroy all empty groups", group = "Layout" }
 		},
 		{
@@ -657,7 +679,7 @@ function hotkeys:init(args)
 			{ description = "Move focused client to active group", group = "Layout" }
 		},
 		{
-			{ env.mod, "Control" }, "f", function() map.hilight_active() end,
+			{ env.mod,                              "Control" }, "f", function() map.hilight_active() end,
 			{ description = "Hilight active group", group = "Layout" }
 		},
 		{
@@ -700,19 +722,23 @@ function hotkeys:init(args)
 			{ description = "Decrease window vertical size factor", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "j", function() map.incfactor(nil, 0.1, false, true) end,
+			{ env.mod,                                               "Control" }, "j",
+			function() map.incfactor(nil, 0.1, false, true) end,
 			{ description = "Increase group horizontal size factor", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "l", function() map.incfactor(nil, -0.1, false, true) end,
+			{ env.mod,                                               "Control" }, "l",
+			function() map.incfactor(nil, -0.1, false, true) end,
 			{ description = "Decrease group horizontal size factor", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "i", function() map.incfactor(nil, 0.1, true, true) end,
+			{ env.mod,                                             "Control" }, "i",
+			function() map.incfactor(nil, 0.1, true, true) end,
 			{ description = "Increase group vertical size factor", group = "Resize" }
 		},
 		{
-			{ env.mod, "Control" }, "k", function() map.incfactor(nil, -0.1, true, true) end,
+			{ env.mod,                                             "Control" }, "k",
+			function() map.incfactor(nil, -0.1, true, true) end,
 			{ description = "Decrease group vertical size factor", group = "Resize" }
 		},
 	}
@@ -729,12 +755,13 @@ function hotkeys:init(args)
 			{ description = "[Hold] Awesome hotkeys helper", group = "Help" }
 		},
 		{
-			{ env.mod, "Control" }, "F1", function() apphelper(appkeys) end,
+			{ env.mod,                                               "Control" }, "F1",
+			function() apphelper(appkeys) end,
 			{ description = "[Hold] Hotkeys helper for application", group = "Help" }
 		},
 
 		{
-			{ env.mod }, "F2", function () awsmx.service.navigator:run() end,
+			{ env.mod }, "F2", function() awsmx.service.navigator:run() end,
 			{ description = "[Hold] Tiling window control mode", group = "Window control" }
 		},
 		{
@@ -802,7 +829,8 @@ function hotkeys:init(args)
 			{ description = "Switch to next with current tag", group = "Application switcher" }
 		},
 		{
-			{ env.mod, "Shift" }, "a", nil, function() appswitcher:show({ filter = allscr }) end,
+			{ env.mod,                                         "Shift" }, "a", nil,
+			function() appswitcher:show({ filter = allscr }) end,
 			{ description = "Switch to next through all tags", group = "Application switcher" }
 		},
 
@@ -827,11 +855,11 @@ function hotkeys:init(args)
 			{ description = "Switch to lower line", group = "Tag navigation" }
 		},
 		{
-			{ env.mod, "Control" }, "space", function() tag_line_switch(tcn) end,
+			{ env.mod,                         "Control" }, "space", function() tag_line_switch(tcn) end,
 			{ description = "Switch tag line", group = "Tag navigation" }
 		},
 		{
-			{ env.mod, "Shift" }, "space", function() clients_swap_by_line(tcn) end,
+			{ env.mod,                                    "Shift" }, "space", function() clients_swap_by_line(tcn) end,
 			{ description = "Swap clients between lines", group = "Tag navigation" }
 		},
 
@@ -887,7 +915,7 @@ function hotkeys:init(args)
 			{ description = "Show layout menu", group = "Layouts" }
 		},
 		{
-			{ env.mod}, "]", function() awful.layout.inc(1) end,
+			{ env.mod }, "]", function() awful.layout.inc(1) end,
 			{ description = "Select next layout", group = "Layouts" }
 		},
 		{
@@ -905,7 +933,9 @@ function hotkeys:init(args)
 	--------------------------------------------------------------------------------
 	self.raw.client = {
 		{
-			{ env.mod }, "f", function(c) c.fullscreen = not c.fullscreen; c:raise() end,
+			{ env.mod }, "f", function(c)
+			c.fullscreen = not c.fullscreen; c:raise()
+		end,
 			{ description = "Toggle fullscreen", group = "Client keys" }
 		},
 		{
@@ -917,7 +947,9 @@ function hotkeys:init(args)
 			{ description = "Minimize", group = "Client keys" }
 		},
 		{
-			{ env.mod }, "m", function(c) c.maximized = not c.maximized; c:raise() end,
+			{ env.mod }, "m", function(c)
+			c.maximized = not c.maximized; c:raise()
+		end,
 			{ description = "Maximize", group = "Client keys" }
 		}
 	}
@@ -932,16 +964,16 @@ function hotkeys:init(args)
 	for i = 1, tcn do
 		self.keys.root = awful.util.table.join(
 			self.keys.root,
-			tag_numkey(i, { env.mod },            function(_) tag_double_select(i, tcn) end),
-			tag_numkey(i, { env.mod, "Control" }, function(t) awful.tag.viewtoggle(t)   end)
+			tag_numkey(i, { env.mod }, function(_) tag_double_select(i, tcn) end),
+			tag_numkey(i, { env.mod, "Control" }, function(t) awful.tag.viewtoggle(t) end)
 		)
 	end
 
 	for i, k in ipairs(tagkeys) do
 		self.keys.root = awful.util.table.join(
 			self.keys.root,
-			awful.key({ env.mod },            k, function() tag_double_select(i + tcn, tcn) end),
-			awful.key({ env.mod, "Control" }, k, function() tag_toogle_by_index(i + tcn)    end)
+			awful.key({ env.mod }, k, function() tag_double_select(i + tcn, tcn) end),
+			awful.key({ env.mod, "Control" }, k, function() tag_toogle_by_index(i + tcn) end)
 		)
 	end
 
@@ -952,15 +984,15 @@ function hotkeys:init(args)
 			{ description = "Switch to tag on 1st line", group = "Tag Control", keyset = numkeys }
 		},
 		{
-			{ env.mod, "Control" }, line1_symb, nil,
+			{ env.mod,                                "Control" }, line1_symb, nil,
 			{ description = "Toggle tag on 1st line", group = "Tag Control", keyset = numkeys }
 		},
-			{
+		{
 			{ env.mod }, line2_symb, nil,
 			{ description = "Switch to tag on 2nd line", group = "Tag Control", keyset = tagkeys }
 		},
 		{
-			{ env.mod, "Control" }, line2_symb, nil,
+			{ env.mod,                                "Control" }, line2_symb, nil,
 			{ description = "Toggle tag on 2nd line", group = "Tag Control", keyset = tagkeys }
 		},
 	}
@@ -979,7 +1011,9 @@ function hotkeys:init(args)
 	end
 
 	self.mouse.client = awful.util.table.join(
-		awful.button({}, 1, function (c) client.focus = c; c:raise() end),
+		awful.button({}, 1, function(c)
+			client.focus = c; c:raise()
+		end),
 		awful.button({}, 2, awful.mouse.client.move),
 		awful.button({ env.mod }, 3, awful.mouse.client.resize),
 		awful.button({}, 8, game_safe_kill)
