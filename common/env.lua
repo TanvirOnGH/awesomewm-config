@@ -23,7 +23,7 @@ function env:init(args)
 	args = args or {}
 
 	-- environment vars
-	self.theme = args.theme or "red"
+	self.theme = args.theme or "purple"
 	self.mod = args.mod or "Mod4"
 	self.terminal = args.terminal or "kitty"
 	self.fm = args.fm or "thunar"
