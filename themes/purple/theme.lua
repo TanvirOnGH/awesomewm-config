@@ -148,7 +148,7 @@ theme.widget.tasklist.char_digit                     = 8
 theme.widget.tasklist.task                           = theme.gauge.task.purple
 theme.widget.tasklist.tasktip.max_width              = 1200
 theme.gauge.task.purple.width                        = 100
-theme.gauge.task.purple.underline                    = { height = 0, thickness = 3, gap = 35, dh = 0 }
+theme.gauge.task.purple.underline                    = { height = 0, thickness = 2, gap = 34, dh = 0 }
 
 -- Floating widgets
 -----------------------------------------------------------------------------------------------------------------------
