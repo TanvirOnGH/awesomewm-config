@@ -10,7 +10,7 @@ local color      = require("gears.color")
 
 -- local awsmx = require("awsmx")
 local redtitle   = require("awsmx.titlebar")
-local redutil    = require("awsmx.util")
+local modutil    = require("awsmx.util")
 local clientmenu = require("awsmx.float.clientmenu")
 
 -- Initialize tables and vars for module
@@ -77,26 +77,26 @@ function titlebar:init()
 	local style        = {}
 
 	-- titlebar schemes
-	style.base         = redutil.table.merge(redutil.table.check(beautiful, "titlebar.base") or {}, { size = 8 })
-	style.compact      = redutil.table.merge(style.base, { size = 16 })
-	style.iconic       = redutil.table.merge(style.base, { size = 24 })
+	style.base         = modutil.table.merge(modutil.table.check(beautiful, "titlebar.base") or {}, { size = 8 })
+	style.compact      = modutil.table.merge(style.base, { size = 16 })
+	style.iconic       = modutil.table.merge(style.base, { size = 24 })
 
 	-- titlebar elements styles
-	style.mark_mini    = redutil.table.merge(
-		redutil.table.check(beautiful, "titlebar.mark") or {},
+	style.mark_mini    = modutil.table.merge(
+		modutil.table.check(beautiful, "titlebar.mark") or {},
 		{ size = 30, gap = 10, angle = 0 }
 	)
-	style.mark_compact = redutil.table.merge(
+	style.mark_compact = modutil.table.merge(
 		style.mark_mini,
 		{ size = 20, gap = 6, angle = 0.707 }
 	)
-	style.icon_full    = redutil.table.merge(
-		redutil.table.check(beautiful, "titlebar.icon") or {},
+	style.icon_full    = modutil.table.merge(
+		modutil.table.check(beautiful, "titlebar.icon") or {},
 		{ gap = 10 }
 	)
 
-	style.icon_compact = redutil.table.merge(
-		redutil.table.check(beautiful, "titlebar.icon_compact") or style.icon_full,
+	style.icon_compact = modutil.table.merge(
+		modutil.table.check(beautiful, "titlebar.icon_compact") or style.icon_full,
 		{ gap = 8 }
 	)
 

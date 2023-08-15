@@ -6,7 +6,7 @@
 local awful     = require("awful")
 local beautiful = require("beautiful")
 
-local redutil   = require("awsmx.util")
+local modutil   = require("awsmx.util")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ function signals:init(args)
 
 			-- put new floating windows to the center of screen
 			if env.set_center and c.floating and not (c.maximized or c.fullscreen) then
-				redutil.placement.centered(c, nil, mouse.screen.workarea)
+				modutil.placement.centered(c, nil, mouse.screen.workarea)
 			end
 		end
 	)
