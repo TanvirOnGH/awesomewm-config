@@ -7,11 +7,9 @@ local beautiful = require("beautiful")
 local flex = require("flex")
 local awful = require("awful")
 
-
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local menu = {}
-
 
 -- Build function
 -----------------------------------------------------------------------------------------------------------------------
@@ -40,7 +38,7 @@ function menu:init(args)
 	-- Awesome submenu
 	------------------------------------------------------------
 	local awesomemenu = {
-		{ "Restart",        awesome.restart,                          micon("gnome-session-reboot") },
+		{ "Restart", awesome.restart, micon("gnome-session-reboot") },
 		separator,
 		{ "Awesome config", "code" .. " /home/user/.config/awesome/", micon("terminal") },
 	}
@@ -54,10 +52,10 @@ function menu:init(args)
 	-- Places submenu
 	------------------------------------------------------------
 	local placesmenu = {
-		{ "Downloads", env.fm .. " downloads",      micon("folder-download") },
-		{ "Music",     env.fm .. " media/musics",   micon("folder-music") },
-		{ "Pictures",  env.fm .. " media/pictures", micon("folder-pictures") },
-		{ "Videos",    env.fm .. " media/videos",   micon("folder-videos") },
+		{ "Downloads", env.fm .. " downloads", micon("folder-download") },
+		{ "Music", env.fm .. " media/musics", micon("folder-music") },
+		{ "Pictures", env.fm .. " media/pictures", micon("folder-pictures") },
+		{ "Videos", env.fm .. " media/videos", micon("folder-videos") },
 		separator,
 		{ "HDD", env.fm .. " /mnt/HDD", micon("folder-bookmarks") },
 	}
@@ -65,7 +63,7 @@ function menu:init(args)
 	-- Exit submenu
 	------------------------------------------------------------
 	local exitmenu = {
-		{ "Reboot",   "reboot",   micon("gnome-session-reboot") },
+		{ "Reboot", "reboot", micon("gnome-session-reboot") },
 		{ "Shutdown", "poweroff", micon("system-shutdown") },
 		separator,
 		{ "Log out", awesome.quit, micon("exit") },
@@ -76,27 +74,27 @@ function menu:init(args)
 	self.mainmenu = flex.menu({
 		theme = theme,
 		items = {
-			{ "Awesome",      awesomemenu, micon("awesome") },
-			{ "NixOS",        nixmenu,     micon("nix") },
-			{ "Applications", appmenu,     micon("folder") },
-			{ "Places",       placesmenu,  micon("folder_home"), key = "c" },
+			{ "Awesome", awesomemenu, micon("awesome") },
+			{ "NixOS", nixmenu, micon("nix") },
+			{ "Applications", appmenu, micon("folder") },
+			{ "Places", placesmenu, micon("folder_home"), key = "c" },
 			separator,
 			{ "Terminal", env.terminal, micon("terminal") },
-			{ "Thunar",   env.fm,       micon("folder") },
-			{ "Firefox",  "firefox",    micon("browser") },
-			{ "VSCode",   "code",       micon("code-editor") },
+			{ "Thunar", env.fm, micon("folder") },
+			{ "Firefox", "firefox", micon("browser") },
+			{ "VSCode", "code", micon("code-editor") },
 			separator,
 			{ "Exit", exitmenu, micon("exit") },
-		}
+		},
 	})
 
 	-- Menu panel widget
 	------------------------------------------------------------
 
 	self.widget = flex.gauge.svgbox(icon, nil, color)
-	self.buttons = awful.util.table.join(
-		awful.button({}, 1, function() self.mainmenu:toggle() end)
-	)
+	self.buttons = awful.util.table.join(awful.button({}, 1, function()
+		self.mainmenu:toggle()
+	end))
 end
 
 -- End

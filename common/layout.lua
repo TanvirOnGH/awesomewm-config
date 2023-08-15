@@ -11,7 +11,6 @@ local beautiful = require("beautiful")
 -----------------------------------------------------------------------------------------------------------------------
 local layouts = {}
 
-
 -- Build  table
 -----------------------------------------------------------------------------------------------------------------------
 function layouts:init()
@@ -42,13 +41,11 @@ end
 flex.layout.map.notification = true
 flex.layout.map.notification_style = { icon = flex.util.table.check(beautiful, "widget.layoutbox.icon.usermap") }
 
-
 -- connect alternatve moving handler to allow using custom handler per layout
 -- by now custom handler provided for 'flex.layout.grid' only
 -- feel free to remove if you don't use this one
 client.disconnect_signal("request::geometry", awful.layout.move_handler)
 client.connect_signal("request::geometry", flex.layout.common.mouse.move)
-
 
 -- connect additional signal for 'flex.layout.map'
 -- this one removing client in smart way and correct tiling scheme
@@ -56,14 +53,20 @@ client.connect_signal("request::geometry", flex.layout.common.mouse.move)
 client.connect_signal("unmanage", flex.layout.map.clean_client)
 
 client.connect_signal("property::minimized", function(c)
-	if c.minimized and flex.layout.map.check_client(c) then flex.layout.map.clean_client(c) end
+	if c.minimized and flex.layout.map.check_client(c) then
+		flex.layout.map.clean_client(c)
+	end
 end)
 client.connect_signal("property::floating", function(c)
-	if c.floating and flex.layout.map.check_client(c) then flex.layout.map.clean_client(c) end
+	if c.floating and flex.layout.map.check_client(c) then
+		flex.layout.map.clean_client(c)
+	end
 end)
 
 client.connect_signal("untagged", function(c, t)
-	if flex.layout.map.data[t] then flex.layout.map.clean_client(c) end
+	if flex.layout.map.data[t] then
+		flex.layout.map.clean_client(c)
+	end
 end)
 
 -- End

@@ -3,14 +3,14 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Grab environment
-local awful     = require("awful")
+local awful = require("awful")
 local beautiful = require("beautiful")
 
-local modutil   = require("flex.util")
+local modutil = require("flex.util")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
-local signals   = {}
+local signals = {}
 
 -- Support functions
 -----------------------------------------------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ local function fixed_maximized_geometry(c, context)
 			x = c.screen.workarea.x,
 			y = c.screen.workarea.y,
 			height = c.screen.workarea.height - 2 * c.border_width,
-			width = c.screen.workarea.width - 2 * c.border_width
+			width = c.screen.workarea.width - 2 * c.border_width,
 		})
 	end
 end
@@ -38,41 +38,32 @@ function signals:init(args)
 	local env = args.env
 
 	-- actions on every application start
-	client.connect_signal(
-		"manage",
-		function(c)
-			-- put client at the end of list
-			if env.set_slave then awful.client.setslave(c) end
-
-			-- startup placement
-			if awesome.startup
-				and not c.size_hints.user_position
-				and not c.size_hints.program_position
-			then
-				awful.placement.no_offscreen(c)
-			end
-
-			-- put new floating windows to the center of screen
-			if env.set_center and c.floating and not (c.maximized or c.fullscreen) then
-				modutil.placement.centered(c, nil, mouse.screen.workarea)
-			end
+	client.connect_signal("manage", function(c)
+		-- put client at the end of list
+		if env.set_slave then
+			awful.client.setslave(c)
 		end
-	)
+
+		-- startup placement
+		if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
+			awful.placement.no_offscreen(c)
+		end
+
+		-- put new floating windows to the center of screen
+		if env.set_center and c.floating and not (c.maximized or c.fullscreen) then
+			modutil.placement.centered(c, nil, mouse.screen.workarea)
+		end
+	end)
 
 	-- add missing borders to windows that get unmaximized
-	client.connect_signal(
-		"property::maximized",
-		function(c)
-			if not c.maximized then
-				c.border_width = beautiful.border_width
-			end
+	client.connect_signal("property::maximized", function(c)
+		if not c.maximized then
+			c.border_width = beautiful.border_width
 		end
-	)
+	end)
 
 	-- don't allow maximized windows move/resize themselves
-	client.connect_signal(
-		"request::geometry", fixed_maximized_geometry
-	)
+	client.connect_signal("request::geometry", fixed_maximized_geometry)
 
 	-- enable sloppy focus, so that focus follows mouse
 	if env.sloppy_focus then
@@ -82,8 +73,12 @@ function signals:init(args)
 	-- hilight border of focused window
 	-- can be disabled since focus indicated by titlebars in current config
 	if env.color_border_focus then
-		client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-		client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+		client.connect_signal("focus", function(c)
+			c.border_color = beautiful.border_focus
+		end)
+		client.connect_signal("unfocus", function(c)
+			c.border_color = beautiful.border_normal
+		end)
 	end
 
 	-- wallpaper update on screen geometry change
