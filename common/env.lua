@@ -8,7 +8,7 @@ local beautiful = require("beautiful")
 local wibox = require("wibox")
 local naughty = require("naughty")
 
-local awsmx = require("awsmx")
+local flex = require("flex")
 
 local unpack = unpack or table.unpack
 
@@ -45,9 +45,9 @@ function env:init(args)
 	naughty.config.padding = beautiful.useless_gap and 2 * beautiful.useless_gap or 0
 
 	if beautiful.naughty then
-		naughty.config.presets.normal   = awsmx.util.table.merge(beautiful.naughty.base, beautiful.naughty.normal)
-		naughty.config.presets.critical = awsmx.util.table.merge(beautiful.naughty.base, beautiful.naughty.critical)
-		naughty.config.presets.low      = awsmx.util.table.merge(beautiful.naughty.base, beautiful.naughty.low)
+		naughty.config.presets.normal   = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.normal)
+		naughty.config.presets.critical = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.critical)
+		naughty.config.presets.low      = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.low)
 	end
 end
 
@@ -70,7 +70,7 @@ end
 --------------------------------------------------------------------------------
 env.tagtip = function(t)
 	local layname = awful.layout.getname(awful.tag.getproperty(t, "layout"))
-	if awsmx.util.table.check(beautiful, "widget.layoutbox.name_alias") then
+	if flex.util.table.check(beautiful, "widget.layoutbox.name_alias") then
 		layname = beautiful.widget.layoutbox.name_alias[layname] or layname
 	end
 	return string.format("%s (%d apps) [%s]", t.name, #(t:clients()), layname)
@@ -79,7 +79,7 @@ end
 -- Panel widgets wrapper
 --------------------------------------------------------------------------------
 env.wrapper = function(widget, name, buttons)
-	local margin = awsmx.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name] or
+	local margin = flex.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name] or
 	{ 0, 0, 0, 0 }
 	if buttons then
 		widget:buttons(buttons)

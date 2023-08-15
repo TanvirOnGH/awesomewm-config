@@ -8,10 +8,10 @@ local wibox      = require("wibox")
 local beautiful  = require("beautiful")
 local color      = require("gears.color")
 
--- local awsmx = require("awsmx")
-local modtitle   = require("awsmx.titlebar")
-local modutil    = require("awsmx.util")
-local clientmenu = require("awsmx.float.clientmenu")
+-- local flex = require("flex")
+local modtitle   = require("flex.titlebar")
+local modutil    = require("flex.util")
+local clientmenu = require("flex.float.clientmenu")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------

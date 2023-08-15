@@ -4,15 +4,15 @@
 
 -- Grab environment
 local awful       = require("awful")
-local awsmx       = require("awsmx")
+local flex       = require("flex")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
 local edges       = {}
 
-local switcher    = awsmx.float.appswitcher
-local currenttags = awsmx.widget.tasklist.filter.currenttags
-local allscreen   = awsmx.widget.tasklist.filter.allscreen
+local switcher    = flex.float.appswitcher
+local currenttags = flex.widget.tasklist.filter.currenttags
+local allscreen   = flex.widget.tasklist.filter.allscreen
 
 -- Active screen edges
 -----------------------------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ function edges:init(args)
 
 	-- Top
 	--------------------------------------------------------------------------------
-	local top = awsmx.util.desktop.edge("horizontal")
+	local top = flex.util.desktop.edge("horizontal")
 	top.wibox:geometry(egeometry["top"])
 
 	top.layout:buttons(awful.util.table.join(
@@ -44,7 +44,7 @@ function edges:init(args)
 
 	-- Right
 	--------------------------------------------------------------------------------
-	local right = awsmx.util.desktop.edge("vertical", { ew, workarea.height - ew })
+	local right = flex.util.desktop.edge("vertical", { ew, workarea.height - ew })
 	right.wibox:geometry(egeometry["right"])
 
 	local function tag_line_switch(colnum)
@@ -66,7 +66,7 @@ function edges:init(args)
 
 	-- Left
 	--------------------------------------------------------------------------------
-	local left = awsmx.util.desktop.edge("vertical", { ew, workarea.height - ew })
+	local left = flex.util.desktop.edge("vertical", { ew, workarea.height - ew })
 	left.wibox:geometry(egeometry["left"])
 
 	left.area[1]:buttons(awful.util.table.join(
@@ -80,7 +80,7 @@ function edges:init(args)
 		awful.button({}, 5, function() switcher:show({ filter = currenttags, reverse = true }) end)
 	))
 
-	left.wibox:connect_signal("mouse::leave", function() awsmx.float.appswitcher:hide() end)
+	left.wibox:connect_signal("mouse::leave", function() flex.float.appswitcher:hide() end)
 end
 
 -- End

@@ -6,7 +6,7 @@
 local awful     = require("awful")
 local beautiful = require("beautiful")
 
-local modutil   = require("awsmx.util")
+local modutil   = require("flex.util")
 
 -- Initialize tables and vars for module
 -----------------------------------------------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ function signals:init(args)
 	screen.connect_signal("property::geometry", env.wallpaper)
 
 	-- Awesome v4.0 introduce screen handling without restart.
-	-- All awsmx panel widgets was designed in old fashioned way and doesn't support this fature properly.
+	-- All flex panel widgets was designed in old fashioned way and doesn't support this fature properly.
 	-- Since I'm using single monitor setup I have no will to rework panel widgets by now,
 	-- so restart signal added here is simple and dirty workaround.
 	-- You can disable it on your own risk.

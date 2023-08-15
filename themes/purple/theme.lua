@@ -49,7 +49,7 @@ theme.desktop.places                                 = {
 
 -- Desktop widgets
 --------------------------------------------------------------------------------
--- individual widget settings doesn't used by awsmx module
+-- individual widget settings doesn't used by flex module
 -- but grab directly from rc-files to rewrite base style
 theme.individual.desktop                             = { speedmeter = {}, multimeter = {}, multiline = {} }
 

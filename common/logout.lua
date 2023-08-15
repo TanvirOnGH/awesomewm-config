@@ -1,5 +1,5 @@
 local awful = require("awful")
-local logout_screen = require("awsmx.service.logout")
+local logout_screen = require("flex.service.logout")
 
 local logout = {}
 
