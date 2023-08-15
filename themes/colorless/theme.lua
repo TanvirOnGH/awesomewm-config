@@ -456,13 +456,6 @@ function theme:init()
 		}
 	}
 
-	self.gauge.tag.green = {
-		width  = 44,       -- widget width
-		margin = { 0, 0, 8, 8 }, -- margin around tag icon
-		icon   = nil,      -- layouts icon list (will be defined below)
-		color  = self.color -- colors (main used)
-	}
-
 	-- Task (base element of tasklist)
 	------------------------------------------------------------
 
@@ -498,13 +491,6 @@ function theme:init()
 			size = 12, -- counter font size
 			margin = 2 -- margin around counter
 		},
-	}
-
-	self.gauge.task.green = {
-		width   = 40,          -- widget width
-		df_icon = self.icon.system, -- fallback icon
-		margin  = { 0, 0, 2, 2 }, -- margin around icon
-		color   = self.color   -- colors (main used)
 	}
 
 	-- Panel widgets
@@ -616,9 +602,6 @@ function theme:init()
 		cornerse   = "Corner SE",
 		cornersw   = "Corner SW",
 	}
-
-	-- green tag icons
-	self.gauge.tag.green.icon = self.widget.layoutbox.icon
 
 	-- Tasklist
 	--------------------------------------------------------------
