@@ -1216,8 +1216,6 @@ function theme:init()
 	self.desktop.calendar           = {
 		show_pointer = true,         -- show date under mouse
 		color        = self.desktop.color, -- color (desktop used)
-		-- TODO: check for better font
-		-- today label style
 		label        = {
 			gap  = 8,                                             -- space between label and pointer
 			sep  = "-",                                           -- day/month separator
