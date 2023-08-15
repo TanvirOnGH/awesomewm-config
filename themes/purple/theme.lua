@@ -179,15 +179,14 @@ theme.individual.desktop.multiline.vnstat            = {
 -- individual margins for panel widgets
 ------------------------------------------------------------
 theme.widget.wrapper                                 = {
-	layoutbox = { 12, 9, 6, 6 },
+	layoutbox = { 12, 10, 6, 6 },
 	textclock = { 10, 10, 0, 0 },
-	volume    = { 4, 9, 3, 3 },
 	tray      = { 8, 8, 7, 7 },
-	cpu       = { 3, 3, 7, 7 },
-	ram       = { 3, 3, 7, 7 },
+	cpu       = { 1, 1, 1, 1 },
+	ram       = { 1, 1, 1, 1 },
 	network   = { 3, 3, 7, 7 },
-	taglist   = { 4, 4, 5, 4 },
-	tasklist  = { 0, -8, 0, 0 }, -- centering tasklist widget
+	taglist   = { 4, 4, 4, 4 },
+	tasklist  = { 0, -6, 0, 0 }, -- centering tasklist widget
 }
 
 -- Various widgets style tuning
