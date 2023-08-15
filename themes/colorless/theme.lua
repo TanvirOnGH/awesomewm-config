@@ -397,19 +397,6 @@ function theme:init()
 
 	-- Tag (base element of taglist)
 	------------------------------------------------------------
-	self.gauge.tag.orange = {
-		width        = 38,                             -- widget width
-		line_width   = self.gauge.monitor.circle.line_width, -- width of arcs
-		iradius      = self.gauge.monitor.circle.iradius, -- radius for center point
-		radius       = self.gauge.monitor.circle.radius, -- arcs radius
-		cgap         = 0.314,                          -- gap between arcs in radians
-		min_sections = 1,                              -- minimal amount of arcs
-		show_min     = false,                          -- indicate minimized apps by color
-		text         = false,                          -- replace middle circle by text
-		font         = self.cairo_fonts.tag,           -- font for text
-		color        = self.color                      -- colors (main used)
-	}
-
 	self.gauge.tag.purple = {
 		width = 40,   -- widget width
 		color = self.color, -- colors (main used)
