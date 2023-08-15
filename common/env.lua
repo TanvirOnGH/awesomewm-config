@@ -45,9 +45,9 @@ function env:init(args)
 	naughty.config.padding = beautiful.useless_gap and 2 * beautiful.useless_gap or 0
 
 	if beautiful.naughty then
-		naughty.config.presets.normal   = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.normal)
+		naughty.config.presets.normal = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.normal)
 		naughty.config.presets.critical = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.critical)
-		naughty.config.presets.low      = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.low)
+		naughty.config.presets.low = flex.util.table.merge(beautiful.naughty.base, beautiful.naughty.low)
 	end
 end
 
@@ -79,15 +79,14 @@ end
 -- Panel widgets wrapper
 --------------------------------------------------------------------------------
 env.wrapper = function(widget, name, buttons)
-	local margin = flex.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name] or
-	{ 0, 0, 0, 0 }
+	local margin = flex.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name]
+		or { 0, 0, 0, 0 }
 	if buttons then
 		widget:buttons(buttons)
 	end
 
 	return wibox.container.margin(widget, unpack(margin))
 end
-
 
 -- End
 -----------------------------------------------------------------------------------------------------------------------

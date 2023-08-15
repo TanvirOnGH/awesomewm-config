@@ -12,28 +12,29 @@ local modtitle = require("flex.titlebar")
 local rules = {}
 
 rules.base_properties = {
-	border_width     = beautiful.border_width,
-	border_color     = beautiful.border_normal,
-	focus            = awful.client.focus.filter,
-	raise            = true,
+	border_width = beautiful.border_width,
+	border_color = beautiful.border_normal,
+	focus = awful.client.focus.filter,
+	raise = true,
 	size_hints_honor = false,
-	screen           = awful.screen.preferred,
+	screen = awful.screen.preferred,
 }
 
 rules.floating_any = {
 	class = {
-		"Clipflap", "Run.py",
+		"Clipflap",
+		"Run.py",
 	},
-	role = { "AlarmWindow", "pop-up", },
-	type = { "dialog" }
+	role = { "AlarmWindow", "pop-up" },
+	type = { "dialog" },
 }
 
 rules.titlebar_exceptions = {
-	class = { "Cavalcade", "Clipflap", "Steam", "Qemu-system-x86_64" }
+	class = { "Cavalcade", "Clipflap", "Steam", "Qemu-system-x86_64" },
 }
 
 rules.maximized = {
-	class = { "Emacs24" }
+	class = { "Emacs24" },
 }
 
 -- Build rule table
@@ -44,17 +45,16 @@ function rules:init(args)
 	self.base_properties.buttons = args.hotkeys.mouse.client
 	self.env = args.env or {}
 
-
 	-- Build rules
 	--------------------------------------------------------------------------------
 	self.rules = {
 		{
-			rule       = {},
-			properties = args.base_properties or self.base_properties
+			rule = {},
+			properties = args.base_properties or self.base_properties,
 		},
 		{
-			rule_any   = args.floating_any or self.floating_any,
-			properties = { floating = true }
+			rule_any = args.floating_any or self.floating_any,
+			properties = { floating = true },
 		},
 		{
 			rule_any = self.maximized,
@@ -62,33 +62,34 @@ function rules:init(args)
 				c.maximized = true
 				modtitle.cut_all({ c })
 				c.height = c.screen.workarea.height - 2 * c.border_width
-			end
+			end,
 		},
 		{
-			rule_any   = { type = { "normal", "dialog" } },
+			rule_any = { type = { "normal", "dialog" } },
 			except_any = self.titlebar_exceptions,
-			properties = { titlebars_enabled = true }
+			properties = { titlebars_enabled = true },
 		},
 		{
-			rule_any   = { type = { "normal" } },
-			properties = { placement = awful.placement.no_overlap + awful.placement.no_offscreen }
+			rule_any = { type = { "normal" } },
+			properties = { placement = awful.placement.no_overlap + awful.placement.no_offscreen },
 		},
 
 		-- Tags placement
 		{
 			rule = { instance = "Xephyr" },
-			properties = { tag = self.env.theme == "purple" and "Test" or "Free", fullscreen = true }
+			properties = { tag = self.env.theme == "purple" and "Test" or "Free", fullscreen = true },
 		},
 
 		-- Jetbrains splash screen fix
 		{
 			rule_any = { class = { "jetbrains-%w+", "java-lang-Thread" } },
 			callback = function(jetbrains)
-				if jetbrains.skip_taskbar then jetbrains.floating = true end
-			end
-		}
+				if jetbrains.skip_taskbar then
+					jetbrains.floating = true
+				end
+			end,
+		},
 	}
-
 
 	-- Set rules
 	--------------------------------------------------------------------------------
