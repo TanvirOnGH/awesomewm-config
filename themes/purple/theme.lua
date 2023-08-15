@@ -35,22 +35,16 @@ theme:update()
 --------------------------------------------------------------------------------
 theme.desktop.grid                                   = {
 	width  = { 450, 450 },
-	height = { 100, 100, 100, 60, 60 },
+	height = { 100, 100, 100, 100, 100 },
 	edge   = { width = { 100, 850 }, height = { 100, 100 } }
 }
 
 theme.desktop.places                                 = {
 	cpumem   = { 1, 1 },
-	netspeed = { 1, 2 },
-	transm   = { 1, 3 },
-	thermal1 = { 1, 4 },
-	vnstat   = { 1, 5 },
+	disks    = { 1, 2 },
+	ssdspeed = { 1, 5 },
 
-	disks    = { 2, 1 },
-	ssdspeed = { 2, 2 },
-	hddspeed = { 2, 3 },
-	thermal2 = { 2, 4 },
-	fan      = { 2, 5 },
+	netspeed = { 2, 5 },
 }
 
 -- Desktop widgets
