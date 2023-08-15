@@ -354,20 +354,6 @@ function theme:init()
 		color = self.color -- color (main used)
 	}
 
-	-- Volume indicator
-	------------------------------------------------------------
-	self.gauge.audio.blue = {
-		width   = 75,         -- widget width
-		dmargin = { 10, 0, 2, 2 }, -- margins around dash area
-		icon    = self.icon.system, -- volume icon
-
-		-- colors
-		color   = { icon = self.color.icon, mute = self.color.urgent },
-
-		-- dash style
-		dash    = { bar = { num = 5, width = 4 } },
-	}
-
 	-- Dotcount (used in minitray widget)
 	------------------------------------------------------------
 	self.gauge.graph.dots = {
@@ -409,35 +395,8 @@ function theme:init()
 		},
 	}
 
-	self.gauge.tag.blue = {
-		width      = 103,            -- widget width
-		show_min   = false,          -- indicate minimized apps by color
-		text_shift = 20,             -- shift from upper border of widget to lower border of text
-		color      = self.color,     -- colors (main used)
-		font       = self.cairo_fonts.tag, -- font
-
-		-- apps indicator
-		point      = {
-			width = 80, -- apps indicator total width
-			height = 3, -- apps indicator total height
-			gap = 27, -- shift from upper border of widget to apps indicator
-			dx = 5 -- gap between apps indicator parts
-		},
-	}
-
 	-- Task (base element of tasklist)
 	------------------------------------------------------------
-
-	-- the same structure as blue tag
-	self.gauge.task.blue = {
-		width      = 70,
-		show_min   = true,
-		text_shift = 20,
-		color      = self.color,
-		font       = self.cairo_fonts.tag,
-		point      = { width = 70, height = 3, gap = 27, dx = 5 },
-	}
-
 	self.gauge.task.purple = {
 		width      = 76,
 		text_shift = 26,
@@ -571,7 +530,7 @@ function theme:init()
 		need_group  = true,          -- group application instances into one task element
 		parser      = {},            -- redlat desktop file parser settings (see theme.service.dfparser)
 		task_margin = { 5, 5, 0, 0 }, -- margins around task element
-		task        = self.gauge.task.blue -- style for task gauge widget
+		task        = self.gauge.task.purple -- style for task gauge widget
 	}
 
 	-- menu settings
