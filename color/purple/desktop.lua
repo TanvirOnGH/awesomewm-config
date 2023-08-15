@@ -228,7 +228,7 @@ function desktop:init(args)
 	-- Calendar
 	--------------------------------------------------------------------------------
 	local cwidth          = 100 -- calendar widget width
-	local cy              = 50 -- calendar widget upper margin
+	local cy              = 20 -- calendar widget upper margin
 	local cheight         = wa.height - 2 * cy
 
 	local calendar        = {
