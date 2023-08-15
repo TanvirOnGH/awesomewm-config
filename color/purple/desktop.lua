@@ -41,7 +41,7 @@ function desktop:init(args)
 		maxspeed       = { up = 6 * 1024 ^ 2, down = 6 * 1024 ^ 2 },
 		crit           = { up = 6 * 1024 ^ 2, down = 6 * 1024 ^ 2 },
 		timeout        = 1,
-		autoscale      = false,
+		autoscale      = true,
 		label          = "NET"
 	}
 

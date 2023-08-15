@@ -161,7 +161,7 @@ sysmon.widget.network = awsmx.widget.net(
 	{
 		interface = "enp42s0",
 		speed = { up = 6 * 1024 ^ 2, down = 6 * 1024 ^ 2 },
-		autoscale = false
+		autoscale = true
 	},
 	{ timeout = 1, widget = awsmx.gauge.icon.double, monitor = { step = 0.1 } }
 )

@@ -248,7 +248,7 @@ function theme:init()
 		keytip            = { geometry = { width = 400 } }, -- hotkeys helper settings
 		shape             = nil,                            -- wibox shape
 		action_on_release = false,                          -- active menu item on mouse release instead of press
-		svg_scale         = { false, false },               -- use vector scaling for left, right icons in menu item
+		svg_scale         = { true, true },               -- use vector scaling for left, right icons in menu item
 	}
 
 	self.menu.color = {
@@ -1182,7 +1182,7 @@ function theme:init()
 	self.desktop.common.bar.plain = {
 		width     = nil, -- widget width
 		height    = nil, -- widget height
-		autoscale = false, -- normalize progressbar value
+		autoscale = true, -- normalize progressbar value
 		maxm      = 1, -- the maximum allowed value
 
 		-- color (desktop used)
