@@ -20,7 +20,7 @@ theme.path         = awful.util.get_configuration_dir() .. "themes/purple"
 
 -- Main config
 --------------------------------------------------------------------------------
-theme.panel_height = 40 -- panel height
+theme.panel_height = 38 -- panel height
 theme.wallpaper    = awful.util.get_configuration_dir() .. "misc/wallpapers/purple/purple.png"
 theme.desktopbg    = theme.wallpaper
 
