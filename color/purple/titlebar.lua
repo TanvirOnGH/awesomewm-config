@@ -9,7 +9,7 @@ local beautiful  = require("beautiful")
 local color      = require("gears.color")
 
 -- local awsmx = require("awsmx")
-local redtitle   = require("awsmx.titlebar")
+local modtitle   = require("awsmx.titlebar")
 local modutil    = require("awsmx.util")
 local clientmenu = require("awsmx.float.clientmenu")
 
@@ -39,10 +39,10 @@ local function on_maximize(c)
 	-- hide/show title bar
 	local is_max = c.maximized_vertical or c.maximized
 	local action = is_max and "cut_all" or "restore_all"
-	redtitle[action]({ c })
+	modtitle[action]({ c })
 
 	-- dirty size correction
-	local model = redtitle.get_model(c)
+	local model = modtitle.get_model(c)
 	if model and not model.hidden then
 		c.height = c:geometry().height + (is_max and model.size or -model.size)
 		if is_max then
@@ -54,7 +54,7 @@ end
 -- Custom titlebar elements
 -----------------------------------------------------------------------------------------------------------------------
 local compact_focus = function(c, style)
-	local focus = redtitle.mark.focus(c, style)
+	local focus = modtitle.mark.focus(c, style)
 
 	function focus:draw(_, cr, width, height)
 		local d = math.tan(self._style.angle) * height
@@ -100,7 +100,7 @@ function titlebar:init()
 		{ gap = 8 }
 	)
 
-	redtitle._index    = 1 -- choose default titlebar model
+	modtitle._index    = 1 -- choose default titlebar model
 
 	-- titlebar setup for clients
 	client.connect_signal(
@@ -110,20 +110,20 @@ function titlebar:init()
 			local menu_buttons = construct_menu_buttons(c)
 			local move_buttons = construct_move_buttons(c)
 			local all_buttons = construct_all_buttons(c, 1, 3)
-			redtitle(c, style.base)
+			modtitle(c, style.base)
 
 			-- build mini titlebar model
 			local base  = wibox.widget({
 				nil,
 				{
 					right = style.mark_mini.gap,
-					redtitle.mark.focus(c, style.mark_mini),
+					modtitle.mark.focus(c, style.mark_mini),
 					layout = wibox.container.margin,
 				},
 				{
-					redtitle.mark.property(c, "floating", style.mark_mini),
-					redtitle.mark.property(c, "sticky", style.mark_mini),
-					redtitle.mark.property(c, "ontop", style.mark_mini),
+					modtitle.mark.property(c, "floating", style.mark_mini),
+					modtitle.mark.property(c, "sticky", style.mark_mini),
+					modtitle.mark.property(c, "ontop", style.mark_mini),
 					spacing = style.mark_mini.gap,
 					layout  = wibox.layout.fixed.horizontal()
 				},
@@ -132,7 +132,7 @@ function titlebar:init()
 			})
 
 			-- build compact titlebar model
-			local focus = redtitle.button.focus(c, style.icon_compact)
+			local focus = modtitle.button.focus(c, style.icon_compact)
 			focus:buttons(menu_buttons)
 
 			local compact = wibox.widget({
@@ -141,10 +141,10 @@ function titlebar:init()
 					{
 						{
 							{
-								redtitle.mark.property(c, "floating", style.mark_compact),
-								redtitle.mark.property(c, "sticky", style.mark_compact),
-								redtitle.mark.property(c, "ontop", style.mark_compact),
-								redtitle.mark.property(c, "below", style.mark_compact),
+								modtitle.mark.property(c, "floating", style.mark_compact),
+								modtitle.mark.property(c, "sticky", style.mark_compact),
+								modtitle.mark.property(c, "ontop", style.mark_compact),
+								modtitle.mark.property(c, "below", style.mark_compact),
 								spacing = style.mark_compact.gap,
 								layout  = wibox.layout.fixed.horizontal
 							},
@@ -163,9 +163,9 @@ function titlebar:init()
 						layout = wibox.container.margin,
 					},
 					{
-						redtitle.button.property(c, "minimized", style.icon_compact),
-						redtitle.button.property(c, "maximized", style.icon_compact),
-						redtitle.button.close(c, style.icon_compact),
+						modtitle.button.property(c, "minimized", style.icon_compact),
+						modtitle.button.property(c, "maximized", style.icon_compact),
+						modtitle.button.close(c, style.icon_compact),
 						spacing = style.icon_compact.gap,
 						layout  = wibox.layout.fixed.horizontal()
 					},
@@ -179,18 +179,18 @@ function titlebar:init()
 			})
 
 			-- build titlebar model with control buttons
-			local title = redtitle.label(c, style.iconic, true)
+			local title = modtitle.label(c, style.iconic, true)
 			title:buttons(move_buttons)
 
-			local menu = redtitle.button.base("menu", style.icon_full)
+			local menu = modtitle.button.base("menu", style.icon_full)
 			menu:buttons(menu_buttons)
 
 			local iconic = wibox.widget({
 				{
 					{
 						menu,
-						redtitle.button.property(c, "floating", style.icon_full),
-						redtitle.button.property(c, "sticky", style.icon_full),
+						modtitle.button.property(c, "floating", style.icon_full),
+						modtitle.button.property(c, "sticky", style.icon_full),
 						spacing = style.icon_full.gap,
 						layout  = wibox.layout.fixed.horizontal()
 					},
@@ -202,9 +202,9 @@ function titlebar:init()
 				title,
 				{
 					{
-						redtitle.button.property(c, "minimized", style.icon_full),
-						redtitle.button.property(c, "maximized", style.icon_full),
-						redtitle.button.close(c, style.icon_full),
+						modtitle.button.property(c, "minimized", style.icon_full),
+						modtitle.button.property(c, "maximized", style.icon_full),
+						modtitle.button.close(c, style.icon_full),
 						spacing = style.icon_full.gap,
 						layout  = wibox.layout.fixed.horizontal()
 					},
@@ -218,10 +218,10 @@ function titlebar:init()
 			})
 
 			-- Set both models to titlebar
-			redtitle.add_layout(c, nil, base, style.base.size)
-			redtitle.add_layout(c, nil, compact, style.compact.size)
-			redtitle.add_layout(c, nil, iconic, style.iconic.size)
-			redtitle.switch(c, nil, redtitle._index)
+			modtitle.add_layout(c, nil, base, style.base.size)
+			modtitle.add_layout(c, nil, compact, style.compact.size)
+			modtitle.add_layout(c, nil, iconic, style.iconic.size)
+			modtitle.switch(c, nil, modtitle._index)
 
 			-- hide titlebar when window maximized
 			if c.maximized_vertical or c.maximized then
