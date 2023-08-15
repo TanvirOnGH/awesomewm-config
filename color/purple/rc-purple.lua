@@ -169,7 +169,7 @@ sysmon.widget.network = awsmx.widget.net(
 -- CPU usage
 sysmon.widget.cpu = awsmx.widget.sysmon(
 	{ func = awsmx.system.pformatted.cpu(80) },
-	{ timeout = 1, widget = awsmx.gauge.monitor.dash }
+	{ timeout = 1, widget = awsmx.gauge.monitor.circle }
 )
 
 sysmon.buttons.cpu = awful.util.table.join(
@@ -179,7 +179,7 @@ sysmon.buttons.cpu = awful.util.table.join(
 -- RAM usage
 sysmon.widget.ram = awsmx.widget.sysmon(
 	{ func = awsmx.system.pformatted.mem(70) },
-	{ timeout = 2, widget = awsmx.gauge.monitor.dash }
+	{ timeout = 2, widget = awsmx.gauge.monitor.circle }
 )
 
 sysmon.buttons.ram = awful.util.table.join(
