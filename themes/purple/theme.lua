@@ -196,14 +196,6 @@ theme.widget.wrapper                                 = {
 -- Dotcount
 theme.gauge.graph.dots.dot_gap_h                     = 5
 
--- Audio
-theme.gauge.audio.blue.dash.plain                    = true
-theme.gauge.audio.blue.dash.bar.num                  = 8
-theme.gauge.audio.blue.dash.bar.width                = 3
-theme.gauge.audio.blue.dmargin                       = { 5, 0, 9, 9 }
-theme.gauge.audio.blue.width                         = 86
-theme.gauge.audio.blue.icon                          = theme.path .. "/widget/audio.svg"
-
 -- Dash
 theme.gauge.monitor.dash.width                       = 11
 
