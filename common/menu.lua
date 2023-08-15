@@ -16,7 +16,6 @@ local menu = {}
 -- Build function
 -----------------------------------------------------------------------------------------------------------------------
 function menu:init(args)
-
 	-- vars
 	args = args or {}
 	local env = args.env or {} -- fix this?
@@ -41,52 +40,53 @@ function menu:init(args)
 	-- Awesome submenu
 	------------------------------------------------------------
 	local awesomemenu = {
-		{ "Restart",         awesome.restart,                           micon("gnome-session-reboot") },
+		{ "Restart",        awesome.restart,                          micon("gnome-session-reboot") },
 		separator,
-		{ "Awesome config",  "code" .. " /home/user/.config/awesome/",  micon("terminal") },
-    }
-	
+		{ "Awesome config", "code" .. " /home/user/.config/awesome/", micon("terminal") },
+	}
+
 	-- Nix submenu
 	------------------------------------------------------------
 	local nixmenu = {
-		{ "Nix config",  "code" .. " /home/user/nix-config/",  micon("terminal") },
+		{ "Nix config", "code" .. " /home/user/nix-config/", micon("terminal") },
 	}
 
 	-- Places submenu
 	------------------------------------------------------------
 	local placesmenu = {
-		{ "Downloads",   env.fm .. " downloads",       micon("folder-download")  },
-		{ "Music",       env.fm .. " media/musics",    micon("folder-music")     },
-		{ "Pictures",    env.fm .. " media/pictures",  micon("folder-pictures")  },
-		{ "Videos",      env.fm .. " media/videos",    micon("folder-videos")    },
+		{ "Downloads", env.fm .. " downloads",      micon("folder-download") },
+		{ "Music",     env.fm .. " media/musics",   micon("folder-music") },
+		{ "Pictures",  env.fm .. " media/pictures", micon("folder-pictures") },
+		{ "Videos",    env.fm .. " media/videos",   micon("folder-videos") },
 		separator,
-		{ "HDD",       env.fm .. " /mnt/HDD",          micon("folder-bookmarks") },
+		{ "HDD", env.fm .. " /mnt/HDD", micon("folder-bookmarks") },
 	}
 
 	-- Exit submenu
 	------------------------------------------------------------
 	local exitmenu = {
-		{ "Reboot",          "reboot",            micon("gnome-session-reboot")  },
-		{ "Shutdown",        "poweroff",          micon("system-shutdown")       },
+		{ "Reboot",   "reboot",   micon("gnome-session-reboot") },
+		{ "Shutdown", "poweroff", micon("system-shutdown") },
 		separator,
-		{ "Log out",         awesome.quit,        micon("exit")                  },
+		{ "Log out", awesome.quit, micon("exit") },
 	}
 
 	-- Main menu
 	------------------------------------------------------------
-	self.mainmenu = awsmx.menu({ theme = theme,
+	self.mainmenu = awsmx.menu({
+		theme = theme,
 		items = {
-            { "Awesome",      awesomemenu, micon("awesome") },
+			{ "Awesome",      awesomemenu, micon("awesome") },
 			{ "NixOS",        nixmenu,     micon("nix") },
-			{ "Applications",  appmenu,     micon("folder") },
-			{ "Places",        placesmenu,  micon("folder_home"), key = "c" },
+			{ "Applications", appmenu,     micon("folder") },
+			{ "Places",       placesmenu,  micon("folder_home"), key = "c" },
 			separator,
-			{ "Terminal",      env.terminal, micon("terminal") },
-			{ "Thunar",        env.fm,       micon("folder")},
-			{ "Firefox",       "firefox",    micon("browser")},
-			{ "VSCode",        "code",       micon("code-editor") },
+			{ "Terminal", env.terminal, micon("terminal") },
+			{ "Thunar",   env.fm,       micon("folder") },
+			{ "Firefox",  "firefox",    micon("browser") },
+			{ "VSCode",   "code",       micon("code-editor") },
 			separator,
-			{ "Exit",          exitmenu,     micon("exit") },
+			{ "Exit", exitmenu, micon("exit") },
 		}
 	})
 
@@ -95,7 +95,7 @@ function menu:init(args)
 
 	self.widget = awsmx.gauge.svgbox(icon, nil, color)
 	self.buttons = awful.util.table.join(
-		awful.button({ }, 1, function () self.mainmenu:toggle() end)
+		awful.button({}, 1, function() self.mainmenu:toggle() end)
 	)
 end
 

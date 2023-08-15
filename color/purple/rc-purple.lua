@@ -71,24 +71,24 @@ taglist.layout = wibox.widget {
 	expand          = true,
 	forced_num_rows = taglist.rows_num,
 	forced_num_cols = taglist.cols_num,
-    layout          = wibox.layout.grid,
+	layout          = wibox.layout.grid,
 }
 
 -- buttons
 taglist.buttons = awful.util.table.join(
-	awful.button({         }, 1, function(t) t:view_only() end),
+	awful.button({}, 1, function(t) t:view_only() end),
 	awful.button({ env.mod }, 1, function(t) if client.focus then client.focus:move_to_tag(t) end end),
-	awful.button({         }, 2, awful.tag.viewtoggle),
-	awful.button({         }, 3, function(t) awsmx.widget.layoutbox:toggle_menu(t) end),
+	awful.button({}, 2, awful.tag.viewtoggle),
+	awful.button({}, 3, function(t) awsmx.widget.layoutbox:toggle_menu(t) end),
 	awful.button({ env.mod }, 3, function(t) if client.focus then client.focus:toggle_tag(t) end end),
-	awful.button({         }, 4, function(t) awful.tag.viewnext(t.screen) end),
-	awful.button({         }, 5, function(t) awful.tag.viewprev(t.screen) end)
+	awful.button({}, 4, function(t) awful.tag.viewnext(t.screen) end),
+	awful.button({}, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
 -- some tag settings which indirectly depends on row and columns number of taglist
 taglist.names = {
 	"1:1", "2:1", "3:1", "4:1", "5:1", -- [1]
-    "1:2", "2:2", "3:2", "4:3", "5:1", -- [2]
+	"1:2", "2:2", "3:2", "4:3", "5:1", -- [2]
 }
 
 local al = awful.layout.layouts
@@ -106,7 +106,8 @@ local tagline_style = { tagline = { height = 40, rows = taglist.rows_num, spacin
 
 -- load list of app name aliases from files and set it as part of tasklist theme
 tasklist.style = {
-	appnames = require("common.alias"),  widget = awsmx.gauge.task.purple.new,
+	appnames = require("common.alias"),
+	widget = awsmx.gauge.task.purple.new,
 	winmenu = tagline_style
 }
 
@@ -136,10 +137,10 @@ textclock.buttons = awful.util.table.join(
 local layoutbox = {}
 
 layoutbox.buttons = awful.util.table.join(
-	awful.button({ }, 3, function () mymenu.mainmenu:toggle() end),
-	awful.button({ }, 1, function () awsmx.widget.layoutbox:toggle_menu(mouse.screen.selected_tag) end),
-	awful.button({ }, 4, function () awful.layout.inc( 1) end),
-	awful.button({ }, 5, function () awful.layout.inc(-1) end)
+	awful.button({}, 3, function() mymenu.mainmenu:toggle() end),
+	awful.button({}, 1, function() awsmx.widget.layoutbox:toggle_menu(mouse.screen.selected_tag) end),
+	awful.button({}, 4, function() awful.layout.inc(1) end),
+	awful.button({}, 5, function() awful.layout.inc(-1) end)
 )
 
 -- Tray widget
@@ -159,7 +160,7 @@ local sysmon = { widget = {}, buttons = {} }
 sysmon.widget.network = awsmx.widget.net(
 	{
 		interface = "enp42s0",
-		speed = { up = 6 * 1024^2, down = 6 * 1024^2 },
+		speed = { up = 6 * 1024 ^ 2, down = 6 * 1024 ^ 2 },
 		autoscale = false
 	},
 	{ timeout = 1, widget = awsmx.gauge.icon.double, monitor = { step = 0.1 } }
@@ -172,7 +173,7 @@ sysmon.widget.cpu = awsmx.widget.sysmon(
 )
 
 sysmon.buttons.cpu = awful.util.table.join(
-	awful.button({ }, 1, function() awsmx.float.top:show("cpu") end)
+	awful.button({}, 1, function() awsmx.float.top:show("cpu") end)
 )
 
 -- RAM usage
@@ -182,7 +183,7 @@ sysmon.widget.ram = awsmx.widget.sysmon(
 )
 
 sysmon.buttons.ram = awful.util.table.join(
-	awful.button({ }, 1, function() awsmx.float.top:show("mem") end)
+	awful.button({}, 1, function() awsmx.float.top:show("mem") end)
 )
 
 
@@ -234,7 +235,7 @@ awful.screen.connect_for_each_screen(
 				layout = wibox.layout.fixed.horizontal,
 
 				separator,
-                env.wrapper(sysmon.widget.network, "network"),
+				env.wrapper(sysmon.widget.network, "network"),
 				separator,
 				env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
 				env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
@@ -254,7 +255,7 @@ if not lock.desktop then
 	local desktop = require("color.purple.desktop") -- load file with desktop widgets configuration
 	desktop:init({
 		env = env,
-		buttons = awful.util.table.join(awful.button({}, 3, function () mymenu.mainmenu:toggle() end))
+		buttons = awful.util.table.join(awful.button({}, 3, function() mymenu.mainmenu:toggle() end))
 	})
 end
 
@@ -273,7 +274,7 @@ logout:init()
 
 -- Key bindings
 -----------------------------------------------------------------------------------------------------------------------
-local appkeys = require("common.appkeys") -- load file with application keys sheet
+local appkeys = require("common.appkeys")    -- load file with application keys sheet
 
 local hotkeys = require("color.purple.keys") -- load file with hotkeys configuration
 hotkeys:init({

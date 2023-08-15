@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Grab environment
-local awful =require("awful")
+local awful = require("awful")
 local beautiful = require("beautiful")
 local redtitle = require("awsmx.titlebar")
 
@@ -39,7 +39,6 @@ rules.maximized = {
 -- Build rule table
 -----------------------------------------------------------------------------------------------------------------------
 function rules:init(args)
-
 	args = args or {}
 	self.base_properties.keys = args.hotkeys.keys.client
 	self.base_properties.buttons = args.hotkeys.mouse.client
@@ -58,7 +57,7 @@ function rules:init(args)
 			properties = { floating = true }
 		},
 		{
-			rule_any   = self.maximized,
+			rule_any = self.maximized,
 			callback = function(c)
 				c.maximized = true
 				redtitle.cut_all({ c })
@@ -66,12 +65,12 @@ function rules:init(args)
 			end
 		},
 		{
-			rule_any   = { type = { "normal", "dialog" }},
+			rule_any   = { type = { "normal", "dialog" } },
 			except_any = self.titlebar_exceptions,
 			properties = { titlebars_enabled = true }
 		},
 		{
-			rule_any   = { type = { "normal" }},
+			rule_any   = { type = { "normal" } },
 			properties = { placement = awful.placement.no_overlap + awful.placement.no_offscreen }
 		},
 
