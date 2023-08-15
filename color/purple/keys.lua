@@ -18,7 +18,7 @@ local appswitcher = awsmx.float.appswitcher
 local current = awsmx.widget.tasklist.filter.currenttags
 local allscr = awsmx.widget.tasklist.filter.allscreen
 local laybox = awsmx.widget.layoutbox
-local redtip = awsmx.float.hotkeys
+local modtip = awsmx.float.hotkeys
 local laycom = awsmx.layout.common
 local grid = awsmx.layout.grid
 local map = awsmx.layout.map
@@ -213,11 +213,11 @@ function hotkeys:init(args)
 		local app = client.focus.class:lower()
 		for name, sheet in pairs(keys) do
 			if name == app then
-				redtip:set_pack(
+				modtip:set_pack(
 					client.focus.class, sheet.pack, sheet.style.column, sheet.style.geometry,
-					function() redtip:remove_pack() end
+					function() modtip:remove_pack() end
 				)
-				redtip:show()
+				modtip:show()
 				return
 			end
 		end
@@ -333,7 +333,7 @@ function hotkeys:init(args)
 			{} -- hidden key
 		},
 		{
-			{ env.mod }, "F1", function() redtip:show() end,
+			{ env.mod }, "F1", function() modtip:show() end,
 			{ description = "Show hotkeys helper", group = "Action" }
 		},
 	}
@@ -751,7 +751,7 @@ function hotkeys:init(args)
 	--------------------------------------------------------------------------------
 	self.raw.root = {
 		{
-			{ env.mod }, "F1", function() redtip:show() end,
+			{ env.mod }, "F1", function() modtip:show() end,
 			{ description = "[Hold] Awesome hotkeys helper", group = "Help" }
 		},
 		{
