@@ -74,7 +74,7 @@ theme.desktop.speedmeter.compact.icon                = {
 theme.desktop.speedmeter.compact.height.chart        = 45
 theme.desktop.speedmeter.compact.label.width         = 70
 theme.desktop.speedmeter.compact.label.height        = 15 -- manually set after font size
-theme.desktop.speedmeter.compact.label.font          = { font = "Fira Code", size = 22, face = 1, slant = 0 }
+theme.desktop.speedmeter.compact.label.font          = { font = "Fira Code", size = 20, face = 1, slant = 0 }
 theme.desktop.speedmeter.compact.margins.label       = { 10, 10, 0, 0 }
 theme.desktop.speedmeter.compact.margins.chart       = { 0, 0, 3, 3 }
 theme.desktop.speedmeter.compact.chart               = { bar = { width = 6, gap = 3 }, height = nil, zero_height = 0 }
