@@ -187,7 +187,7 @@ theme.widget.wrapper                                 = {
 	ram       = { 3, 3, 7, 7 },
 	network   = { 3, 3, 7, 7 },
 	taglist   = { 4, 4, 5, 4 },
-	tasklist  = { 0, 30, 0, 0 }, -- centering tasklist widget
+	tasklist  = { 0, -8, 0, 0 }, -- centering tasklist widget
 }
 
 -- Various widgets style tuning
