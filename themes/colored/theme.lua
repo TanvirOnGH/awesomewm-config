@@ -151,11 +151,6 @@ function theme:update()
 	self.gauge.icon.double.icon2                = self.wicon.up
 	self.gauge.icon.double.igap                 = -6
 
-	-- Volume control
-	------------------------------------------------------------
-	self.gauge.audio.red.icon                   = { volume = self.wicon.audio, mute = self.wicon.mute }
-	self.gauge.audio.blue.icon                  = self.wicon.headphones
-
 	-- Layoutbox
 	------------------------------------------------------------
 	self.widget.layoutbox.menu.icon_margin      = { 8, 12, 9, 9 }

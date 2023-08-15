@@ -368,12 +368,6 @@ function theme:init()
 		dash    = { bar = { num = 5, width = 4 } },
 	}
 
-	self.gauge.audio.red = {
-		icon  = { volume = self.icon.system, mute = self.icon.warning },             -- icons
-		step  = 0.05,                                                                -- icon painting step
-		color = { main = self.color.main, icon = self.color.icon, mute = self.color.gray } -- custom colors
-	}
-
 	-- Dotcount (used in minitray widget)
 	------------------------------------------------------------
 	self.gauge.graph.dots = {
@@ -431,31 +425,6 @@ function theme:init()
 		},
 	}
 
-	self.gauge.tag.red = {
-		width        = 80,             -- widget width
-		text_shift   = 19,             -- shift from upper border of widget to lower border of text
-		font         = self.cairo_fonts.tag, -- font
-		show_counter = true,           -- visible/hidden apps counter
-		color        = self.color,     -- colors (main used)
-
-		-- apps counter
-		counter      = {
-			size = 12, -- counter font size
-			margin = 2, -- margin around counter
-			coord = { 40, 28 } -- counter position
-		},
-
-		-- functions for state marks
-		marks        = nil,
-
-		-- geometry for state marks
-		geometry     = {
-			active   = { height = 4, y = 27 },            -- active tag mark
-			focus    = { x = 5, y = 7, width = 10, height = 12 }, -- focused tag mark
-			occupied = { x = 68, y = 7, width = 8, height = 12 } -- occupied tag mark
-		}
-	}
-
 	-- Task (base element of tasklist)
 	------------------------------------------------------------
 
@@ -477,20 +446,6 @@ function theme:init()
 
 		point      = { size = 5, space = 5, gap = 4 },
 		underline  = { height = 10, thickness = 3, gap = 34, dh = 0 },
-	}
-
-	self.gauge.task.red = {
-		width      = 40,                 -- widget width
-		text_shift = 19,                 -- shift from upper border of widget to lower border of text
-		font       = self.cairo_fonts.tag, -- font
-		line       = { height = 4, y = 27 }, -- application state indicator
-		color      = self.color,         -- colors (main used)
-
-		-- applications counter
-		counter    = {
-			size = 12, -- counter font size
-			margin = 2 -- margin around counter
-		},
 	}
 
 	-- Panel widgets
