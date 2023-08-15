@@ -71,8 +71,8 @@ theme.desktop.speedmeter.compact.icon                = {
 	down = theme.path .. "/desktop/down.svg",
 	margin = { 0, 4, 0, 0 }
 }
-theme.desktop.speedmeter.compact.height.chart        = 46
-theme.desktop.speedmeter.compact.label.width         = 76
+theme.desktop.speedmeter.compact.height.chart        = 45
+theme.desktop.speedmeter.compact.label.width         = 70
 theme.desktop.speedmeter.compact.label.height        = 15 -- manually set after font size
 theme.desktop.speedmeter.compact.label.font          = { font = "Fira Code", size = 22, face = 1, slant = 0 }
 theme.desktop.speedmeter.compact.margins.label       = { 10, 10, 0, 0 }
@@ -99,14 +99,6 @@ theme.individual.desktop.multimeter.cpumem           = {
 	icon   = { image = theme.path .. "/desktop/cpu.svg" }
 }
 
--- Multimeter transmission info (individual widget)
-theme.individual.desktop.multimeter.transmission     = {
-	labels = { "SEED", "DNLD" },
-	unit   = { { "KB", -1 }, { "MB", 1024 ^ 1 } },
-	upbar  = { width = 20, chunk = { num = 8, line = 4 }, shape = "plain" },
-	icon   = { image = theme.path .. "/desktop/transmission.svg" }
-}
-
 -- Multilines (base widget)
 theme.desktop.multiline.lines.show                   = { label = false, tooltip = true, text = false }
 theme.desktop.multiline.icon.margin                  = theme.desktop.multimeter.icon.margin
@@ -124,47 +116,6 @@ theme.individual.desktop.multiline.storage           = {
 -- Multilines qemu drive images (individual widget)
 theme.individual.desktop.multiline.images            = {
 	unit = { { "KB", 1 }, { "MB", 1024 ^ 1 }, { "GB", 1024 ^ 2 } },
-}
-
--- Multilines temperature (individual widget)
-theme.individual.desktop.multiline.thermal           = {
-	digits = 1,
-	icon   = { image = theme.path .. "/desktop/thermometer.svg", margin = { 0, 8, 0, 0 } },
-	lines  = {
-		line        = { height = 13 },
-		text        = { font = { font = "Fira Code", size = 18, face = 1, slant = 0 }, width = 44 },
-		label       = { font = { font = "Fira Code", size = 18, face = 1, slant = 0 } },
-		gap         = { text = 10 },
-		progressbar = { chunk = { gap = 6, width = 4 } },
-		show        = { text = true, label = false, tooltip = true },
-	},
-	unit   = { { "°C", -1 } },
-}
-
--- Multilines fan (individual widget)
-theme.individual.desktop.multiline.fan               = {
-	digits = 1,
-	margin = { 0, 0, 5, 5 },
-	icon   = { image = theme.path .. "/desktop/fan.svg", margin = { 8, 16, 0, 0 } },
-	lines  = {
-		line        = { height = 13 },
-		progressbar = { chunk = { gap = 6, width = 4 } },
-		show        = { text = false, label = false, tooltip = true },
-	},
-	unit   = { { "RPM", -1 }, { "R", 1 } },
-}
-
--- Multilines traffic (individual widget)
-theme.individual.desktop.multiline.vnstat            = {
-	digits = 3,
-	margin = { 0, 0, 5, 5 },
-	icon   = { image = theme.path .. "/desktop/traffic.svg", margin = { 8, 16, 0, 0 } },
-	lines  = {
-		line        = { height = 13 },
-		progressbar = { chunk = { gap = 6, width = 4 } },
-		show        = { text = false, label = false, tooltip = true },
-	},
-	unit   = { { "B", 1 }, { "KiB", 1024 }, { "MiB", 1024 ^ 2 }, { "GiB", 1024 ^ 3 } },
 }
 
 -- Panel widgets
