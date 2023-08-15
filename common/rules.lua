@@ -5,7 +5,7 @@
 -- Grab environment
 local awful = require("awful")
 local beautiful = require("beautiful")
-local redtitle = require("awsmx.titlebar")
+local modtitle = require("awsmx.titlebar")
 
 -- Initialize tables and vars for the module
 -----------------------------------------------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ function rules:init(args)
 			rule_any = self.maximized,
 			callback = function(c)
 				c.maximized = true
-				redtitle.cut_all({ c })
+				modtitle.cut_all({ c })
 				c.height = c.screen.workarea.height - 2 * c.border_width
 			end
 		},
