@@ -879,37 +879,6 @@ function hotkeys:init(args)
 			{ env.mod }, "g", function() qlaunch:show() end,
 			{ description = "Application quick launcher", group = "Launchers" }
 		},
-
-		{
-			{}, "XF86AudioRaiseVolume", volume_raise,
-			{ description = "Increase volume", group = "Volume control" }
-		},
-		{
-			{}, "XF86AudioLowerVolume", volume_lower,
-			{ description = "Reduce volume", group = "Volume control" }
-		},
-		{
-			{}, "XF86AudioMute", volume_mute,
-			{ description = "Mute audio", group = "Volume control" }
-		},
-
-		{
-			{ env.mod }, ".", function() awsmx.float.player:show(rb_corner()) end,
-			{ description = "Show/hide widget", group = "Audio player" }
-		},
-		{
-			{}, "XF86AudioPlay", function() awsmx.float.player:action("PlayPause") end,
-			{ description = "Play/Pause track", group = "Audio player" }
-		},
-		{
-			{}, "XF86AudioNext", function() awsmx.float.player:action("Next") end,
-			{ description = "Next track", group = "Audio player" }
-		},
-		{
-			{}, "XF86AudioPrev", function() awsmx.float.player:action("Previous") end,
-			{ description = "Previous track", group = "Audio player" }
-		},
-
 		{
 			{ env.mod }, "v", function() laybox:toggle_menu(mouse.screen.selected_tag) end,
 			{ description = "Show layout menu", group = "Layouts" }
