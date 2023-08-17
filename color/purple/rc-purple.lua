@@ -113,16 +113,18 @@ taglist.names = {
 
 local al = awful.layout.layouts
 taglist.layouts = {
+	-- Check common/layout for layouts
 	al[16],
 	al[3],
-	al[14],
-	al[12],
-	al[1], -- [1]
+	al[3],
+	al[3],
+	al[3],
+
 	al[15],
 	al[4],
-	al[14],
-	al[12],
-	al[2], -- [2]
+	al[4],
+	al[4],
+	al[4],
 }
 
 -- Tasklist
@@ -302,7 +304,7 @@ logout:init()
 
 -- Key bindings
 -----------------------------------------------------------------------------------------------------------------------
-local appkeys = require("common.appkeys") -- load file with application keys sheet
+local appkeys = require("common.appkeys")    -- load file with application keys sheet
 
 local hotkeys = require("color.purple.keys") -- load file with hotkeys configuration
 hotkeys:init({
