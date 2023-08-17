@@ -1279,13 +1279,13 @@ function hotkeys:init(args)
 		},
 		{
 			{ env.alt },
-			"Left",
+			"a",
 			awful.tag.viewprev,
 			{ description = "View previous tag", group = "Tag navigation" },
 		},
 		{
 			{ env.alt },
-			"Up",
+			"w",
 			function()
 				tag_line_jump(tcn)
 			end,
@@ -1293,7 +1293,7 @@ function hotkeys:init(args)
 		},
 		{
 			{ env.alt },
-			"Down",
+			"s",
 			function()
 				tag_line_jump(tcn, true)
 			end,
