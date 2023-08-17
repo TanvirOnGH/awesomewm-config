@@ -304,7 +304,7 @@ logout:init()
 
 -- Key bindings
 -----------------------------------------------------------------------------------------------------------------------
-local appkeys = require("common.appkeys")    -- load file with application keys sheet
+local appkeys = require("common.appkeys") -- load file with application keys sheet
 
 local hotkeys = require("color.purple.keys") -- load file with hotkeys configuration
 hotkeys:init({
