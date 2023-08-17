@@ -381,7 +381,7 @@ function hotkeys:init(args)
 				appswitcher:hide(true)
 			end,
 			{ description = "Exit", group = "Action" },
-        },
+		},
 		{
 			{ env.mod },
 			"Escape",
