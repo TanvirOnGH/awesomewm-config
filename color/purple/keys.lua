@@ -1314,18 +1314,9 @@ function hotkeys:init(args)
 			end,
 			{ description = "Swap clients between lines", group = "Tag navigation" },
 		},
-
 		{
 			{ env.mod },
 			"s",
-			function()
-				mainmenu:show()
-			end,
-			{ description = "Main menu", group = "Launchers" },
-		},
-		{
-			{ env.mod },
-			"d",
 			function()
 				apprunner:show()
 			end,
