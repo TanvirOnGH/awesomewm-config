@@ -381,7 +381,7 @@ function hotkeys:init(args)
 				appswitcher:hide(true)
 			end,
 			{ description = "Exit", group = "Action" },
-		},
+        },
 		{
 			{ env.mod },
 			"Escape",
@@ -392,7 +392,7 @@ function hotkeys:init(args)
 		},
 		{
 			{ env.mod },
-			"F1",
+			"Escape",
 			function()
 				modtip:show()
 			end,
@@ -1116,7 +1116,7 @@ function hotkeys:init(args)
 	self.raw.root = {
 		{
 			{ env.mod },
-			"F1",
+			"Escape",
 			function()
 				modtip:show()
 			end,
