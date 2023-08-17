@@ -1272,19 +1272,19 @@ function hotkeys:init(args)
 			{ description = "Swith to previos tag by history", group = "Tag navigation" },
 		},
 		{
-			{ env.mod },
-			"Right",
+			{ env.alt },
+			"d",
 			awful.tag.viewnext,
 			{ description = "View next tag", group = "Tag navigation" },
 		},
 		{
-			{ env.mod },
+			{ env.alt },
 			"Left",
 			awful.tag.viewprev,
 			{ description = "View previous tag", group = "Tag navigation" },
 		},
 		{
-			{ env.mod },
+			{ env.alt },
 			"Up",
 			function()
 				tag_line_jump(tcn)
@@ -1292,7 +1292,7 @@ function hotkeys:init(args)
 			{ description = "Switch to upper line", group = "Tag navigation" },
 		},
 		{
-			{ env.mod },
+			{ env.alt },
 			"Down",
 			function()
 				tag_line_jump(tcn, true)
