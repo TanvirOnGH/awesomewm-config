@@ -205,7 +205,6 @@ function hotkeys:init(args)
 	args = args or {}
 	local env = args.env
 	local mainmenu = args.menu
-	local volume = args.volume
 
 	local tcn = args.tag_cols_num or 0
 
@@ -221,17 +220,6 @@ function hotkeys:init(args)
 			awful.button({}, 5, awful.tag.viewprev)
 		)
 	)
-
-	-- volume functions
-	local volume_raise = function()
-		volume:change_volume({ show_notify = true })
-	end
-	local volume_lower = function()
-		volume:change_volume({ show_notify = true, down = true })
-	end
-	local volume_mute = function()
-		volume:mute()
-	end
 
 	-- Init widgets
 	flex.float.qlaunch:init()

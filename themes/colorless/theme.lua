@@ -339,16 +339,6 @@ function theme:init()
 		color = self.color, -- color (secondary used)
 	}
 
-	-- Step like dash bar (user for volume widgets)
-	------------------------------------------------------------
-	self.gauge.graph.dash = {
-		bar = {
-			width = 4, -- dash element width
-			num = 10, -- number of dash elements
-		},
-		color = self.color, -- color (main used)
-	}
-
 	-- Dotcount (used in minitray widget)
 	------------------------------------------------------------
 	self.gauge.graph.dots = {
