@@ -1150,6 +1150,16 @@ function hotkeys:init(args)
 				flex.float.bartip:show()
 			end,
 			{ description = "[Hold] Titlebar control", group = "Window control" },
+        },
+		{
+			{ env.mod, "Shift" },
+			"q",
+			function()
+				if client.focus then
+					client.focus:kill()
+				end
+			end,
+			{ description = "Kill focused window", group = "Window control" },
 		},
 		{
 			{ env.mod },
