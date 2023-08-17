@@ -206,7 +206,6 @@ function hotkeys:init(args)
 	local env = args.env
 	local mainmenu = args.menu
 	local volume = args.volume
-	local appkeys = args.appkeys or {}
 
 	local tcn = args.tag_cols_num or 0
 
@@ -1134,14 +1133,6 @@ function hotkeys:init(args)
 				modtip:show()
 			end,
 			{ description = "[Hold] Awesome hotkeys helper", group = "Help" },
-		},
-		{
-			{ env.mod, "Control" },
-			"F1",
-			function()
-				apphelper(appkeys)
-			end,
-			{ description = "[Hold] Hotkeys helper for application", group = "Help" },
 		},
 
 		{

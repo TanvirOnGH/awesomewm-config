@@ -304,13 +304,10 @@ logout:init()
 
 -- Key bindings
 -----------------------------------------------------------------------------------------------------------------------
-local appkeys = require("common.appkeys") -- load file with application keys sheet
-
 local hotkeys = require("color.purple.keys") -- load file with hotkeys configuration
 hotkeys:init({
 	env = env,
 	menu = mymenu.mainmenu,
-	appkeys = appkeys,
 	tag_cols_num = taglist.cols_num,
 })
 
