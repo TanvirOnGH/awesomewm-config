@@ -1138,7 +1138,7 @@ function hotkeys:init(args)
 				flex.float.bartip:show()
 			end,
 			{ description = "[Hold] Titlebar control", group = "Window control" },
-        },
+		},
 		{
 			{ env.mod, "Shift" },
 			"f",
