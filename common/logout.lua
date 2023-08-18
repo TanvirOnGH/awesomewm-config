@@ -29,14 +29,6 @@ function logout:init()
 			label = "Restart",
 			close_apps = true,
 		},
-		{ -- Switch user
-			callback = function()
-				awful.spawn.with_shell("dm-tool switch-to-greeter")
-			end,
-			icon_name = "switch",
-			label = "Switch User",
-			close_apps = false,
-		},
 		{ -- Suspend
 			callback = function()
 				awful.spawn.with_shell("systemctl suspend")
