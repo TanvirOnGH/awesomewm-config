@@ -1138,6 +1138,14 @@ function hotkeys:init(args)
 				flex.float.bartip:show()
 			end,
 			{ description = "[Hold] Titlebar control", group = "Window control" },
+        },
+		{
+			{ env.mod, "Shift" },
+			"f",
+			function()
+				awful.spawn.with_shell("flash_window")
+			end,
+			{ description = "Flash focused window", group = "Window control" },
 		},
 		{
 			{ env.mod, "Shift" },
