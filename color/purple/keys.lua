@@ -1145,7 +1145,7 @@ function hotkeys:init(args)
 			function()
 				awful.spawn.with_shell("flash_window")
 			end,
-			{ description = "Flash focused window", group = "Window control" },
+			{ description = "Flash focused window", group = "Client focus" },
 		},
 		{
 			{ env.mod, "Shift" },
