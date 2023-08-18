@@ -81,7 +81,7 @@ function menu:init(args)
 			separator,
 			{ "Terminal", env.terminal, micon("terminal") },
 			{ "Thunar", env.fm, micon("folder") },
-			{ "Firefox", "firefox", micon("browser") },
+			{ "Firefox", "firefox", micon("firefox") },
 			{ "VSCode", "code", micon("code-editor") },
 			separator,
 			{ "Exit", exitmenu, micon("exit") },
