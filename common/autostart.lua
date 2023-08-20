@@ -20,7 +20,7 @@ function autostart.run()
 
 	-- utils
 	awful.spawn.with_shell("picom --daemon") -- compositor
-	awful.spawn.with_shell("flashfocus") -- flashfocus daemon
+	-- awful.spawn.with_shell("flashfocus") -- flashfocus daemon
 
 	-- apps
 end
