@@ -100,16 +100,16 @@ taglist.buttons = awful.util.table.join(
 -- some tag settings which indirectly depends on row and columns number of taglist
 taglist.names = {
 	"1:1",
-	"2:1",
-	"3:1",
-	"4:1",
-	"5:1",
-
 	"1:2",
+	"1:3",
+	"1:4",
+	"1:5",
+
+	"2:1",
 	"2:2",
-	"3:2",
-	"4:3",
-	"5:2",
+	"2:3",
+	"2:4",
+	"2:5",
 }
 
 local al = awful.layout.layouts
@@ -121,7 +121,7 @@ taglist.layouts = {
 	al[3],
 	al[3],
 
-	al[15],
+	al[16],
 	al[4],
 	al[4],
 	al[4],
