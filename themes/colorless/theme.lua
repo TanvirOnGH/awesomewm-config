@@ -362,7 +362,7 @@ function theme:init()
 
 	-- Tag (base element of taglist)
 	------------------------------------------------------------
-	self.gauge.tag.purple = {
+	self.gauge.tag.rosybrown = {
 		width = 40, -- widget width
 		color = self.color, -- colors (main used)
 
@@ -382,7 +382,7 @@ function theme:init()
 
 	-- Task (base element of tasklist)
 	------------------------------------------------------------
-	self.gauge.task.purple = {
+	self.gauge.task.rosybrown = {
 		width = 76,
 		text_shift = 26,
 		color = self.color,
@@ -515,7 +515,7 @@ function theme:init()
 		need_group = true, -- group application instances into one task element
 		parser = {}, -- redlat desktop file parser settings (see theme.service.dfparser)
 		task_margin = { 5, 5, 0, 0 }, -- margins around task element
-		task = self.gauge.task.purple, -- style for task gauge widget
+		task = self.gauge.task.rosybrown, -- style for task gauge widget
 	}
 
 	-- menu settings
