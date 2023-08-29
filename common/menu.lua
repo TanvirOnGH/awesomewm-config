@@ -46,7 +46,7 @@ function menu:init(args)
 	-- Nix submenu
 	------------------------------------------------------------
 	local nixmenu = {
-		{ "Nix config", "code" .. " /home/user/nix-config/", micon("terminal") },
+		{ "Nix config", "code" .. " /home/user/development/nix-config/", micon("terminal") },
 	}
 
 	-- Places submenu
