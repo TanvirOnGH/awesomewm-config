@@ -140,11 +140,10 @@ local rosy_brown_task_gauge = flex.gauge.task["rosybrown"].new
 
 -- load list of app name aliases from files and set it as part of tasklist theme
 tasklist.style = {
-    appnames = require("common.alias"),
-    widget = rosy_brown_task_gauge,
-    winmenu = tagline_style,
+	appnames = require("common.alias"),
+	widget = rosy_brown_task_gauge,
+	winmenu = tagline_style,
 }
-
 
 tasklist.buttons = awful.util.table.join(
 	awful.button({}, 1, flex.widget.tasklist.action.select),
