@@ -67,7 +67,7 @@ theme.desktop.common.bar.shaped.tooltip.set_position = theme.desktop.common.pack
 theme.desktop.speedmeter.compact.icon = {
 	up = theme.path .. "/desktop/up.svg",
 	down = theme.path .. "/desktop/down.svg",
-	margin = { 0, 4, 0, 0 },
+	margin = { 0, 10, 0, 0 },
 }
 theme.desktop.speedmeter.compact.height.chart = 45
 theme.desktop.speedmeter.compact.label.width = 70
