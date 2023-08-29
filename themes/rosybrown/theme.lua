@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------------
---                                                  purple theme                                                       --
+--                                                  rosybrown theme                                                       --
 -----------------------------------------------------------------------------------------------------------------------
 local awful = require("awful")
 
@@ -9,17 +9,17 @@ local theme = require("themes/colored/theme")
 
 -- Color scheme
 -----------------------------------------------------------------------------------------------------------------------
-theme.color.main = "#5906D3"
-theme.color.urgent = "#864DDC"
+theme.color.main = "#C38F8F"    -- Rosy Brown
+theme.color.urgent = "#CE9C9C"  -- Light Rosy Brown
 
 -- Common
 -----------------------------------------------------------------------------------------------------------------------
-theme.path = awful.util.get_configuration_dir() .. "themes/purple"
+theme.path = awful.util.get_configuration_dir() .. "themes/rosybrown"
 
 -- Main config
 --------------------------------------------------------------------------------
 theme.panel_height = 38 -- panel height
-theme.wallpaper = awful.util.get_configuration_dir() .. "misc/wallpapers/purple/purple.png"
+theme.wallpaper = awful.util.get_configuration_dir() .. "misc/wallpapers/rosybrown/rosybrown.png"
 theme.desktopbg = theme.wallpaper
 
 -- Setup parent theme settings
@@ -143,10 +143,10 @@ theme.gauge.monitor.dash.width = 11
 
 -- Tasklist
 theme.widget.tasklist.char_digit = 8
-theme.widget.tasklist.task = theme.gauge.task.purple
+theme.widget.tasklist.task = theme.gauge.task.rosybrown
 theme.widget.tasklist.tasktip.max_width = 1200
-theme.gauge.task.purple.width = 100
-theme.gauge.task.purple.underline = { height = 0, thickness = 2, gap = 34, dh = 0 }
+theme.gauge.task.rosybrown.width = 100
+theme.gauge.task.rosybrown.underline = { height = 0, thickness = 2, gap = 34, dh = 0 }
 
 -- Floating widgets
 -----------------------------------------------------------------------------------------------------------------------

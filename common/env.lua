@@ -23,7 +23,7 @@ function env:init(args)
 	args = args or {}
 
 	-- environment vars
-	self.theme = args.theme or "purple"
+	self.theme = args.theme or "rosybrown"
 	self.mod = args.mod or "Mod4" -- Windows/Command key
 	self.alt = args.alt or "Mod1" -- Alt key
 	self.terminal = args.terminal or "kitty"

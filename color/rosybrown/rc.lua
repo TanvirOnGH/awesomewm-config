@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------------
---                                                   purple config                                                     --
+--                                                   rosybrown config                                                     --
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Load modules
@@ -33,7 +33,7 @@ require("common.ercheck") -- load file with error handling
 -- Setup theme and environment vars
 -----------------------------------------------------------------------------------------------------------------------
 local env = require("common.env") -- load file with environment
-env:init({ theme = "purple", desktop_autohide = false, set_center = true })
+env:init({ theme = "rosybrown", desktop_autohide = false, set_center = true })
 
 -- Layouts setup
 -----------------------------------------------------------------------------------------------------------------------
@@ -56,7 +56,8 @@ local separator = flex.gauge.separator.vertical()
 --------------------------------------------------------------------------------
 local taglist = {}
 
-taglist.style = { widget = flex.gauge.tag.purple.new, show_tip = true }
+local rosy_brown_gauge = flex.gauge.tag["rosybrown"].new
+taglist.style = { widget = rosy_brown_gauge, show_tip = true }
 
 -- double line taglist
 taglist.cols_num = 5
@@ -134,12 +135,16 @@ local tasklist = {}
 -- dirty double tag line setup for tasklist client menu
 local tagline_style = { tagline = { height = 40, rows = taglist.rows_num, spacing = 4 } }
 
+-- Load the rosybrown tasklist gauge widget
+local rosy_brown_task_gauge = flex.gauge.task["rosybrown"].new
+
 -- load list of app name aliases from files and set it as part of tasklist theme
 tasklist.style = {
-	appnames = require("common.alias"),
-	widget = flex.gauge.task.purple.new,
-	winmenu = tagline_style,
+    appnames = require("common.alias"),
+    widget = rosy_brown_task_gauge,
+    winmenu = tagline_style,
 }
+
 
 tasklist.buttons = awful.util.table.join(
 	awful.button({}, 1, flex.widget.tasklist.action.select),
@@ -283,7 +288,7 @@ end)
 -- Desktop widgets
 -----------------------------------------------------------------------------------------------------------------------
 if not lock.desktop then
-	local desktop = require("color.purple.desktop") -- load file with desktop widgets configuration
+	local desktop = require("color.rosybrown.desktop") -- load file with desktop widgets configuration
 	desktop:init({
 		env = env,
 		buttons = awful.util.table.join(awful.button({}, 3, function()
@@ -294,7 +299,7 @@ end
 
 -- Active screen edges
 -----------------------------------------------------------------------------------------------------------------------
-local edges = require("color.purple.edges") -- load file with edges configuration
+local edges = require("color.rosybrown.edges") -- load file with edges configuration
 edges:init({ tag_cols_num = taglist.cols_num })
 
 -- Log out screen
@@ -304,7 +309,7 @@ logout:init()
 
 -- Key bindings
 -----------------------------------------------------------------------------------------------------------------------
-local hotkeys = require("color.purple.keys") -- load file with hotkeys configuration
+local hotkeys = require("color.rosybrown.keys") -- load file with hotkeys configuration
 hotkeys:init({
 	env = env,
 	menu = mymenu.mainmenu,
@@ -318,7 +323,7 @@ rules:init({ env = env, hotkeys = hotkeys })
 
 -- Titlebar setup
 -----------------------------------------------------------------------------------------------------------------------
-local titlebar = require("color.purple.titlebar") -- load file with titlebar configuration
+local titlebar = require("color.rosybrown.titlebar") -- load file with titlebar configuration
 titlebar:init()
 
 -- Base signal set for awesome wm

@@ -5,6 +5,6 @@
 -- Configuration file selection
 -----------------------------------------------------------------------------------------------------------------------
 
-local rc = "color.purple.rc-purple"
+local rc = "color.rosybrown.rc"
 
 require(rc)
