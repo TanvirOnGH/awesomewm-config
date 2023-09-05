@@ -9,7 +9,7 @@ local theme = require("themes/colored/theme")
 
 -- Color scheme
 -----------------------------------------------------------------------------------------------------------------------
-theme.color.main = "#C38F8F" -- Rosy Brown
+theme.color.main   = "#C38F8F" -- Rosy Brown
 theme.color.urgent = "#8DB8CD" -- Light blue-gray
 
 -- Common
@@ -19,7 +19,7 @@ theme.path = awful.util.get_configuration_dir() .. "themes/rosybrown"
 -- Main config
 --------------------------------------------------------------------------------
 theme.panel_height = 38 -- panel height
-theme.wallpaper = awful.util.get_configuration_dir() .. "misc/wallpapers/rosybrown/rosybrown.png"
+theme.wallpaper = "~/media/pictures/wallpapers/awesome/rosybrown/rosybrown.png"
 theme.desktopbg = theme.wallpaper
 
 -- Setup parent theme settings
