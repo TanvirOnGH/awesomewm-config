@@ -83,7 +83,7 @@ function menu:init(args)
 			{ "Thunar", env.fm, micon("folder") },
 			{ "Firefox", "firefox", micon("firefox") },
 			{ "VSCode", "code", micon("code-editor") },
-            separator,
+			separator,
 			{ "Lock Screen", "i3lock-fancy-rapid 5 5", micon("exit") },
 			separator,
 			{ "Exit", exitmenu, micon("exit") },
