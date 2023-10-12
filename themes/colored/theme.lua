@@ -122,7 +122,7 @@ function theme:update()
 
 	-- Desktop file parser
 	--------------------------------------------------------------------------------
-	self.service.dfparser.icons.theme = self.homedir .. "/.icons/ACYLS"
+	self.service.dfparser.icons.theme = self.homedir .. "/.icons/ACYLS" -- ACYLS: <https://github.com/worron/acyls>
 	self.service.dfparser.icons.custom_only = true
 	self.service.dfparser.icons.scalable_only = true
 

@@ -217,8 +217,7 @@ function theme:init()
 		},
 		-- icon theme settings
 		icons = {
-			theme = nil, -- user icon theme path
-			--theme         = "/usr/share/icons/ACYLS", -- for example
+			theme   = self.homedir .. "/.icons/ACYLS", -- ACYLS: <https://github.com/worron/acyls>
 			df_icon = self.icon.system, -- default (fallback) icon
 			custom_only = false, -- use icons from user theme (no system fallback like 'hicolor' allowed) only
 			scalable_only = false, -- use vector(svg) icons (no raster icons allowed) only
