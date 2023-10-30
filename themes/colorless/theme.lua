@@ -10,14 +10,14 @@ local theme = {}
 -----------------------------------------------------------------------------------------------------------------------
 theme.color = {
 	-- main colors
-	main = "#02606D",
+	main = "#C38F8F",
 	gray = "#575757",
 	bg = "#161616",
 	bg_second = "#181818",
 	wibox = "#202020",
 	icon = "#a0a0a0",
 	text = "#aaaaaa",
-	urgent = "#B25500",
+	urgent = "#8DB8CD",
 	highlight = "#e0e0e0",
 	border = "#404040",
 
