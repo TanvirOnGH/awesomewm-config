@@ -214,6 +214,16 @@ sysmon.buttons.gpu = awful.util.table.join(awful.button({}, 1, function()
 	flex.float.top:show("gpu")
 end))
 
+-- VRAM usage
+sysmon.widget.vram = flex.widget.sysmon(
+	{ func = flex.system.pformatted.vram(95) },
+	{ timeout = 1, widget = flex.gauge.monitor.circle }
+)
+
+sysmon.buttons.vram = awful.util.table.join(awful.button({}, 1, function()
+	flex.float.top:show("vram")
+end))
+
 -- CPU usage
 sysmon.widget.cpu = flex.widget.sysmon(
 	{ func = flex.system.pformatted.cpu(80) },
@@ -284,7 +294,8 @@ awful.screen.connect_for_each_screen(function(s)
 			separator,
 			env.wrapper(sysmon.widget.network, "network"),
 			separator,
-			env.wrapper(sysmon.widget.gpu, "gpu", sysmon.buttons.gpu),
+            env.wrapper(sysmon.widget.gpu, "gpu", sysmon.buttons.gpu),
+			env.wrapper(sysmon.widget.vram, "vram", sysmon.buttons.vram),
 			env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
 			env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
 			separator,
