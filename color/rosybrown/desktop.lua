@@ -84,8 +84,8 @@ function desktop:init(args)
 
 	disks.args = {
 		sensors = {
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "root",     args = "/" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "windows",  args = "/mnt/windows" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "root", args = "/" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "windows", args = "/mnt/windows" },
 			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "harddisk", args = "/mnt/hdd" },
 		},
 		timeout = 300,
@@ -135,7 +135,7 @@ function desktop:init(args)
 	-- Calendar
 	--------------------------------------------------------------------------------
 	local cwidth = 100 -- calendar widget width
-	local cy = 20   -- calendar widget upper margin
+	local cy = 20 -- calendar widget upper margin
 	local cheight = wa.height - 2 * cy
 
 	local calendar = {
