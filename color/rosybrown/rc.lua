@@ -283,7 +283,7 @@ awful.screen.connect_for_each_screen(function(s)
 
 			separator,
 			env.wrapper(sysmon.widget.network, "network"),
-            separator,
+			separator,
 			env.wrapper(sysmon.widget.gpu, "gpu", sysmon.buttons.gpu),
 			env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
 			env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
