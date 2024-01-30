@@ -204,6 +204,16 @@ sysmon.widget.network = flex.widget.net({
 	autoscale = true,
 }, { timeout = 1, widget = flex.gauge.icon.double, monitor = { step = 0.1 } })
 
+-- GPU usage
+sysmon.widget.gpu = flex.widget.sysmon(
+	{ func = flex.system.pformatted.gpu(75) },
+	{ timeout = 1, widget = flex.gauge.monitor.circle }
+)
+
+sysmon.buttons.gpu = awful.util.table.join(awful.button({}, 1, function()
+	flex.float.top:show("gpu")
+end))
+
 -- CPU usage
 sysmon.widget.cpu = flex.widget.sysmon(
 	{ func = flex.system.pformatted.cpu(80) },
@@ -273,7 +283,8 @@ awful.screen.connect_for_each_screen(function(s)
 
 			separator,
 			env.wrapper(sysmon.widget.network, "network"),
-			separator,
+            separator,
+			env.wrapper(sysmon.widget.gpu, "gpu", sysmon.buttons.gpu),
 			env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
 			env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
 			separator,
