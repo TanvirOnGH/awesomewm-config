@@ -57,7 +57,7 @@ function menu:init(args)
 		{ "Pictures", env.fm .. " media/pictures", micon("folder-pictures") },
 		{ "Videos", env.fm .. " media/videos", micon("folder-videos") },
 		separator,
-        { "HDD", env.fm .. " /mnt/hdd", micon("folder-bookmarks") },
+		{ "HDD", env.fm .. " /mnt/hdd", micon("folder-bookmarks") },
 		{ "Windows", env.fm .. " /mnt/windows", micon("folder-bookmarks") },
 	}
 
