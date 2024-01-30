@@ -14,5 +14,6 @@ appnames["Pavucontrol"] = "PavuCon"
 appnames[".blueman-manager-wrapped"] = "BlueMan"
 appnames["KeePassXC"] = "KeePass"
 appnames["qBittorrent"] = "QBit"
+appnames["revolt-desktop"] = "Revolt"
 
 return appnames
