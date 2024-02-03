@@ -19,7 +19,8 @@ function autostart.run()
 	awful.spawn.with_shell("xset r rate 250 50") -- speed up keyboard auto-repeat rate
 
 	-- utils
-	awful.spawn.with_shell("picom --daemon") -- compositor
+    awful.spawn.with_shell("picom --daemon") -- compositor
+	awful.spawn.with_shell("copyq") -- clipboard manager daemon
 	-- awful.spawn.with_shell("flashfocus") -- flashfocus daemon
 
 	-- apps
