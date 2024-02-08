@@ -15,5 +15,6 @@ appnames[".blueman-manager-wrapped"] = "BlueMan"
 appnames["KeePassXC"] = "KeePass"
 appnames["qBittorrent"] = "QBit"
 appnames["revolt-desktop"] = "Revolt"
+appnames["wihotspot-gui"] = "Hotspot"
 
 return appnames
