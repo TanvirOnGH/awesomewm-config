@@ -84,7 +84,7 @@ function menu:init(args)
 			{ "Thunar", env.fm, micon("folder") },
 			{ "Firefox", "firefox", micon("firefox") },
 			{ "VSCode", "code", micon("code-editor") },
-            { "Bluetooth Manager", "blueman-manager", micon("bluetooth") },
+			{ "Bluetooth Manager", "blueman-manager", micon("bluetooth") },
 			{ "Wifi Hotspot", "wihotspot-gui", micon("wifi") },
 			{ "Volume Control", "pavucontrol", micon("volume") },
 			separator,
