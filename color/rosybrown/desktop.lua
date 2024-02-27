@@ -85,8 +85,8 @@ function desktop:init(args)
 	disks.args = {
 		sensors = {
 			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "root", args = "/" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "windows", args = "/mnt/windows" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "harddisk", args = "/mnt/hdd" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "ssd", args = "/mnt/ssd" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "hdd", args = "/mnt/hdd" },
 		},
 		timeout = 300,
 	}
