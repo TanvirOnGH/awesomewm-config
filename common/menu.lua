@@ -58,7 +58,7 @@ function menu:init(args)
 		{ "Videos", env.fm .. " media/videos", micon("folder-videos") },
 		separator,
 		{ "HDD", env.fm .. " /mnt/hdd", micon("folder-bookmarks") },
-		{ "Windows", env.fm .. " /mnt/windows", micon("folder-bookmarks") },
+		{ "SSD", env.fm .. " /mnt/ssd", micon("folder-bookmarks") },
 	}
 
 	-- Exit submenu
