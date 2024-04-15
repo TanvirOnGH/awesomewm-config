@@ -92,7 +92,7 @@ function titlebar:init()
 	style.icon_compact =
 		modutil.table.merge(modutil.table.check(beautiful, "titlebar.icon_compact") or style.icon_full, { gap = 8 })
 
-	modtitle._index = 1 -- choose default titlebar model
+	modtitle._index = 3 -- choose default titlebar model
 
 	-- titlebar setup for clients
 	client.connect_signal("request::titlebars", function(c)
