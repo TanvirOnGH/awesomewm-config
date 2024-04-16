@@ -3,6 +3,8 @@ My [awesome window manager](https://awesomewm.org) configuration (fork of [worro
 
 ![Ruby Desktop](screenshots/rosybrown_desktop.png)
 
+![Ruby Desktop Terminal Windows](screenshots/rosybrown_desktop_terminals.png)
+
 ## Installation
 ```bash
 git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome --recursive
