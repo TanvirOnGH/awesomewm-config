@@ -19,3 +19,21 @@ I'm using this [awesomewm](https://awesomewm.org) configuration on my [NixOS](ht
 Wallpapers aren't included for obvious reasons.
 
 This repository is not meant to be used as a whole, but rather as a reference for my own configuration. I do not recommend using it as is, as it is not meant to be used by anyone else. I do not provide any support for this repository. If you want to use it, you are on your own.
+
+## Misc screenshots
+
+### Window Layouts
+
+![Window Layouts](screenshots/layouts.png)
+
+### Time-Calendar widget
+
+![Time-Calendar bottom bar widget](screenshots/time_calendar_bar_widget.png)
+
+### Desktop Menu
+
+![Desktop Menu](screenshots/desktop_menu.png)
+
+### Window Menu
+
+![Window Menu](screenshots/window_menu.png)
