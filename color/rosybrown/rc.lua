@@ -159,7 +159,7 @@ flex.float.clientmenu:set_style(tagline_style)
 -- Textclock widget
 --------------------------------------------------------------------------------
 local textclock = {}
-textclock.widget = flex.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%d/%m/%Y" })
+textclock.widget = flex.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%A, %d/%m/%Y" })
 
 textclock.buttons = awful.util.table.join(awful.button({}, 1, function()
 	flex.float.calendar:show()
