@@ -1,7 +1,3 @@
------------------------------------------------------------------------------------------------------------------------
---                                                  Environment config                                               --
------------------------------------------------------------------------------------------------------------------------
-
 local awful = require("awful")
 local gears = require("gears")
 local beautiful = require("beautiful")
@@ -13,11 +9,9 @@ local flex = require("flex")
 local unpack = unpack or table.unpack
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local env = {}
 
 -- Build hotkeys depended on config parameters
------------------------------------------------------------------------------------------------------------------------
 function env:init(args)
 	-- init vars
 	args = args or {}
@@ -53,10 +47,7 @@ function env:init(args)
 end
 
 -- Common functions
------------------------------------------------------------------------------------------------------------------------
-
 -- Wallpaper setup
---------------------------------------------------------------------------------
 env.wallpaper = function(s)
 	if beautiful.wallpaper then
 		if not env.desktop_autohide and awful.util.file_readable(beautiful.wallpaper) then
@@ -68,7 +59,6 @@ env.wallpaper = function(s)
 end
 
 -- Tag tooltip text generation
---------------------------------------------------------------------------------
 env.tagtip = function(t)
 	local layname = awful.layout.getname(awful.tag.getproperty(t, "layout"))
 	if flex.util.table.check(beautiful, "widget.layoutbox.name_alias") then
@@ -78,7 +68,6 @@ env.tagtip = function(t)
 end
 
 -- Panel widgets wrapper
---------------------------------------------------------------------------------
 env.wrapper = function(widget, name, buttons)
 	local margin = flex.util.table.check(beautiful, "widget.wrapper") and beautiful.widget.wrapper[name]
 		or { 0, 0, 0, 0 }
@@ -89,6 +78,4 @@ env.wrapper = function(widget, name, buttons)
 	return wibox.container.margin(widget, unpack(margin))
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return env

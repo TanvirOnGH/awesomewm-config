@@ -1,14 +1,9 @@
------------------------------------------------------------------------------------------------------------------------
---                                                Rules config                                                       --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local awful = require("awful")
 local beautiful = require("beautiful")
 local modtitle = require("flex.titlebar")
 
 -- Initialize tables and vars for the module
------------------------------------------------------------------------------------------------------------------------
 local rules = {}
 
 rules.base_properties = {
@@ -38,7 +33,6 @@ rules.maximized = {
 }
 
 -- Build rule table
------------------------------------------------------------------------------------------------------------------------
 function rules:init(args)
 	args = args or {}
 	self.base_properties.keys = args.hotkeys.keys.client
@@ -46,7 +40,6 @@ function rules:init(args)
 	self.env = args.env or {}
 
 	-- Build rules
-	--------------------------------------------------------------------------------
 	self.rules = {
 		{
 			rule = {},
@@ -92,10 +85,7 @@ function rules:init(args)
 	}
 
 	-- Set rules
-	--------------------------------------------------------------------------------
 	awful.rules.rules = rules.rules
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return rules

@@ -1,7 +1,3 @@
------------------------------------------------------------------------------------------------------------------------
---                                          Hotkeys and mouse buttons config                                         --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local table = table
 local unpack = unpack or table.unpack
@@ -9,7 +5,6 @@ local awful = require("awful")
 local flex = require("flex")
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local hotkeys = { mouse = {}, raw = {}, keys = {}, fake = {} }
 
 -- key aliases
@@ -28,7 +23,6 @@ local numkeys_line = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 local tagkeys_line = { "q", "w", "e", "r", "t", "y", "u", "i", "o" }
 
 -- Key support functions
------------------------------------------------------------------------------------------------------------------------
 
 -- change window focus by history
 --loc function focus_to_previous()
@@ -199,7 +193,6 @@ local rb_corner = function()
 end
 
 -- Build hotkeys depended on config parameters
------------------------------------------------------------------------------------------------------------------------
 function hotkeys:init(args)
 	-- Init vars
 	args = args or {}
@@ -225,7 +218,6 @@ function hotkeys:init(args)
 	flex.float.qlaunch:init()
 
 	-- Application hotkeys helper
-	--------------------------------------------------------------------------------
 	local apphelper = function(keys)
 		if not client.focus then
 			return
@@ -246,10 +238,7 @@ function hotkeys:init(args)
 	end
 
 	-- Keys for widgets
-	--------------------------------------------------------------------------------
-
 	-- Apprunner widget
-	------------------------------------------------------------
 	local apprunner_keys_move = {
 		{
 			{ env.mod },
@@ -273,7 +262,6 @@ function hotkeys:init(args)
 	--apprunner:set_keys(apprunner_keys_move, "move")
 
 	-- Log out screen
-	------------------------------------------------------------
 	local logout_extra_keys = {
 		{
 			{},
@@ -292,7 +280,6 @@ function hotkeys:init(args)
 	logout:set_keys(awful.util.table.join(logout.keys, logout_extra_keys))
 
 	-- Menu widget
-	------------------------------------------------------------
 	local menu_keys_move = {
 		{
 			{ env.mod },
@@ -324,7 +311,6 @@ function hotkeys:init(args)
 	--flex.menu:set_keys(menu_keys_move, "move")
 
 	-- Appswitcher widget
-	------------------------------------------------------------
 	local appswitcher_keys = {
 		{
 			{ env.mod },
@@ -403,8 +389,6 @@ function hotkeys:init(args)
 	appswitcher:set_keys(appswitcher_keys)
 
 	-- Emacs like key sequences
-	--------------------------------------------------------------------------------
-
 	-- initial key
 	local keyseq = { { env.mod }, "c", {}, {} }
 
@@ -643,8 +627,6 @@ function hotkeys:init(args)
 	end
 
 	-- Layouts
-	--------------------------------------------------------------------------------
-
 	-- shared layout keys
 	local layout_tile = {
 		{
@@ -1112,7 +1094,6 @@ function hotkeys:init(args)
 	flex.layout.map:set_keys(layout_map_resize, "resize")
 
 	-- Global keys
-	--------------------------------------------------------------------------------
 	self.raw.root = {
 		{
 			{ env.mod },
@@ -1367,7 +1348,6 @@ function hotkeys:init(args)
 	}
 
 	-- Client keys
-	--------------------------------------------------------------------------------
 	self.raw.client = {
 		{
 			{ env.mod },
@@ -1409,8 +1389,6 @@ function hotkeys:init(args)
 	self.keys.client = flex.util.key.build(self.raw.client)
 
 	-- Numkeys
-	--------------------------------------------------------------------------------
-
 	-- add real keys without description here
 	for i = 1, tcn do
 		self.keys.root = awful.util.table.join(
@@ -1465,11 +1443,9 @@ function hotkeys:init(args)
 	}
 
 	-- Hotkeys helper setup
-	--------------------------------------------------------------------------------
 	flex.float.hotkeys:set_pack("Main", awful.util.table.join(self.raw.root, self.raw.client, self.fake.tagkeys), 2)
 
 	-- Mouse buttons
-	--------------------------------------------------------------------------------
 	local function game_safe_kill(c)
 		local current_tag = awful.screen.focused().selected_tag
 		if current_tag and current_tag.name and current_tag.name:lower() ~= "game" then
@@ -1488,11 +1464,8 @@ function hotkeys:init(args)
 	)
 
 	-- Set root hotkeys
-	--------------------------------------------------------------------------------
 	root.keys(self.keys.root)
 	root.buttons(self.mouse.root)
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return hotkeys

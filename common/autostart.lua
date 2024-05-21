@@ -1,16 +1,10 @@
------------------------------------------------------------------------------------------------------------------------
---                                              Autostart app list                                                   --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local awful = require("awful")
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local autostart = {}
 
 -- Application list function
---------------------------------------------------------------------------------
 function autostart.run()
 	-- essentials
 	awful.spawn.with_shell("xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 75 --pos 0x0 --rotate normal") -- display output
@@ -27,7 +21,6 @@ function autostart.run()
 end
 
 -- Read and commands from file and spawn them
---------------------------------------------------------------------------------
 function autostart.run_from_file(file_)
 	local f = io.open(file_)
 	for line in f:lines() do
@@ -38,6 +31,4 @@ function autostart.run_from_file(file_)
 	f:close()
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return autostart

@@ -1,13 +1,9 @@
------------------------------------------------------------------------------------------------------------------------
---                                                Colorless theme                                                    --
------------------------------------------------------------------------------------------------------------------------
 local awful = require("awful")
 
 local theme = {}
 --local wa = mouse.screen.workarea
 
 -- Color scheme
------------------------------------------------------------------------------------------------------------------------
 theme.color = {
 	-- main colors
 	main = "#C38F8F",
@@ -35,14 +31,11 @@ theme.color = {
 }
 
 -- Common
------------------------------------------------------------------------------------------------------------------------
 theme.path = awful.util.get_configuration_dir() .. "themes/colorless"
 theme.base = awful.util.get_configuration_dir() .. "themes/colorless"
 theme.homedir = os.getenv("HOME")
 
 -- Main config
-------------------------------------------------------------
-
 theme.panel_height = 40 -- panel height
 theme.border_width = 0 -- window border width
 theme.useless_gap = 5 -- useless gap
@@ -50,7 +43,6 @@ theme.cellnum = { x = 96, y = 58 } -- grid layout property
 theme.wallpaper = awful.util.get_configuration_dir() .. "misc/wallpapers/colorless/primary.png"
 
 -- Fonts
-------------------------------------------------------------
 theme.fonts = {
 	main = "Fira Code 12", -- main font
 	menu = "Fira Code 12", -- main menu font
@@ -103,7 +95,6 @@ theme.cairo_fonts = {
 }
 
 -- Shared icons
---------------------------------------------------------------------------------
 theme.icon = {
 	check = theme.path .. "/common/check.svg",
 	blank = theme.path .. "/common/blank.svg",
@@ -119,14 +110,11 @@ theme.icon = {
 
 -- Main theme settings
 -- Make it updatabele since it may depends on common
------------------------------------------------------------------------------------------------------------------------
 function theme:init()
 	-- Service utils config
-	----------------------------------------------------------------------------------
 	self.service = {}
 
 	-- Window control mode appearance
-	--------------------------------------------------------------------------------
 	self.service.navigator = {
 		border_width = 0, -- window placeholder border width
 		gradstep = 60, -- window placeholder background stripes width
@@ -186,7 +174,6 @@ function theme:init()
 	self.service.navigator.keytip["usermap"] = { geometry = { width = 1400 }, column = 2, exit = true }
 
 	-- Log out screen
-	--------------------------------------------------------------------------------
 	self.service.logout = {
 		button_size = { width = 128, height = 128 },
 		icon_margin = 22,
@@ -204,7 +191,6 @@ function theme:init()
 	}
 
 	-- Desktop file parser
-	--------------------------------------------------------------------------------
 	self.service.dfparser = {
 		-- list of path to check desktop files
 		desktop_file_dirs = {
@@ -226,7 +212,6 @@ function theme:init()
 	}
 
 	-- Menu config
-	--------------------------------------------------------------------------------
 	self.menu = {
 		border_width = 4, -- menu border width
 		screen_gap = self.useless_gap + self.border_width, -- minimal space from screen edge on placement
@@ -259,17 +244,14 @@ function theme:init()
 	}
 
 	-- Gauge (various elements that used as component for other widgets) style
-	--------------------------------------------------------------------------------
 	self.gauge = { tag = {}, task = {}, icon = {}, monitor = {}, graph = {} }
 
 	-- Plain progressbar element
-	------------------------------------------------------------
 	self.gauge.graph.bar = {
 		color = self.color, -- colors (main used)
 	}
 
 	-- Plain monitor (label and progressbar below)
-	--------------------------------------------------------------
 	self.gauge.monitor.plain = {
 		width = 50, -- widget width
 		font = self.cairo_fonts.tag, -- widget font
@@ -281,7 +263,6 @@ function theme:init()
 	}
 
 	-- Simple monitor with sigle vertical dashed progressbar
-	------------------------------------------------------------
 	self.gauge.monitor.dash = {
 		width = 10, -- widget width
 		color = self.color, -- colors (main used)
@@ -294,7 +275,6 @@ function theme:init()
 	}
 
 	-- Icon indicator (decoration in some panel widgets)
-	------------------------------------------------------------
 	self.gauge.icon.single = {
 		icon = self.icon.system, -- default icon
 		is_vertical = false, -- use vertical gradient (horizontal if false)
@@ -303,7 +283,6 @@ function theme:init()
 	}
 
 	-- Double icon indicator
-	--------------------------------------------------------------
 	self.gauge.icon.double = {
 		icon1 = self.icon.system, -- first icon
 		icon2 = self.icon.system, -- second icon
@@ -314,7 +293,6 @@ function theme:init()
 	}
 
 	-- Double value monitor (double progressbar with icon)
-	--------------------------------------------------------------
 	self.gauge.monitor.double = {
 		icon = self.icon.system, -- default icon
 		width = 90, -- widget width
@@ -331,7 +309,6 @@ function theme:init()
 	}
 
 	-- Separator (decoration used on panel, menu and some other widgets)
-	------------------------------------------------------------
 	self.gauge.separator = {
 		marginv = { 2, 2, 4, 4 }, -- margins for vertical separator
 		marginh = { 6, 6, 3, 3 }, -- margins for horizontal separator
@@ -339,7 +316,6 @@ function theme:init()
 	}
 
 	-- Dotcount (used in minitray widget)
-	------------------------------------------------------------
 	self.gauge.graph.dots = {
 		column_num = { 3, 5 }, -- amount of dot columns (min/max)
 		row_num = 3, -- amount of dot rows
@@ -349,7 +325,6 @@ function theme:init()
 	}
 
 	-- Circle shaped monitor
-	--------------------------------------------------------------
 	self.gauge.monitor.circle = {
 		width = 32, -- widget width
 		line_width = 4, -- width of circle
@@ -360,7 +335,6 @@ function theme:init()
 	}
 
 	-- Tag (base element of taglist)
-	------------------------------------------------------------
 	self.gauge.tag.rosybrown = {
 		width = 40, -- widget width
 		color = self.color, -- colors (main used)
@@ -380,7 +354,6 @@ function theme:init()
 	}
 
 	-- Task (base element of tasklist)
-	------------------------------------------------------------
 	self.gauge.task.rosybrown = {
 		width = 76,
 		text_shift = 26,
@@ -392,11 +365,9 @@ function theme:init()
 	}
 
 	-- Panel widgets
-	--------------------------------------------------------------------------------
 	self.widget = {}
 
 	-- individual margins for panel widgets
-	------------------------------------------------------------
 	self.widget.wrapper = {
 		mainmenu = { 12, 10, 6, 6 },
 		layoutbox = { 10, 10, 6, 6 },
@@ -407,7 +378,6 @@ function theme:init()
 	}
 
 	-- Textclock
-	------------------------------------------------------------
 	self.widget.textclock = {
 		font = self.fonts.clock, -- font
 		tooltip = {}, -- flex tooltip style (see theme.float.tooltip)
@@ -415,7 +385,6 @@ function theme:init()
 	}
 
 	-- Binary clock
-	------------------------------------------------------------
 	self.widget.binclock = {
 		width = 52, -- widget width
 		tooltip = {}, -- flex tooltip style (see theme.float.tooltip)
@@ -424,7 +393,6 @@ function theme:init()
 	}
 
 	-- Minitray
-	------------------------------------------------------------
 	self.widget.minitray = {
 		dotcount = {}, -- flex dotcount style (see theme.gauge.graph.dots)
 		border_width = 0, -- floating widget border width
@@ -444,7 +412,6 @@ function theme:init()
 	}
 
 	-- Layoutbox
-	------------------------------------------------------------
 	self.widget.layoutbox = {
 		micon = self.icon, -- some common menu icons (used: 'blank', 'check')
 		color = self.color, -- colors (main used)
@@ -502,8 +469,6 @@ function theme:init()
 	}
 
 	-- Tasklist
-	--------------------------------------------------------------
-
 	-- main settings
 	self.widget.tasklist = {
 		custom_icon = false, -- use custom applications icons (not every gauge task widget support icons)
@@ -586,11 +551,9 @@ function theme:init()
 	self.widget.tasklist.appnames = {}
 
 	-- Floating widgets
-	--------------------------------------------------------------------------------
 	self.float = { decoration = {} }
 
 	-- Client menu
-	------------------------------------------------------------
 	self.float.clientmenu = {
 		actionline = { height = 28 }, -- height of menu item with action icons
 		action_iconsize = { width = 18, height = 18 }, -- size for action icons
@@ -616,7 +579,6 @@ function theme:init()
 	}
 
 	-- Top processes
-	------------------------------------------------------------
 	self.float.top = {
 		geometry = { width = 460, height = 400 }, -- widget size
 		screen_gap = 2 * self.useless_gap, -- minimal space from screen edge on floating widget placement
@@ -642,7 +604,6 @@ function theme:init()
 	}
 
 	-- Application runner
-	------------------------------------------------------------
 	self.float.apprunner = {
 		itemnum = 6, -- number of visible items
 		geometry = { width = 620, height = 480 }, -- widget size
@@ -667,7 +628,6 @@ function theme:init()
 	}
 
 	-- Application switcher
-	------------------------------------------------------------
 	self.float.appswitcher = {
 		wibox_height = 240, -- widget height
 		label_height = 28, -- height of the area with application mark(key)
@@ -728,7 +688,6 @@ function theme:init()
 	}
 
 	-- Quick launcher
-	------------------------------------------------------------
 	self.float.qlaunch = {
 		geometry = { width = 1400, height = 170 }, -- widget size
 
@@ -772,7 +731,6 @@ function theme:init()
 	}
 
 	-- Hotkeys helper
-	------------------------------------------------------------
 	self.float.hotkeys = {
 		geometry = { width = 1400 }, -- widget size
 		border_margin = { 20, 20, 8, 10 }, -- margins around widget content
@@ -796,7 +754,6 @@ function theme:init()
 	}
 
 	-- Titlebar helper
-	------------------------------------------------------------
 	self.float.bartip = {
 		geometry = { width = 260, height = 40 }, -- widget size
 		border_margin = { 10, 10, 10, 10 }, -- margins around widget content
@@ -825,7 +782,6 @@ function theme:init()
 	}
 
 	-- Floating window control helper
-	------------------------------------------------------------
 	self.float.control = {
 		geometry = { width = 260, height = 48 }, -- widget size
 		border_margin = { 10, 10, 10, 10 }, -- margins around widget content
@@ -852,7 +808,6 @@ function theme:init()
 	}
 
 	-- Key sequence tip
-	------------------------------------------------------------
 	self.float.keychain = {
 		geometry = { width = 250, height = 56 }, -- default widget size
 		font = self.fonts.keychain, -- widget font
@@ -865,7 +820,6 @@ function theme:init()
 	}
 
 	-- Tooltip
-	------------------------------------------------------------
 	self.float.tooltip = {
 		timeout = 0, -- show delay
 		shape = nil, -- wibox shapea
@@ -879,7 +833,6 @@ function theme:init()
 	}
 
 	-- Floating prompt
-	------------------------------------------------------------
 	self.float.prompt = {
 		geometry = { width = 620, height = 120 }, -- widget size
 		border_width = 0, -- widget border width
@@ -891,7 +844,6 @@ function theme:init()
 	}
 
 	-- Floating calendar
-	------------------------------------------------------------
 	self.float.calendar = {
 		geometry = { width = 340, height = 420 },
 		margin = { 20, 20, 20, 15 },
@@ -927,7 +879,6 @@ function theme:init()
 	}
 
 	-- Notify (flex notification widget)
-	------------------------------------------------------------
 	self.float.notify = {
 		geometry = { width = 484, height = 106 }, -- widget size
 		screen_gap = 2 * self.useless_gap, -- screen edges gap on placement
@@ -951,7 +902,6 @@ function theme:init()
 	}
 
 	-- Decoration (various elements that used as component for other widgets) style
-	--------------------------------------------------------------------------------
 	self.float.decoration.button = {
 		color = self.color, -- colors (secondary used)
 	}
@@ -961,7 +911,6 @@ function theme:init()
 	}
 
 	-- Titlebar
-	--------------------------------------------------------------------------------
 	self.titlebar = {}
 
 	self.titlebar.base = {
@@ -997,7 +946,6 @@ function theme:init()
 	}
 
 	-- Desktop config
-	--------------------------------------------------------------------------------
 	self.desktop = { common = { bar = {}, pack = {} }, speedmeter = {} }
 
 	self.desktop.line_height = 18 -- text and progressbar height for desktop widgets
@@ -1012,10 +960,7 @@ function theme:init()
 	}
 
 	-- Common (various elem, 0.20, 0.25ents that used as component for desktop widgets)
-	--------------------------------------------------------------------------------
-
 	-- Textbox
-	------------------------------------------------------------
 	self.desktop.common.textbox = {
 		width = nil, -- widget width
 		height = nil, -- widget height
@@ -1027,7 +972,6 @@ function theme:init()
 	}
 
 	-- Dashed progressbar
-	------------------------------------------------------------
 	self.desktop.common.bar.plain = {
 		width = nil, -- widget width
 		height = nil, -- widget height
@@ -1045,7 +989,6 @@ function theme:init()
 	}
 
 	-- Time chart
-	------------------------------------------------------------
 	self.desktop.common.chart = {
 		width = nil, -- widget width
 		height = nil, -- widget height
@@ -1062,7 +1005,6 @@ function theme:init()
 	}
 
 	-- Custom shaped vertical progressbar
-	------------------------------------------------------------
 	self.desktop.common.bar.shaped = {
 		width = nil, -- widget width
 		height = nil, -- widget height
@@ -1084,7 +1026,6 @@ function theme:init()
 	}
 
 	-- Lines (group of progressbars with label in front and text value after it)
-	------------------------------------------------------------
 	self.desktop.common.pack.lines = {
 		label = { width = 80, draw = "by_width" }, -- label style (see theme.desktop.common.textbox)
 		text = { width = 92, draw = "by_edges" }, -- value style (see theme.desktop.common.textbox)
@@ -1101,10 +1042,7 @@ function theme:init()
 	}
 
 	-- Widgets
-	--------------------------------------------------------------------------------
-
 	--Custom aligned text block
-	------------------------------------------------------------
 	self.desktop.textset = {
 		font = "Fira Code 12", -- font
 		spacing = 0, -- space between lines
@@ -1112,7 +1050,6 @@ function theme:init()
 	}
 
 	-- Speed widget (double progressbar with time chart for each of it)
-	------------------------------------------------------------
 	self.desktop.speedmeter.normal = {
 		barvalue_height = 32, -- height of the area with progressbar and text
 		digits = 2, -- minimal number of digits for progressbar value
@@ -1159,7 +1096,6 @@ function theme:init()
 	}
 
 	-- Widget with multiple horizontal and vertical progress bars
-	------------------------------------------------------------
 	self.desktop.multimeter = {
 		digits = 3, -- minimal number of digits for horizontal progressbar values
 		color = self.desktop.color, -- color (desktop used)
@@ -1187,7 +1123,6 @@ function theme:init()
 	}
 
 	-- Widget with multiple progress bars
-	------------------------------------------------------------
 	self.desktop.multiline = {
 		digits = 3, -- minimal number of digits for progressbar value
 		margin = { 0, 0, 0, 0 }, -- margin around progressbar list
@@ -1204,7 +1139,6 @@ function theme:init()
 
 	-- Widget with several text groups in single line
 	-- every group has label and value and icon in the middle
-	------------------------------------------------------------
 	self.desktop.singleline = {
 		lbox = { draw = "by_width", width = 50 }, -- label style (see theme.desktop.common.textbox)
 		rbox = { draw = "by_edges", width = 60 }, -- value style (see theme.desktop.common.textbox)
@@ -1215,7 +1149,6 @@ function theme:init()
 	}
 
 	-- Calendar widget with lined up marks
-	------------------------------------------------------------
 	self.desktop.calendar = {
 		show_pointer = true, -- show date under mouse
 		color = self.desktop.color, -- color (desktop used)
@@ -1235,12 +1168,9 @@ function theme:init()
 	}
 
 	-- Individual styles for certain widgets
-	--------------------------------------------------------------------------------
 	self.individual = { desktop = {} }
 
-	-- Default awesome theme vars
-	--------------------------------------------------------------------------------
-
+	-- Default awesome theme var
 	-- colors
 	self.bg_normal = self.color.wibox
 	self.bg_focus = self.color.main
@@ -1291,8 +1221,6 @@ function theme:init()
 	}
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 theme:init()
 
 return theme

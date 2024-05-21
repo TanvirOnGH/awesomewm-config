@@ -1,12 +1,5 @@
------------------------------------------------------------------------------------------------------------------------
---                                                   rosybrown config                                                     --
------------------------------------------------------------------------------------------------------------------------
-
 -- Load modules
------------------------------------------------------------------------------------------------------------------------
-
 -- Standard awesome library
-------------------------------------------------------------
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
@@ -14,7 +7,6 @@ local beautiful = require("beautiful")
 require("awful.autofocus")
 
 -- User modules
-------------------------------------------------------------
 local flex = require("flex")
 
 -- debug locker
@@ -27,33 +19,25 @@ flex.startup.locked = lock.autostart
 flex.startup:activate()
 
 -- Error handling
------------------------------------------------------------------------------------------------------------------------
 require("common.ercheck") -- load file with error handling
 
 -- Setup theme and environment vars
------------------------------------------------------------------------------------------------------------------------
 local env = require("common.env") -- load file with environment
 env:init({ theme = "rosybrown", desktop_autohide = false, set_center = true })
 
 -- Layouts setup
------------------------------------------------------------------------------------------------------------------------
 local layouts = require("common.layout") -- load file with tile layouts setup
 layouts:init()
 
 -- Main menu configuration
------------------------------------------------------------------------------------------------------------------------
 local mymenu = require("common.menu") -- load file with menu configuration
 mymenu:init({ env = env })
 
 -- Panel widgets
------------------------------------------------------------------------------------------------------------------------
-
 -- Separator
---------------------------------------------------------------------------------
 local separator = flex.gauge.separator.vertical()
 
 -- Taglist widget
---------------------------------------------------------------------------------
 local taglist = {}
 
 local rosy_brown_gauge = flex.gauge.tag["rosybrown"].new
@@ -129,7 +113,6 @@ taglist.layouts = {
 }
 
 -- Tasklist
---------------------------------------------------------------------------------
 local tasklist = {}
 
 -- dirty double tag line setup for tasklist client menu
@@ -157,7 +140,6 @@ tasklist.buttons = awful.util.table.join(
 flex.float.clientmenu:set_style(tagline_style)
 
 -- Textclock widget
---------------------------------------------------------------------------------
 local textclock = {}
 textclock.widget = flex.widget.textclock({ timeformat = "%I:%M %p", dateformat = "%A, %d/%m/%Y" })
 
@@ -166,7 +148,6 @@ textclock.buttons = awful.util.table.join(awful.button({}, 1, function()
 end))
 
 -- Layoutbox configure
---------------------------------------------------------------------------------
 local layoutbox = {}
 
 layoutbox.buttons = awful.util.table.join(
@@ -185,7 +166,6 @@ layoutbox.buttons = awful.util.table.join(
 )
 
 -- Tray widget
---------------------------------------------------------------------------------
 local tray = {}
 tray.widget = flex.widget.minitray()
 
@@ -194,7 +174,6 @@ tray.buttons = awful.util.table.join(awful.button({}, 1, function()
 end))
 
 -- System resource monitoring widgets
---------------------------------------------------------------------------------
 local sysmon = { widget = {}, buttons = {} }
 
 -- network speed
@@ -245,8 +224,6 @@ sysmon.buttons.ram = awful.util.table.join(awful.button({}, 1, function()
 end))
 
 -- Screen setup
------------------------------------------------------------------------------------------------------------------------
-
 -- setup
 awful.screen.connect_for_each_screen(function(s)
 	-- wallpaper
@@ -307,7 +284,6 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 -- Desktop widgets
------------------------------------------------------------------------------------------------------------------------
 if not lock.desktop then
 	local desktop = require("color.rosybrown.desktop") -- load file with desktop widgets configuration
 	desktop:init({
@@ -319,17 +295,14 @@ if not lock.desktop then
 end
 
 -- Active screen edges
------------------------------------------------------------------------------------------------------------------------
 local edges = require("color.rosybrown.edges") -- load file with edges configuration
 edges:init({ tag_cols_num = taglist.cols_num })
 
 -- Log out screen
------------------------------------------------------------------------------------------------------------------------
 local logout = require("common.logout")
 logout:init()
 
 -- Key bindings
------------------------------------------------------------------------------------------------------------------------
 local hotkeys = require("color.rosybrown.keys") -- load file with hotkeys configuration
 hotkeys:init({
 	env = env,
@@ -338,22 +311,18 @@ hotkeys:init({
 })
 
 -- Rules
------------------------------------------------------------------------------------------------------------------------
 local rules = require("common.rules") -- load file with rules configuration
 rules:init({ env = env, hotkeys = hotkeys })
 
 -- Titlebar setup
------------------------------------------------------------------------------------------------------------------------
 local titlebar = require("color.rosybrown.titlebar") -- load file with titlebar configuration
 titlebar:init()
 
 -- Base signal set for awesome wm
------------------------------------------------------------------------------------------------------------------------
 local signals = require("common.signals") -- load file with signals configuration
 signals:init({ env = env })
 
 -- Autostart user applications
------------------------------------------------------------------------------------------------------------------------
 if flex.startup.is_startup then
 	local autostart = require("common.autostart") -- load file with autostart application list
 	autostart.run()

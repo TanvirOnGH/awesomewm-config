@@ -8,7 +8,7 @@ self = false
 exclude_files = {
     ".luacheckrc", -- this file itself
     "rc-back.lua", -- original config
-    "flex",       -- submodule
+    "flex",        -- submodule
 }
 
 -- Global objects defined by the C code
@@ -32,7 +32,7 @@ read_globals = {
     "unpack"
 }
 
--- Not read-only globals.
+-- Not read-only globals
 globals = {
     -- awesome API
     "screen",
