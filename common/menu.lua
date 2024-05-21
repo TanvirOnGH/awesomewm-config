@@ -10,7 +10,7 @@ local menu = {}
 function menu:init(args)
 	-- vars
 	args = args or {}
-	local env = args.env or {} -- fix this?
+	local env = args.env or {}
 	local separator = args.separator or { widget = flex.gauge.separator.horizontal() }
 	local theme = args.theme or { auto_hotkey = true }
 	local icon_style = args.icon_style or { custom_only = true, scalable_only = true }
