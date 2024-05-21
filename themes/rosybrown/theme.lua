@@ -1,6 +1,3 @@
------------------------------------------------------------------------------------------------------------------------
---                                                  rosybrown theme                                                       --
------------------------------------------------------------------------------------------------------------------------
 local awful = require("awful")
 
 -- This theme was inherited from another with overwriting some values
@@ -8,29 +5,22 @@ local awful = require("awful")
 local theme = require("themes/colored/theme")
 
 -- Color scheme
------------------------------------------------------------------------------------------------------------------------
 theme.color.main = "#C38F8F" -- Rosy Brown
 theme.color.urgent = "#8DB8CD" -- Light blue-gray
 
 -- Common
------------------------------------------------------------------------------------------------------------------------
 theme.path = awful.util.get_configuration_dir() .. "themes/rosybrown"
 
 -- Main config
---------------------------------------------------------------------------------
 theme.panel_height = 38 -- panel height
 theme.wallpaper = "~/media/pictures/wallpapers/awesome/rosybrown/rosybrown.png"
 theme.desktopbg = theme.wallpaper
 
 -- Setup parent theme settings
---------------------------------------------------------------------------------
 theme:update()
 
 -- Desktop config
------------------------------------------------------------------------------------------------------------------------
-
 -- Desktop widgets placement
---------------------------------------------------------------------------------
 theme.desktop.grid = {
 	width = { 450, 450 },
 	height = { 100, 100, 100, 100, 100 },
@@ -46,7 +36,6 @@ theme.desktop.places = {
 }
 
 -- Desktop widgets
---------------------------------------------------------------------------------
 -- individual widget settings doesn't used by flex module
 -- but grab directly from rc-files to rewrite base style
 theme.individual.desktop = { speedmeter = {}, multimeter = {}, multiline = {} }
@@ -117,10 +106,7 @@ theme.individual.desktop.multiline.images = {
 }
 
 -- Panel widgets
------------------------------------------------------------------------------------------------------------------------
-
 -- individual margins for panel widgets
-------------------------------------------------------------
 theme.widget.wrapper = {
 	layoutbox = { 12, 10, 6, 6 },
 	textclock = { 10, 10, 0, 0 },
@@ -133,8 +119,6 @@ theme.widget.wrapper = {
 }
 
 -- Various widgets style tuning
-------------------------------------------------------------
-
 -- Dotcount
 theme.gauge.graph.dots.dot_gap_h = 5
 
@@ -149,8 +133,6 @@ theme.gauge.task.rosybrown.width = 100
 theme.gauge.task.rosybrown.underline = { height = 0, thickness = 2, gap = 34, dh = 0 }
 
 -- Floating widgets
------------------------------------------------------------------------------------------------------------------------
-
 -- Titlebar helper
 theme.float.bartip.names = { "Mini", "Compact", "Full" }
 
@@ -162,7 +144,6 @@ theme.float.clientmenu.enable_tagline = false
 theme.float.clientmenu.icon.tag = theme.widget.tasklist.winmenu.icon.tag
 
 -- Set hotkey helper size according current fonts and keys scheme
---------------------------------------------------------------------------------
 theme.float.hotkeys.geometry = { width = 1420 }
 theme.float.appswitcher.keytip = { geometry = { width = 400 }, exit = true }
 theme.float.keychain.keytip = { geometry = { width = 1020 }, column = 2 }
@@ -171,7 +152,6 @@ theme.float.apprunner.keytip = { geometry = { width = 400 } }
 theme.menu.keytip = { geometry = { width = 400 } }
 
 -- Titlebar
------------------------------------------------------------------------------------------------------------------------
 theme.titlebar.icon_compact = {
 	color = { icon = theme.color.gray, main = theme.color.main, urgent = theme.color.main },
 	list = {
@@ -183,6 +163,4 @@ theme.titlebar.icon_compact = {
 	},
 }
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return theme

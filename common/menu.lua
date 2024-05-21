@@ -1,18 +1,12 @@
------------------------------------------------------------------------------------------------------------------------
---                                                  Menu config                                                      --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local beautiful = require("beautiful")
 local flex = require("flex")
 local awful = require("awful")
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local menu = {}
 
 -- Build function
------------------------------------------------------------------------------------------------------------------------
 function menu:init(args)
 	-- vars
 	args = args or {}
@@ -32,11 +26,9 @@ function menu:init(args)
 	end
 
 	-- Application submenu
-	------------------------------------------------------------
 	local appmenu = flex.service.dfparser.menu({ icons = icon_style, wm_name = "awesome" })
 
 	-- Awesome submenu
-	------------------------------------------------------------
 	local awesomemenu = {
 		{ "Restart", awesome.restart, micon("gnome-session-reboot") },
 		separator,
@@ -44,13 +36,11 @@ function menu:init(args)
 	}
 
 	-- Nix submenu
-	------------------------------------------------------------
 	local nixmenu = {
 		{ "Nix config", "code" .. " /home/user/workspace/development/github/nix-config/", micon("terminal") },
 	}
 
 	-- Places submenu
-	------------------------------------------------------------
 	local placesmenu = {
 		{ "Downloads", env.fm .. " downloads", micon("folder-download") },
 		{ "Music", env.fm .. " media/musics", micon("folder-music") },
@@ -64,7 +54,6 @@ function menu:init(args)
 	}
 
 	-- Exit submenu
-	------------------------------------------------------------
 	local exitmenu = {
 		{ "Reboot", "reboot", micon("gnome-session-reboot") },
 		{ "Shutdown", "poweroff", micon("system-shutdown") },
@@ -73,7 +62,6 @@ function menu:init(args)
 	}
 
 	-- Main menu
-	------------------------------------------------------------
 	self.mainmenu = flex.menu({
 		theme = theme,
 		items = {
@@ -97,7 +85,6 @@ function menu:init(args)
 	})
 
 	-- Menu panel widget
-	------------------------------------------------------------
 
 	self.widget = flex.gauge.svgbox(icon, nil, color)
 	self.buttons = awful.util.table.join(awful.button({}, 1, function()
@@ -105,6 +92,4 @@ function menu:init(args)
 	end))
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return menu

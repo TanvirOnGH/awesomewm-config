@@ -1,13 +1,8 @@
------------------------------------------------------------------------------------------------------------------------
---                                           Active screen edges config                                              --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local awful = require("awful")
 local flex = require("flex")
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local edges = {}
 
 local switcher = flex.float.appswitcher
@@ -15,7 +10,6 @@ local currenttags = flex.widget.tasklist.filter.currenttags
 local allscreen = flex.widget.tasklist.filter.allscreen
 
 -- Active screen edges
------------------------------------------------------------------------------------------------------------------------
 function edges:init(args)
 	args = args or {}
 	local ew = args.width or 1 -- edge width
@@ -30,7 +24,6 @@ function edges:init(args)
 	}
 
 	-- Top
-	--------------------------------------------------------------------------------
 	local top = flex.util.desktop.edge("horizontal")
 	top.wibox:geometry(egeometry["top"])
 
@@ -41,7 +34,6 @@ function edges:init(args)
 	end)))
 
 	-- Right
-	--------------------------------------------------------------------------------
 	local right = flex.util.desktop.edge("vertical", { ew, workarea.height - ew })
 	right.wibox:geometry(egeometry["right"])
 
@@ -71,7 +63,6 @@ function edges:init(args)
 	))
 
 	-- Left
-	--------------------------------------------------------------------------------
 	local left = flex.util.desktop.edge("vertical", { ew, workarea.height - ew })
 	left.wibox:geometry(egeometry["left"])
 
@@ -103,6 +94,4 @@ function edges:init(args)
 	end)
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return edges

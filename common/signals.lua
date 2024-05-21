@@ -1,7 +1,3 @@
------------------------------------------------------------------------------------------------------------------------
---                                                Signals config                                                     --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local awful = require("awful")
 local beautiful = require("beautiful")
@@ -9,11 +5,9 @@ local beautiful = require("beautiful")
 local modutil = require("flex.util")
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local signals = {}
 
 -- Support functions
------------------------------------------------------------------------------------------------------------------------
 local function do_sloppy_focus(c)
 	if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier and awful.client.focus.filter(c) then
 		client.focus = c
@@ -32,7 +26,6 @@ local function fixed_maximized_geometry(c, context)
 end
 
 -- Build  table
------------------------------------------------------------------------------------------------------------------------
 function signals:init(args)
 	args = args or {}
 	local env = args.env
@@ -92,6 +85,4 @@ function signals:init(args)
 	screen.connect_signal("list", awesome.restart)
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return signals

@@ -1,14 +1,9 @@
------------------------------------------------------------------------------------------------------------------------
---                                               Desktop widgets config                                              --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local beautiful = require("beautiful")
 --local awful = require("awful")
 local flex = require("flex")
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local desktop = {}
 
 -- desktop aliases
@@ -19,7 +14,6 @@ local system = flex.system
 local wa = mouse.screen.workarea
 
 -- Desktop widgets
------------------------------------------------------------------------------------------------------------------------
 function desktop:init(args)
 	if not beautiful.desktop then
 		return
@@ -34,7 +28,6 @@ function desktop:init(args)
 	local places = beautiful.desktop.places
 
 	-- Network speed
-	--------------------------------------------------------------------------------
 	local netspeed = { geometry = wgeometry(grid, places.netspeed, workarea) }
 
 	netspeed.args = {
@@ -50,7 +43,6 @@ function desktop:init(args)
 	netspeed.style = {}
 
 	-- SSD speed
-	--------------------------------------------------------------------------------
 	local ssdspeed = { geometry = wgeometry(grid, places.ssdspeed, workarea) }
 
 	ssdspeed.args = {
@@ -63,7 +55,6 @@ function desktop:init(args)
 	ssdspeed.style = beautiful.individual.desktop.speedmeter.drive
 
 	-- CPU and memory usage
-	--------------------------------------------------------------------------------
 	local cpu_storage = { cpu_total = {}, cpu_active = {} }
 	local cpumem = { geometry = wgeometry(grid, places.cpumem, workarea) }
 
@@ -77,7 +68,6 @@ function desktop:init(args)
 	cpumem.style = beautiful.individual.desktop.multimeter.cpumem
 
 	-- Disks
-	--------------------------------------------------------------------------------
 	local disks = { geometry = wgeometry(grid, places.disks, workarea) }
 	local disks_original_height = disks.geometry.height
 	disks.geometry.height = beautiful.desktop.multimeter.height.upright
@@ -96,7 +86,6 @@ function desktop:init(args)
 	disks.style = beautiful.individual.desktop.multiline.storage
 
 	-- QEMU image (placed along with disks)
-	--------------------------------------------------------------------------------
 	local qm1 = "/var/lib/libvirt/images/Whonix-Workstation.qcow2"
 	local qm2 = "/var/lib/libvirt/images/Whonix-Gateway.qcow2"
 
@@ -135,7 +124,6 @@ function desktop:init(args)
 	qemu.style = beautiful.individual.desktop.multiline.images
 
 	-- Calendar
-	--------------------------------------------------------------------------------
 	local cwidth = 100 -- calendar widget width
 	local cy = 20 -- calendar widget upper margin
 	local cheight = wa.height - 2 * cy
@@ -146,7 +134,6 @@ function desktop:init(args)
 	}
 
 	-- Initialize all desktop widgets
-	--------------------------------------------------------------------------------
 	cpumem.body = flex.desktop.multimeter(cpumem.args, cpumem.style)
 	netspeed.body = flex.desktop.speedmeter.compact(netspeed.args, netspeed.style)
 	ssdspeed.body = flex.desktop.speedmeter.compact(ssdspeed.args, ssdspeed.style)
@@ -156,7 +143,6 @@ function desktop:init(args)
 	calendar.body = flex.desktop.calendar(calendar.args, calendar.style)
 
 	-- Desktop setup
-	--------------------------------------------------------------------------------
 	local desktop_objects = {
 		cpumem,
 		netspeed,
@@ -175,6 +161,4 @@ function desktop:init(args)
 	calendar.body:activate_wibox(calendar.wibox)
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return desktop

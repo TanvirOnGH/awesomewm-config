@@ -1,7 +1,3 @@
------------------------------------------------------------------------------------------------------------------------
---                                               Titlebar config                                                     --
------------------------------------------------------------------------------------------------------------------------
-
 -- Grab environment
 local awful = require("awful")
 local wibox = require("wibox")
@@ -14,11 +10,9 @@ local modutil = require("flex.util")
 local clientmenu = require("flex.float.clientmenu")
 
 -- Initialize tables and vars for module
------------------------------------------------------------------------------------------------------------------------
 local titlebar = {}
 
 -- Support functions
------------------------------------------------------------------------------------------------------------------------
 local function construct_move_buttons(c, btn)
 	return awful.button({}, btn or 1, function()
 		client.focus = c
@@ -54,7 +48,6 @@ local function on_maximize(c)
 end
 
 -- Custom titlebar elements
------------------------------------------------------------------------------------------------------------------------
 local compact_focus = function(c, style)
 	local focus = modtitle.mark.focus(c, style)
 
@@ -74,7 +67,6 @@ local compact_focus = function(c, style)
 end
 
 -- Connect titlebar building signal
------------------------------------------------------------------------------------------------------------------------
 function titlebar:init()
 	local style = {}
 
@@ -222,6 +214,4 @@ function titlebar:init()
 	end)
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 return titlebar

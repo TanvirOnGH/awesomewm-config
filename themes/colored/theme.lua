@@ -1,6 +1,3 @@
------------------------------------------------------------------------------------------------------------------------
---                                     Shared settings for colored themes                                            --
------------------------------------------------------------------------------------------------------------------------
 local awful = require("awful")
 
 -- This theme was inherited from another with overwriting some values
@@ -8,17 +5,14 @@ local awful = require("awful")
 local theme = require("themes/colorless/theme")
 
 -- Common
------------------------------------------------------------------------------------------------------------------------
 theme.path = awful.util.get_configuration_dir() .. "themes/colored"
 
 -- Main config
-------------------------------------------------------------
 theme.panel_height = 40 -- panel height
 theme.border_width = 0 -- window border width
 theme.useless_gap = 5 -- useless gap
 
 -- Fonts
-------------------------------------------------------------
 theme.fonts = {
 	main = "Fira Code 13", -- main font
 	menu = "Fira Code 13", -- main menu font
@@ -71,7 +65,6 @@ theme.cairo_fonts = {
 }
 
 -- Widget icons
---------------------------------------------------------------------------------
 theme.wicon = {
 	wireless = theme.path .. "/widget/wireless.svg",
 	monitor = theme.path .. "/widget/monitor.svg",
@@ -100,7 +93,6 @@ theme.wicon = {
 
 -- Main theme settings
 -- Make it updatabele since it may depends on common and ancestor theme settings
------------------------------------------------------------------------------------------------------------------------
 
 -- overwrite ancestor update settings with current theme values
 function theme:update()
@@ -108,7 +100,6 @@ function theme:update()
 	self:init()
 
 	-- Set hotkey helper size according current fonts and keys scheme
-	--------------------------------------------------------------------------------
 	self.service.navigator.keytip["fairv"] = { geometry = { width = 600 }, exit = true }
 	self.service.navigator.keytip["fairh"] = self.service.navigator.keytip["fairv"]
 
@@ -121,13 +112,11 @@ function theme:update()
 	self.service.navigator.keytip["usermap"] = { geometry = { width = 1400 }, column = 2, exit = true }
 
 	-- Desktop file parser
-	--------------------------------------------------------------------------------
 	self.service.dfparser.icons.theme = self.homedir .. "/.icons/ACYLS" -- ACYLS: <https://github.com/worron/acyls>
 	self.service.dfparser.icons.custom_only = true
 	self.service.dfparser.icons.scalable_only = true
 
 	-- Log out screen
-	--------------------------------------------------------------------------------
 	self.service.logout.icons.logout = self.wicon.logout.logout
 	self.service.logout.icons.lock = self.wicon.logout.lock
 	self.service.logout.icons.poweroff = self.wicon.logout.poweroff
@@ -136,26 +125,20 @@ function theme:update()
 	self.service.logout.icons.switch = self.wicon.logout.switch
 
 	-- Menu config
-	--------------------------------------------------------------------------------
 	self.menu.icon_margin = { 4, 7, 7, 8 }
 	self.menu.keytip = { geometry = { width = 400 } }
 
 	-- Panel widgets
-	--------------------------------------------------------------------------------
-
 	-- Double icon indicator
-	------------------------------------------------------------
 	self.gauge.icon.double.icon1 = self.wicon.down
 	self.gauge.icon.double.icon2 = self.wicon.up
 	self.gauge.icon.double.igap = -6
 
 	-- Layoutbox
-	------------------------------------------------------------
 	self.widget.layoutbox.menu.icon_margin = { 8, 12, 9, 9 }
 	self.widget.layoutbox.menu.width = 200
 
 	-- Tasklist
-	------------------------------------------------------------
 	self.widget.tasklist.winmenu.hide_action = { min = false, move = false }
 	self.widget.tasklist.tasktip.margin = { 8, 8, 4, 4 }
 	self.widget.tasklist.winmenu.tagmenu.width = 150
@@ -164,15 +147,11 @@ function theme:update()
 	self.widget.tasklist.winmenu.tag_iconsize = { width = 16, height = 16 }
 
 	-- Floating widgets
-	--------------------------------------------------------------------------------
-
 	-- Client menu
-	------------------------------------------------------------
 	self.float.clientmenu.enable_tagline = true
 	self.float.clientmenu.hide_action = { min = false, move = false }
 
 	-- Top processes
-	------------------------------------------------------------
 	self.float.top.set_position = function(wibox)
 		local geometry = {
 			x = mouse.screen.workarea.x + mouse.screen.workarea.width,
@@ -182,30 +161,24 @@ function theme:update()
 	end
 
 	-- Application runner
-	------------------------------------------------------------
 	self.float.apprunner.title_icon = self.wicon.search
 	self.float.apprunner.keytip = { geometry = { width = 400 } }
 
 	-- Application switcher
-	------------------------------------------------------------
 	self.float.appswitcher.keytip = { geometry = { width = 400 }, exit = true }
 
 	-- Quick launcher
-	------------------------------------------------------------
 	self.float.qlaunch.keytip = { geometry = { width = 600 } }
 
 	-- Hotkeys helper
-	------------------------------------------------------------
 	self.float.hotkeys.geometry = { width = 1800 }
 	self.float.hotkeys.heights = { key = 26, title = 32 }
 
 	-- Key sequence tip
-	------------------------------------------------------------
 	self.float.keychain.border_width = 0
 	self.float.keychain.keytip = { geometry = { width = 1200 }, column = 2 }
 
 	-- Floating calendar
-	------------------------------------------------------------
 	self.float.calendar.geometry = { width = 364, height = 460 }
 	self.float.calendar.border_width = 0
 	self.float.calendar.show_week_numbers = false
@@ -225,7 +198,6 @@ function theme:update()
 	}
 
 	-- Floating window control helper
-	------------------------------------------------------------
 	self.float.control.icon = {
 		onscreen = self.wicon.onscreen,
 		resize = {
@@ -236,12 +208,9 @@ function theme:update()
 	}
 
 	-- Default awesome theme vars
-	--------------------------------------------------------------------------------
 	self.enable_spawn_cursor = false
 end
 
--- End
------------------------------------------------------------------------------------------------------------------------
 theme:update()
 
 return theme
