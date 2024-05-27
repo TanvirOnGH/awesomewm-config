@@ -30,6 +30,10 @@ This repository is not meant to be used as a whole, but rather as a reference fo
 
 ![Time-Calendar bottom bar widget](screenshots/time_calendar_bar_widget.png)
 
+### Window Titlebar
+
+![Window Titlebar](screenshots/window_titlebar.png)
+
 ### Desktop Menu
 
 ![Desktop Menu](screenshots/desktop_menu.png)
@@ -37,3 +41,7 @@ This repository is not meant to be used as a whole, but rather as a reference fo
 ### Window Menu
 
 ![Window Menu](screenshots/window_menu.png)
+
+### Calendar
+
+![Calendar](screenshots/calendar.png)
