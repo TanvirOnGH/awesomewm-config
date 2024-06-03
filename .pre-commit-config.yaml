@@ -3,3 +3,8 @@ repos:
     rev: v0.1.6
     hooks:
       - id: ripsecrets
+
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.20.0
+    hooks:
+      - id: stylua
