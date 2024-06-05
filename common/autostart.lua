@@ -15,7 +15,7 @@ function autostart.run()
 	-- utils
 	awful.spawn.with_shell("picom --daemon") -- compositor
 	awful.spawn.with_shell("copyq") -- clipboard manager daemon
-	awful.spawn.with_shell("nmtui") -- NetworkManager Tray
+	awful.spawn.with_shell("nm-tray") -- NetworkManager Tray
 	-- awful.spawn.with_shell("flashfocus") -- flashfocus daemon
 
 	-- apps
