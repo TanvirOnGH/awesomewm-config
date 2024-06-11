@@ -40,8 +40,12 @@ function edges:init(args)
 	local function tag_line_switch(colnum)
 		local screen = awful.screen.focused()
 		local i = screen.selected_tag.index
-		local tag = (i <= colnum) and screen.tags[i + colnum] or screen.tags[i - colnum]
-		tag:view_only()
+		local next_index = (i <= colnum) and i + colnum or i - colnum
+		-- Check if the tag index is valid
+		if next_index > 0 and next_index <= #screen.tags then
+			local tag = screen.tags[next_index]
+			tag:view_only()
+		end
 	end
 
 	right.area[1]:buttons(awful.util.table.join(
