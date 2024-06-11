@@ -118,22 +118,22 @@ local function current_clients()
 	return awful.screen.focused().selected_tag:clients()
 end
 
-local function client_move_by_index(i, group)
-	for _, c in ipairs(group) do
+local function client_move_by_index(i, clients)
+	for _, c in ipairs(clients) do
 		c:move_to_tag(awful.screen.focused().tags[i])
 	end
 end
 
-local function client_move_and_go_by_index(i, group)
+local function client_move_and_go_by_index(i, clients)
 	local tag = awful.screen.focused().tags[i]
-	for _, c in ipairs(group) do
+	for _, c in ipairs(clients) do
 		c:move_to_tag(tag)
 	end
 	tag:view_only()
 end
 
-local function client_toggle_by_index(i, group)
-	for _, c in ipairs(group) do
+local function client_toggle_by_index(i, clients)
+	for _, c in ipairs(clients) do
 		c:toggle_tag(awful.screen.focused().tags[i])
 	end
 end
