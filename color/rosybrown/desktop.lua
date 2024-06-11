@@ -8,10 +8,7 @@ local desktop = {}
 
 -- desktop aliases
 local wgeometry = flex.util.desktop.wgeometry
-local workarea = screen[mouse.screen].workarea
 local system = flex.system
-
-local wa = mouse.screen.workarea
 
 -- Desktop widgets
 function desktop:init(args)
@@ -23,12 +20,21 @@ function desktop:init(args)
 	local env = args.env or {}
 	local autohide = env.desktop_autohide or false
 
+	-- Caching calculated values
+	local workareas = {}
+	for s in screen do
+		workareas[s] = s.workarea
+		workareas[s].wgeometry = {}
+		for name, place in pairs(beautiful.desktop.places) do
+			workareas[s].wgeometry[name] = wgeometry(beautiful.desktop.grid, place, workareas[s])
+		end
+	end
+
 	-- placement
-	local grid = beautiful.desktop.grid
 	local places = beautiful.desktop.places
 
 	-- Network speed
-	local netspeed = { geometry = wgeometry(grid, places.netspeed, workarea) }
+	local netspeed = { geometry = workareas[mouse.screen].wgeometry.netspeed }
 
 	netspeed.args = {
 		meter_function = system.net_speed,
@@ -43,7 +49,7 @@ function desktop:init(args)
 	netspeed.style = {}
 
 	-- SSD speed
-	local ssdspeed = { geometry = wgeometry(grid, places.ssdspeed, workarea) }
+	local ssdspeed = { geometry = workareas[mouse.screen].wgeometry.ssdspeed }
 
 	ssdspeed.args = {
 		interface = "nvme0n1",
@@ -56,7 +62,7 @@ function desktop:init(args)
 
 	-- CPU and memory usage
 	local cpu_storage = { cpu_total = {}, cpu_active = {} }
-	local cpumem = { geometry = wgeometry(grid, places.cpumem, workarea) }
+	local cpumem = { geometry = workareas[mouse.screen].wgeometry.cpumem }
 
 	cpumem.args = {
 		topbars = { num = 8, maxm = 100, crit = 90 },
@@ -68,17 +74,17 @@ function desktop:init(args)
 	cpumem.style = beautiful.individual.desktop.multimeter.cpumem
 
 	-- Disks
-	local disks = { geometry = wgeometry(grid, places.disks, workarea) }
+	local disks = { geometry = workareas[mouse.screen].wgeometry.disks }
 	local disks_original_height = disks.geometry.height
 	disks.geometry.height = beautiful.desktop.multimeter.height.upright
 
 	disks.args = {
 		sensors = {
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "root", args = "/" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "root",       args = "/" },
 			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "gamedrive1", args = "/mnt/gamedrive1" },
 			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "gamedrive2", args = "/mnt/gamedrive2" },
 			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "gamedrive3", args = "/mnt/gamedrive3" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "windows", args = "/mnt/windows" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "windows",    args = "/mnt/windows" },
 		},
 		timeout = 300,
 	}
@@ -125,12 +131,12 @@ function desktop:init(args)
 
 	-- Calendar
 	local cwidth = 100 -- calendar widget width
-	local cy = 20 -- calendar widget upper margin
-	local cheight = wa.height - 2 * cy
+	local cy = 20   -- calendar widget upper margin
+	local cheight = workareas[mouse.screen].height - 2 * cy
 
 	local calendar = {
 		args = { timeout = 60 },
-		geometry = { x = wa.width - cwidth, y = cy, width = cwidth, height = cheight },
+		geometry = { x = workareas[mouse.screen].width - cwidth, y = cy, width = cwidth, height = cheight },
 	}
 
 	-- Initialize all desktop widgets
