@@ -1,6 +1,6 @@
 # About
 
-My [awesome window manager](https://awesomewm.org) configuration (fork of [worron/awesome-config](https://github.com/worron/awesome-config))
+My [Awesome Window Manager](https://awesomewm.org) configuration. It's a highly customized setup focused on a clean, efficient, and visually appealing desktop experience.
 
 > [!NOTE]  
 > I'm using this [awesomewm](https://awesomewm.org) configuration on my [NixOS](https://nixos.org) systems, and you might notice some things that appear unusual, like the standard paths, e.g `/usr/share` equivalent for nix is `/run/current-system/sw/share` and for home-manager is `~/.local/state/home-manager/gcroots/current-home/home-path/share` on NixOS systems.
@@ -47,3 +47,11 @@ git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome -
 ### Calendar
 
 ![Calendar](screenshots/calendar.png)
+
+## Acknowledgements
+
+[worron/awesome-config](https://github.com/worron/awesome-config) Original configuration that served as the foundation for this project.
+
+[flex](https://github.com/TanvirOnGH/flex) extension module for providing a collection of visually consistent and functional widgets, layout enhancements, and utilities.
+
+The AwesomeWM community for their excellent window manager and helpful resources.
