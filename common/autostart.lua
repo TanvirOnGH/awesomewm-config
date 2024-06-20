@@ -17,6 +17,7 @@ function autostart.run()
 	awful.spawn.with_shell("copyq") -- clipboard manager daemon
 	awful.spawn.with_shell("nm-tray") -- NetworkManager Tray
 	awful.spawn.with_shell("pasystray") -- PulseAudio Tray
+	awful.spawn.with_shell("blueman-applet") -- Bluetooth (Blueman) Tray
 	-- awful.spawn.with_shell("flashfocus") -- flashfocus daemon
 
 	-- cloud
