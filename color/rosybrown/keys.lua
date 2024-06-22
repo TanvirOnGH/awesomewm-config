@@ -312,6 +312,19 @@ function hotkeys:init(args)
 	flex.menu:set_keys(awful.util.table.join(flex.menu.keys.move, menu_keys_move), "move")
 	--flex.menu:set_keys(menu_keys_move, "move")
 
+	-- Top process list
+	local top_keys_action = {
+		{
+			{ env.mod }, "/", function() flex.float.top:hide() end,
+			{ description = "Close top list widget", group = "Action" }
+		},
+	}
+
+	-- close widget by the same key as showing
+	flex.float.top:set_keys(
+		awful.util.table.join(flex.float.top.keys.action, top_keys_action), "action"
+	)
+
 	-- Appswitcher widget
 	local appswitcher_keys = {
 		{
@@ -1199,7 +1212,11 @@ function hotkeys:init(args)
 		--{
 		--	{ env.mod }, "z", focus_to_previous,
 		--	{ description = "Go to previos client", group = "Client focus" }
-		--},
+        --},
+		{
+			{ env.mod }, "/", function() flex.float.top:show("cpu") end,
+			{ description = "Top process list", group = "Widgets" }
+		},
 		{
 			{ env.mod },
 			"`",
