@@ -34,7 +34,17 @@ git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome -
 
 ### Window Titlebar
 
-![Window Titlebar](screenshots/window_titlebar.png)
+Mini:
+
+![Window Titlebar Mini](screenshots/window_titlebar_mini.png)
+
+Compact:
+
+![Window Titlebar Compact](screenshots/window_titlebar_compact.png)
+
+Full (default):
+
+![Window Titlebar](screenshots/window_titlebar_full.png)
 
 ### Desktop Menu
 
