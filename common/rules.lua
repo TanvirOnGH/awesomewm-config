@@ -29,7 +29,7 @@ rules.titlebar_exceptions = {
 }
 
 rules.maximized = {
-	class = { "Emacs24" },
+	class = { "firefox" },
 }
 
 -- Build rule table
