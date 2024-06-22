@@ -13,7 +13,7 @@ function menu:init(args)
 	local env = args.env or {}
 	local separator = args.separator or { widget = flex.gauge.separator.horizontal() }
 	local theme = args.theme or { auto_hotkey = true }
-	local icon_style = args.icon_style or { custom_only = true, scalable_only = true }
+	local icon_style = args.icon_style or { custom_only = false, scalable_only = false }
 
 	-- theme vars
 	local default_icon = flex.util.base.placeholder()
@@ -66,7 +66,7 @@ function menu:init(args)
 		theme = theme,
 		items = {
 			{ "Awesome", awesomemenu, micon("awesome") },
-			{ "NixOS", nixmenu, micon("nix") },
+			{ "NixOS", nixmenu, micon("nix-snowflake") },
 			{ "Applications", appmenu, micon("folder") },
 			{ "Places", placesmenu, micon("folder_home"), key = "c" },
 			separator,
@@ -78,7 +78,7 @@ function menu:init(args)
 			{ "Wifi Hotspot", "wihotspot-gui", micon("wifi") },
 			{ "Volume Control", "pavucontrol", micon("volume") },
 			separator,
-			{ "Lock Screen", "i3lock-fancy-rapid 5 5", micon("exit") },
+			{ "Lock Screen", "i3lock-fancy-rapid 5 5", micon("lockscreen") },
 			separator,
 			{ "Exit", exitmenu, micon("exit") },
 		},
