@@ -44,6 +44,10 @@ git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome -
 
 ![Window Menu](screenshots/window_menu.png)
 
+### Process List
+
+![Process List](screenshots/process_list.png)
+
 ### Calendar
 
 ![Calendar](screenshots/calendar.png)
