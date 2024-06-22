@@ -85,7 +85,6 @@ function menu:init(args)
 	})
 
 	-- Menu panel widget
-
 	self.widget = flex.gauge.svgbox(icon, nil, color)
 	self.buttons = awful.util.table.join(awful.button({}, 1, function()
 		self.mainmenu:toggle()

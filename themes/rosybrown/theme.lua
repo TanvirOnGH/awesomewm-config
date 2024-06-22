@@ -31,7 +31,6 @@ theme.desktop.places = {
 	cpumem = { 1, 1 },
 	disks = { 1, 2 },
 	ssdspeed = { 1, 5 },
-
 	netspeed = { 2, 5 },
 }
 

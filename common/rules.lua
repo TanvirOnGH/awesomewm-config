@@ -71,7 +71,14 @@ function rules:init(args)
 		{
 			rule = { instance = "Xephyr" },
 			properties = { tag = self.env.theme == "rosybrown" and "Test" or "Free", fullscreen = true },
+        },
+		
+		--[[
+		{
+			rule = { class = "firefox" },
+			properties = { tag = "1:1", switchtotag = true }
 		},
+		--]]
 
 		-- Jetbrains splash screen fix
 		{
