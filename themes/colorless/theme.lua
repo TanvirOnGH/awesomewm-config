@@ -456,8 +456,8 @@ function theme:init()
 		grid = "Grid",
 		usermap = "User Map",
 		tile = "Right Tile",
-		fairv = "Fair Tile", -- Vertical
-		-- fairh = "Fair Tile", -- Horitontal
+		fairv = "Fair Tile (V)",
+		fairh = "Fair Tile (H)",
 		tileleft = "Left Tile",
 		tiletop = "Top Tile",
 		tilebottom = "Bottom Tile",
