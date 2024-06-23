@@ -867,7 +867,7 @@ function theme:init()
 		fonts = self.fonts.calendar,
 		icon = { next = self.icon.right, prev = self.icon.left },
 		clock_format = "%I:%M %p",
-		date_format = "%A, %d. %B",
+		date_format = "%A, %d %B",
 		clock_refresh_seconds = 60,
 		weeks_start_sunday = false,
 		show_week_numbers = true,
