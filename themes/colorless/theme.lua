@@ -463,7 +463,7 @@ function theme:init()
 		tiletop = "Top Tile",
 		tilebottom = "Bottom Tile",
 		magnifier = "Magnifier",
-        spiral = "Spiral",
+		spiral = "Spiral",
 		dwindle = "Dwindle",
 		cornerne = "Corner NE",
 		cornernw = "Corner NW",
