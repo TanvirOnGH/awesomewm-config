@@ -58,6 +58,10 @@ Full (default):
 
 ![Process List](screenshots/process_list.png)
 
+### Application Switcher
+
+![Application Switcher](screenshots/application_switcher.png)
+
 ### Calendar
 
 ![Calendar](screenshots/calendar.png)
