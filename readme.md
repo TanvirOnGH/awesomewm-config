@@ -62,6 +62,10 @@ Full (default):
 
 ![Application Switcher](screenshots/application_switcher.png)
 
+### Tray
+
+![Tray](screenshots/tray.png)
+
 ### Calendar
 
 ![Calendar](screenshots/calendar.png)
