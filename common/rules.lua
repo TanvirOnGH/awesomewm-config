@@ -28,9 +28,11 @@ rules.titlebar_exceptions = {
 	class = { "Cavalcade", "Clipflap", "Steam", "Qemu-system-x86_64" },
 }
 
+--[[
 rules.maximized = {
 	class = { "firefox" },
 }
+--]]
 
 -- Build rule table
 function rules:init(args)
