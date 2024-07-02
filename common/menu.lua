@@ -13,7 +13,7 @@ function menu:init(args)
 	local env = args.env or {}
 	local separator = args.separator or { widget = flex.gauge.separator.horizontal() }
 	local theme = args.theme or { auto_hotkey = true }
-	local icon_style = args.icon_style or { custom_only = false, scalable_only = false }
+	local icon_style = args.icon_style or { custom_only = false, scalable_only = true }
 
 	-- theme vars
 	local default_icon = flex.util.base.placeholder()
