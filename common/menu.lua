@@ -55,7 +55,7 @@ function menu:init(args)
 
 	-- Exit submenu
 	local exitmenu = {
-		{ "Lockscreen", "lockscreen", micon("lock") },
+		{ "Lockscreen", "i3lock-fancy-rapid 5 5", micon("lock") },
 		separator,
 		{ "Reboot", "reboot", micon("gnome-session-reboot") },
 		{ "Shutdown", "poweroff", micon("system-shutdown") },
