@@ -55,8 +55,11 @@ function menu:init(args)
 
 	-- Exit submenu
 	local exitmenu = {
-		{ "Reboot", "reboot", micon("gnome-session-reboot") },
-		{ "Shutdown", "poweroff", micon("system-shutdown") },
+		{ "Reboot",       "reboot",       micon("gnome-session-reboot") },
+		{ "Shutdown",     "poweroff",     micon("system-shutdown") },
+		{ "Suspend",      "suspend",      micon("system-suspend") },
+		{ "Hibernate",    "hibernate",    micon("system-hibernate") },
+		{ "Hybrid Sleep", "hybrid-sleep", micon("system-hybrid-sleep") },
 		separator,
 		{ "Log out", awesome.quit, micon("exit") },
 	}
