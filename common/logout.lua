@@ -13,6 +13,14 @@ function logout:init()
 			label = "Logout",
 			close_apps = true,
 		},
+		{ -- Lock screen
+			callback = function()
+				awful.spawn.with_shell("sleep 1 && i3lock-fancy-rapid 5 5")
+			end,
+			icon_name = "lock",
+			label = "Lock",
+			close_apps = false,
+		},
 		{ -- Shutdown
 			callback = function()
 				awful.spawn.with_shell("systemctl poweroff")
