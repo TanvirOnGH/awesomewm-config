@@ -101,13 +101,13 @@ taglist.layouts = {
 	-- Check common/layout for layouts
 	al[2],
 	al[3],
-	al[5],
+	al[4],
 	al[7],
 	al[13],
 
 	al[1],
 	al[4],
-	al[6],
+	al[3],
 	al[8],
 	al[14],
 }
