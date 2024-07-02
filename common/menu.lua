@@ -54,7 +54,9 @@ function menu:init(args)
 	}
 
 	-- Exit submenu
-	local exitmenu = {
+    local exitmenu = {
+		{ "Lock", "lock", micon("lock") },
+		separator,
 		{ "Reboot",       "reboot",       micon("gnome-session-reboot") },
 		{ "Shutdown",     "poweroff",     micon("system-shutdown") },
 		{ "Suspend",      "suspend",      micon("system-suspend") },
@@ -80,8 +82,6 @@ function menu:init(args)
 			{ "Bluetooth Manager", "blueman-manager", micon("bluetooth") },
 			{ "Wifi Hotspot", "wihotspot-gui", micon("wifi") },
 			{ "Volume Control", "pavucontrol", micon("volume") },
-			separator,
-			{ "Lock Screen", "i3lock-fancy-rapid 5 5", micon("lockscreen") },
 			separator,
 			{ "Exit", exitmenu, micon("exit") },
 		},
