@@ -32,12 +32,12 @@ function menu:init(args)
 	local awesomemenu = {
 		{ "Restart", awesome.restart, micon("gnome-session-reboot") },
 		separator,
-		{ "Awesome config", "code" .. " /home/user/.config/awesome/", micon("terminal") },
+		{ "Awesome config", "code /home/user/.config/awesome/", micon("terminal") },
 	}
 
 	-- Nix submenu
 	local nixmenu = {
-		{ "NixOS config", "code" .. " /home/user/workspace/development/github/nixos-config/", micon("terminal") },
+		{ "NixOS config", "code /home/user/workspace/development/github/nixos-config/", micon("terminal") },
 	}
 
 	-- Places submenu
