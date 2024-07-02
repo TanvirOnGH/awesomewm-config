@@ -57,11 +57,11 @@ function menu:init(args)
 	local exitmenu = {
 		{ "Lockscreen", "i3lock-fancy-rapid 5 5", micon("lock") },
 		separator,
-		{ "Reboot", "reboot", micon("gnome-session-reboot") },
-		{ "Shutdown", "poweroff", micon("system-shutdown") },
-		{ "Suspend", "suspend", micon("system-suspend") },
-		{ "Hibernate", "hibernate", micon("system-hibernate") },
-		{ "Hybrid Sleep", "hybrid-sleep", micon("system-hybrid-sleep") },
+		{ "Reboot", "systemctl reboot", micon("gnome-session-reboot") },
+		{ "Shutdown", "systemctl poweroff", micon("system-shutdown") },
+		{ "Suspend", "systemctl suspend", micon("system-suspend") },
+		{ "Hibernate", "systemctl hibernate", micon("system-hibernate") },
+		{ "Hybrid Sleep", "systemctl hybrid-sleep", micon("system-hybrid-sleep") },
 		separator,
 		{ "Log out", awesome.quit, micon("exit") },
 	}
