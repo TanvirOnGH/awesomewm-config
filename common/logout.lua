@@ -37,6 +37,22 @@ function logout:init()
 			label = "Sleep",
 			close_apps = false,
 		},
+		{ -- Hibernate
+			callback = function()
+				awful.spawn.with_shell("systemctl hibernate")
+			end,
+			icon_name = "hibernate",
+			label = "Hibernate",
+			close_apps = false,
+		},
+		{ -- Hybrid Sleep
+			callback = function()
+				awful.spawn.with_shell("systemctl hybrid-sleep")
+			end,
+			icon_name = "hybrid-sleep",
+			label = "Hybrid Sleep",
+			close_apps = false,
+		},
 	}
 
 	logout_screen:set_entries(logout_entries)
