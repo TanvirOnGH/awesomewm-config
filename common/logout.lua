@@ -17,8 +17,8 @@ function logout:init()
 			callback = function()
 				awful.spawn.with_shell("sleep 1 && i3lock-fancy-rapid 5 5")
 			end,
-			icon_name = "lock",
-			label = "Lock",
+			icon_name = "lockscreen",
+			label = "Lockscreen",
 			close_apps = false,
 		},
 		{ -- Shutdown
