@@ -200,6 +200,8 @@ function theme:init()
 			-- '/usr/share/applications/',
 			-- '/usr/local/share/applications/',
 			"~/.local/share/applications/",
+			"~/.local/share/flatpak/exports/share/applications/", -- user installed flatpak apps
+			"/var/lib/flatpak/exports/share/applications/" -- system wide installed flatpak apps
 		},
 		-- icon theme settings
 		icons = {
