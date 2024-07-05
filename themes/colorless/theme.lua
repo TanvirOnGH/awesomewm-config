@@ -1066,7 +1066,7 @@ function theme:init()
 			self.icon.system, -- down
 		},
 
-		-- !!! WARNING some missed style settings for elemets below will be overwritten by widget
+		-- WARNING: some missed style settings for elemets below will be overwritten by widget
 		-- do not try to use full style settings from 'theme.desktop.commom' here
 
 		-- time chart style (see theme.desktop.common.chart)
@@ -1092,7 +1092,7 @@ function theme:init()
 			margin = { 4, 4, 2, 2 }, -- margins around icon
 		},
 
-		-- !!! WARNING some style settings for elemets below will be overwritten by widget
+		-- WARNING: some style settings for elemets below will be overwritten by widget
 		chart = { zero_height = 0 }, -- time chart style (see theme.desktop.common.chart)
 		label = {}, -- progressbar value (see theme.desktop.common.textbox)
 		progressbar = {}, -- double progressbar style (see theme.desktop.common.bar.plain)
@@ -1116,7 +1116,7 @@ function theme:init()
 			margin = { 0, 16, 0, 0 }, -- margins around icon
 			full = false, -- draw icon in full height of widget
 		},
-		-- !!! WARNING some missed style settings for elemets below will be overwritten by widget
+		-- WARNING: some missed style settings for elemets below will be overwritten by widget
 
 		--  vertical progressbars style (see theme.desktop.common.bar.shaped)
 		upbar = { width = 34, chunk = { height = 17, num = 10, line = 4 } },
@@ -1134,7 +1134,7 @@ function theme:init()
 		-- widget icon settings
 		icon = { image = nil, margin = { 0, 0, 0, 0 } },
 
-		-- !!! WARNING some missed style settings for elemets below will be overwritten by widget
+		-- WARNING: some missed style settings for elemets below will be overwritten by widget
 
 		-- progressbars style (see theme.desktop.common.pack.lines)
 		lines = { progressbar = {}, tooltip = {} },
