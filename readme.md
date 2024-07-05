@@ -14,7 +14,7 @@ My [Awesome Window Manager](https://awesomewm.org) configuration. It's a highly 
 
 ![Ruby Desktop](screenshots/rosybrown_desktop.png)
 
-![Ruby Desktop Terminal Windows](screenshots/rosybrown_desktop_terminals.png)
+![Ruby Desktop Terminal Windows](screenshots/rosybrown_desktop2.png)
 
 ## Installation
 
