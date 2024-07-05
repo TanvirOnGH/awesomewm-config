@@ -99,13 +99,13 @@ taglist.names = {
 local al = awful.layout.layouts
 taglist.layouts = {
 	-- Check common/layout for layouts
-	al[2],
+	al[18],
 	al[3],
 	al[4],
 	al[7],
 	al[13],
 
-	al[1],
+	al[18],
 	al[4],
 	al[3],
 	al[8],
