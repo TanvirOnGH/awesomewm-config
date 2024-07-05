@@ -223,6 +223,16 @@ sysmon.buttons.ram = awful.util.table.join(awful.button({}, 1, function()
 	flex.float.top:show("mem")
 end))
 
+-- SWAP usage
+sysmon.widget.swap = flex.widget.sysmon(
+	{ func = flex.system.pformatted.swap(50) },
+	{ timeout = 2, widget = flex.gauge.monitor.circle }
+)
+
+sysmon.buttons.swap = awful.util.table.join(awful.button({}, 1, function()
+	flex.float.top:show("swap")
+end))
+
 -- Screen setup
 -- setup
 awful.screen.connect_for_each_screen(function(s)
@@ -274,7 +284,8 @@ awful.screen.connect_for_each_screen(function(s)
 			env.wrapper(sysmon.widget.gpu, "gpu", sysmon.buttons.gpu),
 			env.wrapper(sysmon.widget.vram, "vram", sysmon.buttons.vram),
 			env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
-			env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
+            env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
+			env.wrapper(sysmon.widget.swap, "swap", sysmon.buttons.swap),
 			separator,
 			env.wrapper(textclock.widget, "textclock", textclock.buttons),
 			separator,
