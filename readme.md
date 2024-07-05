@@ -32,6 +32,10 @@ git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome -
 
 ![Time-Calendar bottom bar widget](screenshots/time_calendar_bar_widget.png)
 
+### Bar
+
+![Bar](screenshots/bar.png)
+
 ### Window Titlebar
 
 Mini:
@@ -61,6 +65,10 @@ Full (default):
 ### Application Switcher
 
 ![Application Switcher](screenshots/application_switcher.png)
+
+### Application launcher
+
+![Application Launcher](screenshots/application_launcher.png)
 
 ### Tray
 
