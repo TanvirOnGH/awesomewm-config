@@ -233,6 +233,16 @@ sysmon.buttons.swap = awful.util.table.join(awful.button({}, 1, function()
 	flex.float.top:show("swap")
 end))
 
+-- DISK usage
+sysmon.widget.disk = flex.widget.sysmon(
+	{ func = flex.system.pformatted.disk(90) },
+	{ timeout = 2, widget = flex.gauge.monitor.circle }
+)
+
+sysmon.buttons.disk = awful.util.table.join(awful.button({}, 1, function()
+	flex.float.top:show("disk")
+end))
+
 -- Screen setup
 -- setup
 awful.screen.connect_for_each_screen(function(s)
@@ -286,6 +296,7 @@ awful.screen.connect_for_each_screen(function(s)
 			env.wrapper(sysmon.widget.cpu, "cpu", sysmon.buttons.cpu),
 			env.wrapper(sysmon.widget.ram, "ram", sysmon.buttons.ram),
 			env.wrapper(sysmon.widget.swap, "swap", sysmon.buttons.swap),
+			-- env.wrapper(sysmon.widget.disk, "disk", sysmon.buttons.disk),
 			separator,
 			env.wrapper(textclock.widget, "textclock", textclock.buttons),
 			separator,
