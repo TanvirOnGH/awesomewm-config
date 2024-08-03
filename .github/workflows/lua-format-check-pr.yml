@@ -1,4 +1,4 @@
-name: Check Lint With Stylua
+name: Check formatting issues with Stylua
 on:
   pull_request:
     paths:
