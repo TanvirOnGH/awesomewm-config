@@ -1,4 +1,4 @@
-name: Lint With Stylua
+name: Format with Stylua
 on:
   push:
     paths:
@@ -29,4 +29,4 @@ jobs:
       - name: Auto commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore: linting with Stylua"
+          commit_message: "Format lua code with stylua"
