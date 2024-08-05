@@ -3,11 +3,16 @@ repos:
     rev: v0.1.8
     hooks:
       - id: ripsecrets
-        
+
   - repo: https://github.com/trufflesecurity/trufflehog
     rev: v3.81.5
     hooks:
       - id: trufflehog
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
 
   - repo: https://github.com/JohnnyMorganz/StyLua
     rev: v0.20.0
