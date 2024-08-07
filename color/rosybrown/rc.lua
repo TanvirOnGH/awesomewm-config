@@ -82,6 +82,7 @@ taglist.buttons = awful.util.table.join(
 )
 
 -- some tag settings which indirectly depends on row and columns number of taglist
+--[[
 taglist.names = {
 	"1:1",
 	"1:2",
@@ -111,6 +112,15 @@ taglist.layouts = {
 	al[8],
 	al[14],
 }
+]]
+
+-- Dynamically generate the taglist.names and taglist.layouts tables based on the number of configured tags
+taglist.names = {}
+taglist.layouts = {}
+for i = 1, taglist.rows_num * taglist.cols_num do
+	taglist.names[i] = tostring(i) .. ":" .. tostring((i - 1) % taglist.cols_num + 1)
+	taglist.layouts[i] = awful.layout.layouts[i % #awful.layout.layouts + 1]
+end
 
 -- Tasklist
 local tasklist = {}
