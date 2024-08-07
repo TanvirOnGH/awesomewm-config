@@ -44,6 +44,9 @@ local function on_maximize(c)
 		if is_max then
 			c.y = c.screen.workarea.y
 		end
+
+		-- Force geometry recalculation to fix a bug with maximized windows
+		c:emit_signal("request::geometry")
 	end
 end
 
