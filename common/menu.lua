@@ -47,10 +47,10 @@ function menu:init(args)
 		{ "Pictures", env.fm .. " media/pictures", micon("folder-pictures") },
 		{ "Videos", env.fm .. " media/videos", micon("folder-videos") },
 		separator,
-		{ "gamedrive1", env.fm .. " /mnt/gamedrive1", micon("folder-bookmarks") },
-		{ "gamedrive2", env.fm .. " /mnt/gamedrive2", micon("folder-bookmarks") },
-		{ "gamedrive3", env.fm .. " /mnt/gamedrive3", micon("folder-bookmarks") },
-		{ "windows", env.fm .. " /mnt/windows", micon("folder-bookmarks") },
+		{ "radare", env.fm .. " /mnt/radare", micon("folder-bookmarks") },
+		{ "sonare", env.fm .. " /mnt/sonare", micon("folder-bookmarks") },
+		{ "whispare", env.fm .. " /mnt/whispare", micon("folder-bookmarks") },
+		{ "homare", env.fm .. " /mnt/homare", micon("folder-bookmarks") },
 	}
 
 	-- Exit submenu
