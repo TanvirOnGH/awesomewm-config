@@ -12,16 +12,20 @@ function autostart.run()
 	awful.spawn.with_shell("xset s off") -- disable X screen saver feature
 	awful.spawn.with_shell("xset r rate 250 50") -- speed up keyboard auto-repeat rate
 
-	-- utils
+	-- daemon
 	awful.spawn.with_shell("picom --daemon") -- compositor
 	awful.spawn.with_shell("copyq") -- clipboard manager daemon
+	-- awful.spawn.with_shell("flashfocus") -- flashfocus daemon
+
+	-- tray
+	--[[
 	-- awful.spawn.with_shell("nm-tray") -- NetworkManager Tray
 	awful.spawn.with_shell("nm-applet") -- NetworkManager Tray
 	awful.spawn.with_shell("pasystray") -- PulseAudio Tray
 	awful.spawn.with_shell("blueman-applet") -- Bluetooth (Blueman) Tray
-	-- awful.spawn.with_shell("flashfocus") -- flashfocus daemon
+	--]]
 
-    -- cloud
+	-- cloud
 	--[[
 	awful.spawn.with_shell("megasync") -- MEGA sync daemon
 	awful.spawn.with_shell("cozydrive") -- Cozy Drive daemon
