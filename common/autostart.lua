@@ -21,11 +21,13 @@ function autostart.run()
 	awful.spawn.with_shell("blueman-applet") -- Bluetooth (Blueman) Tray
 	-- awful.spawn.with_shell("flashfocus") -- flashfocus daemon
 
-	-- cloud
+    -- cloud
+	--[[
 	awful.spawn.with_shell("megasync") -- MEGA sync daemon
 	awful.spawn.with_shell("cozydrive") -- Cozy Drive daemon
 	awful.spawn.with_shell("maestral_qt") -- Maestral (Dropbox) daemon
 	awful.spawn.with_shell("onedrivegui") -- OneDrive daemon
+	--]]
 
 	-- apps
 end
