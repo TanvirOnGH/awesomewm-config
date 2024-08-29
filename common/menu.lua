@@ -47,10 +47,12 @@ function menu:init(args)
 		{ "Pictures", env.fm .. " media/pictures", micon("folder-pictures") },
 		{ "Videos", env.fm .. " media/videos", micon("folder-videos") },
 		separator,
-		{ "radare", env.fm .. " /mnt/radare", micon("folder-bookmarks") },
-		{ "sonare", env.fm .. " /mnt/sonare", micon("folder-bookmarks") },
-		{ "whispare", env.fm .. " /mnt/whispare", micon("folder-bookmarks") },
-		{ "homare", env.fm .. " /mnt/homare", micon("folder-bookmarks") },
+		{ "media1", env.fm .. " /mnt/media1", micon("folder-bookmarks") },
+		{ "media2", env.fm .. " /mnt/media2", micon("folder-bookmarks") },
+		{ "media3",  env.fm .. " /mnt/media3",  micon("folder-bookmarks") },
+		separator,
+		{ "games",  env.fm .. " /mnt/games",  micon("folder-bookmarks") },
+		{ "windows",  env.fm .. " /mnt/windows",  micon("folder-bookmarks") },
 	}
 
 	-- Exit submenu

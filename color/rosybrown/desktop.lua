@@ -81,10 +81,11 @@ function desktop:init(args)
 	disks.args = {
 		sensors = {
 			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "root", args = "/" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "radare", args = "/mnt/radare" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "sonare", args = "/mnt/sonare" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "whispare", args = "/mnt/whispare" },
-			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "homare", args = "/mnt/homare" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "media1", args = "/mnt/media1" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "media2", args = "/mnt/media2" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "media3", args = "/mnt/media3" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "games",  args = "/mnt/games" },
+			{ meter_function = system.fs_info, maxm = 100, crit = 80, name = "windows",  args = "/mnt/windows" },
 		},
 		timeout = 300,
 	}
