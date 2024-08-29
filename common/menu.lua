@@ -49,10 +49,10 @@ function menu:init(args)
 		separator,
 		{ "media1", env.fm .. " /mnt/media1", micon("folder-bookmarks") },
 		{ "media2", env.fm .. " /mnt/media2", micon("folder-bookmarks") },
-		{ "media3",  env.fm .. " /mnt/media3",  micon("folder-bookmarks") },
+		{ "media3", env.fm .. " /mnt/media3", micon("folder-bookmarks") },
 		separator,
-		{ "games",  env.fm .. " /mnt/games",  micon("folder-bookmarks") },
-		{ "windows",  env.fm .. " /mnt/windows",  micon("folder-bookmarks") },
+		{ "games", env.fm .. " /mnt/games", micon("folder-bookmarks") },
+		{ "windows", env.fm .. " /mnt/windows", micon("folder-bookmarks") },
 	}
 
 	-- Exit submenu
