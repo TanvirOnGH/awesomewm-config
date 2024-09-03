@@ -1,3 +1,6 @@
 [submodule "flex"]
 	url = https://github.com/TanvirOnGH/flex
 	path = flex
+[submodule "bling"]
+	path = bling
+	url = https://github.com/BlingCorp/bling
