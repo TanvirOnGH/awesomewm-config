@@ -438,7 +438,13 @@ function theme:init()
 		cornerne = self.base .. "/layouts/cornerne.svg",
 		cornernw = self.base .. "/layouts/cornernw.svg",
 		cornerse = self.base .. "/layouts/cornerse.svg",
-		cornersw = self.base .. "/layouts/cornersw.svg",
+        cornersw = self.base .. "/layouts/cornersw.svg",
+        equalarea = self.base .. "/layouts/equalarea.svg",
+        centered = self.base .. "/layouts/centered.svg",
+        vertical = self.base .. "/layouts/vertical.svg",
+		horizontal = self.base .. "/layouts/horizontal.svg",
+        deck = self.base .. "/layouts/deck.svg",
+		mstab = self.base .. "/layouts/mstab.svg",
 		unknown = self.icon.unknown, -- this one used as fallback
 	}
 
