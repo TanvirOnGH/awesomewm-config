@@ -30,7 +30,7 @@ function layouts:init()
 		flex.layout.centered,
 		flex.layout.vertical,
 		flex.layout.horizontal,
-        flex.layout.deck,
+		flex.layout.deck,
 		flex.layout.mstab,
 		awful.layout.suit.max.fullscreen,
 		awful.layout.suit.max,
