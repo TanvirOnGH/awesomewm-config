@@ -118,7 +118,9 @@ taglist.layouts = {
 taglist.names = {}
 taglist.layouts = {}
 for i = 1, taglist.rows_num * taglist.cols_num do
-	taglist.names[i] = tostring(i) .. ":" .. tostring((i - 1) % taglist.cols_num + 1)
+	local row = math.ceil(i / taglist.cols_num)
+	local col = (i - 1) % taglist.cols_num + 1
+	taglist.names[i] = tostring(row) .. ":" .. tostring(col)
 	taglist.layouts[i] = awful.layout.layouts[i % #awful.layout.layouts + 1]
 end
 
