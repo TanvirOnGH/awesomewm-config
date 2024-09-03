@@ -18,7 +18,6 @@ rules.base_properties = {
 rules.floating_any = {
 	class = {
 		"Clipflap",
-		"Run.py",
 	},
 	role = { "AlarmWindow", "pop-up" },
 	type = { "dialog" },
@@ -27,12 +26,6 @@ rules.floating_any = {
 rules.titlebar_exceptions = {
 	class = { "Cavalcade", "Clipflap", "Steam", "Qemu-system-x86_64" },
 }
-
---[[
-rules.maximized = {
-	class = { "firefox" },
-}
---]]
 
 -- Build rule table
 function rules:init(args)
@@ -74,13 +67,6 @@ function rules:init(args)
 			rule = { instance = "Xephyr" },
 			properties = { tag = self.env.theme == "rosybrown" and "Test" or "Free", fullscreen = true },
 		},
-
-		--[[
-		{
-			rule = { class = "firefox" },
-			properties = { tag = "1:1", switchtotag = true }
-		},
-		--]]
 
 		-- Jetbrains splash screen fix
 		{
