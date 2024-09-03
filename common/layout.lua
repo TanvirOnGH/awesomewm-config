@@ -26,6 +26,12 @@ function layouts:init()
 		awful.layout.suit.spiral.dwindle,
 		awful.layout.suit.magnifier,
 		flex.layout.grid,
+		flex.layout.equalarea,
+		flex.layout.centered,
+		flex.layout.vertical,
+		flex.layout.horizontal,
+        flex.layout.deck,
+		flex.layout.mstab,
 		awful.layout.suit.max.fullscreen,
 		awful.layout.suit.max,
 	}
