@@ -1,9 +1,3 @@
 # Default rc.lua is actually a link to specific config
 # Default config
 rc-back.lua
-
-# Contains wallpapers, screenshots and screenrecords
-misc
-
-# IDE settings
-.idea
