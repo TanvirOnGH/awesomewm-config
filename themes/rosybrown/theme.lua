@@ -68,7 +68,7 @@ theme.desktop.speedmeter.compact.progressbar = { chunk = { width = 6, gap = 3 },
 
 -- Speedmeter drive (individual widget)
 theme.individual.desktop.speedmeter.drive = {
-	unit = { { "B", -1 }, { "KB", 2 }, { "MB", 2048 } },
+	unit = { { "B/s", -1 }, { "KB/s", 2 }, { "MB/s", 2048 } },
 }
 
 -- Multimeter (base widget)
@@ -91,7 +91,7 @@ theme.desktop.multiline.icon.margin = theme.desktop.multimeter.icon.margin
 
 -- Multilines storage (individual widget)
 theme.individual.desktop.multiline.storage = {
-	unit = { { "KB", 1 }, { "MB", 1024 ^ 1 }, { "GB", 1024 ^ 2 } },
+	unit = { { "KB/s", 1 }, { "MB/s", 1024 ^ 1 }, { "GB/s", 1024 ^ 2 } },
 	icon = { image = theme.path .. "/desktop/storage.svg" },
 	lines = {
 		line = { height = 10 },
@@ -101,7 +101,7 @@ theme.individual.desktop.multiline.storage = {
 
 -- Multilines qemu drive images (individual widget)
 theme.individual.desktop.multiline.images = {
-	unit = { { "KB", 1 }, { "MB", 1024 ^ 1 }, { "GB", 1024 ^ 2 } },
+	unit = { { "KB/s", 1 }, { "MB/s", 1024 ^ 1 }, { "GB/s", 1024 ^ 2 } },
 }
 
 -- Panel widgets
