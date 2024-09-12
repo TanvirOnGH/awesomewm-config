@@ -10,6 +10,8 @@ My [Awesome Window Manager](https://awesomewm.org) configuration. It's a highly 
 
 > [!TIP]  
 > Use [LuaJIT](https://luajit.org) for best performance.
+>
+> For easy customization use [Xephyr](https://wiki.archlinux.org/title/Xephyr). See scripts directory.
 
 ## Desktop Screenshots
 
