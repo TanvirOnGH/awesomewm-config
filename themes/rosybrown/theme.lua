@@ -13,7 +13,7 @@ theme.path = awful.util.get_configuration_dir() .. "themes/rosybrown"
 
 -- Main config
 theme.panel_height = 38 -- panel height
-theme.wallpaper = awful.util.get_configuration_dir() .. "wallpapers/rosybrown/RosyBrown.png"
+theme.wallpaper = awful.util.get_configuration_dir() .. "wallpapers/RosyBrown.png"
 theme.desktopbg = theme.wallpaper
 
 -- Setup parent theme settings
