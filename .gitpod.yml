@@ -1,0 +1,43 @@
+# TODO: Custom image with awesomewm preinstalled and configured
+image: gitpod/workspace-full-vnc
+
+# Then use the xephyr script(s) from scripts directory
+tasks:
+    - name: Setup AwesomeWM Config along with necessary dependencies
+      before: |
+          sudo apt update && sudo apt install awesome xserver-xephyr -y
+      init: |
+          mkdir -p ~/.config/awesome
+      command: |
+          git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome --recursive
+
+ports:
+    - name: VNC
+      description: Full GUI Virtual Desktop
+      port: 6080
+      onOpen: open-browser
+
+vscode:
+    extensions:
+        - sumneko.lua
+        - JohnnyMorganz.stylua
+        - castrogusttavo.min-theme
+        - castrogusttavo.symbols
+        - antfu.icons-carbon
+        - gruntfuggly.todo-tree
+        - mhutchie.git-graph
+        - donjayamanne.githistory
+        - timonwong.shellcheck
+        - foxundermoon.shell-format
+        - tyriar.sort-lines
+        - yzhang.markdown-all-in-one
+        - davidanson.vscode-markdownlint
+        - naumovs.color-highlight
+        - oderwat.indent-rainbow
+        - tamasfe.even-better-toml
+        - idleberg.icon-fonts
+        - anseki.vscode-color
+        - aaron-bond.better-comments
+        - ibm.output-colorizer
+        - chouzz.vscode-better-align
+        - esbenp.prettier-vscode
