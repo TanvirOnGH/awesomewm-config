@@ -10,6 +10,12 @@ tasks:
           mkdir -p ~/.config/awesome
       command: |
           git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome --recursive
+    - name: Set bash aliases for easy access of xephyr scripts
+      command: |
+          echo "alias start='~/.config/awesome/scripts/xephyr.sh start xephyr && ~/.config/awesome/scripts/xephyr.sh start awesome'" >> ~/.bashrc
+          echo "alias stop='~/.config/awesome/scripts/xephyr.sh stop xephyr && ~/.config/awesome/scripts/xephyr.sh stop awesome'" >> ~/.bashrc
+          echo "alias quit='~/.config/awesome/scripts/xephyr.sh stop awesome'" >> ~/.bashrc
+          echo "alias restart='stop && start'" >> ~/.bashrc
 
 ports:
     - name: VNC
