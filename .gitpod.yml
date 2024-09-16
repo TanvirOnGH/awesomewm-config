@@ -1,7 +1,5 @@
-# TODO: Custom image with awesomewm preinstalled and configured
 image: gitpod/workspace-full-vnc
 
-# Then use the xephyr script(s) from scripts directory
 tasks:
     - name: Setup AwesomeWM Config along with necessary dependencies
       before: |
@@ -9,7 +7,9 @@ tasks:
       init: |
           mkdir -p ~/.config/awesome
       command: |
-          git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome --recursive
+          for item in /workspace/awesomewm-config/*; do
+              ln -sfn "$item" ~/.config/awesome/
+          done
     - name: Set bash aliases for easy access of xephyr script
       command: |
           echo "alias start='~/.config/awesome/scripts/xephyr.sh start xephyr && ~/.config/awesome/scripts/xephyr.sh start awesome'" >> ~/.bashrc
