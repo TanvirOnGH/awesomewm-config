@@ -1,6 +1,8 @@
 image: gitpod/workspace-full-vnc
 
 tasks:
+    - init: |
+          git submodule update --init --recursive
     - name: Setup AwesomeWM Config along with necessary dependencies
       before: |
           sudo apt update && sudo apt install awesome xserver-xephyr -y
