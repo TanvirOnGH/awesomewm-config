@@ -13,8 +13,20 @@ theme.path = awful.util.get_configuration_dir() .. "themes/rosybrown"
 
 -- Main config
 theme.panel_height = 38 -- panel height
-theme.wallpaper = awful.util.get_configuration_dir() .. "wallpapers/RosyBrown.png"
-theme.desktopbg = theme.wallpaper
+-- theme.desktopbg = theme.wallpapers["1:1"]
+theme.wallpapers = {
+	["1:1"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrown.png",
+	["1:2"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownApple.png",
+	["1:3"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownBoy.png",
+	["1:4"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownMan.png",
+	["1:5"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownGun.png",
+
+	["2:1"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownSword.png",
+	["2:2"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownSword2.png",
+	["2:3"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownNix.png",
+	["2:4"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownGirl.png",
+	["2:5"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownTree.png",
+}
 
 -- Setup parent theme settings
 theme:update()

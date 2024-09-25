@@ -49,7 +49,11 @@ end
 -- Common functions
 -- Wallpaper setup
 env.wallpaper = function(s)
-	if beautiful.wallpaper then
+	local selected_tag = s.selected_tag
+
+	if selected_tag and beautiful.wallpapers[selected_tag.name] then
+		gears.wallpaper.maximized(beautiful.wallpapers[selected_tag.name], s, true)
+	elseif beautiful.wallpaper then
 		if not env.desktop_autohide and awful.util.file_readable(beautiful.wallpaper) then
 			gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 		else
@@ -57,6 +61,10 @@ env.wallpaper = function(s)
 		end
 	end
 end
+
+screen.connect_signal("tag::history::update", function(s)
+	env.wallpaper(s)
+end)
 
 -- Tag tooltip text generation
 env.tagtip = function(t)
