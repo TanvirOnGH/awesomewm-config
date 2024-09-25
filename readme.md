@@ -17,9 +17,13 @@ My [Awesome Window Manager](https://awesomewm.org) configuration. It's a highly 
 
 ## Desktop Screenshots
 
-![Ruby Desktop](screenshots/rosybrown_desktop.png)
+![RosyBrown Desktop](screenshots/rosybrown_desktop.png)
 
-![Ruby Desktop Terminal Windows](screenshots/rosybrown_desktop2.png)
+![RosyBrown Desktop VSCode and Terminal Windows](screenshots/rosybrown_desktop_vscode_terminals.png)
+
+![RosyBrown Desktop HTOP Window](screenshots/rosybrown_desktop_htop.png)
+
+![RosyBrown Desktop Firefox Window](screenshots/rosybrown_desktop_firefox.png)
 
 ## Installation
 
