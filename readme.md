@@ -9,6 +9,8 @@ My [Awesome Window Manager](https://awesomewm.org) configuration. It's a highly 
 
 > [!IMPORTANT]
 > I'm using this [awesomewm](https://awesomewm.org) configuration on my [NixOS](https://nixos.org) systems, and you might notice some things that appear unusual, like the standard paths, e.g `/usr/share` equivalent for nix is `/run/current-system/sw/share` and for home-manager is `~/.local/state/home-manager/gcroots/current-home/home-path/share` on NixOS systems.
+>
+> Wallpapers are not included in the repository because they were found online from various sources and later customized for personal use. I don't know the original sources, authors, or licenses for these wallpapers. If you want to use them, here's the link which contains all the wallpapers I use including the ones used in the screenshots: [Wallpapers](https://drive.proton.me/urls/K1ENRKADZW#X8S54trbhSck)
 
 > [!TIP]  
 > Use [LuaJIT](https://luajit.org) for best performance.
