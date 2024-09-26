@@ -25,6 +25,8 @@ My [Awesome Window Manager](https://awesomewm.org) configuration. It's a highly 
 
 ![RosyBrown Desktop HTOP Window](screenshots/rosybrown_desktop_htop.png)
 
+![RosyBrown Desktop Menu](screenshots/rosybrown_desktop_menu.png)
+
 ![RosyBrown Desktop Firefox Window](screenshots/rosybrown_desktop_firefox.png)
 
 ## Installation
