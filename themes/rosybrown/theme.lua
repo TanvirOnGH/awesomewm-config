@@ -14,18 +14,19 @@ theme.path = awful.util.get_configuration_dir() .. "themes/rosybrown"
 -- Main config
 theme.panel_height = 38 -- panel height
 -- theme.desktopbg = theme.wallpapers["1:1"]
+local wallpaper_dir = os.getenv("HOME") .. "/media/pictures/wallpapers/"
 theme.wallpapers = {
-	["1:1"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrown.png",
-	["1:2"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownApple.png",
-	["1:3"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownBoy.png",
-	["1:4"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownMan.png",
-	["1:5"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownGun.png",
+	["1:1"] = wallpaper_dir .. "RosyBrown.png",
+	["1:2"] = wallpaper_dir .. "RosyBrownApple.png",
+	["1:3"] = wallpaper_dir .. "RosyBrownBoy.png",
+	["1:4"] = wallpaper_dir .. "RosyBrownMan.png",
+	["1:5"] = wallpaper_dir .. "RosyBrownGun.png",
 
-	["2:1"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownSword.png",
-	["2:2"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownSword2.png",
-	["2:3"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownNix.png",
-	["2:4"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownGirl.png",
-	["2:5"] = awful.util.get_configuration_dir() .. "wallpapers/RosyBrownTree.png",
+	["2:1"] = wallpaper_dir .. "RosyBrownSword.png",
+	["2:2"] = wallpaper_dir .. "RosyBrownSword2.png",
+	["2:3"] = wallpaper_dir .. "RosyBrownNix.png",
+	["2:4"] = wallpaper_dir .. "RosyBrownGirl.png",
+	["2:5"] = wallpaper_dir .. "RosyBrownTree.png",
 }
 
 -- Setup parent theme settings
