@@ -45,22 +45,22 @@ theme.cellnum = { x = 96, y = 58 } -- grid layout property
 local wallpaper_dir = os.getenv("HOME") .. "/media/pictures/wallpapers/"
 local wallpapers = helpers.get_wallpapers(wallpaper_dir)
 
--- Assign random wallpapers to tags
+-- Seed the RNG
 math.randomseed(os.time())
-theme.wallpapers = {
-	-- ["1:1"] = wallpaper_dir .. "RosyBrown.png"
-	["1:1"] = helpers.get_random_wallpaper(wallpapers),
-	["1:2"] = helpers.get_random_wallpaper(wallpapers),
-	["1:3"] = helpers.get_random_wallpaper(wallpapers),
-	["1:4"] = helpers.get_random_wallpaper(wallpapers),
-	["1:5"] = helpers.get_random_wallpaper(wallpapers),
 
-	["2:1"] = helpers.get_random_wallpaper(wallpapers),
-	["2:2"] = helpers.get_random_wallpaper(wallpapers),
-	["2:3"] = helpers.get_random_wallpaper(wallpapers),
-	["2:4"] = helpers.get_random_wallpaper(wallpapers),
-	["2:5"] = helpers.get_random_wallpaper(wallpapers),
+-- Shuffle wallpapers
+helpers.shuffle_table(wallpapers)
+
+-- Assign unique wallpapers to tags, reuse if not enough
+local tags = {
+	"1:1", "1:2", "1:3", "1:4", "1:5",
+	"2:1", "2:2", "2:3", "2:4", "2:5"
 }
+
+theme.wallpapers = {}
+for i, tag in ipairs(tags) do
+	theme.wallpapers[tag] = wallpapers[(i - 1) % #wallpapers + 1]
+end
 
 -- Fonts
 theme.fonts = {
