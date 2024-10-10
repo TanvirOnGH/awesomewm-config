@@ -1,4 +1,5 @@
 local awful = require("awful")
+local helpers = require("common.helpers")
 
 -- This theme was inherited from another with overwriting some values
 -- Check parent theme to find full settings list and its description
@@ -14,19 +15,25 @@ theme.path = awful.util.get_configuration_dir() .. "themes/rosybrown"
 -- Main config
 theme.panel_height = 38 -- panel height
 -- theme.desktopbg = theme.wallpapers["1:1"]
+-- Wallpaper
 local wallpaper_dir = os.getenv("HOME") .. "/media/pictures/wallpapers/"
-theme.wallpapers = {
-	["1:1"] = wallpaper_dir .. "RosyBrown.png",
-	["1:2"] = wallpaper_dir .. "RosyBrownApple.png",
-	["1:3"] = wallpaper_dir .. "RosyBrownBoy.png",
-	["1:4"] = wallpaper_dir .. "RosyBrownMan.png",
-	["1:5"] = wallpaper_dir .. "RosyBrownGun.png",
+local wallpapers = helpers.get_wallpapers(wallpaper_dir)
 
-	["2:1"] = wallpaper_dir .. "RosyBrownSword.png",
-	["2:2"] = wallpaper_dir .. "RosyBrownSword2.png",
-	["2:3"] = wallpaper_dir .. "RosyBrownNix.png",
-	["2:4"] = wallpaper_dir .. "RosyBrownGirl.png",
-	["2:5"] = wallpaper_dir .. "RosyBrownTree.png",
+-- Assign random wallpapers to tags
+math.randomseed(os.time())
+theme.wallpapers = {
+	-- ["1:1"] = wallpaper_dir .. "RosyBrown.png"
+	["1:1"] = helpers.get_random_wallpaper(wallpapers),
+	["1:2"] = helpers.get_random_wallpaper(wallpapers),
+	["1:3"] = helpers.get_random_wallpaper(wallpapers),
+	["1:4"] = helpers.get_random_wallpaper(wallpapers),
+	["1:5"] = helpers.get_random_wallpaper(wallpapers),
+
+	["2:1"] = helpers.get_random_wallpaper(wallpapers),
+	["2:2"] = helpers.get_random_wallpaper(wallpapers),
+	["2:3"] = helpers.get_random_wallpaper(wallpapers),
+	["2:4"] = helpers.get_random_wallpaper(wallpapers),
+	["2:5"] = helpers.get_random_wallpaper(wallpapers),
 }
 
 -- Setup parent theme settings

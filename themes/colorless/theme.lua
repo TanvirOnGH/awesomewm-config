@@ -1,4 +1,5 @@
 local awful = require("awful")
+local helpers = require("common.helpers")
 
 local theme = {}
 --local wa = mouse.screen.workarea
@@ -40,20 +41,25 @@ theme.panel_height = 40 -- panel height
 theme.border_width = 0 -- window border width
 theme.useless_gap = 5 -- useless gap
 theme.cellnum = { x = 96, y = 58 } -- grid layout property
-
+-- Wallpaper
 local wallpaper_dir = os.getenv("HOME") .. "/media/pictures/wallpapers/"
-theme.wallpapers = {
-	["1:1"] = wallpaper_dir .. "RosyBrown.png",
-	["1:2"] = wallpaper_dir .. "RosyBrownApple.png",
-	["1:3"] = wallpaper_dir .. "RosyBrownBoy.png",
-	["1:4"] = wallpaper_dir .. "RosyBrownMan.png",
-	["1:5"] = wallpaper_dir .. "RosyBrownGun.png",
+local wallpapers = helpers.get_wallpapers(wallpaper_dir)
 
-	["2:1"] = wallpaper_dir .. "RosyBrownSword.png",
-	["2:2"] = wallpaper_dir .. "RosyBrownSword2.png",
-	["2:3"] = wallpaper_dir .. "RosyBrownNix.png",
-	["2:4"] = wallpaper_dir .. "RosyBrownGirl.png",
-	["2:5"] = wallpaper_dir .. "RosyBrownTree.png",
+-- Assign random wallpapers to tags
+math.randomseed(os.time())
+theme.wallpapers = {
+	-- ["1:1"] = wallpaper_dir .. "RosyBrown.png"
+	["1:1"] = helpers.get_random_wallpaper(wallpapers),
+	["1:2"] = helpers.get_random_wallpaper(wallpapers),
+	["1:3"] = helpers.get_random_wallpaper(wallpapers),
+	["1:4"] = helpers.get_random_wallpaper(wallpapers),
+	["1:5"] = helpers.get_random_wallpaper(wallpapers),
+
+	["2:1"] = helpers.get_random_wallpaper(wallpapers),
+	["2:2"] = helpers.get_random_wallpaper(wallpapers),
+	["2:3"] = helpers.get_random_wallpaper(wallpapers),
+	["2:4"] = helpers.get_random_wallpaper(wallpapers),
+	["2:5"] = helpers.get_random_wallpaper(wallpapers),
 }
 
 -- Fonts
