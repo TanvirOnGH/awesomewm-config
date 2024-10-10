@@ -35,6 +35,15 @@ My [Awesome Window Manager](https://awesomewm.org) configuration. It's a highly 
 git clone https://github.com/TanvirOnGH/awesomewm-config.git ~/.config/awesome --recursive
 ```
 
+## Color Scheme
+
+* Text Color: `#aaaaaa`
+* Primary Color: `#C38F8F`
+* Secondary Color: `#8DB8CD`
+* Primary Background: `#161616`
+* Secondary Background: `#202020`
+* Tertiary Background: `#575757`
+
 ## Misc screenshots
 
 ### Window Layouts
